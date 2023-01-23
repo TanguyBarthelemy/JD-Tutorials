@@ -25,11 +25,12 @@ windows_path_color <- "#006817"
 colFmt <- function(x, color, url = TRUE) {
     color_name <- deparse(substitute(color))
     outputFormat <- knitr::opts_knit$get("rmarkdown.pandoc.to")
-        x <- x |> 
-            gsub(pattern = "\\", replacement = "\\\\", fixed = TRUE) |> 
-            gsub(pattern = "#", replacement = "\\#", fixed = TRUE)
+    x <- x |> 
+        gsub(pattern = "\\", replacement = "\\\\", fixed = TRUE)
     
     if (outputFormat == 'latex') {
+        x <- x |> 
+            gsub(pattern = "#", replacement = "\\#", fixed = TRUE)
         ret <- paste("\\textcolor{", color_name, ifelse(url, "}{\\url{", "}{\\nolinkurl{"), x, ifelse(url, "}}", "}}"), sep = "")
     } else if (outputFormat == 'html') {
         ret <- paste("<font color='", color, "'>", x, "</font>", sep = "")
@@ -108,7 +109,7 @@ Remarque : Vous pouvez créer des raccourcis des exécutables si vous souhaitez 
 
 ## Installation du cruncher
 
-Le cruncher (**JWSACruncher**) est un outil qui permet de mettre à jour un workspace de JDemetra+ à partir de la console, sans devoir ouvrir JDemetra+. La mise à jour d’un workspace peut alors se faire à partir d’un autre logiciel statistique (R ou SAS par exemple). La version 2.2.3 du cruncher peut être téléchargée ici `r colFmt("https://github.com/jdemetra/jwsacruncher/releases", html_color)` (fichier `jwsacruncher-x.y.z-bin.zip`) et les anciennes versions sont téléchargeables sous `r colFmt("https://github.com/jdemetra/jdemetra-core/releases", html_color)`.
+Le cruncher ([**JWSACruncher**](https://github.com/jdemetra/jwsacruncher)) est un outil qui permet de mettre à jour un workspace de JDemetra+ à partir de la console, sans devoir ouvrir JDemetra+. La mise à jour d’un workspace peut alors se faire à partir d’un autre logiciel statistique (R ou SAS par exemple). La version 2.2.3 du cruncher peut être téléchargée ici `r colFmt("https://github.com/jdemetra/jwsacruncher/releases", html_color)` (fichier `jwsacruncher-x.y.z-bin.zip`) et les anciennes versions sont téléchargeables sous `r colFmt("https://github.com/jdemetra/jdemetra-core/releases", html_color)`.
 
 Si l’on utilise une version portable de Java (voir section [installation Java](#install_java)), il faut encore modifier certains paramètres pour utiliser le cruncher :
 
@@ -132,9 +133,12 @@ Pour installer Java 17, il faut aller à l'adresse `r colFmt("https://www.oracle
 -   **Télécharger** la version **Compressed Archive** de Windows (`r colFmt("https://download.oracle.com/java/17/archive/jdk-17.0.4.1_windows-x64_bin.zip", html_color)`)
 -   **Dézipper** le dossier `r colFmt("jdk-17.0.6", windows_path_color, url = FALSE)` sous `r colFmt("C:\\Users\\Software", windows_path_color, url = FALSE)` (par exemple)
 
-Après avoir installé Java (en version 8, 17 ou autre), il est important de **modifier** les variables d'environnement de PATH de Rstudio et de Windows (voir section [Variables d'environnement](#var_env)).
+Après avoir installé Java (en version 8, 17 ou autre), il faut :
 
-Enfin, si vous souhaitez utiliser la version 3.0.0 de JDemetra+. Il est nécessaire d'ajouter la localisation de Java 17 au raccourci de l'exécutable grace à l'option `--jdkhome`. La cible du raccourci devient `C:\Users\Software\nbdemetra-3.0.0\bin\nbdemetra64.exe --jdkhome "C:\Users\Software\Java17\jdk17"`
+- **modifier** les variables d'environnement de PATH de Rstudio et de Windows (voir section [Variables d'environnement](#var_env))
+- **modifier** les cibles de JDemetra+ pour informer de la localisation des nouvelles versions de Java.
+
+Ainsi par exemple, si vous avez installé la version 17 de Java pour utiliser la version 3.0.0 de JDemetra+. Il est nécessaire d'ajouter la localisation de Java 17 au raccourci de l'exécutable grace à l'option `--jdkhome`. La cible du raccourci devient `C:\Users\Software\nbdemetra-3.0.0\bin\nbdemetra64.exe --jdkhome "C:\Users\Software\Java17\jdk17"`
 
 
 # Installation de R et Rstudio
