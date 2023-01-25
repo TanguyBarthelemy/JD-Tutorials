@@ -1732,7 +1732,7 @@ professionnels par exemple</em>), il est conseillé de créer un dossier
 <font color="#006817">C:\Users\…\Software</font> ou directement sous
 <font color="#006817">C:\Users\Software</font> dans lequel tous les
 logiciels seront installés.</p>
-<p>Attention : lorsqu’on précise un chemin <strong>absolu</strong> de
+<p>⚠️ Attention : lorsqu’on précise un chemin <strong>absolu</strong> de
 logiciel (JDemetra+, Java, R, …) dans un programme, un raccourci, une
 variable, …, il doit être modifié à chaque fois qu’un des répertoires
 racines du logiciel est déplacé.</p>
@@ -1784,9 +1784,9 @@ nécessite une version de Java <span class="math inline">\(&gt;=17\)</span> :</p
 </tbody>
 </table>
 <p><em>RC : Release candidate</em></p>
-<p>Ainsi les processus d’installation de ces 3 versions sont semblables.
-Seulement v2.2.3 et v2.2.4 nécessite une version de Java <span class="math inline">\(&gt;= 8\)</span> alors que v3.0.0 nécessite une
-version de Java <span class="math inline">\(&gt;= 17\)</span>.</p>
+<p>Pour la suite, les processus d’installation de ces 3 versions sont
+les mêmes. Il suffit de les répéter pour chaque version que l’on veut
+installer.</p>
 </div>
 <div id="processus-dinstallation" class="section level2" number="1.2">
 <h2><span class="header-section-number">1.2</span> Processus
@@ -1795,17 +1795,18 @@ d’installation</h2>
 <ul>
 <li><strong>Télécharger et exécuter</strong> le fichier
 <code>.exe</code> qui nécessite des droits d’administrateur</li>
-<li><strong>Télécharger</strong> le <code>.zip</code> qui permet d’avoir
-une version portable du logiciel.</li>
+<li><strong>Télécharger</strong> et <strong>dézipper</strong> le dossier
+compressé <code>.zip</code> qui permet d’avoir une version portable du
+logiciel.</li>
 </ul>
-<p>Attention : pour la seconde option il faut télécharger le fichier
+<p>⚠️ Attention : pour la seconde option il faut
+<strong>télécharger</strong> le dossier compressé
 <code>jdemetra+-2.2.3-bin.zip</code> (pour la version 2.2.3 par exemple)
-et le fichier <code>Source code (zip)</code> :</p>
-<p>Une fois le fichier téléchargé, il suffit de le dézipper : le
-logiciel se trouve alors dans le dossier
+et <strong>non</strong> le dossier <code>Source code (zip)</code>.</p>
+<p>Le logiciel se trouve alors dans le dossier
 <font color="#006817">\nbdemetra\bin\</font>, ce sont les fichiers
-<code>nbdemetra.exe</code> (version 32-bit) et nbdemetra64.exe (version
-64-bit).</p>
+<code>nbdemetra.exe</code> (version 32-bit) et
+<code>nbdemetra64.exe</code> (version 64-bit).</p>
 <p>Conseil : si vous comptez utiliser plusieurs version de JDemetra+
 (v2.2.3, v3.0.0, …), vous pouvez renommer les dossiers dézippé en
 <font color="#006817">\nbdemetra-2.2.3\</font>,
@@ -1823,8 +1824,8 @@ partir de la console, sans devoir ouvrir JDemetra+. La mise à jour d’un
 workspace peut alors se faire à partir d’un autre logiciel statistique
 (R ou SAS par exemple). La version 2.2.3 du cruncher peut être
 téléchargée ici <font color="#000cff"><a href="https://github.com/jdemetra/jwsacruncher/releases" class="uri">https://github.com/jdemetra/jwsacruncher/releases</a></font>
-(fichier <code>jwsacruncher-x.y.z-bin.zip</code>) et les anciennes
-versions sont téléchargeables sous <font color="#000cff"><a href="https://github.com/jdemetra/jdemetra-core/releases" class="uri">https://github.com/jdemetra/jdemetra-core/releases</a></font>.</p>
+(dossier compressé <code>jwsacruncher-x.y.z-bin.zip</code>) et les
+anciennes versions sont téléchargeables sous <font color="#000cff"><a href="https://github.com/jdemetra/jdemetra-core/releases" class="uri">https://github.com/jdemetra/jdemetra-core/releases</a></font>.</p>
 <p>Si l’on utilise une version portable de Java (voir section <a href="#install_java">installation Java</a>), il faut encore modifier
 certains paramètres pour utiliser le cruncher :</p>
 <ul>
@@ -1850,7 +1851,9 @@ nouvelle ligne est
 Java</h1>
 <div id="java-8" class="section level2" number="2.1">
 <h2><span class="header-section-number">2.1</span> Java 8</h2>
-<p>Pour installer Java 8, utiliser le lien <font color="#000cff"><a href="https://portableapps.com/apps/utilities/java_portable" class="uri">https://portableapps.com/apps/utilities/java_portable</a></font>.</p>
+<p>Pour installer Java 8, utiliser le lien <font color="#000cff"><a href="https://portableapps.com/apps/utilities/java_portable" class="uri">https://portableapps.com/apps/utilities/java_portable</a></font>.
+Si l’on utilise la version 64-bit de JDemetra+, il faut bien installer
+la version jPortable 64-bit (en bas de la page).</p>
 </div>
 <div id="java-17" class="section level2" number="2.2">
 <h2><span class="header-section-number">2.2</span> Java 17</h2>
@@ -1881,18 +1884,19 @@ localisation de Java 17 au raccourci de l’exécutable grace à l’option
 <div id="installation-de-r-et-rstudio" class="section level1" number="3">
 <h1><span class="header-section-number">3</span> Installation de R et
 Rstudio</h1>
-<p>Les fonctionnalités de JDemetra+ sont accessibles sur R via des
-packages R. Pour utiliser R, mieux vaut utiliser un IDE donc Rstudio.
-Tous les exécutables à télécharger sont sous <font color="#000cff"><a href="https://posit.co/download/rstudio-desktop/#download" class="uri">https://posit.co/download/rstudio-desktop/#download</a></font>.</p>
+<p>Les fonctionnalités de JDemetra+ sont accessibles sur
+<strong>R</strong> via des packages <strong>R</strong>. Pour utiliser
+<strong>R</strong>, mieux vaut utiliser un IDE donc Rstudio. Tous les
+exécutables à télécharger sont sous <font color="#000cff"><a href="https://posit.co/download/rstudio-desktop/#download" class="uri">https://posit.co/download/rstudio-desktop/#download</a></font>.</p>
 <div id="installation-de-r" class="section level2" number="3.1">
 <h2><span class="header-section-number">3.1</span> Installation de
-R</h2>
-<p>Pour installer R, il faut :</p>
+<strong>R</strong></h2>
+<p>Pour installer <strong>R</strong>, il faut :</p>
 <ul>
 <li><strong>Télécharger</strong> le fichier binaire
 <code>R-4.2.2-win.exe</code> sous <font color="#000cff"><a href="https://cran.rstudio.com/bin/windows/base/" class="uri">https://cran.rstudio.com/bin/windows/base/</a></font></li>
 <li><strong>Exécuter</strong> l’exécutable pour paramétrer et
-<strong>installer</strong> R.</li>
+<strong>installer</strong> <strong>R</strong>.</li>
 </ul>
 </div>
 <div id="installation-de-rstudio" class="section level2" number="3.2">
@@ -1901,10 +1905,20 @@ Rstudio</h2>
 <p><strong>Télécharger</strong> la dernière version de Rstudio (sous
 <font color="#000cff"><a href="https://posit.co/download/rstudio-desktop/#download" class="uri">https://posit.co/download/rstudio-desktop/#download</a></font>)
 et l’<strong>installer</strong>.</p>
+<p>Si l’installation via le fichier <code>.exe</code> échoue (car
+nécessite des droits supérieurs (administrateur, élévation, …), nous
+allons récupérer une version portable du logiciel. Pour cela :</p>
+<ul>
+<li><strong>Télécharger</strong> et <strong>dézipper</strong> le dossier
+compressé <code>.zip</code> dans un dossier Rstudio (sous
+<font color="#006817">C:\Users\Software</font>)</li>
+<li><strong>Créer un raccourci</strong> du fichier
+<code>rstudio.exe</code> sur le Bureau</li>
+</ul>
 </div>
 <div id="installation-des-packages-r" class="section level2" number="3.3">
 <h2><span class="header-section-number">3.3</span> Installation des
-packages R</h2>
+packages <strong>R</strong></h2>
 <div id="en-version-2" class="section level3" number="3.3.1">
 <h3><span class="header-section-number">3.3.1</span> En version 2</h3>
 <p>Les packages en version 2 sont les suivants :</p>
@@ -1978,7 +1992,7 @@ installer les packages :</p>
 <li>soit il se trouve sur le CRAN et il est possible de l’installer
 directement via la fonction <code class="sourceCode r"><span class="fu">install.packages</span>()</code></li>
 <li>soit il ne s’y trouve pas et il faut alors récupérer le package au
-format binaire (.zip) et l’installer avec la fonction <code class="sourceCode r"><span class="fu">install.packages</span>()</code>
+format binaire (<code>.zip</code>) et l’installer avec la fonction <code class="sourceCode r"><span class="fu">install.packages</span>()</code>
 et les arguments <code>repos = NULL, type = &quot;binary&quot;</code>.</li>
 </ul>
 <p>Exemple pour le package <strong>JDCrunchR</strong> :</p>
@@ -2022,8 +2036,9 @@ fichier</p></li>
 </div>
 <div id="path" class="section level3" number="4.1.3">
 <h3><span class="header-section-number">4.1.3</span> PATH</h3>
-<p>La variable d’environnement <code>PATH</code> en R sert à indiquer à
-R où chercher les fichiers exécutables.</p>
+<p>La variable d’environnement <code>PATH</code> en <strong>R</strong>
+sert à indiquer à <strong>R</strong> où chercher les fichiers
+exécutables.</p>
 <p>Pour modifier cette variable d’environnement :</p>
 <ul>
 <li><p><strong>Récupérer</strong> les chemins de logiciels déjà
@@ -2038,9 +2053,10 @@ après. Par exemple, pour l’installation de Rtools, le chemin est
 <font color="#006817">C:\rtools42\mingw64\bin</font> (selon là où a été
 installé Rtools). Il faut donc rajouter
 <code>C:\\rtools42\\mingw64\\bin</code> ou
-<code>C:/rtools42/mingw64/bin</code> (En <code>R</code>, <code>\</code>
-est un caractère spécial, donc il faut remplacer les <code>\</code> par
-<code>/</code> ou par <code>\\</code>). Le chemin devient
+<code>C:/rtools42/mingw64/bin</code> (En <strong>R</strong>,
+<code>\</code> est un caractère spécial, donc il faut remplacer les
+<code>\</code> par <code>/</code> ou par <code>\\</code>). Le chemin
+devient
 <code>C:/WINDOWS/system32;C:/WINDOWS;C:/rtools42/mingw64/bin</code>.</p></li>
 <li><p><strong>Modifier</strong> la variable avec la fonction <code class="sourceCode r"><span class="fu">Sys.setenv</span>()</code>. Pour
 l’exemple ci-dessus, la commande à lancer est :</p>
@@ -2094,17 +2110,16 @@ exemples de code et vérifier qu’il n’y a pas d’erreurs :</p>
 <span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Basic plot with the original series, the trend and the SA series</span></span>
 <span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x13_model, <span class="at">type_chart =</span> <span class="st">&quot;sa-trend&quot;</span>)</span></code></pre></div>
-<p>Pour vérifier la version de Java que l’on utilise sous R, on peut
-essayer d’installer et utiliser le package <code>rJava</code> et lancer
-la commande ci-dessous :</p>
+<p>Pour vérifier la version de Java que l’on utilise sous
+<strong>R</strong>, on peut essayer d’installer et utiliser le package
+<strong>rJava</strong> et lancer la commande ci-dessous :</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># If rJava is not installed</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;rJava&quot;</span>)</span></code></pre></div>
-<p>Si l’installation de <code>rJava</code> retourne une erreur, cela
-veut dire que Java a été mal installé ou mal configuré sur R. Il faut
-retourner à la section <a href="#var_env">Variables
-d’environnement</a>.</p>
-<p>Ce bloc de commande test la version de Java avec laquelle R
-fonctionne :</p>
+<p>Si l’installation de <strong>rJava</strong> retourne une erreur, cela
+veut dire que Java a été mal installé ou mal configuré sur
+<strong>R</strong>. Il faut retourner à la section <a href="#var_env">Variables d’environnement</a>.</p>
+<p>Ce bloc de commande test la version de Java avec laquelle
+<strong>R</strong> fonctionne :</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;rJava&quot;</span>)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.jinit</span>()</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">.jcall</span>(<span class="st">&quot;java/lang/System&quot;</span>, <span class="st">&quot;S&quot;</span>, <span class="st">&quot;getProperty&quot;</span>, <span class="st">&quot;java.runtime.version&quot;</span>)</span></code></pre></div>
@@ -2129,18 +2144,19 @@ fonctionnalités externes) :</p>
 rencontrer</h1>
 <div id="problème-dinstallation-de-package-r" class="section level2" number="7.1">
 <h2><span class="header-section-number">7.1</span> Problème
-d’installation de package R</h2>
+d’installation de package <strong>R</strong></h2>
 <p>Si lors de l’installation de packages, vous obtenez l’erreur suivante
 :</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;RJDemetra&quot;</span>)</span></code></pre></div>
 <pre><code>## Error in eval(expr, envir, enclos): Erreur : le chargement a échoué
 ## Exécution arrêtée
 ## *** arch - x64</code></pre>
-<p>Le problème ne vient pas de Java mais du package R. Par défaut, le
-package s’installe depuis le fichier “source”, c’est-à-dire que le
-package est recompilé. Pour certaines raisons informatiques, lorsqu’on
-compile par défaut, ce sont les paramètres du système qui sont utilisés
-(et qui n’ont pas forcément les bonnes versions de Java).</p>
+<p>Le problème ne vient pas de Java mais du package <strong>R</strong>.
+Par défaut, le package s’installe depuis le fichier “source”,
+c’est-à-dire que le package est recompilé. Pour certaines raisons
+informatiques, lorsqu’on compile par défaut, ce sont les paramètres du
+système qui sont utilisés (et qui n’ont pas forcément les bonnes
+versions de Java).</p>
 <p>Deux solutions :</p>
 <ul>
 <li><p>ne pas compiler le package en installant depuis le fichier
@@ -2159,16 +2175,17 @@ minimum) de Java pour fonctionner, qui n’est pas celle utilisée par
 défaut sous AUS (au 3 mars 2020). Si au moins un autre package a déjà
 été chargé via la fonction <code class="sourceCode r"><span class="fu">library</span>()</code> et qu’il
 ne nécessite pas une version très à jour de Java, c’est cette ancienne
-version qui sera sollicitée pendant toute la durée de la session (R est
-réfractaire au changement de version en cours de session). En cas
-d’utilisation de <strong>RJDemetra</strong> au cours d’un programme, il
-faut donc impérativement spécifier dès le début du programme qu’il faut
-que R ailler chercher la version 8, via la commande :</p>
+version qui sera sollicitée pendant toute la durée de la session
+(<strong>R</strong> est réfractaire au changement de version en cours de
+session). En cas d’utilisation de <strong>RJDemetra</strong> au cours
+d’un programme, il faut donc impérativement spécifier dès le début du
+programme qu’il faut que <strong>R</strong> ailler chercher la version
+8, via la commande :</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.setenv</span>(<span class="at">JAVA_HOME =</span> <span class="st">&quot;C:/Users/Software/Java17/jdk17&quot;</span>) <span class="co">#Là où est installé java</span></span></code></pre></div>
-<p>ou charger RJDemetra en premier</p>
+<p>ou charger <strong>RJDemetra</strong> en premier</p>
 <div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># En début de programme</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;RJDemetra&quot;</span>)</span></code></pre></div>
-<p>Sinon il faut redémarrer une nouvelle session R.</p>
+<p>Sinon il faut redémarrer une nouvelle session <strong>R</strong>.</p>
 </div>
 <div id="error-array-index--1" class="section level2" number="7.3">
 <h2><span class="header-section-number">7.3</span>
