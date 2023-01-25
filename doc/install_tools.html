@@ -1721,7 +1721,8 @@ désaisonnalisation</h1>
 <li>R et Rstudio</li>
 <li>JDemetra+</li>
 </ul>
-<p>Aucune assistance en langage SAS n’est apportée.</p>
+<p>⚠️ Aucune assistance en langage <strong>SAS</strong> n’est apportée.
+⚠️</p>
 </div>
 <div id="préalable" class="section level1 unnumbered">
 <h1 class="unnumbered">Préalable</h1>
@@ -1745,8 +1746,10 @@ et dépendance</h2>
 l’application : <font color="#000cff"><a href="https://github.com/jdemetra/jdemetra-app/releases" class="uri">https://github.com/jdemetra/jdemetra-app/releases</a></font>.</p>
 <p>La dernière release (<a href="https://github.com/jdemetra/jdemetra-app/releases/tag/v2.2.3">v2.2.3</a>)
 date du 7 juillet 2020. C’est la dernière version
-<strong>stable</strong> de JDemetra+. Elle version nécessite Java 8. Il
-existe 2 autres versions de JDemetra+ :</p>
+<strong>stable</strong> de JDemetra+. <strong>C’est cette version qu’il
+convient de télécharger et d’utiliser en production.</strong></p>
+<p>Il existe 2 autres versions de JDemetra+ qui en sont uniquement au
+stade de <strong>test</strong> :</p>
 <ul>
 <li><a href="https://github.com/jdemetra/jdemetra-app/releases/tag/v2.2.4-RC2">v2.2.4</a>
 : une v2.2.3 corrigée des bugs mais sans ajout de nouvelles
@@ -1755,6 +1758,9 @@ fonctionnalités majeures</li>
 : la nouvelle version de JDemetra+ avec de nouvelles fonctionnalités et
 une nouvelle interface</li>
 </ul>
+<p>Les v2.2.3 et v2.2.4 de JDemetra+ nécéssitent une version de Java
+<span class="math inline">\(&gt;=8\)</span> alors que la v3.0.0
+nécessite une version de Java <span class="math inline">\(&gt;=17\)</span> :</p>
 <table>
 <thead>
 <tr class="header">
@@ -1918,17 +1924,17 @@ packages R</h2>
 <tbody>
 <tr class="odd">
 <td>RJDemetra</td>
-<td>Oui</td>
+<td>✔️</td>
 <td><font color="#000cff"><a href="https://github.com/jdemetra/rjdemetra" class="uri">https://github.com/jdemetra/rjdemetra</a></font></td>
 </tr>
 <tr class="even">
 <td>rjdworkspace</td>
-<td>Non</td>
+<td>❌</td>
 <td><font color="#000cff"><a href="https://github.com/InseeFrLab/rjdworkspace" class="uri">https://github.com/InseeFrLab/rjdworkspace</a></font></td>
 </tr>
 <tr class="odd">
 <td>JDCruncheR</td>
-<td>Non</td>
+<td>❌</td>
 <td><font color="#000cff"><a href="https://github.com/InseeFr/JDCruncheR" class="uri">https://github.com/InseeFr/JDCruncheR</a></font></td>
 </tr>
 </tbody>
@@ -1970,14 +1976,13 @@ installer les packages :</p>
 <p>Pour installer un package sur AUS,</p>
 <ul>
 <li>soit il se trouve sur le CRAN et il est possible de l’installer
-directement via la fonction <code>install.packages()</code></li>
+directement via la fonction <code class="sourceCode r"><span class="fu">install.packages</span>()</code></li>
 <li>soit il ne s’y trouve pas et il faut alors récupérer le package au
-format binaire (.zip) et l’installer avec la fonction
-<code>install.packages()</code> et les arguments
-<code>repos = NULL, type = &quot;binary&quot;</code>.</li>
+format binaire (.zip) et l’installer avec la fonction <code class="sourceCode r"><span class="fu">install.packages</span>()</code>
+et les arguments <code>repos = NULL, type = &quot;binary&quot;</code>.</li>
 </ul>
 <p>Exemple pour le package <strong>JDCrunchR</strong> :</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;chemin/.../JDCruncheR_0.2.4.tar.gz&quot;</span>, </span>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;chemin/.../JDCruncheR_0.2.4.tar.gz&quot;</span>,</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>                 <span class="at">repos =</span> <span class="cn">NULL</span>, <span class="at">type =</span> <span class="st">&quot;binary&quot;</span>)</span></code></pre></div>
 </div>
 </div>
@@ -1993,7 +1998,7 @@ d’environnement</h1>
 et des paramètres de localisation des logiciels sous Rstudio. Il suffit
 de :</p>
 <ul>
-<li><p><strong>Lancer</strong> le code file.edit(“~/.Renviron”)</p></li>
+<li><p><strong>Lancer</strong> le code <code class="sourceCode r"><span class="fu">file.edit</span>(<span class="st">&quot;~/.Renviron&quot;</span>)</code></p></li>
 <li><p><strong>Ajouter</strong> les paramètres (nouvelles lignes) :</p>
 <pre><code>http_proxy = http://proxy-rie.http.insee.fr:8080/
 https_proxy = http://proxy-rie.http.insee.fr:8080/</code></pre></li>
@@ -2008,7 +2013,7 @@ Java</h3>
 Rstudio la localisation de l’installation. Pour cela, comme pour
 paramétrer le proxy :</p>
 <ul>
-<li><p><strong>Lancer</strong> le code file.edit(“~/.Renviron”)</p></li>
+<li><p><strong>Lancer</strong> le code <code class="sourceCode r"><span class="fu">file.edit</span>(<span class="st">&quot;~/.Renviron&quot;</span>)</code></p></li>
 <li><p><strong>Ajouter</strong> les paramètres :</p>
 <pre><code>JAVA_HOME = &quot;C:/Users/Software/Java17/jdk17&quot;</code></pre></li>
 <li><p><strong>Sauvegarder</strong> et <strong>fermer</strong> le
@@ -2166,8 +2171,8 @@ que R ailler chercher la version 8, via la commande :</p>
 <p>Sinon il faut redémarrer une nouvelle session R.</p>
 </div>
 <div id="error-array-index--1" class="section level2" number="7.3">
-<h2><span class="header-section-number">7.3</span> Error array index =
--1</h2>
+<h2><span class="header-section-number">7.3</span>
+<code>Error array index = -1</code></h2>
 <p>Le message du type <code>Error array index = -1</code> indique une
 variable auxiliaire non trouvée. Il peut s’agir de régresseurs CJO ou
 d’autres variables définies par l’utilisateur (effet de Pâques

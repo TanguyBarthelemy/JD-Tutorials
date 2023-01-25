@@ -4,9 +4,13 @@ author: "Tanguy BARTHELEMY"
 date: "2023-01-17"
 output:
   pdf_document: 
+    includes:
+        in_header: 
+            - ../xelatex-emoji/xelatexemoji.sty
     extra_dependencies: ["url"]
     number_sections: TRUE
     highlight: "arrow"
+    latex_engine: xelatex
   html_document:
     df_print: paged
     number_sections: TRUE
@@ -50,6 +54,8 @@ windows_path_color <- "#006817"
 \definecolor{html_color}{HTML}{000cff}
 \definecolor{windows_path_color}{HTML}{006817}
 
+\renewcommand{\xelatexemojipath}[1]{../xelatex-emoji/images/#1}
+
 
 # Contexte  {-}
 
@@ -58,7 +64,7 @@ Les outils d'aide à la désaisonnalisation sont :
 -   R et Rstudio
 -   JDemetra+
 
-Aucune assistance en langage SAS n'est apportée.
+⚠️ Aucune assistance en langage **SAS** n'est apportée. ⚠️
 
 
 # Préalable  {-}
@@ -75,10 +81,15 @@ Attention : lorsqu'on précise un chemin **absolu** de logiciel (JDemetra+, Java
 
 JDemetra+ est téléchargeable depuis le lien [github](https://github.com/jdemetra/jdemetra-app/releases) de l'application : `r colFmt("https://github.com/jdemetra/jdemetra-app/releases", html_color)`.
 
-La dernière release ([v2.2.3](https://github.com/jdemetra/jdemetra-app/releases/tag/v2.2.3)) date du 7 juillet 2020. C'est la dernière version **stable** de JDemetra+. Elle version nécessite Java 8. Il existe 2 autres versions de JDemetra+ :
+La dernière release ([v2.2.3](https://github.com/jdemetra/jdemetra-app/releases/tag/v2.2.3)) date du 7 juillet 2020. C'est la dernière version **stable** de JDemetra+. **C'est cette version qu'il convient de télécharger et d'utiliser en production.**
+
+
+Il existe 2 autres versions de JDemetra+ qui en sont uniquement au stade de **test** :
 
 -   [v2.2.4](https://github.com/jdemetra/jdemetra-app/releases/tag/v2.2.4-RC2) : une v2.2.3 corrigée des bugs mais sans ajout de nouvelles fonctionnalités majeures
 -   [v3.0.0](https://github.com/jdemetra/jdemetra-app/releases/tag/v3.0.0-RC1) : la nouvelle version de JDemetra+ avec de nouvelles fonctionnalités et une nouvelle interface
+
+Les v2.2.3 et v2.2.4 de JDemetra+ nécéssitent une version de Java $>=8$ alors que la v3.0.0 nécessite une version de Java $>=17$ :
 
 | JDemetra+ version | Java version |
 |-------------------|--------------|
@@ -170,9 +181,9 @@ Les packages en version 2 sont les suivants :
 
 | Nom | Disponible sur le CRAN | Lien Github |
 |---|--|-----|
-|    RJDemetra | Oui |      `r colFmt("https://github.com/jdemetra/rjdemetra", html_color)` |
-| rjdworkspace | Non | `r colFmt("https://github.com/InseeFrLab/rjdworkspace", html_color)` |
-|   JDCruncheR | Non |      `r colFmt("https://github.com/InseeFr/JDCruncheR", html_color)` |
+|    RJDemetra | ✔️ |      `r colFmt("https://github.com/jdemetra/rjdemetra", html_color)` |
+| rjdworkspace | ❌ | `r colFmt("https://github.com/InseeFrLab/rjdworkspace", html_color)` |
+|   JDCruncheR | ❌ |      `r colFmt("https://github.com/InseeFr/JDCruncheR", html_color)` |
 
 Le code d'installation des packages est ci-dessous :
 
@@ -215,15 +226,15 @@ remotes::install_github("AQLT/ggdemetra3")
 
 ### Cas AUS
 
-Pour installer un package sur AUS, 
+Pour installer un package sur AUS,
 
-- soit il se trouve sur le CRAN et il est possible de l'installer directement via la fonction `install.packages()`
-- soit il ne s'y trouve pas et il faut alors récupérer le package au format binaire (.zip) et l'installer avec la fonction `install.packages()` et les arguments `repos = NULL, type = "binary"`.
+- soit il se trouve sur le CRAN et il est possible de l'installer directement via la fonction `install.packages()`{.r}
+- soit il ne s'y trouve pas et il faut alors récupérer le package au format binaire (.zip) et l'installer avec la fonction `install.packages()`{.r} et les arguments `repos = NULL, type = "binary"`.
 
 Exemple pour le package **JDCrunchR** :
 
 ```{r, echo = TRUE, eval = FALSE}
-install.packages("chemin/.../JDCruncheR_0.2.4.tar.gz", 
+install.packages("chemin/.../JDCruncheR_0.2.4.tar.gz",
                  repos = NULL, type = "binary")
 ```
 
@@ -236,7 +247,7 @@ install.packages("chemin/.../JDCruncheR_0.2.4.tar.gz",
 
 Pour les postes Insee, il faut **configurer** le proxy et des paramètres de localisation des logiciels sous Rstudio. Il suffit de :
 
-- **Lancer** le code file.edit("~/.Renviron")
+- **Lancer** le code `file.edit("~/.Renviron")`{.r}
 - **Ajouter** les paramètres (nouvelles lignes) :
 
     ```
@@ -251,7 +262,7 @@ Pour les postes Insee, il faut **configurer** le proxy et des paramètres de loc
 
 Si une nouvelle version de Java a été installé, il faut préciser à Rstudio la localisation de l'installation. Pour cela, comme pour paramétrer le proxy :
 
-- **Lancer** le code file.edit("~/.Renviron")
+- **Lancer** le code `file.edit("~/.Renviron")`{.r}
 - **Ajouter** les paramètres :
 
     ```
@@ -357,7 +368,7 @@ Exécution arrêtée
 *** arch - x64")
 ```
 
-Le problème ne vient pas de Java mais du package R. Par défaut, le package s'installe depuis le fichier "source", c'est-à-dire que le package est recompilé. Pour certaines raisons informatiques, lorsqu'on compile par défaut, ce sont les paramètres du système qui sont utilisés (et qui n'ont pas forcément les bonnes versions de Java). 
+Le problème ne vient pas de Java mais du package R. Par défaut, le package s'installe depuis le fichier "source", c'est-à-dire que le package est recompilé. Pour certaines raisons informatiques, lorsqu'on compile par défaut, ce sont les paramètres du système qui sont utilisés (et qui n'ont pas forcément les bonnes versions de Java).
 
 Deux solutions :
 
@@ -372,7 +383,7 @@ Deux solutions :
     ```{r, echo = TRUE, eval = FALSE}
     install.packages("RJDemetra", type = "source", INSTALL_opts = "--no-multiarch")
     ```
- 
+
 Plus d'information : `r colFmt("https://github.com/jdemetra/rjdemetra/wiki/Installation-manual", html_color)`
 
 
@@ -393,7 +404,8 @@ library("RJDemetra")
 
 Sinon il faut redémarrer une nouvelle session R.
 
-## Error array index = -1
+
+## `Error array index = -1`
 
 Le message du type `Error array index = -1` indique une variable auxiliaire non trouvée. Il peut s’agir de régresseurs CJO ou d’autres variables définies par l’utilisateur (effet de Pâques spécifique, PSO = pure seasonal outlier...).
 
