@@ -348,7 +348,7 @@ install.packages("rJava")
 
 Si l'installation de **rJava** retourne une erreur, cela veut dire que Java a été mal installé ou mal configuré sur **R**. Il faut retourner à la section [Variables d'environnement](#var_env).
 
-Ce bloc de commande test la version de Java avec laquelle **R** fonctionne :
+Ce bloc de commande teste la version de Java avec laquelle **R** fonctionne :
 
 ```{r, echo = TRUE, eval = FALSE}
 library("rJava")
@@ -356,7 +356,7 @@ library("rJava")
 .jcall("java/lang/System", "S", "getProperty", "java.runtime.version")
 ```
 
-Enfin lon peut consulter la version de Java installé sur notre poste et avec laquelle windows fonctionne (cela n'a pas d'importance pour nous) :
+Enfin, on peut consulter la version de Java installé sur notre poste et avec laquelle Windows fonctionne (cela n'a pas d'importance pour nous) :
 
 ```{r, echo = TRUE, eval = FALSE}
 system("java -version")
@@ -365,7 +365,7 @@ system("java -version")
 
 # Installations optionnelles
 
-Certaines installation supplémentaires sotn optionnelles (c'est-à-dire qu'elles ne sont pas obligatoires mais apportent des fonctionnalités externes) :
+Certaines installation supplémentaires sont optionnelles (c'est-à-dire qu'elles ne sont pas obligatoires mais apportent des fonctionnalités externes) :
 
 -   Miktek pour produire des documents latex
 -   Rtools pour développer des packages et compiler du code
