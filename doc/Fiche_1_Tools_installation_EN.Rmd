@@ -81,7 +81,7 @@ On the computers without administrator rights (*professionnal computer, for exam
 
 # Installation of [JDemetra+](https://github.com/jdemetra/jdemetra-app)
 
-JDemetra+ is a collection of Java programs used for the study of time series and more specifically for seasonnal adjustment. JDemetra+ is delivered in the forme of an GUI (Graphical User Interface) but there are **R** packages developped to be used with **R** as well as a cruncher (executable).
+JDemetra+ is a collection of Java programs used for the study of time series and more specifically for seasonnal adjustment. JDemetra+ is delivered in the forme of an GUI (Graphical User Interface) but there are **R** packages developed to be used with **R** as well as a cruncher (executable).
 
 ## Version of JDemetra+ and dependence
 
@@ -94,13 +94,13 @@ There are two more versions of JDemetra+ which are only at the **test** stage:
 -   [v2.2.4](https://github.com/jdemetra/jdemetra-app/releases/tag/v2.2.4-RC2): a v2.2.3 corrected from bugs but without adding some major new features
 -   [v3.0.0](https://github.com/jdemetra/jdemetra-app/releases/tag/v3.0.0-RC1): the new JDemetra+ version with new features and a new GUI
 
-JDemetra+ v2.2.3 and v2.2.4 require Java version $>=8$ while v3.0.0 require Java version $>=17$:
+JDemetra+ v2.2.3 and v2.2.4 require Java version $\geq 8$ while v3.0.0 require Java version $\geq 17$:
 
 | JDemetra+ version | Java version |
 |-------------------|--------------|
-|            v2.2.3 |        $>=8$ |
-|      v2.2.4 (RC2) |        $>=8$ |
-|      v3.0.0 (RC1) |       $>=17$ |
+|            v2.2.3 |        $\geq 8$ |
+|      v2.2.4 (RC2) |        $\geq 8$ |
+|      v3.0.0 (RC1) |       $\geq 17$ |
 
 *RC: Release candidate*
 
@@ -125,7 +125,7 @@ The Software is in the folder `r colFmt("\\nbdemetra\\bin\\", windows_path_color
 
 ## Installation of the cruncher
 
-The cruncher ([**JWSACruncher**](https://github.com/jdemetra/jwsacruncher)) is a tool to update a workspace of JDemetra+ from the console, without opening JDemetra+. The update of a workspace can then be done from another Software (R or SAS for example).
+The cruncher ([**JWSACruncher**](https://github.com/jdemetra/jwsacruncher)) is a tool to update a workspace of JDemetra+ from the console, without opening JDemetra+. The update of a workspace can then be done from another Software (**R** or **SAS** for example).
 
 To use the cruncher, you have to:
 
@@ -150,7 +150,7 @@ To install Java 8, use the link `r colFmt("https://portableapps.com/apps/utiliti
 
 To install Java 17, you need to go at the adresse `r colFmt("https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html", html_color)`.
 
--   **Download** the version **Compressed Archive** of Windows (`r colFmt("https://download.oracle.com/java/17/archive/jdk-17.0.4.1_windows-x64_bin.zip", html_color)`)
+-   **Download** the version `Compressed Archive` of Windows (`r colFmt("https://download.oracle.com/java/17/archive/jdk-17.0.4.1_windows-x64_bin.zip", html_color)`)
 -   **Unzip** the folder `r colFmt("jdk-17.0.6", windows_path_color, url = FALSE)` under `r colFmt("C:\\Users\\Software", windows_path_color, url = FALSE)` (for example)
 
 After a Java installation (in version 8, 17 or other), you need to:
@@ -353,7 +353,7 @@ library("rJava")
 .jcall("java/lang/System", "S", "getProperty", "java.runtime.version")
 ```
 
-Finally, you can consult the Java version installed with which windows works (it doesn't matter to us):
+Finally, you can consult the Java version installed with which Windows works (it doesn't matter to us):
 
 ```{r, echo = TRUE, eval = FALSE}
 system("java -version")
@@ -364,8 +364,8 @@ system("java -version")
 
 Some supplementary installations are optionnal (that is they are no mandatory but bring external features):
 
--   Miktek to produce PDF document with Latex
--   Rtools to developpe **R** packages and compile the code
+-   [Miktek](https://miktex.org/howto/install-miktex) to produce PDF document with Latex
+-   [Rtools](https://cran.r-project.org/bin/windows/Rtools/rtools42/rtools.html) to develop **R** packages and compile the code
 
 
 # Problems you may encounter
@@ -384,7 +384,7 @@ Exécution arrêtée
 *** arch - x64")
 ```
 
-The problem doesn't come from Java but from the **R** package. By default, the package is installed from a "source" file, it means that the package is recompiled. For some computing reasons, when compiling by default, **R** uses the system (windows) parameters (which doesn't have necessarily have the correct Java version).
+The problem doesn't come from Java but from the **R** package. By default, the package is installed from a "source" file, it means that the package is recompiled. For some computing reasons, when compiling by default, **R** uses the system (Windows) parameters (which doesn't have necessarily have the correct Java version).
 
 There are two solutions:
 
@@ -405,7 +405,7 @@ There are two solutions:
 
 ## The command `library("RJDemetra")`{.r} returns an error message
 
-The package **RJDemetra** requires Java version 8 or higher to work, which is not used by default (for example under AUS). If another package has been loaded before **RJDemetra** via the function `library()`{.r} and which doesn't requires an updated Java version, then an old Java version will be used during all the session (**R** is refractory to in-session version change). In case of using **RJDemetra** in a program, you have to specify at the very beginning of the program that **R** must use Java version 8, via the command:
+The package **RJDemetra** requires Java version 8 or higher to work. If another package has been loaded before **RJDemetra** via the function `library()`{.r} and which doesn't requires an updated Java version, then an old Java version will be used during all the session (**R** is refractory to in-session version change). In case of using **RJDemetra** in a program, you have to specify at the very beginning of the program that **R** must use Java version 8, via the command:
 
 ```{r, echo = TRUE, eval = FALSE}
 Sys.setenv(JAVA_HOME = "C:/Users/Software/Java17/jdk17") # Là où is installé java
