@@ -24,7 +24,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{css, echo = FALSE}
 .Code {
-background-color: grey;
+background-color: #F1F3F5;
 }
 ```
 
@@ -83,7 +83,7 @@ On the computers without administrator rights (*professionnal computer, for exam
 
 JDemetra+ is a collection of Java programs used for the study of time series and more specifically for seasonnal adjustment. JDemetra+ is delivered in the forme of an GUI (Graphical User Interface) but there are **R** packages developed to be used with **R** as well as a cruncher (executable).
 
-## Version of JDemetra+ and dependence
+## Version of JDemetra+ and dependencies
 
 JDemetra+ is downloadable from the [github link](https://github.com/jdemetra/jdemetra-app/releases) of the application: `r colFmt("https://github.com/jdemetra/jdemetra-app/releases", html_color)`.
 
@@ -261,7 +261,7 @@ install.packages("path/.../JDCruncheR_0.2.4.tar.gz",
 
 ### Proxy
 
-ℹ️ On Insee computer, you need to **configure** the proxy and parameters of Software localisation under Rstudio. You should:
+ℹ️ On Insee computers, you need to **configure** the proxy and parameters of Software localisation under Rstudio. You should:
 
 - **Launch** the code `file.edit("~/.Renviron")`{.r}
 - **Add** the parameters (news lines):
@@ -388,7 +388,7 @@ The problem doesn't come from Java but from the **R** package. By default, the p
 
 There are two solutions:
 
-- Compile the package by installin from the binary file:
+- Compile the package by installing from the binary file:
 
     ```{r, echo = TRUE, eval = FALSE}
     install.packages("RJDemetra", type = "binary")
@@ -408,7 +408,8 @@ There are two solutions:
 The package **RJDemetra** requires Java version 8 or higher to work. If another package has been loaded before **RJDemetra** via the function `library()`{.r} and which doesn't requires an updated Java version, then an old Java version will be used during all the session (**R** is refractory to in-session version change). In case of using **RJDemetra** in a program, you have to specify at the very beginning of the program that **R** must use Java version 8, via the command:
 
 ```{r, echo = TRUE, eval = FALSE}
-Sys.setenv(JAVA_HOME = "C:/Users/Software/Java17/jdk17") # Là où is installé java
+# Where Java is installed
+Sys.setenv(JAVA_HOME = "C:/Users/Software/Java17/jdk17")
 ```
 
 or load **RJDemetra** first

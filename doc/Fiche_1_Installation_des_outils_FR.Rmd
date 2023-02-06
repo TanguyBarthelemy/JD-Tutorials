@@ -24,7 +24,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{css, echo = FALSE}
 .Code {
-background-color: grey;
+background-color: #F1F3F5;
 }
 ```
 
@@ -84,7 +84,7 @@ Sur les ordinateurs sans droits d'administrateur (*postes professionnels par exe
 
 JDemetra+ est une galerie de programmes Java servant à l'étude des séries temporelles et plus particulièrement à la désaisonnalisation. JDemetra+ est livrée sous la forme d'une IHM (Interface Homme Machine) mais il existe des packages **R** développés pour l'utiliser aussi sur **R** ainsi qu'un cruncher (executable).
 
-## Version de JDemetra+ et dépendance
+## Version de JDemetra+ et dépendances
 
 JDemetra+ est téléchargeable depuis le lien [github](https://github.com/jdemetra/jdemetra-app/releases) de l'application : `r colFmt("https://github.com/jdemetra/jdemetra-app/releases", html_color)`.
 
