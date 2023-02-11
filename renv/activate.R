@@ -52,7 +52,7 @@ local({
 
   # load the 'utils' package eagerly -- this ensures that renv shims, which
   # mask 'utils' packages, will come first on the search path
-  library(utils, lib.loc = .Library)
+  library("utils", lib.loc = .Library)
 
   # unload renv if it's already been loaded
   if ("renv" %in% loadedNamespaces())
