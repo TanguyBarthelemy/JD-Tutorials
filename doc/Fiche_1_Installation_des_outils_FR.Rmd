@@ -100,9 +100,9 @@ Les v2.2.3 et v2.2.4 de JDemetra+ nécessitent une version de Java $\geq 8$ alor
 
 | JDemetra+ version | Java version |
 |-------------------|--------------|
-|            v2.2.3 |        $\geq 8$ |
-|      v2.2.4 (RC2) |        $\geq 8$ |
-|      v3.0.0 (RC1) |       $\geq 17$ |
+|            v2.2.3 |     $\geq 8$ |
+|      v2.2.4 (RC2) |     $\geq 8$ |
+|      v3.0.0 (RC1) |    $\geq 17$ |
 
 *RC : Release candidate*
 
@@ -249,9 +249,9 @@ remotes::install_github("AQLT/ggdemetra3")
 
 ### Cas AUS
 
-Pour installer un package sur AUS, il n'est pas possible d'utiliser la fonction `install_github()`{.r}. Ainsi, si le package n'est pas sur le CRAN, il doit être téléchargé au format binaire.
+Pour installer un package sur AUS, il n'est pas possible d'utiliser la fonction `install_github()`{.r}. Ainsi, si le package n'est pas sur le CRAN, il doit être téléchargé au format binaire. Pour cela, il faut aller chercher le dossier compressé `.zip` sous GitHub.
 
-Exemple pour le package **JDCruncheR** :
+Exemple pour le package **JDCruncheR**, le `Source code (tar.gz)` se trouve sous `r colFmt("https://github.com/InseeFr/JDCruncheR/releases/tag/v0.2.4", html_color)` (*release* Section). Après l'avoir récupéré, il faut lancer la commande d'installation :
 
 ```{r, echo = TRUE, eval = FALSE}
 install.packages("chemin/.../JDCruncheR_0.2.4.tar.gz",
@@ -311,18 +311,28 @@ Lorsque vous installer un nouveau logiciel *(exemple JDemetra+, Rtools, Java...)
     Sys.setenv(PATH = "C:/WINDOWS/system32;C:/WINDOWS;C:/rtools42/mingw64/bin")
     ```
 
-ℹ️ NB : Généralement une version 32 bits et une version 64 bits sont disponibles au téléchargement et à l'installation d'un logiciel. Il faut vérifier le type de processeur de votre Système d’exploitation afin de choisir le bon dossier propre à votre version système :
+ℹ️ NB : Généralement une version 32 bits et une version 64 bits sont disponibles au téléchargement et à l'installation d'un logiciel. Il faut vérifier le type de processeur de votre Système d’exploitation afin de choisir le bon dossier propre à votre version système.
+
+Pour cela, vous pouvez lancer les commandes suivantes :
+
+```{r, echo = TRUE, eval = FALSE}
+Sys.getenv("R_ARCH")
+Sys.info()[["machine"]]
+```
+
+Selon le résultat, la version est 32 bits ou 64 bits :
 
 +------------+-------------+
-| Version    | Mots-clés   |
+| Version    | Output      |
 +============+=============+
-|            | 64          |
+|            | /x64        |
 | 64 bits    +-------------+
-|            | x64         |
+|            | x86-64      |
 +------------+-------------+
-|            | 32          |
++------------+-------------+
+|            | /i386       |
 | 32 bits    +-------------+
-|            | x86         |
+|            | x86_32      |
 +------------+-------------+
 
 Plus d'informations sur la variable `PATH` via la page `r colFmt("https://java.com/fr/download/help/path.xml", html_color)`.
@@ -433,3 +443,12 @@ Sinon il faut redémarrer une nouvelle session **R**.
 
 Le message du type `Error array index = -1` indique une variable auxiliaire non trouvée. Il peut s’agir de régresseurs CJO ou d’autres variables définies par l’utilisateur (effet de Pâques spécifique, PSO = pure seasonal outlier...).
 
+
+## La commande `cruncher_and_param(...)`{.r} renvoie un message d’erreur
+
+Lorsqu'on lance la commande `cruncher_and_param(...)`{.r}, on peut obtenir l'erreur :
+
+```{r, error = TRUE, echo = FALSE, include = TRUE, eval = TRUE}
+stop("Error in cruncher(workspace = workspace, cruncher_bin_directory = cruncher_bin_directory,  : 
+  There is an error in the path to the cruncher bin folder")
+```

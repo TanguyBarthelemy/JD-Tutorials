@@ -1721,17 +1721,20 @@ background-color: #F1F3F5;
 </style>
 <div id="context" class="section level1 unnumbered">
 <h1 class="unnumbered">Context</h1>
-<p>The helping tools for seasonal adjustment are:</p>
+<p>For seasonal adjustment we recommend using JDemetra+ algorithms</p>
+<p>Thus, it is helpful to install the following tools:</p>
 <ul>
-<li><strong>R</strong> and Rstudio</li>
-<li>JDemetra+</li>
+<li><p>JDemetra+ Graphical User Interface (X13-Arima and Tramo-Seats
+)</p></li>
+<li><p><strong>R</strong> and Rstudio (which allow to access even more
+JDemetra+ algorithms)</p></li>
 </ul>
 <p>⚠️ No assistance in <strong>SAS</strong> language will be given.
 ⚠️</p>
 </div>
 <div id="preliminary" class="section level1 unnumbered">
 <h1 class="unnumbered">Preliminary</h1>
-<p>On the computers without administrator rights (<em>professionnal
+<p>On the computers without administrator rights (<em>professional
 computer, for example</em>), it is recommended to create a folder
 <strong>Software</strong> under
 <font color="#006817">C:\Users\…\Software</font> or directly under
@@ -1744,11 +1747,11 @@ repository is moved.</p>
 </div>
 <div id="installation-of-jdemetra" class="section level1" number="1">
 <h1><span class="header-section-number">1</span> Installation of <a href="https://github.com/jdemetra/jdemetra-app">JDemetra+</a></h1>
-<p>JDemetra+ is a collection of Java programs used for the study of time
-series and more specifically for seasonnal adjustment. JDemetra+ is
-delivered in the forme of an GUI (Graphical User Interface) but there
-are <strong>R</strong> packages developed to be used with
-<strong>R</strong> as well as a cruncher (executable).</p>
+<p>JDemetra+ is a collection of Java programs used for time series
+analysis and more specifically for seasonal adjustment. JDemetra+ is
+delivered in the form of an GUI (Graphical User Interface) but there are
+<strong>R</strong> packages developed to be used with <strong>R</strong>
+as well as a cruncher (executable).</p>
 <div id="version-of-jdemetra-and-dependencies" class="section level2" number="1.1">
 <h2><span class="header-section-number">1.1</span> Version of JDemetra+
 and dependencies</h2>
@@ -1758,7 +1761,7 @@ of the application: <font color="#000cff"><a href="https://github.com/jdemetra/j
 dates from July 7, 2020. It is the last <strong>stable</strong> version
 of JDemetra+. <strong>This version should be downloaded and must be used
 in production.</strong></p>
-<p>There are two more versions of JDemetra+ which are only at the
+<p>There are two more versions of JDemetra+ which are only at a
 <strong>test</strong> stage:</p>
 <ul>
 <li><a href="https://github.com/jdemetra/jdemetra-app/releases/tag/v2.2.4-RC2">v2.2.4</a>:
@@ -1767,7 +1770,7 @@ features</li>
 <li><a href="https://github.com/jdemetra/jdemetra-app/releases/tag/v3.0.0-RC1">v3.0.0</a>:
 the new JDemetra+ version with new features and a new GUI</li>
 </ul>
-<p>JDemetra+ v2.2.3 and v2.2.4 require Java version <span class="math inline">\(\geq 8\)</span> while v3.0.0 require Java version
+<p>JDemetra+ v2.2.3 and v2.2.4 require Java version <span class="math inline">\(\geq 8\)</span> while v3.0.0 requires Java version
 <span class="math inline">\(\geq 17\)</span>:</p>
 <table>
 <thead>
@@ -1792,17 +1795,17 @@ the new JDemetra+ version with new features and a new GUI</li>
 </tbody>
 </table>
 <p><em>RC: Release candidate</em></p>
-<p>For the sequel, the installation processes of this 3 versions are the
-same. You just have to repeat them for each version you want to
-install.</p>
+<p>In the following procedure, the installation processes of this 3
+versions are the same. You just have to repeat them for each version you
+want to install.</p>
 </div>
 <div id="installation-process" class="section level2" number="1.2">
 <h2><span class="header-section-number">1.2</span> Installation
 process</h2>
-<p>There are two possibility for installing:</p>
+<p>There are two possibilities for installing:</p>
 <ul>
-<li><strong>Download and exécuter</strong> the file <code>.exe</code>
-which need administrator rights</li>
+<li><strong>Download and execute</strong> the <code>.exe</code> file
+which requires administrator rights</li>
 <li><strong>Download</strong> and <strong>unzip</strong> the compressed
 folder <code>.zip</code> that allows to get a portable version of the
 software</li>
@@ -1815,22 +1818,22 @@ and <strong>not</strong> the folder <code>Source code (zip)</code>.</p>
 <font color="#006817">\nbdemetra\bin\</font>, these are the file
 <code>nbdemetra.exe</code> (version 32-bit) and
 <code>nbdemetra64.exe</code> (version 64-bit).</p>
-<p>ℹ️ Advise: If you want to use several version of JDemetra+ (v2.2.3,
+<p>ℹ Advice: If you want to use several versions of JDemetra+ (v2.2.3,
 v3.0.0, …), you can rename the unzipped folder in
 <font color="#006817">\nbdemetra-2.2.3\</font>,
 <font color="#006817">\nbdemetra-2.2.4\</font> and
 <font color="#006817">\nbdemetra-3.0.0\</font>.</p>
-<p>ℹ️ Remark: You can create shortcut fo the executables if you want to
-launch them from another folder (Desktop, project folder…).</p>
+<p>ℹ️ Remark:You can create shortcuts to the executable files if you
+want to launch them from another folder (Desktop, project folder…).</p>
 </div>
 <div id="installation-of-the-cruncher" class="section level2" number="1.3">
 <h2><span class="header-section-number">1.3</span> Installation of the
 cruncher</h2>
 <p>The cruncher (<a href="https://github.com/jdemetra/jwsacruncher"><strong>JWSACruncher</strong></a>)
 is a tool to update a workspace of JDemetra+ from the console, without
-opening JDemetra+. The update of a workspace can then be done from
-another Software (<strong>R</strong> or <strong>SAS</strong> for
-example).</p>
+opening JDemetra+ Graphical User Interface. The update of a workspace
+can then be done from another Software (<strong>R</strong> or
+<strong>SAS</strong> for example).</p>
 <p>To use the cruncher, you have to:</p>
 <ul>
 <li><strong>Download</strong> and <strong>unzip</strong> the file from
@@ -1838,17 +1841,17 @@ the <strong>latest stable</strong> version v2.2.3 here
 <font color="#000cff"><a href="https://github.com/jdemetra/jwsacruncher/releases" class="uri">https://github.com/jdemetra/jwsacruncher/releases</a></font></li>
 </ul>
 <p>If you want to install and use a portable Java version (See section
-<a href="#install_java">Java installation</a>), you have to modified
-some parameters to use the cruncher:</p>
+<a href="#install_java">Java installation</a>), you have to modify some
+parameters to use the cruncher:</p>
 <ul>
-<li>In the unziped folder, <strong>open</strong> (for example with
+<li>In the unzipped folder, <strong>open</strong> (for example with
 Notepad++) the file <code>jwsacruncher.bat</code> present in the
 subfolder <font color="#006817">\bin\</font> (that is under
 <font color="#006817">jdemetra-cli-2.2.3\bin\</font> in the version
 2.2.3 of the cruncher)</li>
-<li><strong>Modify</strong> the valeur of the variable
+<li><strong>Modify</strong> the value of the variable
 <code>JAVACMD</code> at the line <strong>71</strong> (currently
-<code>JAVACMD=java</code>) by the adress toward the file
+<code>JAVACMD=java</code>) by the address towards the file
 <code>java.exe</code> of the portable version. Then, if JPortable is
 installed under <font color="#006817">C:\Users\Software</font>, the new
 line is
@@ -1871,8 +1874,7 @@ version jPortable 64-bit (at the bottom of the page).</p>
 </div>
 <div id="java-17" class="section level2" number="2.2">
 <h2><span class="header-section-number">2.2</span> Java 17</h2>
-<p>To install Java 17, you need to go at the adresse
-<font color="#000cff"><a href="https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html" class="uri">https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html</a></font>.</p>
+<p>To install Java 17, you need to head over to <font color="#000cff"><a href="https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html" class="uri">https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html</a></font>.</p>
 <ul>
 <li><strong>Download</strong> the version
 <code>Compressed Archive</code> of Windows (<font color="#000cff"><a href="https://download.oracle.com/java/17/archive/jdk-17.0.4.1_windows-x64_bin.zip" class="uri">https://download.oracle.com/java/17/archive/jdk-17.0.4.1_windows-x64_bin.zip</a></font>)</li>
@@ -1886,22 +1888,22 @@ to:</p>
 <li><strong>Modify</strong> the environment variable <code>PATH</code>
 of Rstudio and of Windows (See section <a href="#var_env">Environment
 variables</a>)</li>
-<li><strong>Modify</strong> the targets of JDemetra+ to inform of the
+<li><strong>Modify</strong> the targets of JDemetra+ to set the
 localisation of the new Java versions.</li>
 </ul>
-<p>For example, if you installed Java version 17 to use the JDemetra+
-version 3.0.0. You should add the localisation of Java 17 at the
-shortcut of the executable using the option <code>--jdkhome</code>. The
-target of the shortcut become
+<p>For example, if you installed Java version 17 in order to use the
+JDemetra+ version 3.0.0. You should add the localisation of Java 17 to
+the shortcut of the executable using the option <code>--jdkhome</code>.
+The target of the shortcut becomes
 <code>C:\Users\Software\nbdemetra-3.0.0\bin\nbdemetra64.exe --jdkhome &quot;C:\Users\Software\Java17\jdk17&quot;</code></p>
 </div>
 </div>
 <div id="installation-of-r-and-rstudio" class="section level1" number="3">
 <h1><span class="header-section-number">3</span> Installation of
 <strong>R</strong> and Rstudio</h1>
-<p>The JDemetra+ features are availables on <strong>R</strong> via
+<p>The JDemetra+ features are available on <strong>R</strong> via
 <strong>R</strong> packages. To use <strong>R</strong>, it is better to
-use an IDE so Rstudio. All the executables to download are under
+use an IDE like Rstudio. All the executable files to download are under
 <font color="#000cff"><a href="https://posit.co/download/rstudio-desktop/#download" class="uri">https://posit.co/download/rstudio-desktop/#download</a></font>.</p>
 <div id="installation-of-r" class="section level2" number="3.1">
 <h2><span class="header-section-number">3.1</span> Installation of
@@ -1934,7 +1936,7 @@ folder <code>.zip</code> in a folder named “Rstudio” (under
 <div id="installation-of-r-packages" class="section level2" number="3.3">
 <h2><span class="header-section-number">3.3</span> Installation of
 <strong>R</strong> packages</h2>
-<p>To install a <strong>R</strong> package, there is several
+<p>To install a <strong>R</strong> package, there are several
 methods:</p>
 <ul>
 <li>Either it is on CRAN and you can install it directly with the
@@ -1942,8 +1944,8 @@ function <code class="sourceCode r"><span class="fu">install.packages</span>()</
 <li>Or it is on Github and you can install it directly with the function
 <code class="sourceCode r"><span class="fu">install_github</span>()</code>
 from the package <strong>remotes</strong></li>
-<li>Or you have to retrieve the package at the binary format
-(<code>.zip</code>) and then install with the function <code class="sourceCode r"><span class="fu">install.packages</span>()</code>
+<li>Or you have to retrieve the package from a folder (binary format)
+(<code>.zip</code>) and then install it with the function <code class="sourceCode r"><span class="fu">install.packages</span>()</code>
 with the arguments <code>repos = NULL, type = &quot;binary&quot;</code>.</li>
 </ul>
 <div id="in-version-2" class="section level3" number="3.3.1">
@@ -1990,8 +1992,8 @@ with the arguments <code>repos = NULL, type = &quot;binary&quot;</code>.</li>
 </div>
 <div id="in-version-3" class="section level3" number="3.3.2">
 <h3><span class="header-section-number">3.3.2</span> In version 3</h3>
-<p>Currently no package of the version 3 are on CRAN. To install them,
-you need to go through Github:</p>
+<p>Currently version 3 packages are NOT on CRAN. To install them, you
+need to go through Github:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># If remotes is not installed</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages(&quot;remotes&quot;)</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -2012,11 +2014,12 @@ you need to go through Github:</p>
 <span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;AQLT/ggdemetra3&quot;</span>)</span></code></pre></div>
 </div>
-<div id="aus-case" class="section level3" number="3.3.3">
-<h3><span class="header-section-number">3.3.3</span> AUS case</h3>
+<div id="aus-insee-server-case" class="section level3" number="3.3.3">
+<h3><span class="header-section-number">3.3.3</span> AUS (Insee server)
+case</h3>
 <p>To install a package on AUS, you can’t use the function <code class="sourceCode r"><span class="fu">install_github</span>()</code>.
-Then if the package is not on CRAN, it must be downloaded at the binary
-format (<code>.zip</code>)</p>
+Therefore, if the package is not on CRAN, it must be downloaded at the
+binary format (<code>.zip</code>)</p>
 <p>For the package <strong>JDCruncheR</strong>, the installing code
 is:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;path/.../JDCruncheR_0.2.4.tar.gz&quot;</span>,</span>
@@ -2070,7 +2073,7 @@ variable:</p>
 <code>PATH</code> via the <strong>R</strong> command <code class="sourceCode r"><span class="fu">Sys.getenv</span>(<span class="st">&quot;PATH&quot;</span>)</code>
 (Rstudio returns a succession of adresses as
 <code>C:/WINDOWS/system32;C:/WINDOWS</code>)</p></li>
-<li><p><strong>Copy paster</strong> this value after <code>PATH =</code>
+<li><p><strong>Copy paste</strong> this value after <code>PATH =</code>
 and add the paths towards the folder <font color="#006817">\bin\</font>
 (binary) of the software newly installed, by separating them with
 semicolon (without space before or after). For the Rtools installation,
@@ -2117,7 +2120,7 @@ to download:</p>
 </tr>
 </tbody>
 </table>
-<p>More informations on the variable <code>PATH</code> via the page
+<p>More information on the variable <code>PATH</code> via the page
 <font color="#000cff"><a href="https://java.com/fr/download/help/path.xml" class="uri">https://java.com/fr/download/help/path.xml</a></font>.</p>
 </div>
 </div>
@@ -2139,7 +2142,7 @@ try to install and use the package <strong>rJava</strong> and launch the
 command below:</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># If rJava is not installed</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;rJava&quot;</span>)</span></code></pre></div>
-<p>If the installation of <strong>rJava</strong> return an error, it
+<p>If the installation of <strong>rJava</strong> returns an error, it
 means that Java was incorrectly installed or incorrectly configured on
 <strong>R</strong>. You need to get back to the section <a href="#var_env">Environment variables</a>.</p>
 <p>This block of code tests the Java version with which
@@ -2188,7 +2191,7 @@ version).</p>
 <li><p>Specify that we want to use the local parameters:</p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;RJDemetra&quot;</span>, <span class="at">type =</span> <span class="st">&quot;source&quot;</span>, <span class="at">INSTALL_opts =</span> <span class="st">&quot;--no-multiarch&quot;</span>)</span></code></pre></div></li>
 </ul>
-<p>ℹ️ More informations: <font color="#000cff"><a href="https://github.com/jdemetra/rjdemetra/wiki/Installation-manual" class="uri">https://github.com/jdemetra/rjdemetra/wiki/Installation-manual</a></font></p>
+<p>ℹ️ More information: <font color="#000cff"><a href="https://github.com/jdemetra/rjdemetra/wiki/Installation-manual" class="uri">https://github.com/jdemetra/rjdemetra/wiki/Installation-manual</a></font></p>
 </div>
 <div id="the-command-libraryrjdemetra-returns-an-error-message" class="section level2" number="7.2">
 <h2><span class="header-section-number">7.2</span> The command <code class="sourceCode r"><span class="fu">library</span>(<span class="st">&quot;RJDemetra&quot;</span>)</code>
@@ -2212,7 +2215,7 @@ that <strong>R</strong> must use Java version 8, via the command:</p>
 <h2><span class="header-section-number">7.3</span>
 <code>Error array index = -1</code></h2>
 <p>The message of the type <code>Error array index = -1</code> tells
-that an auxiliary variable is not found. It can be calendar regressor as
+that an auxiliary variable is not found. It can be calendar regressor or
 other user defined variables (Easter effect, PSO = pure seasonal
 outlier…).</p>
 </div>
