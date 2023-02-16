@@ -203,9 +203,10 @@ Les packages en version 2 sont les suivants :
 
 | Nom | Disponible sur le CRAN | Lien Github |
 |--|:--:|-----|
-|    RJDemetra | ✔️ |      `r colFmt("https://github.com/jdemetra/rjdemetra", html_color)` |
-| rjdworkspace | ❌ | `r colFmt("https://github.com/InseeFrLab/rjdworkspace", html_color)` |
-|   JDCruncheR | ❌ |      `r colFmt("https://github.com/InseeFr/JDCruncheR", html_color)` |
+|    RJDemetra  | ✔️ |      `r colFmt("https://github.com/jdemetra/rjdemetra", html_color)` |
+| rjdworkspace  | ❌ | `r colFmt("https://github.com/InseeFrLab/rjdworkspace", html_color)` |
+|   JDCruncheR  | ❌ |      `r colFmt("https://github.com/InseeFr/JDCruncheR", html_color)` |
+| rjwsacruncher | ✔️ |      `r colFmt("https://github.com/AQLT/rjwsacruncher", html_color)` |
 
 
 Le code d'installation des packages est ci-dessous :
@@ -217,6 +218,7 @@ Le code d'installation des packages est ci-dessous :
 install.packages("RJDemetra")
 remotes::install_github("InseeFrLab/rjdworkspace")
 remotes::install_github("InseeFr/JDCruncheR")
+install.packages("rjwsacruncher")
 ```
 
 
