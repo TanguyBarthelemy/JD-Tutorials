@@ -446,11 +446,23 @@ Sinon il faut redémarrer une nouvelle session **R**.
 Le message du type `Error array index = -1` indique une variable auxiliaire non trouvée. Il peut s’agir de régresseurs CJO ou d’autres variables définies par l’utilisateur (effet de Pâques spécifique, PSO = pure seasonal outlier...).
 
 
-## La commande `cruncher_and_param(...)`{.r} renvoie un message d’erreur
+## La fonction `cruncher_and_param(...)`{.r} du package **JDCruncheR** renvoie un message d’erreur
 
-Lorsqu'on lance la commande `cruncher_and_param(...)`{.r}, on peut obtenir l'erreur :
+Lorsqu'on lance la fonction `cruncher_and_param(...)`{.r} du package **JDCruncheR**, on peut obtenir l'erreur suivante :
 
 ```{r, error = TRUE, echo = FALSE, include = TRUE, eval = TRUE}
 stop("Error in cruncher(workspace = workspace, cruncher_bin_directory = cruncher_bin_directory,  : 
   There is an error in the path to the cruncher bin folder")
+```
+
+Cela veut dire que le chemin jusqu'au cruncher a mal été configuré. Pour remédier à cela, il faut préciser à R le chemin du cruncher en début de programme avec la fonction `options(...)`{.r} :
+
+```{r, echo = TRUE, eval = FALSE}
+options(cruncher_bin_directory = "C:/Users/Software/jwsacruncher-2.2.3-bin/bin")
+```
+
+Pour vérifier que le chemin est bien valide, il faut utiliser la fonction `getOption(...)`{.r} :
+
+```{r, echo = TRUE, eval = FALSE}
+getOption("cruncher_bin_directory")
 ```

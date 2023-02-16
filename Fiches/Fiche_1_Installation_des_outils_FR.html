@@ -1980,6 +1980,11 @@ et les arguments <code>repos = NULL, type = &quot;binary&quot;</code>.</li>
 <td align="center">❌</td>
 <td><font color="#000cff"><a href="https://github.com/InseeFr/JDCruncheR" class="uri">https://github.com/InseeFr/JDCruncheR</a></font></td>
 </tr>
+<tr class="even">
+<td>rjwsacruncher</td>
+<td align="center">✔️</td>
+<td><font color="#000cff"><a href="https://github.com/AQLT/rjwsacruncher" class="uri">https://github.com/AQLT/rjwsacruncher</a></font></td>
+</tr>
 </tbody>
 </table>
 <p>Le code d’installation des packages est ci-dessous :</p>
@@ -1988,7 +1993,8 @@ et les arguments <code>repos = NULL, type = &quot;binary&quot;</code>.</li>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;RJDemetra&quot;</span>)</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;InseeFrLab/rjdworkspace&quot;</span>)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;InseeFr/JDCruncheR&quot;</span>)</span></code></pre></div>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;InseeFr/JDCruncheR&quot;</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;rjwsacruncher&quot;</span>)</span></code></pre></div>
 </div>
 <div id="en-version-3" class="section level3" number="3.3.2">
 <h3><span class="header-section-number">3.3.2</span> En version 3</h3>
@@ -2019,8 +2025,13 @@ installer les packages, il faut passer par Github :</p>
 <p>Pour installer un package sur AUS, il n’est pas possible d’utiliser
 la fonction <code class="sourceCode r"><span class="fu">install_github</span>()</code>.
 Ainsi, si le package n’est pas sur le CRAN, il doit être téléchargé au
-format binaire.</p>
-<p>Exemple pour le package <strong>JDCruncheR</strong> :</p>
+format binaire. Pour cela, il faut aller chercher le dossier compressé
+<code>.zip</code> sous GitHub.</p>
+<p>Exemple pour le package <strong>JDCruncheR</strong>, le
+<code>Source code (tar.gz)</code> se trouve sous
+<font color="#000cff"><a href="https://github.com/InseeFr/JDCruncheR/releases/tag/v0.2.4" class="uri">https://github.com/InseeFr/JDCruncheR/releases/tag/v0.2.4</a></font>
+(<em>release</em> Section). Après l’avoir récupéré, il faut lancer la
+commande d’installation :</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;chemin/.../JDCruncheR_0.2.4.tar.gz&quot;</span>,</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>                 <span class="at">repos =</span> <span class="cn">NULL</span>, <span class="at">type =</span> <span class="st">&quot;binary&quot;</span>)</span></code></pre></div>
 </div>
@@ -2093,7 +2104,11 @@ devient
 <p>ℹ️ NB : Généralement une version 32 bits et une version 64 bits sont
 disponibles au téléchargement et à l’installation d’un logiciel. Il faut
 vérifier le type de processeur de votre Système d’exploitation afin de
-choisir le bon dossier propre à votre version système :</p>
+choisir le bon dossier propre à votre version système.</p>
+<p>Pour cela, vous pouvez lancer les commandes suivantes :</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.getenv</span>(<span class="st">&quot;R_ARCH&quot;</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.info</span>()[[<span class="st">&quot;machine&quot;</span>]]</span></code></pre></div>
+<p>Selon le résultat, la version est 32 bits ou 64 bits :</p>
 <table style="width:38%;">
 <colgroup>
 <col width="18%" />
@@ -2102,23 +2117,27 @@ choisir le bon dossier propre à votre version système :</p>
 <thead>
 <tr class="header">
 <th>Version</th>
-<th>Mots-clés</th>
+<th>Output</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td rowspan="2">64 bits</td>
-<td>64</td>
+<td>/x64</td>
 </tr>
 <tr class="even">
-<td>x64</td>
+<td>x86-64</td>
 </tr>
 <tr class="odd">
-<td rowspan="2">32 bits</td>
-<td>32</td>
+<td></td>
+<td></td>
 </tr>
 <tr class="even">
-<td>x86</td>
+<td rowspan="2">32 bits</td>
+<td>/i386</td>
+</tr>
+<tr class="odd">
+<td>x86_32</td>
 </tr>
 </tbody>
 </table>
@@ -2131,31 +2150,31 @@ choisir le bon dossier propre à votre version système :</p>
 <h1><span class="header-section-number">5</span> Vérifications</h1>
 <p>Pour s’assurer que tout fonctionne bien, on peut faire tourner des
 exemples de code et vérifier qu’il n’y a pas d’erreurs :</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;RJDemetra&quot;</span>)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>myseries <span class="ot">&lt;-</span> ipi_c_eu[, <span class="st">&quot;FR&quot;</span>]</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>x13_model <span class="ot">&lt;-</span> <span class="fu">x13</span>(myseries) <span class="co"># X-13ARIMA method</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>ts_model <span class="ot">&lt;-</span> <span class="fu">tramoseats</span>(myseries) <span class="co"># TRAMO-SEATS method</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Basic plot with the original series, the trend and the SA series</span></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x13_model, <span class="at">type_chart =</span> <span class="st">&quot;sa-trend&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;RJDemetra&quot;</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>myseries <span class="ot">&lt;-</span> ipi_c_eu[, <span class="st">&quot;FR&quot;</span>]</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>x13_model <span class="ot">&lt;-</span> <span class="fu">x13</span>(myseries) <span class="co"># X-13ARIMA method</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>ts_model <span class="ot">&lt;-</span> <span class="fu">tramoseats</span>(myseries) <span class="co"># TRAMO-SEATS method</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Basic plot with the original series, the trend and the SA series</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x13_model, <span class="at">type_chart =</span> <span class="st">&quot;sa-trend&quot;</span>)</span></code></pre></div>
 <p>Pour vérifier la version de Java que l’on utilise sous
 <strong>R</strong>, on peut essayer d’installer et utiliser le package
 <strong>rJava</strong> et lancer la commande ci-dessous :</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Si le package rJava n&#39;est pas installé</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;rJava&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Si le package rJava n&#39;est pas installé</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;rJava&quot;</span>)</span></code></pre></div>
 <p>Si l’installation de <strong>rJava</strong> retourne une erreur, cela
 veut dire que Java a été mal installé ou mal configuré sur
 <strong>R</strong>. Il faut retourner à la section <a href="#var_env">Variables d’environnement</a>.</p>
 <p>Ce bloc de commande teste la version de Java avec laquelle
 <strong>R</strong> fonctionne :</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;rJava&quot;</span>)</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.jinit</span>()</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">.jcall</span>(<span class="st">&quot;java/lang/System&quot;</span>, <span class="st">&quot;S&quot;</span>, <span class="st">&quot;getProperty&quot;</span>, <span class="st">&quot;java.runtime.version&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;rJava&quot;</span>)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.jinit</span>()</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">.jcall</span>(<span class="st">&quot;java/lang/System&quot;</span>, <span class="st">&quot;S&quot;</span>, <span class="st">&quot;getProperty&quot;</span>, <span class="st">&quot;java.runtime.version&quot;</span>)</span></code></pre></div>
 <p>Enfin, on peut consulter la version de Java installé sur notre poste
 et avec laquelle Windows fonctionne (cela n’a pas d’importance pour
 nous) :</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">system</span>(<span class="st">&quot;java -version&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">system</span>(<span class="st">&quot;java -version&quot;</span>)</span></code></pre></div>
 </div>
 <div id="installations-optionnelles" class="section level1" number="6">
 <h1><span class="header-section-number">6</span> Installations
@@ -2178,7 +2197,7 @@ rencontrer</h1>
 d’installation de package <strong>R</strong></h2>
 <p>Si lors de l’installation de packages, vous obtenez l’erreur suivante
 :</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;RJDemetra&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;RJDemetra&quot;</span>)</span></code></pre></div>
 <pre><code>## Error in eval(expr, envir, enclos): Erreur : le chargement a échoué
 ## Exécution arrêtée
 ## *** arch - x64</code></pre>
@@ -2191,9 +2210,9 @@ versions de Java).</p>
 <p>Deux solutions :</p>
 <ul>
 <li><p>Compiler le package en installant depuis le “binary” :</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;RJDemetra&quot;</span>, <span class="at">type =</span> <span class="st">&quot;binary&quot;</span>)</span></code></pre></div></li>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;RJDemetra&quot;</span>, <span class="at">type =</span> <span class="st">&quot;binary&quot;</span>)</span></code></pre></div></li>
 <li><p>Spécifier que l’on veut utiliser les paramètres locaux :</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;RJDemetra&quot;</span>, <span class="at">type =</span> <span class="st">&quot;source&quot;</span>, <span class="at">INSTALL_opts =</span> <span class="st">&quot;--no-multiarch&quot;</span>)</span></code></pre></div></li>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;RJDemetra&quot;</span>, <span class="at">type =</span> <span class="st">&quot;source&quot;</span>, <span class="at">INSTALL_opts =</span> <span class="st">&quot;--no-multiarch&quot;</span>)</span></code></pre></div></li>
 </ul>
 <p>ℹ️ Plus d’information : <font color="#000cff"><a href="https://github.com/jdemetra/rjdemetra/wiki/Installation-manual" class="uri">https://github.com/jdemetra/rjdemetra/wiki/Installation-manual</a></font></p>
 </div>
@@ -2210,11 +2229,11 @@ session). En cas d’utilisation de <strong>RJDemetra</strong> au cours
 d’un programme, il faut donc impérativement spécifier dès le début de
 programme que <strong>R</strong> aille chercher la version 8, via la
 commande :</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Là où est installé java</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.setenv</span>(<span class="at">JAVA_HOME =</span> <span class="st">&quot;C:/Users/Software/Java17/jdk17&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Là où est installé java</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.setenv</span>(<span class="at">JAVA_HOME =</span> <span class="st">&quot;C:/Users/Software/Java17/jdk17&quot;</span>)</span></code></pre></div>
 <p>ou charger <strong>RJDemetra</strong> en premier</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># En début de programme</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;RJDemetra&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># En début de programme</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;RJDemetra&quot;</span>)</span></code></pre></div>
 <p>Sinon il faut redémarrer une nouvelle session <strong>R</strong>.</p>
 </div>
 <div id="error-array-index--1" class="section level2" number="7.3">
@@ -2224,6 +2243,22 @@ commande :</p>
 variable auxiliaire non trouvée. Il peut s’agir de régresseurs CJO ou
 d’autres variables définies par l’utilisateur (effet de Pâques
 spécifique, PSO = pure seasonal outlier…).</p>
+</div>
+<div id="la-fonction-cruncher_and_param...-du-package-jdcruncher-renvoie-un-message-derreur" class="section level2" number="7.4">
+<h2><span class="header-section-number">7.4</span> La fonction <code class="sourceCode r"><span class="fu">cruncher_and_param</span>(...)</code>
+du package <strong>JDCruncheR</strong> renvoie un message d’erreur</h2>
+<p>Lorsqu’on lance la fonction <code class="sourceCode r"><span class="fu">cruncher_and_param</span>(...)</code>
+du package <strong>JDCruncheR</strong>, on peut obtenir l’erreur
+suivante :</p>
+<pre><code>## Error in eval(expr, envir, enclos): Error in cruncher(workspace = workspace, cruncher_bin_directory = cruncher_bin_directory,  : 
+##   There is an error in the path to the cruncher bin folder</code></pre>
+<p>Cela veut dire que le chemin jusqu’au cruncher a mal été configuré.
+Pour remédier à cela, il faut préciser à R le chemin du cruncher en
+début de programme avec la fonction <code class="sourceCode r"><span class="fu">options</span>(...)</code> :</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">cruncher_bin_directory =</span> <span class="st">&quot;C:/Users/Software/jwsacruncher-2.2.3-bin/bin&quot;</span>)</span></code></pre></div>
+<p>Pour vérifier que le chemin est bien valide, il faut utiliser la
+fonction <code class="sourceCode r"><span class="fu">getOption</span>(...)</code> :</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">getOption</span>(<span class="st">&quot;cruncher_bin_directory&quot;</span>)</span></code></pre></div>
 </div>
 </div>
 
