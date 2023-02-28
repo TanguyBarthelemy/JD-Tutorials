@@ -203,11 +203,11 @@ Les packages en version 2 sont les suivants :
 
 | Nom | Disponible sur le CRAN | Lien Github |
 |--|:--:|-----|
-|    RJDemetra  | ✔️ |      `r colFmt("https://github.com/jdemetra/rjdemetra", html_color)` |
-| rjdworkspace  | ❌ | `r colFmt("https://github.com/InseeFrLab/rjdworkspace", html_color)` |
-|   JDCruncheR  | ❌ |      `r colFmt("https://github.com/InseeFr/JDCruncheR", html_color)` |
+|     RJDemetra | ✔️ |      `r colFmt("https://github.com/jdemetra/rjdemetra", html_color)` |
+|  rjdworkspace | ❌ | `r colFmt("https://github.com/InseeFrLab/rjdworkspace", html_color)` |
+|    JDCruncheR | ❌ |      `r colFmt("https://github.com/InseeFr/JDCruncheR", html_color)` |
 | rjwsacruncher | ✔️ |      `r colFmt("https://github.com/AQLT/rjwsacruncher", html_color)` |
-
+|   rjdmarkdown | ✔️ |        `r colFmt("https://github.com/AQLT/rjdmarkdown", html_color)` |
 
 Le code d'installation des packages est ci-dessous :
 
@@ -219,6 +219,7 @@ install.packages("RJDemetra")
 remotes::install_github("InseeFrLab/rjdworkspace")
 remotes::install_github("InseeFr/JDCruncheR")
 install.packages("rjwsacruncher")
+install.packages("rjdmarkdown")
 ```
 
 
@@ -229,9 +230,6 @@ Pour l'instant aucun package de la version 3 n'est sur le CRAN. Pour installer l
 ```{r, echo = TRUE, eval = FALSE}
 # Si le package remotes n'est pas installé
 # install.packages("remotes")
-
-remotes::install_github("palatej/rjdemetra3")
-
 remotes::install_github("palatej/rjd3toolkit", ref = "v0.6.0")
 
 remotes::install_github("palatej/rjd3modelling", ref = "v0.6.0")
@@ -240,6 +238,7 @@ remotes::install_github("palatej/rjd3sa", ref = "v0.6.0")
 
 remotes::install_github("palatej/rjd3tramoseats", ref = "v0.6.0")
 remotes::install_github("palatej/rjd3x13", ref = "v0.6.0")
+
 remotes::install_github("palatej/rjdemetra3", ref = "v0.6.0")
 
 remotes::install_github("palatej/rjd3sts", ref = "v0.5.0")
