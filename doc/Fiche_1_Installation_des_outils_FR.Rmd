@@ -88,20 +88,18 @@ JDemetra+ est une galerie de programmes Java servant à l'étude des séries tem
 
 JDemetra+ est téléchargeable depuis le lien [github](https://github.com/jdemetra/jdemetra-app/releases) de l'application : `r colFmt("https://github.com/jdemetra/jdemetra-app/releases", html_color)`.
 
-La dernière release ([v2.2.3](https://github.com/jdemetra/jdemetra-app/releases/tag/v2.2.3)) date du 7 juillet 2020. C'est la dernière version **stable** de JDemetra+. **C'est cette version qu'il convient de télécharger et d'utiliser en production.**
+La dernière release ([v2.2.4](https://github.com/jdemetra/jdemetra-app/releases/tag/v2.2.4)) date du 31 janvier 2023. C'est la dernière version **stable** de JDemetra+. **C'est cette version qu'il convient de télécharger et d'utiliser en production.**
 
 
-Il existe 2 autres versions de JDemetra+ qui en sont uniquement au stade de **test** :
+Il existe une autre version de JDemetra+ qui en est uniquement au stade de **test** :
 
--   [v2.2.4](https://github.com/jdemetra/jdemetra-app/releases/tag/v2.2.4-RC2) : une v2.2.3 corrigée des bugs mais sans ajout de nouvelles fonctionnalités majeures
 -   [v3.0.0](https://github.com/jdemetra/jdemetra-app/releases/tag/v3.0.0-RC1) : la nouvelle version de JDemetra+ avec de nouvelles fonctionnalités et une nouvelle interface
 
-Les v2.2.3 et v2.2.4 de JDemetra+ nécessitent une version de Java $\geq 8$ alors que la v3.0.0 nécessite une version de Java $\geq 17$ :
+La v2.2.4 de JDemetra+ nécessite une version de Java $\geq 8$ alors que la v3.0.0 nécessite une version de Java $\geq 17$ :
 
 | JDemetra+ version | Java version |
 |-------------------|--------------|
-|            v2.2.3 |     $\geq 8$ |
-|      v2.2.4 (RC2) |     $\geq 8$ |
+|            v2.2.4 |     $\geq 8$ |
 |      v3.0.0 (RC1) |    $\geq 17$ |
 
 *RC : Release candidate*
@@ -116,11 +114,11 @@ Deux solutions pour l'installer :
 -   **Télécharger et exécuter** le fichier `.exe` qui nécessite des droits d'administrateur
 -   **Télécharger** et **dézipper** le dossier compressé `.zip` qui permet d'avoir une version portable du logiciel.
 
-⚠️ Attention : pour la seconde option il faut **télécharger** le dossier compressé `jdemetra+-2.2.3-bin.zip` (pour la version 2.2.3 par exemple) et **non** le dossier `Source code (zip)`.
+⚠️ Attention : pour la seconde option il faut **télécharger** le dossier compressé `jdemetra+-2.2.4-bin.zip` (pour la version 2.2.4 par exemple) et **non** le dossier `Source code (zip)`.
 
 Le logiciel se trouve alors dans le dossier `r colFmt("\\nbdemetra\\bin\\", windows_path_color, url = FALSE)`, ce sont les fichiers `nbdemetra.exe` (version 32-bit) et `nbdemetra64.exe` (version 64-bit).
 
-ℹ️ Conseil : si vous comptez utiliser plusieurs version de JDemetra+ (v2.2.3, v3.0.0, ...), vous pouvez renommer les dossiers dézippés en `r colFmt("\\nbdemetra-2.2.3\\", windows_path_color, url = FALSE)`, `r colFmt("\\nbdemetra-2.2.4\\", windows_path_color, url = FALSE)` et `r colFmt("\\nbdemetra-3.0.0\\", windows_path_color, url = FALSE)`.
+ℹ️ Conseil : si vous comptez utiliser plusieurs version de JDemetra+ (v2.2.4, v3.0.0, ...), vous pouvez renommer les dossiers dézippés en `r colFmt("\\nbdemetra-2.2.4\\", windows_path_color, url = FALSE)` et `r colFmt("\\nbdemetra-3.0.0\\", windows_path_color, url = FALSE)`.
 
 ℹ️ Remarque : Vous pouvez créer des raccourcis des exécutables si vous souhaitez les lancer depuis le bureau ou d'autres dossiers.
 
@@ -131,17 +129,17 @@ Le cruncher ([**JWSACruncher**](https://github.com/jdemetra/jwsacruncher)) est u
 
 Pour utiliser le cruncher, il faut:
 
--   **Télécharger** et **Dézipper** le fichier de la dernière version **stable** (**Latest** v2.2.3 disponible ici `r colFmt("https://github.com/jdemetra/jwsacruncher/releases", html_color)`)
+-   **Télécharger** et **Dézipper** le fichier `jwsacruncher-2.2.4-bin.zip` de la dernière version **stable** (**Latest** v2.2.4 disponible ici `r colFmt("https://github.com/jdemetra/jwsacruncher/releases", html_color)`)
 
 Si l’on utilise une version portable de Java (voir section [Installation Java](#install_java)), il faut encore modifier certains paramètres pour utiliser le cruncher :
 
--   Dans le dossier dézippé, **ouvrir** (par exemple avec Notepad++) le fichier `jwsacruncher.bat` présent dans le sous-dossier `r colFmt("\\bin\\", windows_path_color, url = FALSE)` (c'est-à-dire sous `r colFmt("jdemetra-cli-2.2.3\\bin\\", windows_path_color, url = FALSE)` dans la version 2.2.3 du cruncher)
+-   Dans le dossier dézippé, **ouvrir** (par exemple avec Notepad++) le fichier `jwsacruncher.bat` présent dans le sous-dossier `r colFmt("\\bin\\", windows_path_color, url = FALSE)` (c'est-à-dire sous `r colFmt("jdemetra-cli-2.2.4\\bin\\", windows_path_color, url = FALSE)` dans la version 2.2.4 du cruncher)
 -   **Modifier** la valeur de la variable `JAVACMD` de la ligne **71** (actuelle `JAVACMD=java`) par l’adresse vers le fichier `java.exe` de la version portable . Ainsi, si JPortable est installé sous `r colFmt("C:\\Users\\Software", windows_path_color, url = FALSE)`, la nouvelle ligne est `if "%JAVACMD%"=="" set JAVACMD="C:\\Users\\Software\\Java64\\bin\\java"` (pour Java 8).
 
 
 # Installation de Java {#install_java}
 
-ℹ️ Sur les ordinateurs Insee, Java est déjà installé en version 8. Ainsi, il n'y a pas besoin d'installer de version portable de Java pour utiliser JDemetra+ en version 2.2.3 ou 2.2.4.
+ℹ️ Sur les ordinateurs Insee, Java est déjà installé en version 8. Ainsi, il n'y a pas besoin d'installer de version portable de Java pour utiliser JDemetra+ en version 2.2.4.
 
 ## Java 8
 
@@ -460,7 +458,7 @@ stop("Error in cruncher(workspace = workspace, cruncher_bin_directory = cruncher
 Cela veut dire que le chemin jusqu'au cruncher a mal été configuré. Pour remédier à cela, il faut préciser à R le chemin du cruncher en début de programme avec la fonction `options(...)`{.r} :
 
 ```{r, echo = TRUE, eval = FALSE}
-options(cruncher_bin_directory = "C:/Users/Software/jwsacruncher-2.2.3-bin/bin")
+options(cruncher_bin_directory = "C:/Users/Software/jwsacruncher-2.2.4-bin/bin")
 ```
 
 Pour vérifier que le chemin est bien valide, il faut utiliser la fonction `getOption(...)`{.r} :
