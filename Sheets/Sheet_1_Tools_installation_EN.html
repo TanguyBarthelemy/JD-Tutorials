@@ -1757,20 +1757,17 @@ as well as a cruncher (executable).</p>
 and dependencies</h2>
 <p>JDemetra+ is downloadable from the <a href="https://github.com/jdemetra/jdemetra-app/releases">github link</a>
 of the application: <font color="#000cff"><a href="https://github.com/jdemetra/jdemetra-app/releases" class="uri">https://github.com/jdemetra/jdemetra-app/releases</a></font>.</p>
-<p>The last release (<a href="https://github.com/jdemetra/jdemetra-app/releases/tag/v2.2.3">v2.2.3</a>)
-dates from July 7, 2020. It is the last <strong>stable</strong> version
-of JDemetra+. <strong>This version should be downloaded and must be used
-in production.</strong></p>
-<p>There are two more versions of JDemetra+ which are only at a
+<p>The last release (<a href="https://github.com/jdemetra/jdemetra-app/releases/tag/v2.2.3">v2.2.4</a>)
+dates from january 31, 2023. It is the last <strong>stable</strong>
+version of JDemetra+. <strong>This version should be downloaded and must
+be used in production.</strong></p>
+<p>There is one more version of JDemetra+ which are only at a
 <strong>test</strong> stage:</p>
 <ul>
-<li><a href="https://github.com/jdemetra/jdemetra-app/releases/tag/v2.2.4-RC2">v2.2.4</a>:
-a v2.2.3 corrected from bugs but without adding some major new
-features</li>
 <li><a href="https://github.com/jdemetra/jdemetra-app/releases/tag/v3.0.0-RC1">v3.0.0</a>:
 the new JDemetra+ version with new features and a new GUI</li>
 </ul>
-<p>JDemetra+ v2.2.3 and v2.2.4 require Java version <span class="math inline">\(\geq 8\)</span> while v3.0.0 requires Java version
+<p>JDemetra+ v2.2.4 require Java version <span class="math inline">\(\geq 8\)</span> while v3.0.0 requires Java version
 <span class="math inline">\(\geq 17\)</span>:</p>
 <table>
 <thead>
@@ -1781,14 +1778,10 @@ the new JDemetra+ version with new features and a new GUI</li>
 </thead>
 <tbody>
 <tr class="odd">
-<td>v2.2.3</td>
+<td>v2.2.4</td>
 <td><span class="math inline">\(\geq 8\)</span></td>
 </tr>
 <tr class="even">
-<td>v2.2.4 (RC2)</td>
-<td><span class="math inline">\(\geq 8\)</span></td>
-</tr>
-<tr class="odd">
 <td>v3.0.0 (RC1)</td>
 <td><span class="math inline">\(\geq 17\)</span></td>
 </tr>
@@ -1812,15 +1805,14 @@ software</li>
 </ul>
 <p>⚠️ Warning: for the second option, you need to
 <strong>download</strong> the compressed folder
-<code>jdemetra+-2.2.3-bin.zip</code> (for the version 2.2.3 for example)
+<code>jdemetra+-2.2.4-bin.zip</code> (for the version 2.2.4 for example)
 and <strong>not</strong> the folder <code>Source code (zip)</code>.</p>
 <p>The Software is in the folder
 <font color="#006817">\nbdemetra\bin\</font>, these are the file
 <code>nbdemetra.exe</code> (version 32-bit) and
 <code>nbdemetra64.exe</code> (version 64-bit).</p>
-<p>ℹ Advice: If you want to use several versions of JDemetra+ (v2.2.3,
+<p>ℹ Advice: If you want to use several versions of JDemetra+ (v2.2.4,
 v3.0.0, …), you can rename the unzipped folder in
-<font color="#006817">\nbdemetra-2.2.3\</font>,
 <font color="#006817">\nbdemetra-2.2.4\</font> and
 <font color="#006817">\nbdemetra-3.0.0\</font>.</p>
 <p>ℹ️ Remark:You can create shortcuts to the executable files if you
@@ -1837,7 +1829,7 @@ can then be done from another Software (<strong>R</strong> or
 <p>To use the cruncher, you have to:</p>
 <ul>
 <li><strong>Download</strong> and <strong>unzip</strong> the file from
-the <strong>latest stable</strong> version v2.2.3 here
+the <strong>latest stable</strong> version v2.2.4 here
 <font color="#000cff"><a href="https://github.com/jdemetra/jwsacruncher/releases" class="uri">https://github.com/jdemetra/jwsacruncher/releases</a></font></li>
 </ul>
 <p>If you want to install and use a portable Java version (See section
@@ -1847,7 +1839,7 @@ parameters to use the cruncher:</p>
 <li>In the unzipped folder, <strong>open</strong> (for example with
 Notepad++) the file <code>jwsacruncher.bat</code> present in the
 subfolder <font color="#006817">\bin\</font> (that is under
-<font color="#006817">jdemetra-cli-2.2.3\bin\</font> in the version
+<font color="#006817">jdemetra-cli-2.2.4\bin\</font> in the version
 2.2.3 of the cruncher)</li>
 <li><strong>Modify</strong> the value of the variable
 <code>JAVACMD</code> at the line <strong>71</strong> (currently
@@ -1865,7 +1857,7 @@ line is
 Java</h1>
 <p>ℹ️ On Insee computers, Java is already installed in version 8. Then,
 there is no need to install a portable version to use JDemetra+ in
-version 2.2.3 or 2.2.4.</p>
+version 2.2.4.</p>
 <div id="java-8" class="section level2" number="2.1">
 <h2><span class="header-section-number">2.1</span> Java 8</h2>
 <p>To install Java 8, use the link <font color="#000cff"><a href="https://portableapps.com/apps/utilities/java_portable" class="uri">https://portableapps.com/apps/utilities/java_portable</a></font>.
@@ -1980,6 +1972,16 @@ with the arguments <code>repos = NULL, type = &quot;binary&quot;</code>.</li>
 <td>❌</td>
 <td><font color="#000cff"><a href="https://github.com/InseeFr/JDCruncheR" class="uri">https://github.com/InseeFr/JDCruncheR</a></font></td>
 </tr>
+<tr class="even">
+<td>rjwsacruncher</td>
+<td>✔️</td>
+<td><font color="#000cff"><a href="https://github.com/AQLT/rjwsacruncher" class="uri">https://github.com/AQLT/rjwsacruncher</a></font></td>
+</tr>
+<tr class="odd">
+<td>rjdmarkdown</td>
+<td>✔️</td>
+<td><font color="#000cff"><a href="https://github.com/AQLT/rjdmarkdown" class="uri">https://github.com/AQLT/rjdmarkdown</a></font></td>
+</tr>
 </tbody>
 </table>
 <p>The packages installation code is below:</p>
@@ -1988,7 +1990,9 @@ with the arguments <code>repos = NULL, type = &quot;binary&quot;</code>.</li>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;RJDemetra&quot;</span>)</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;InseeFrLab/rjdworkspace&quot;</span>)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;InseeFr/JDCruncheR&quot;</span>)</span></code></pre></div>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;InseeFr/JDCruncheR&quot;</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;rjwsacruncher&quot;</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;rjdmarkdown&quot;</span>)</span></code></pre></div>
 </div>
 <div id="in-version-3" class="section level3" number="3.3.2">
 <h3><span class="header-section-number">3.3.2</span> In version 3</h3>
@@ -1996,32 +2000,31 @@ with the arguments <code>repos = NULL, type = &quot;binary&quot;</code>.</li>
 need to go through Github:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># If remotes is not installed</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages(&quot;remotes&quot;)</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;palatej/rjdemetra3&quot;</span>)</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;palatej/rjd3toolkit&quot;</span>)</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;palatej/rjd3modelling&quot;</span>)</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;palatej/rjd3sa&quot;</span>)</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;palatej/rjd3arima&quot;</span>)</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;palatej/rjd3x13&quot;</span>)</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;palatej/rjd3tramoseats&quot;</span>)</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;palatej/rjdemetra3&quot;</span>)</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;palatej/rjdfilters&quot;</span>)</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;palatej/rjd3sts&quot;</span>)</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;palatej/rjd3highfreq&quot;</span>)</span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;palatej/rjd3stl&quot;</span>)</span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;palatej/rjd3bench&quot;</span>)</span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;AQLT/ggdemetra3&quot;</span>)</span></code></pre></div>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;palatej/rjd3toolkit&quot;</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;palatej/rjd3tramoseats&quot;</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;palatej/rjd3x13&quot;</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;palatej/rjdemetra3&quot;</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;palatej/rjd3sts&quot;</span>)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;palatej/rjd3highfreq&quot;</span>)</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;palatej/rjd3stl&quot;</span>)</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;palatej/rjd3bench&quot;</span>)</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="co"># options : INSTALL_opts = &quot;--no-multiarch&quot;</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;AQLT/ggdemetra3&quot;</span>)</span></code></pre></div>
 </div>
 <div id="aus-insee-server-case" class="section level3" number="3.3.3">
 <h3><span class="header-section-number">3.3.3</span> AUS (Insee server)
 case</h3>
 <p>To install a package on AUS, you can’t use the function <code class="sourceCode r"><span class="fu">install_github</span>()</code>.
 Therefore, if the package is not on CRAN, it must be downloaded at the
-binary format (<code>.zip</code>)</p>
-<p>For the package <strong>JDCruncheR</strong>, the installing code
-is:</p>
+binary format (<code>.zip</code>). For this you have to look for the
+compressed folder <code>.zip</code> under GitHub.</p>
+<p>For the package <strong>JDCruncheR</strong>, you need to search under
+<font color="#000cff"><a href="https://github.com/InseeFr/JDCruncheR" class="uri">https://github.com/InseeFr/JDCruncheR</a></font>
+(<em>release</em> Section) then launch the installation code:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;path/.../JDCruncheR_0.2.4.tar.gz&quot;</span>,</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>                 <span class="at">repos =</span> <span class="cn">NULL</span>, <span class="at">type =</span> <span class="st">&quot;binary&quot;</span>)</span></code></pre></div>
 </div>
@@ -2091,32 +2094,40 @@ Rtools, the command to launch is:</p>
 <p>ℹ️ NB: Generally a 32 bits version and a 64 bits version are
 available for downloading and installing a software. You need to check
 your processor type of your operating system to choose the right folder
-to download:</p>
-<table style="width:44%;">
+to download.</p>
+<p>For this, you can launch the command:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.getenv</span>(<span class="st">&quot;R_ARCH&quot;</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.info</span>()[[<span class="st">&quot;machine&quot;</span>]]</span></code></pre></div>
+<p>According to the result, the version is 32 bits or 64 bits :</p>
+<table style="width:38%;">
 <colgroup>
-<col width="22%" />
-<col width="22%" />
+<col width="18%" />
+<col width="19%" />
 </colgroup>
 <thead>
 <tr class="header">
 <th>Version</th>
-<th>Keywords</th>
+<th>Output</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td rowspan="2">64 bits</td>
-<td>64</td>
+<td>/x64</td>
 </tr>
 <tr class="even">
-<td>x64</td>
+<td>x86-64</td>
 </tr>
 <tr class="odd">
-<td rowspan="2">32 bits</td>
-<td>32</td>
+<td></td>
+<td></td>
 </tr>
 <tr class="even">
-<td>x86</td>
+<td rowspan="2">32 bits</td>
+<td>/i386</td>
+</tr>
+<tr class="odd">
+<td>x86_32</td>
 </tr>
 </tbody>
 </table>
@@ -2129,30 +2140,30 @@ to download:</p>
 <h1><span class="header-section-number">5</span> Verifications</h1>
 <p>To ensure that everything works fine, you can launch some example of
 <strong>R</strong> code and check that there is no error:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;RJDemetra&quot;</span>)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>myseries <span class="ot">&lt;-</span> ipi_c_eu[, <span class="st">&quot;FR&quot;</span>]</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>x13_model <span class="ot">&lt;-</span> <span class="fu">x13</span>(myseries) <span class="co"># X-13ARIMA method</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>ts_model <span class="ot">&lt;-</span> <span class="fu">tramoseats</span>(myseries) <span class="co"># TRAMO-SEATS method</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Basic plot with the original series, the trend and the SA series</span></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x13_model, <span class="at">type_chart =</span> <span class="st">&quot;sa-trend&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;RJDemetra&quot;</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>myseries <span class="ot">&lt;-</span> ipi_c_eu[, <span class="st">&quot;FR&quot;</span>]</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>x13_model <span class="ot">&lt;-</span> <span class="fu">x13</span>(myseries) <span class="co"># X-13ARIMA method</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>ts_model <span class="ot">&lt;-</span> <span class="fu">tramoseats</span>(myseries) <span class="co"># TRAMO-SEATS method</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Basic plot with the original series, the trend and the SA series</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x13_model, <span class="at">type_chart =</span> <span class="st">&quot;sa-trend&quot;</span>)</span></code></pre></div>
 <p>To check the Java version we are using on <strong>R</strong>, you can
 try to install and use the package <strong>rJava</strong> and launch the
 command below:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># If rJava is not installed</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;rJava&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># If rJava is not installed</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;rJava&quot;</span>)</span></code></pre></div>
 <p>If the installation of <strong>rJava</strong> returns an error, it
 means that Java was incorrectly installed or incorrectly configured on
 <strong>R</strong>. You need to get back to the section <a href="#var_env">Environment variables</a>.</p>
 <p>This block of code tests the Java version with which
 <strong>R</strong> works:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;rJava&quot;</span>)</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.jinit</span>()</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">.jcall</span>(<span class="st">&quot;java/lang/System&quot;</span>, <span class="st">&quot;S&quot;</span>, <span class="st">&quot;getProperty&quot;</span>, <span class="st">&quot;java.runtime.version&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;rJava&quot;</span>)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.jinit</span>()</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">.jcall</span>(<span class="st">&quot;java/lang/System&quot;</span>, <span class="st">&quot;S&quot;</span>, <span class="st">&quot;getProperty&quot;</span>, <span class="st">&quot;java.runtime.version&quot;</span>)</span></code></pre></div>
 <p>Finally, you can consult the Java version installed with which
 Windows works (it doesn’t matter to us):</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">system</span>(<span class="st">&quot;java -version&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">system</span>(<span class="st">&quot;java -version&quot;</span>)</span></code></pre></div>
 </div>
 <div id="optionnal-installations" class="section level1" number="6">
 <h1><span class="header-section-number">6</span> Optionnal
@@ -2174,7 +2185,7 @@ encounter</h1>
 <strong>R</strong> packages</h2>
 <p>If you get the following error while installing <strong>R</strong>
 packages:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;RJDemetra&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;RJDemetra&quot;</span>)</span></code></pre></div>
 <pre><code>## Error in eval(expr, envir, enclos): Erreur: the chargement a échoué
 ## Exécution arrêtée
 ## *** arch - x64</code></pre>
@@ -2187,9 +2198,9 @@ version).</p>
 <p>There are two solutions:</p>
 <ul>
 <li><p>Compile the package by installing from the binary file:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;RJDemetra&quot;</span>, <span class="at">type =</span> <span class="st">&quot;binary&quot;</span>)</span></code></pre></div></li>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;RJDemetra&quot;</span>, <span class="at">type =</span> <span class="st">&quot;binary&quot;</span>)</span></code></pre></div></li>
 <li><p>Specify that we want to use the local parameters:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;RJDemetra&quot;</span>, <span class="at">type =</span> <span class="st">&quot;source&quot;</span>, <span class="at">INSTALL_opts =</span> <span class="st">&quot;--no-multiarch&quot;</span>)</span></code></pre></div></li>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;RJDemetra&quot;</span>, <span class="at">type =</span> <span class="st">&quot;source&quot;</span>, <span class="at">INSTALL_opts =</span> <span class="st">&quot;--no-multiarch&quot;</span>)</span></code></pre></div></li>
 </ul>
 <p>ℹ️ More information: <font color="#000cff"><a href="https://github.com/jdemetra/rjdemetra/wiki/Installation-manual" class="uri">https://github.com/jdemetra/rjdemetra/wiki/Installation-manual</a></font></p>
 </div>
@@ -2204,11 +2215,11 @@ be used during all the session (<strong>R</strong> is refractory to
 in-session version change). In case of using <strong>RJDemetra</strong>
 in a program, you have to specify at the very beginning of the program
 that <strong>R</strong> must use Java version 8, via the command:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Where Java is installed</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.setenv</span>(<span class="at">JAVA_HOME =</span> <span class="st">&quot;C:/Users/Software/Java17/jdk17&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Where Java is installed</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.setenv</span>(<span class="at">JAVA_HOME =</span> <span class="st">&quot;C:/Users/Software/Java17/jdk17&quot;</span>)</span></code></pre></div>
 <p>or load <strong>RJDemetra</strong> first</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># At the beginning of program</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;RJDemetra&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># At the beginning of program</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;RJDemetra&quot;</span>)</span></code></pre></div>
 <p>Else you have to restart a new <strong>R</strong> session.</p>
 </div>
 <div id="error-array-index--1" class="section level2" number="7.3">
@@ -2218,6 +2229,21 @@ that <strong>R</strong> must use Java version 8, via the command:</p>
 that an auxiliary variable is not found. It can be calendar regressor or
 other user defined variables (Easter effect, PSO = pure seasonal
 outlier…).</p>
+</div>
+<div id="the-function-cruncher_and_param...-of-the-jdcruncher-package-returns-an-error" class="section level2" number="7.4">
+<h2><span class="header-section-number">7.4</span> The function <code class="sourceCode r"><span class="fu">cruncher_and_param</span>(...)</code>
+of the <strong>JDCruncheR</strong> package returns an error</h2>
+<p>When you use the function <code class="sourceCode r"><span class="fu">cruncher_and_param</span>(...)</code>
+of the <strong>JDCruncheR</strong> package, you can get the following
+error:</p>
+<pre><code>## Error in eval(expr, envir, enclos): Error in cruncher(workspace = workspace, cruncher_bin_directory = cruncher_bin_directory,  : 
+##   There is an error in the path to the cruncher bin folder</code></pre>
+<p>That means that the path to the cruncher is incorrectly configured.
+To solve this, you need to specify to R the path to the cruncher at the
+start of the program withe the function <code class="sourceCode r"><span class="fu">options</span>(...)</code> :</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">cruncher_bin_directory =</span> <span class="st">&quot;C:/Users/Software/jwsacruncher-2.2.4-bin/bin&quot;</span>)</span></code></pre></div>
+<p>To check that the path is valid, you could use the function <code class="sourceCode r"><span class="fu">getOption</span>(...)</code> :</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">getOption</span>(<span class="st">&quot;cruncher_bin_directory&quot;</span>)</span></code></pre></div>
 </div>
 </div>
 

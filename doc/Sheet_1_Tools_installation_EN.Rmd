@@ -90,19 +90,17 @@ JDemetra+ is a collection of Java programs used for time series analysis and mor
 
 JDemetra+ is downloadable from the [github link](https://github.com/jdemetra/jdemetra-app/releases) of the application: `r colFmt("https://github.com/jdemetra/jdemetra-app/releases", html_color)`.
 
-The last release ([v2.2.3](https://github.com/jdemetra/jdemetra-app/releases/tag/v2.2.3)) dates from July 7, 2020. It is the last **stable** version of JDemetra+. **This version should be downloaded and must be used in production.**
+The last release ([v2.2.4](https://github.com/jdemetra/jdemetra-app/releases/tag/v2.2.3)) dates from january 31, 2023. It is the last **stable** version of JDemetra+. **This version should be downloaded and must be used in production.**
 
-There are two more versions of JDemetra+ which are only at a **test** stage:
+There is one more version of JDemetra+ which are only at a **test** stage:
 
--   [v2.2.4](https://github.com/jdemetra/jdemetra-app/releases/tag/v2.2.4-RC2): a v2.2.3 corrected from bugs but without adding some major new features
 -   [v3.0.0](https://github.com/jdemetra/jdemetra-app/releases/tag/v3.0.0-RC1): the new JDemetra+ version with new features and a new GUI
 
-JDemetra+ v2.2.3 and v2.2.4 require Java version $\geq 8$ while v3.0.0 requires Java version $\geq 17$:
+JDemetra+ v2.2.4 require Java version $\geq 8$ while v3.0.0 requires Java version $\geq 17$:
 
 | JDemetra+ version | Java version |
 |-------------------|--------------|
-|            v2.2.3 |        $\geq 8$ |
-|      v2.2.4 (RC2) |        $\geq 8$ |
+|            v2.2.4 |        $\geq 8$ |
 |      v3.0.0 (RC1) |       $\geq 17$ |
 
 *RC: Release candidate*
@@ -117,11 +115,11 @@ There are two possibilities for installing:
 -   **Download and execute** the `.exe` file which requires administrator rights
 -   **Download** and **unzip** the compressed folder `.zip` that allows to get a portable version of the software
 
-⚠️ Warning: for the second option, you need to **download** the compressed folder `jdemetra+-2.2.3-bin.zip` (for the version 2.2.3 for example) and **not** the folder `Source code (zip)`.
+⚠️ Warning: for the second option, you need to **download** the compressed folder `jdemetra+-2.2.4-bin.zip` (for the version 2.2.4 for example) and **not** the folder `Source code (zip)`.
 
 The Software is in the folder `r colFmt("\\nbdemetra\\bin\\", windows_path_color, url = FALSE)`, these are the file `nbdemetra.exe` (version 32-bit) and `nbdemetra64.exe` (version 64-bit).
 
-ℹ Advice: If you want to use several versions of JDemetra+ (v2.2.3, v3.0.0, ...), you can rename the unzipped folder in `r colFmt("\\nbdemetra-2.2.3\\", windows_path_color, url = FALSE)`, `r colFmt("\\nbdemetra-2.2.4\\", windows_path_color, url = FALSE)` and `r colFmt("\\nbdemetra-3.0.0\\", windows_path_color, url = FALSE)`.
+ℹ Advice: If you want to use several versions of JDemetra+ (v2.2.4, v3.0.0, ...), you can rename the unzipped folder in `r colFmt("\\nbdemetra-2.2.4\\", windows_path_color, url = FALSE)` and `r colFmt("\\nbdemetra-3.0.0\\", windows_path_color, url = FALSE)`.
 
 ℹ️ Remark:You can create shortcuts to the executable files if you want to launch them from another folder (Desktop, project folder...).
 
@@ -131,17 +129,17 @@ The cruncher ([**JWSACruncher**](https://github.com/jdemetra/jwsacruncher)) is a
 
 To use the cruncher, you have to:
 
--   **Download** and **unzip** the file from the **latest stable** version v2.2.3 here `r colFmt("https://github.com/jdemetra/jwsacruncher/releases", html_color)`
+-   **Download** and **unzip** the file from the **latest stable** version v2.2.4 here `r colFmt("https://github.com/jdemetra/jwsacruncher/releases", html_color)`
 
 If you want to install and use a portable Java version (See section [Java installation](#install_java)), you have to modify some parameters to use the cruncher:
 
--   In the unzipped folder, **open** (for example with Notepad++) the file `jwsacruncher.bat` present in the subfolder `r colFmt("\\bin\\", windows_path_color, url = FALSE)` (that is under `r colFmt("jdemetra-cli-2.2.3\\bin\\", windows_path_color, url = FALSE)` in the version 2.2.3 of the cruncher)
+-   In the unzipped folder, **open** (for example with Notepad++) the file `jwsacruncher.bat` present in the subfolder `r colFmt("\\bin\\", windows_path_color, url = FALSE)` (that is under `r colFmt("jdemetra-cli-2.2.4\\bin\\", windows_path_color, url = FALSE)` in the version 2.2.3 of the cruncher)
 -   **Modify** the value of the variable `JAVACMD` at the line **71** (currently `JAVACMD=java`) by the address towards the file `java.exe` of the portable version. Then, if JPortable is installed under `r colFmt("C:\\Users\\Software", windows_path_color, url = FALSE)`, the new line is `if "%JAVACMD%"=="" set JAVACMD="C:\\Users\\Software\\Java64\\bin\\java"` (for Java 8).
 
 
 # Installation of Java {#install_java}
 
-ℹ️ On Insee computers, Java is already installed in version 8. Then, there is no need to install a portable version to use JDemetra+ in version 2.2.3 or 2.2.4.
+ℹ️ On Insee computers, Java is already installed in version 8. Then, there is no need to install a portable version to use JDemetra+ in version 2.2.4.
 
 ## Java 8
 
@@ -202,9 +200,11 @@ The packages in version 2 are:
 
 | Name | Available on CRAN | Github link |
 |---|--|-----|
-|    RJDemetra | ✔️ |      `r colFmt("https://github.com/jdemetra/rjdemetra", html_color)` |
-| rjdworkspace | ❌ | `r colFmt("https://github.com/InseeFrLab/rjdworkspace", html_color)` |
-|   JDCruncheR | ❌ |      `r colFmt("https://github.com/InseeFr/JDCruncheR", html_color)` |
+|     RJDemetra | ✔️ |      `r colFmt("https://github.com/jdemetra/rjdemetra", html_color)` |
+|  rjdworkspace | ❌ | `r colFmt("https://github.com/InseeFrLab/rjdworkspace", html_color)` |
+|    JDCruncheR | ❌ |      `r colFmt("https://github.com/InseeFr/JDCruncheR", html_color)` |
+| rjwsacruncher | ✔️ |      `r colFmt("https://github.com/AQLT/rjwsacruncher", html_color)` |
+|   rjdmarkdown | ✔️ |        `r colFmt("https://github.com/AQLT/rjdmarkdown", html_color)` |
 
 The packages installation code is below:
 
@@ -215,6 +215,8 @@ The packages installation code is below:
 install.packages("RJDemetra")
 remotes::install_github("InseeFrLab/rjdworkspace")
 remotes::install_github("InseeFr/JDCruncheR")
+install.packages("rjwsacruncher")
+install.packages("rjdmarkdown")
 ```
 
 
@@ -225,21 +227,18 @@ Currently version 3 packages are NOT on CRAN. To install them, you need to go th
 ```{r, echo = TRUE, eval = FALSE}
 # If remotes is not installed
 # install.packages("remotes")
-
-remotes::install_github("palatej/rjdemetra3")
-
 remotes::install_github("palatej/rjd3toolkit")
-remotes::install_github("palatej/rjd3modelling")
-remotes::install_github("palatej/rjd3sa")
-remotes::install_github("palatej/rjd3arima")
-remotes::install_github("palatej/rjd3x13")
+
 remotes::install_github("palatej/rjd3tramoseats")
+remotes::install_github("palatej/rjd3x13")
+
 remotes::install_github("palatej/rjdemetra3")
-remotes::install_github("palatej/rjdfilters")
+
 remotes::install_github("palatej/rjd3sts")
 remotes::install_github("palatej/rjd3highfreq")
 remotes::install_github("palatej/rjd3stl")
 remotes::install_github("palatej/rjd3bench")
+# options : INSTALL_opts = "--no-multiarch"
 
 remotes::install_github("AQLT/ggdemetra3")
 ```
@@ -247,9 +246,9 @@ remotes::install_github("AQLT/ggdemetra3")
 
 ### AUS (Insee server) case
 
-To install a package on AUS, you can't use the function `install_github()`{.r}. Therefore, if the package is not on CRAN, it must be downloaded at the binary format (`.zip`)
+To install a package on AUS, you can't use the function `install_github()`{.r}. Therefore, if the package is not on CRAN, it must be downloaded at the binary format (`.zip`). For this you have to look for the compressed folder `.zip` under GitHub.
 
-For the package **JDCruncheR**, the installing code is:
+For the package **JDCruncheR**, you need to search under `r colFmt("https://github.com/InseeFr/JDCruncheR", html_color)` (*release* Section) then launch the installation code:
 
 ```{r, echo = TRUE, eval = FALSE}
 install.packages("path/.../JDCruncheR_0.2.4.tar.gz",
@@ -306,19 +305,29 @@ When you install a new software (for example JDemetra+, Rtools, Java...) that Rs
     Sys.setenv(PATH = "C:/WINDOWS/system32;C:/WINDOWS;C:/rtools42/mingw64/bin")
     ```
 
-ℹ️ NB: Generally a  32 bits version and a 64 bits version are available for downloading and installing a software. You need to check your processor type of your operating system to choose the right folder to download:
+ℹ️ NB: Generally a  32 bits version and a 64 bits version are available for downloading and installing a software. You need to check your processor type of your operating system to choose the right folder to download.
 
-+---------------+---------------+
-| Version       | Keywords      |
-+===============+===============+
-|               | 64            |
-| 64 bits       +---------------+
-|               | x64           |
-+---------------+---------------+
-|               | 32            |
-| 32 bits       +---------------+
-|               | x86           |
-+---------------+---------------+
+For this, you can launch the command:
+
+```{r, echo = TRUE, eval = FALSE}
+Sys.getenv("R_ARCH")
+Sys.info()[["machine"]]
+```
+
+According to the result, the version is 32 bits or 64 bits : 
+
++------------+-------------+
+| Version    | Output      |
++============+=============+
+|            | /x64        |
+| 64 bits    +-------------+
+|            | x86-64      |
++------------+-------------+
++------------+-------------+
+|            | /i386       |
+| 32 bits    +-------------+
+|            | x86_32      |
++------------+-------------+
 
 More information on the variable `PATH` via the page `r colFmt("https://java.com/fr/download/help/path.xml", html_color)`.
 
@@ -428,3 +437,24 @@ Else you have to restart a new **R** session.
 
 The message of the type `Error array index = -1` tells that an auxiliary variable is not found. It can be calendar regressor or other user defined variables (Easter effect, PSO = pure seasonal outlier...).
 
+
+## The function `cruncher_and_param(...)`{.r} of the **JDCruncheR** package returns an error
+
+When you use the function `cruncher_and_param(...)`{.r} of the **JDCruncheR** package, you can get the following error:
+
+```{r, error = TRUE, echo = FALSE, include = TRUE, eval = TRUE}
+stop("Error in cruncher(workspace = workspace, cruncher_bin_directory = cruncher_bin_directory,  : 
+  There is an error in the path to the cruncher bin folder")
+```
+
+That means that the path to the cruncher is incorrectly configured. To solve this, you need to specify to R the path to the cruncher at the start of the program withe the function `options(...)`{.r} :
+
+```{r, echo = TRUE, eval = FALSE}
+options(cruncher_bin_directory = "C:/Users/Software/jwsacruncher-2.2.4-bin/bin")
+```
+
+To check that the path is valid, you could use the function `getOption(...)`{.r} :
+
+```{r, echo = TRUE, eval = FALSE}
+getOption("cruncher_bin_directory")
+```

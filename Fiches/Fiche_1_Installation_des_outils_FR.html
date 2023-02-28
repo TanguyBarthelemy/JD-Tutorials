@@ -1755,24 +1755,19 @@ l’utiliser aussi sur <strong>R</strong> ainsi qu’un cruncher
 et dépendances</h2>
 <p>JDemetra+ est téléchargeable depuis le lien <a href="https://github.com/jdemetra/jdemetra-app/releases">github</a> de
 l’application : <font color="#000cff"><a href="https://github.com/jdemetra/jdemetra-app/releases" class="uri">https://github.com/jdemetra/jdemetra-app/releases</a></font>.</p>
-<p>La dernière release (<a href="https://github.com/jdemetra/jdemetra-app/releases/tag/v2.2.3">v2.2.3</a>)
-date du 7 juillet 2020. C’est la dernière version
+<p>La dernière release (<a href="https://github.com/jdemetra/jdemetra-app/releases/tag/v2.2.4">v2.2.4</a>)
+date du 31 janvier 2023. C’est la dernière version
 <strong>stable</strong> de JDemetra+. <strong>C’est cette version qu’il
 convient de télécharger et d’utiliser en production.</strong></p>
-<p>Il existe 2 autres versions de JDemetra+ qui en sont uniquement au
+<p>Il existe une autre version de JDemetra+ qui en est uniquement au
 stade de <strong>test</strong> :</p>
 <ul>
-<li><a href="https://github.com/jdemetra/jdemetra-app/releases/tag/v2.2.4-RC2">v2.2.4</a>
-: une v2.2.3 corrigée des bugs mais sans ajout de nouvelles
-fonctionnalités majeures</li>
 <li><a href="https://github.com/jdemetra/jdemetra-app/releases/tag/v3.0.0-RC1">v3.0.0</a>
 : la nouvelle version de JDemetra+ avec de nouvelles fonctionnalités et
 une nouvelle interface</li>
 </ul>
-<p>Les v2.2.3 et v2.2.4 de JDemetra+ nécessitent une version de Java
-<span class="math inline">\(\geq 8\)</span> alors que la v3.0.0
-nécessite une version de Java <span class="math inline">\(\geq
-17\)</span> :</p>
+<p>La v2.2.4 de JDemetra+ nécessite une version de Java <span class="math inline">\(\geq 8\)</span> alors que la v3.0.0 nécessite une
+version de Java <span class="math inline">\(\geq 17\)</span> :</p>
 <table>
 <thead>
 <tr class="header">
@@ -1782,14 +1777,10 @@ nécessite une version de Java <span class="math inline">\(\geq
 </thead>
 <tbody>
 <tr class="odd">
-<td>v2.2.3</td>
+<td>v2.2.4</td>
 <td><span class="math inline">\(\geq 8\)</span></td>
 </tr>
 <tr class="even">
-<td>v2.2.4 (RC2)</td>
-<td><span class="math inline">\(\geq 8\)</span></td>
-</tr>
-<tr class="odd">
 <td>v3.0.0 (RC1)</td>
 <td><span class="math inline">\(\geq 17\)</span></td>
 </tr>
@@ -1813,15 +1804,14 @@ logiciel.</li>
 </ul>
 <p>⚠️ Attention : pour la seconde option il faut
 <strong>télécharger</strong> le dossier compressé
-<code>jdemetra+-2.2.3-bin.zip</code> (pour la version 2.2.3 par exemple)
+<code>jdemetra+-2.2.4-bin.zip</code> (pour la version 2.2.4 par exemple)
 et <strong>non</strong> le dossier <code>Source code (zip)</code>.</p>
 <p>Le logiciel se trouve alors dans le dossier
 <font color="#006817">\nbdemetra\bin\</font>, ce sont les fichiers
 <code>nbdemetra.exe</code> (version 32-bit) et
 <code>nbdemetra64.exe</code> (version 64-bit).</p>
 <p>ℹ️ Conseil : si vous comptez utiliser plusieurs version de JDemetra+
-(v2.2.3, v3.0.0, …), vous pouvez renommer les dossiers dézippés en
-<font color="#006817">\nbdemetra-2.2.3\</font>,
+(v2.2.4, v3.0.0, …), vous pouvez renommer les dossiers dézippés en
 <font color="#006817">\nbdemetra-2.2.4\</font> et
 <font color="#006817">\nbdemetra-3.0.0\</font>.</p>
 <p>ℹ️ Remarque : Vous pouvez créer des raccourcis des exécutables si
@@ -1838,8 +1828,9 @@ workspace peut alors se faire à partir d’un autre logiciel statistique
 <p>Pour utiliser le cruncher, il faut:</p>
 <ul>
 <li><strong>Télécharger</strong> et <strong>Dézipper</strong> le fichier
-de la dernière version <strong>stable</strong> (<strong>Latest</strong>
-v2.2.3 disponible ici <font color="#000cff"><a href="https://github.com/jdemetra/jwsacruncher/releases" class="uri">https://github.com/jdemetra/jwsacruncher/releases</a></font>)</li>
+<code>jwsacruncher-2.2.4-bin.zip</code> de la dernière version
+<strong>stable</strong> (<strong>Latest</strong> v2.2.4 disponible ici
+<font color="#000cff"><a href="https://github.com/jdemetra/jwsacruncher/releases" class="uri">https://github.com/jdemetra/jwsacruncher/releases</a></font>)</li>
 </ul>
 <p>Si l’on utilise une version portable de Java (voir section <a href="#install_java">Installation Java</a>), il faut encore modifier
 certains paramètres pour utiliser le cruncher :</p>
@@ -1847,8 +1838,8 @@ certains paramètres pour utiliser le cruncher :</p>
 <li>Dans le dossier dézippé, <strong>ouvrir</strong> (par exemple avec
 Notepad++) le fichier <code>jwsacruncher.bat</code> présent dans le
 sous-dossier <font color="#006817">\bin\</font> (c’est-à-dire sous
-<font color="#006817">jdemetra-cli-2.2.3\bin\</font> dans la version
-2.2.3 du cruncher)</li>
+<font color="#006817">jdemetra-cli-2.2.4\bin\</font> dans la version
+2.2.4 du cruncher)</li>
 <li><strong>Modifier</strong> la valeur de la variable
 <code>JAVACMD</code> de la ligne <strong>71</strong> (actuelle
 <code>JAVACMD=java</code>) par l’adresse vers le fichier
@@ -1865,7 +1856,7 @@ nouvelle ligne est
 Java</h1>
 <p>ℹ️ Sur les ordinateurs Insee, Java est déjà installé en version 8.
 Ainsi, il n’y a pas besoin d’installer de version portable de Java pour
-utiliser JDemetra+ en version 2.2.3 ou 2.2.4.</p>
+utiliser JDemetra+ en version 2.2.4.</p>
 <div id="java-8" class="section level2" number="2.1">
 <h2><span class="header-section-number">2.1</span> Java 8</h2>
 <p>Pour installer Java 8, utiliser le lien <font color="#000cff"><a href="https://portableapps.com/apps/utilities/java_portable" class="uri">https://portableapps.com/apps/utilities/java_portable</a></font>.
@@ -1985,6 +1976,11 @@ et les arguments <code>repos = NULL, type = &quot;binary&quot;</code>.</li>
 <td align="center">✔️</td>
 <td><font color="#000cff"><a href="https://github.com/AQLT/rjwsacruncher" class="uri">https://github.com/AQLT/rjwsacruncher</a></font></td>
 </tr>
+<tr class="odd">
+<td>rjdmarkdown</td>
+<td align="center">✔️</td>
+<td><font color="#000cff"><a href="https://github.com/AQLT/rjdmarkdown" class="uri">https://github.com/AQLT/rjdmarkdown</a></font></td>
+</tr>
 </tbody>
 </table>
 <p>Le code d’installation des packages est ci-dessous :</p>
@@ -1994,7 +1990,8 @@ et les arguments <code>repos = NULL, type = &quot;binary&quot;</code>.</li>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;RJDemetra&quot;</span>)</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;InseeFrLab/rjdworkspace&quot;</span>)</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;InseeFr/JDCruncheR&quot;</span>)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;rjwsacruncher&quot;</span>)</span></code></pre></div>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;rjwsacruncher&quot;</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;rjdmarkdown&quot;</span>)</span></code></pre></div>
 </div>
 <div id="en-version-3" class="section level3" number="3.3.2">
 <h3><span class="header-section-number">3.3.2</span> En version 3</h3>
@@ -2002,23 +1999,20 @@ et les arguments <code>repos = NULL, type = &quot;binary&quot;</code>.</li>
 installer les packages, il faut passer par Github :</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Si le package remotes n&#39;est pas installé</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages(&quot;remotes&quot;)</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;palatej/rjdemetra3&quot;</span>)</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;palatej/rjd3toolkit&quot;</span>)</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;palatej/rjd3modelling&quot;</span>)</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;palatej/rjd3sa&quot;</span>)</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;palatej/rjd3arima&quot;</span>)</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;palatej/rjd3x13&quot;</span>)</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;palatej/rjd3tramoseats&quot;</span>)</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;palatej/rjdemetra3&quot;</span>)</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;palatej/rjdfilters&quot;</span>)</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;palatej/rjd3sts&quot;</span>)</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;palatej/rjd3highfreq&quot;</span>)</span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;palatej/rjd3stl&quot;</span>)</span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;palatej/rjd3bench&quot;</span>)</span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;AQLT/ggdemetra3&quot;</span>)</span></code></pre></div>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;palatej/rjd3toolkit&quot;</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;palatej/rjd3tramoseats&quot;</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;palatej/rjd3x13&quot;</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;palatej/rjdemetra3&quot;</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;palatej/rjd3sts&quot;</span>)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;palatej/rjd3highfreq&quot;</span>)</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;palatej/rjd3stl&quot;</span>)</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;palatej/rjd3bench&quot;</span>)</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="co"># options : INSTALL_opts = &quot;--no-multiarch&quot;</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;AQLT/ggdemetra3&quot;</span>)</span></code></pre></div>
 </div>
 <div id="cas-aus" class="section level3" number="3.3.3">
 <h3><span class="header-section-number">3.3.3</span> Cas AUS</h3>
@@ -2255,7 +2249,7 @@ suivante :</p>
 <p>Cela veut dire que le chemin jusqu’au cruncher a mal été configuré.
 Pour remédier à cela, il faut préciser à R le chemin du cruncher en
 début de programme avec la fonction <code class="sourceCode r"><span class="fu">options</span>(...)</code> :</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">cruncher_bin_directory =</span> <span class="st">&quot;C:/Users/Software/jwsacruncher-2.2.3-bin/bin&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">cruncher_bin_directory =</span> <span class="st">&quot;C:/Users/Software/jwsacruncher-2.2.4-bin/bin&quot;</span>)</span></code></pre></div>
 <p>Pour vérifier que le chemin est bien valide, il faut utiliser la
 fonction <code class="sourceCode r"><span class="fu">getOption</span>(...)</code> :</p>
 <div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">getOption</span>(<span class="st">&quot;cruncher_bin_directory&quot;</span>)</span></code></pre></div>
