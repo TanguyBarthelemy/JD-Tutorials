@@ -100,8 +100,8 @@ JDemetra+ v2.2.4 require Java version $\geq 8$ while v3.0.0 requires Java versio
 
 | JDemetra+ version | Java version |
 |-------------------|--------------|
-|            v2.2.4 |        $\geq 8$ |
-|      v3.0.0 (RC1) |       $\geq 17$ |
+|            v2.2.4 |     $\geq 8$ |
+|      v3.0.0 (RC1) |    $\geq 17$ |
 
 *RC: Release candidate*
 
