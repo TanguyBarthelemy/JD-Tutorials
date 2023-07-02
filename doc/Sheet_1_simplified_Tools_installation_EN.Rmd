@@ -8,7 +8,6 @@ output:
     number_sections: TRUE
     highlight: "arrow"
     theme: "readable"
-    keep_md: true
   pdf_document: 
     includes:
         in_header: 
@@ -17,6 +16,7 @@ output:
     number_sections: TRUE
     highlight: "arrow"
     latex_engine: xelatex
+  github_document: default
 ---
 
 ```{r setup, include=FALSE}

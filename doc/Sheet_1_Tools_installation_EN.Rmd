@@ -16,7 +16,7 @@ output:
     number_sections: TRUE
     highlight: "arrow"
     theme: "readable"
-    keep_md: true
+  github_document: default
 ---
 
 ```{r setup, include=FALSE}
