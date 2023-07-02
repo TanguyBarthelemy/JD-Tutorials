@@ -19,44 +19,17 @@ output:
     keep_md: true
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
 
-```{css, echo = FALSE}
+
+<style type="text/css">
 .Code {
 background-color: #F1F3F5;
 }
-```
+</style>
 
-```{r, echo = FALSE, eval = TRUE}
-html_color <- "#000cff"
-windows_path_color <- "#006817"
 
-colFmt <- function(x, color, url = TRUE) {
-    color_name <- deparse(substitute(color))
-    outputFormat <- knitr::opts_knit$get("rmarkdown.pandoc.to")
-    x <- x |> 
-        gsub(pattern = "\\", replacement = "\\\\", fixed = TRUE)
-    
-    if (outputFormat == 'latex') {
-        x <- x |> 
-            gsub(pattern = "#", replacement = "\\#", fixed = TRUE)
-        ret <- paste("\\textcolor{", color_name, ifelse(url, "}{\\url{", "}{\\nolinkurl{"), x, ifelse(url, "}}", "}}"), sep = "")
-    } else if (outputFormat == 'html') {
-        ret <- paste("<font color='", color, "'>", x, "</font>", sep = "")
-    } else {
-        ret <- x
-    }
-    
-    return(ret)
-}
-```
 
-```{r, echo = FALSE, eval = TRUE}
-html_color <- "#000cff"
-windows_path_color <- "#006817"
-```
+
 
 \definecolor{html_color}{HTML}{000cff}
 \definecolor{windows_path_color}{HTML}{006817}
@@ -79,7 +52,7 @@ Thus, it is helpful to install the following tools:
 
 # Preliminary {-}
 
-On the computers without administrator rights (*professional computer, for example*), it is recommended to create a folder **Software** under `r colFmt("C:\\Users\\...\\Software", windows_path_color, url = FALSE)` or directly under `r colFmt("C:\\Users\\Software", windows_path_color, url = FALSE)` where all software will be installed.
+On the computers without administrator rights (*professional computer, for example*), it is recommended to create a folder **Software** under <font color='#006817'>C:\\Users\\...\\Software</font> or directly under <font color='#006817'>C:\\Users\\Software</font> where all software will be installed.
 
 ⚠️ Warning: when we specify an **absolute** path for a software (JDemetra+, Java, **R**, ...) in a program, a shortcut, a variable, ..., it must be modified each time any root repository is moved.
 
@@ -89,7 +62,7 @@ JDemetra+ is a collection of Java programs used for time series analysis and mor
 
 ## Version of JDemetra+ and dependencies
 
-JDemetra+ is downloadable from the [github link](https://github.com/jdemetra/jdemetra-app/releases) of the application: `r colFmt("https://github.com/jdemetra/jdemetra-app/releases", html_color)`.
+JDemetra+ is downloadable from the [github link](https://github.com/jdemetra/jdemetra-app/releases) of the application: <font color='#000cff'>https://github.com/jdemetra/jdemetra-app/releases</font>.
 
 The last release ([v2.2.4](https://github.com/jdemetra/jdemetra-app/releases/tag/v2.2.3)) dates from january 31, 2023. It is the last **stable** version of JDemetra+. **This version should be downloaded and must be used in production.**
 
@@ -118,9 +91,9 @@ There are two possibilities for installing:
 
 ⚠️ Warning: for the second option, you need to **download** the compressed folder `jdemetra+-2.2.4-bin.zip` (for the version 2.2.4 for example) and **not** the folder `Source code (zip)`.
 
-The Software is in the folder `r colFmt("\\nbdemetra\\bin\\", windows_path_color, url = FALSE)`, these are the file `nbdemetra.exe` (version 32-bit) and `nbdemetra64.exe` (version 64-bit).
+The Software is in the folder <font color='#006817'>\\nbdemetra\\bin\\</font>, these are the file `nbdemetra.exe` (version 32-bit) and `nbdemetra64.exe` (version 64-bit).
 
-ℹ Advice: If you want to use several versions of JDemetra+ (v2.2.4, v3.0.0, ...), you can rename the unzipped folder in `r colFmt("\\nbdemetra-2.2.4\\", windows_path_color, url = FALSE)` and `r colFmt("\\nbdemetra-3.0.0\\", windows_path_color, url = FALSE)`.
+ℹ Advice: If you want to use several versions of JDemetra+ (v2.2.4, v3.0.0, ...), you can rename the unzipped folder in <font color='#006817'>\\nbdemetra-2.2.4\\</font> and <font color='#006817'>\\nbdemetra-3.0.0\\</font>.
 
 ℹ️ Remark:You can create shortcuts to the executable files if you want to launch them from another folder (Desktop, project folder...).
 
@@ -130,12 +103,12 @@ The cruncher ([**JWSACruncher**](https://github.com/jdemetra/jwsacruncher)) is a
 
 To use the cruncher, you have to:
 
--   **Download** and **unzip** the file from the **latest stable** version v2.2.4 here `r colFmt("https://github.com/jdemetra/jwsacruncher/releases", html_color)`
+-   **Download** and **unzip** the file from the **latest stable** version v2.2.4 here <font color='#000cff'>https://github.com/jdemetra/jwsacruncher/releases</font>
 
 If you want to install and use a portable Java version (See section [Java installation](#install_java)), you have to modify some parameters to use the cruncher:
 
--   In the unzipped folder, **open** (for example with Notepad++) the file `jwsacruncher.bat` present in the subfolder `r colFmt("\\bin\\", windows_path_color, url = FALSE)` (that is under `r colFmt("jdemetra-cli-2.2.4\\bin\\", windows_path_color, url = FALSE)` in the version 2.2.3 of the cruncher)
--   **Modify** the value of the variable `JAVACMD` at the line **71** (currently `JAVACMD=java`) by the address towards the file `java.exe` of the portable version. Then, if JPortable is installed under `r colFmt("C:\\Users\\Software", windows_path_color, url = FALSE)`, the new line is `if "%JAVACMD%"=="" set JAVACMD="C:\\Users\\Software\\Java64\\bin\\java"` (for Java 8).
+-   In the unzipped folder, **open** (for example with Notepad++) the file `jwsacruncher.bat` present in the subfolder <font color='#006817'>\\bin\\</font> (that is under <font color='#006817'>jdemetra-cli-2.2.4\\bin\\</font> in the version 2.2.3 of the cruncher)
+-   **Modify** the value of the variable `JAVACMD` at the line **71** (currently `JAVACMD=java`) by the address towards the file `java.exe` of the portable version. Then, if JPortable is installed under <font color='#006817'>C:\\Users\\Software</font>, the new line is `if "%JAVACMD%"=="" set JAVACMD="C:\\Users\\Software\\Java64\\bin\\java"` (for Java 8).
 
 
 # Installation of Java {#install_java}
@@ -144,15 +117,15 @@ If you want to install and use a portable Java version (See section [Java instal
 
 ## Java 8
 
-To install Java 8, use the link `r colFmt("https://portableapps.com/apps/utilities/java_portable", html_color)`. If you use the version 64-bit of JDemetra+, you should install the version jPortable 64-bit (at the bottom of the page).
+To install Java 8, use the link <font color='#000cff'>https://portableapps.com/apps/utilities/java_portable</font>. If you use the version 64-bit of JDemetra+, you should install the version jPortable 64-bit (at the bottom of the page).
 
 
 ## Java 17
 
-To install Java 17, you need to head over to `r colFmt("https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html", html_color)`.
+To install Java 17, you need to head over to <font color='#000cff'>https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html</font>.
 
--   **Download** the version `Compressed Archive` of Windows (`r colFmt("https://download.oracle.com/java/17/archive/jdk-17.0.4.1_windows-x64_bin.zip", html_color)`)
--   **Unzip** the folder `r colFmt("jdk-17.0.6", windows_path_color, url = FALSE)` under `r colFmt("C:\\Users\\Software", windows_path_color, url = FALSE)` (for example)
+-   **Download** the version `Compressed Archive` of Windows (<font color='#000cff'>https://download.oracle.com/java/17/archive/jdk-17.0.4.1_windows-x64_bin.zip</font>)
+-   **Unzip** the folder <font color='#006817'>jdk-17.0.6</font> under <font color='#006817'>C:\\Users\\Software</font> (for example)
 
 After a Java installation (in version 8, 17 or other), you need to:
 
@@ -165,24 +138,24 @@ For example, if you installed Java version 17 in order to use the JDemetra+ vers
 # Installation of **R** and Rstudio
 
 The JDemetra+ features are available on **R** via **R** packages.
-To use **R**, it is better to use an IDE like Rstudio. All the executable files to download are under `r colFmt("https://posit.co/download/rstudio-desktop/#download", html_color)`.
+To use **R**, it is better to use an IDE like Rstudio. All the executable files to download are under <font color='#000cff'>https://posit.co/download/rstudio-desktop/#download</font>.
 
 
 ## Installation of **R**
 
 To install **R**, you should:
 
--   **Download** the binary file `R-4.2.2-win.exe` under `r colFmt("https://cran.rstudio.com/bin/windows/base/", html_color)`
+-   **Download** the binary file `R-4.2.2-win.exe` under <font color='#000cff'>https://cran.rstudio.com/bin/windows/base/</font>
 -   **Execute** the executable to parameter and install **R**.
 
 
 ## Installation of Rstudio
 
-**Download** the last Rstudio version (under `r colFmt("https://posit.co/download/rstudio-desktop/#download", html_color)`) and the **installer**.
+**Download** the last Rstudio version (under <font color='#000cff'>https://posit.co/download/rstudio-desktop/#download</font>) and the **installer**.
 
 If the installation via the file `.exe` fails (because it requires higher rights (administrator, elevation, ...), we will get a portable version of the Software. To do this:
 
-- **Download** and **unzip** the compressed folder `.zip` in a folder named "Rstudio" (under `r colFmt("C:\\Users\\Software", windows_path_color, url = FALSE)`) 
+- **Download** and **unzip** the compressed folder `.zip` in a folder named "Rstudio" (under <font color='#006817'>C:\\Users\\Software</font>) 
 - **Create a shortcut** of the file `rstudio.exe` on the Desktop.
 
 
@@ -201,15 +174,16 @@ The packages in version 2 are:
 
 | Name | Available on CRAN | Github link |
 |---|--|-----|
-|     RJDemetra | ✔️ |      `r colFmt("https://github.com/jdemetra/rjdemetra", html_color)` |
-|  rjdworkspace | ❌ | `r colFmt("https://github.com/InseeFrLab/rjdworkspace", html_color)` |
-|    JDCruncheR | ❌ |      `r colFmt("https://github.com/InseeFr/JDCruncheR", html_color)` |
-| rjwsacruncher | ✔️ |      `r colFmt("https://github.com/AQLT/rjwsacruncher", html_color)` |
-|   rjdmarkdown | ✔️ |        `r colFmt("https://github.com/AQLT/rjdmarkdown", html_color)` |
+|     RJDemetra | ✔️ |      <font color='#000cff'>https://github.com/jdemetra/rjdemetra</font> |
+|  rjdworkspace | ❌ | <font color='#000cff'>https://github.com/InseeFrLab/rjdworkspace</font> |
+|    JDCruncheR | ❌ |      <font color='#000cff'>https://github.com/InseeFr/JDCruncheR</font> |
+| rjwsacruncher | ✔️ |      <font color='#000cff'>https://github.com/AQLT/rjwsacruncher</font> |
+|   rjdmarkdown | ✔️ |        <font color='#000cff'>https://github.com/AQLT/rjdmarkdown</font> |
 
 The packages installation code is below:
 
-```{r, echo = TRUE, eval = FALSE}
+
+```r
 # If remotes is not installed
 # install.packages("remotes")
 
@@ -225,7 +199,8 @@ install.packages("rjdmarkdown")
 
 Currently version 3 packages are NOT on CRAN. To install them, you need to go through Github:
 
-```{r, echo = TRUE, eval = FALSE}
+
+```r
 # If remotes is not installed
 # install.packages("remotes")
 remotes::install_github("rjdemetra/rjd3toolkit")
@@ -250,9 +225,10 @@ remotes::install_github("AQLT/ggdemetra3")
 
 To install a package on AUS, you can't use the function `install_github()`{.r}. Therefore, if the package is not on CRAN, it must be downloaded at the binary format (`.zip`). For this you have to look for the compressed folder `.zip` under GitHub.
 
-For the package **JDCruncheR**, you need to search under `r colFmt("https://github.com/InseeFr/JDCruncheR", html_color)` (*release* Section) then launch the installation code:
+For the package **JDCruncheR**, you need to search under <font color='#000cff'>https://github.com/InseeFr/JDCruncheR</font> (*release* Section) then launch the installation code:
 
-```{r, echo = TRUE, eval = FALSE}
+
+```r
 install.packages("path/.../JDCruncheR_0.2.4.tar.gz",
                  repos = NULL, type = "binary")
 ```
@@ -298,12 +274,13 @@ When you install a new software (for example JDemetra+, Rtools, Java...) that Rs
 
 - **Get** the actual value of the variable `PATH` via the **R** command `Sys.getenv("PATH")`{.r} (Rstudio returns a succession of adresses as `C:/WINDOWS/system32;C:/WINDOWS`)
 
-- **Copy paste** this value after `PATH = ` and add the paths towards the folder `r colFmt("\\bin\\", windows_path_color, url = FALSE)` (binary) of the software newly installed, by separating them with semicolon (without space before or after).
-    For the Rtools installation, the path is `r colFmt("C:\\rtools42\\mingw64\\bin", windows_path_color, url = FALSE)` (depending on where Rtools was installed). You have to add `C:\\rtools42\\mingw64\\bin` or `C:/rtools42/mingw64/bin` (In **R**, `\` is a special character, so you have to replace the `\` by `/` or by `\\`). The path become `C:/WINDOWS/system32;C:/WINDOWS;C:/rtools42/mingw64/bin`.
+- **Copy paste** this value after `PATH = ` and add the paths towards the folder <font color='#006817'>\\bin\\</font> (binary) of the software newly installed, by separating them with semicolon (without space before or after).
+    For the Rtools installation, the path is <font color='#006817'>C:\\rtools42\\mingw64\\bin</font> (depending on where Rtools was installed). You have to add `C:\\rtools42\\mingw64\\bin` or `C:/rtools42/mingw64/bin` (In **R**, `\` is a special character, so you have to replace the `\` by `/` or by `\\`). The path become `C:/WINDOWS/system32;C:/WINDOWS;C:/rtools42/mingw64/bin`.
 
 - **Modify** the variable with the function `Sys.setenv()`{.r}. For Rtools, the command to launch is:
 
-    ```{r, echo = TRUE, eval = FALSE}
+    
+    ```r
     Sys.setenv(PATH = "C:/WINDOWS/system32;C:/WINDOWS;C:/rtools42/mingw64/bin")
     ```
 
@@ -311,7 +288,8 @@ When you install a new software (for example JDemetra+, Rtools, Java...) that Rs
 
 For this, you can launch the command:
 
-```{r, echo = TRUE, eval = FALSE}
+
+```r
 Sys.getenv("R_ARCH")
 Sys.info()[["machine"]]
 ```
@@ -331,14 +309,15 @@ According to the result, the version is 32 bits or 64 bits :
 |            | x86_32      |
 +------------+-------------+
 
-More information on the variable `PATH` via the page `r colFmt("https://java.com/fr/download/help/path.xml", html_color)`.
+More information on the variable `PATH` via the page <font color='#000cff'>https://java.com/fr/download/help/path.xml</font>.
 
 
 # Verifications
 
 To ensure that everything works fine, you can launch some example of **R** code and check that there is no error:
 
-```{r, echo = TRUE, eval = FALSE}
+
+```r
 library("RJDemetra")
 
 myseries <- ipi_c_eu[, "FR"]
@@ -351,7 +330,8 @@ plot(x13_model, type_chart = "sa-trend")
 
 To check the Java version we are using on **R**, you can try to install and use the package **rJava** and launch the command below:
 
-```{r, echo = TRUE, eval = FALSE}
+
+```r
 # If rJava is not installed
 install.packages("rJava")
 ```
@@ -360,7 +340,8 @@ If the installation of **rJava** returns an error, it means that Java was incorr
 
 This block of code tests the Java version with which **R** works:
 
-```{r, echo = TRUE, eval = FALSE}
+
+```r
 library("rJava")
 .jinit()
 .jcall("java/lang/System", "S", "getProperty", "java.runtime.version")
@@ -368,7 +349,8 @@ library("rJava")
 
 Finally, you can consult the Java version installed with which Windows works (it doesn't matter to us):
 
-```{r, echo = TRUE, eval = FALSE}
+
+```r
 system("java -version")
 ```
 
@@ -387,14 +369,16 @@ Some supplementary installations are optionnal (that is they are no mandatory bu
 
 If you get the following error while installing **R** packages:
 
-```{r, echo = TRUE, eval = FALSE}
+
+```r
 install.packages("RJDemetra")
 ```
 
-```{r, error = TRUE, echo = FALSE, include = TRUE, eval = TRUE}
-stop("Erreur: the chargement a échoué
-Exécution arrêtée
-*** arch - x64")
+
+```
+## Error in eval(expr, envir, enclos): Erreur: the chargement a échoué
+## Exécution arrêtée
+## *** arch - x64
 ```
 
 The problem doesn't come from Java but from the **R** package. By default, the package is installed from a "source" file, it means that the package is recompiled. For some computing reasons, when compiling by default, **R** uses the system (Windows) parameters (which doesn't have necessarily have the correct Java version).
@@ -403,31 +387,35 @@ There are two solutions:
 
 - Compile the package by installing from the binary file:
 
-    ```{r, echo = TRUE, eval = FALSE}
+    
+    ```r
     install.packages("RJDemetra", type = "binary")
     ```
 
 - Specify that we want to use the local parameters:
 
-    ```{r, echo = TRUE, eval = FALSE}
+    
+    ```r
     install.packages("RJDemetra", type = "source", INSTALL_opts = "--no-multiarch")
     ```
 
-ℹ️ More information: `r colFmt("https://github.com/jdemetra/rjdemetra/wiki/Installation-manual", html_color)`
+ℹ️ More information: <font color='#000cff'>https://github.com/jdemetra/rjdemetra/wiki/Installation-manual</font>
 
 
 ## The command `library("RJDemetra")`{.r} returns an error message
 
 The package **RJDemetra** requires Java version 8 or higher to work. If another package has been loaded before **RJDemetra** via the function `library()`{.r} and which doesn't requires an updated Java version, then an old Java version will be used during all the session (**R** is refractory to in-session version change). In case of using **RJDemetra** in a program, you have to specify at the very beginning of the program that **R** must use Java version 8, via the command:
 
-```{r, echo = TRUE, eval = FALSE}
+
+```r
 # Where Java is installed
 Sys.setenv(JAVA_HOME = "C:/Users/Software/Java17/jdk17")
 ```
 
 or load **RJDemetra** first
 
-```{r, echo = TRUE, eval = FALSE}
+
+```r
 # At the beginning of program
 library("RJDemetra")
 ```
@@ -444,19 +432,22 @@ The message of the type `Error array index = -1` tells that an auxiliary variabl
 
 When you use the function `cruncher_and_param(...)`{.r} of the **JDCruncheR** package, you can get the following error:
 
-```{r, error = TRUE, echo = FALSE, include = TRUE, eval = TRUE}
-stop("Error in cruncher(workspace = workspace, cruncher_bin_directory = cruncher_bin_directory,  : 
-  There is an error in the path to the cruncher bin folder")
+
+```
+## Error in eval(expr, envir, enclos): Error in cruncher(workspace = workspace, cruncher_bin_directory = cruncher_bin_directory,  : 
+##   There is an error in the path to the cruncher bin folder
 ```
 
 That means that the path to the cruncher is incorrectly configured. To solve this, you need to specify to R the path to the cruncher at the start of the program withe the function `options(...)`{.r} :
 
-```{r, echo = TRUE, eval = FALSE}
+
+```r
 options(cruncher_bin_directory = "C:/Users/Software/jwsacruncher-2.2.4-bin/bin")
 ```
 
 To check that the path is valid, you could use the function `getOption(...)`{.r} :
 
-```{r, echo = TRUE, eval = FALSE}
+
+```r
 getOption("cruncher_bin_directory")
 ```

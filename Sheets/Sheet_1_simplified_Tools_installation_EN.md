@@ -19,44 +19,17 @@ output:
     latex_engine: xelatex
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
 
-```{css, echo = FALSE}
+
+<style type="text/css">
 .Code {
 background-color: #F1F3F5;
 }
-```
+</style>
 
-```{r, echo = FALSE, eval = TRUE}
-html_color <- "#000cff"
-windows_path_color <- "#006817"
 
-colFmt <- function(x, color, url = TRUE) {
-    color_name <- deparse(substitute(color))
-    outputFormat <- knitr::opts_knit$get("rmarkdown.pandoc.to")
-    x <- x |> 
-        gsub(pattern = "\\", replacement = "\\\\", fixed = TRUE)
-    
-    if (outputFormat == 'latex') {
-        x <- x |> 
-            gsub(pattern = "#", replacement = "\\#", fixed = TRUE)
-        ret <- paste("\\textcolor{", color_name, ifelse(url, "}{\\url{", "}{\\nolinkurl{"), x, ifelse(url, "}}", "}}"), sep = "")
-    } else if (outputFormat == 'html') {
-        ret <- paste("<font color='", color, "'>", x, "</font>", sep = "")
-    } else {
-        ret <- x
-    }
-    
-    return(ret)
-}
-```
 
-```{r, echo = FALSE, eval = TRUE}
-html_color <- "#000cff"
-windows_path_color <- "#006817"
-```
+
 
 \definecolor{html_color}{HTML}{000cff}
 \definecolor{windows_path_color}{HTML}{006817}
@@ -77,7 +50,7 @@ Thus, it is helpful to install the following tools:
 
 # Preliminary {-}
 
-On the computers without administrator rights (*professional computer, for example*), it is recommended to create a folder **Software** under `r colFmt("C:\\Users\\...\\Software", windows_path_color, url = FALSE)` or directly under `r colFmt("C:\\Users\\Software", windows_path_color, url = FALSE)` where all software will be installed.
+On the computers without administrator rights (*professional computer, for example*), it is recommended to create a folder **Software** under <font color='#006817'>C:\\Users\\...\\Software</font> or directly under <font color='#006817'>C:\\Users\\Software</font> where all software will be installed.
 
 ⚠️ Warning: when we specify an **absolute** path for a software (JDemetra+, Java, ...) in a program, a shortcut, a variable, ..., it must be modified each time any root repository is moved.
 
@@ -87,7 +60,7 @@ JDemetra+ is a collection of Java programs used for time series analysis and mor
 
 ## Version of JDemetra+ and dependencies
 
-JDemetra+ is downloadable from the [github link](https://github.com/jdemetra/jdemetra-app/releases) of the application: `r colFmt("https://github.com/jdemetra/jdemetra-app/releases", html_color)`.
+JDemetra+ is downloadable from the [github link](https://github.com/jdemetra/jdemetra-app/releases) of the application: <font color='#000cff'>https://github.com/jdemetra/jdemetra-app/releases</font>.
 
 The last release ([v2.2.4](https://github.com/jdemetra/jdemetra-app/releases/tag/v2.2.3)) dates from january 31, 2023. It is the last **stable** version of JDemetra+. **This version should be downloaded and must be used in production.**
 
@@ -116,9 +89,9 @@ There are two possibilities for installing:
 
 ⚠️ Warning: for the second option, you need to **download** the compressed folder `jdemetra+-2.2.4-bin.zip` (for the version 2.2.4 for example) and **not** the folder `Source code (zip)`.
 
-The Software is in the folder `r colFmt("\\nbdemetra\\bin\\", windows_path_color, url = FALSE)`, these are the file `nbdemetra.exe` (version 32-bit) and `nbdemetra64.exe` (version 64-bit).
+The Software is in the folder <font color='#006817'>\\nbdemetra\\bin\\</font>, these are the file `nbdemetra.exe` (version 32-bit) and `nbdemetra64.exe` (version 64-bit).
 
-ℹ Advice: If you want to use several versions of JDemetra+ (v2.2.4, v3.0.0, ...), you can rename the unzipped folder in `r colFmt("\\nbdemetra-2.2.4\\", windows_path_color, url = FALSE)` and `r colFmt("\\nbdemetra-3.0.0\\", windows_path_color, url = FALSE)`.
+ℹ Advice: If you want to use several versions of JDemetra+ (v2.2.4, v3.0.0, ...), you can rename the unzipped folder in <font color='#006817'>\\nbdemetra-2.2.4\\</font> and <font color='#006817'>\\nbdemetra-3.0.0\\</font>.
 
 ℹ️ Remark:You can create shortcuts to the executable files if you want to launch them from another folder (Desktop, project folder...).
 
@@ -128,12 +101,12 @@ The cruncher ([**JWSACruncher**](https://github.com/jdemetra/jwsacruncher)) is a
 
 To use the cruncher, you have to:
 
--   **Download** and **unzip** the file from the **latest stable** version v2.2.4 here `r colFmt("https://github.com/jdemetra/jwsacruncher/releases", html_color)`
+-   **Download** and **unzip** the file from the **latest stable** version v2.2.4 here <font color='#000cff'>https://github.com/jdemetra/jwsacruncher/releases</font>
 
 If you want to install and use a portable Java version (See section [Java installation](#install_java)), you have to modify some parameters to use the cruncher:
 
--   In the unzipped folder, **open** (for example with Notepad++) the file `jwsacruncher.bat` present in the subfolder `r colFmt("\\bin\\", windows_path_color, url = FALSE)` (that is under `r colFmt("jdemetra-cli-2.2.4\\bin\\", windows_path_color, url = FALSE)` in the version 2.2.3 of the cruncher)
--   **Modify** the value of the variable `JAVACMD` at the line **71** (currently `JAVACMD=java`) by the address towards the file `java.exe` of the portable version. Then, if JPortable is installed under `r colFmt("C:\\Users\\Software", windows_path_color, url = FALSE)`, the new line is `if "%JAVACMD%"=="" set JAVACMD="C:\\Users\\Software\\Java64\\bin\\java"` (for Java 8).
+-   In the unzipped folder, **open** (for example with Notepad++) the file `jwsacruncher.bat` present in the subfolder <font color='#006817'>\\bin\\</font> (that is under <font color='#006817'>jdemetra-cli-2.2.4\\bin\\</font> in the version 2.2.3 of the cruncher)
+-   **Modify** the value of the variable `JAVACMD` at the line **71** (currently `JAVACMD=java`) by the address towards the file `java.exe` of the portable version. Then, if JPortable is installed under <font color='#006817'>C:\\Users\\Software</font>, the new line is `if "%JAVACMD%"=="" set JAVACMD="C:\\Users\\Software\\Java64\\bin\\java"` (for Java 8).
 
 
 # Installation of Java {#install_java}
@@ -142,15 +115,15 @@ If you want to install and use a portable Java version (See section [Java instal
 
 ## Java 8
 
-To install Java 8, use the link `r colFmt("https://portableapps.com/apps/utilities/java_portable", html_color)`. If you use the version 64-bit of JDemetra+, you should install the version jPortable 64-bit (at the bottom of the page).
+To install Java 8, use the link <font color='#000cff'>https://portableapps.com/apps/utilities/java_portable</font>. If you use the version 64-bit of JDemetra+, you should install the version jPortable 64-bit (at the bottom of the page).
 
 
 ## Java 17
 
-To install Java 17, you need to head over to `r colFmt("https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html", html_color)`.
+To install Java 17, you need to head over to <font color='#000cff'>https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html</font>.
 
--   **Download** the version `Compressed Archive` of Windows (`r colFmt("https://download.oracle.com/java/17/archive/jdk-17.0.4.1_windows-x64_bin.zip", html_color)`)
--   **Unzip** the folder `r colFmt("jdk-17.0.6", windows_path_color, url = FALSE)` under `r colFmt("C:\\Users\\Software", windows_path_color, url = FALSE)` (for example)
+-   **Download** the version `Compressed Archive` of Windows (<font color='#000cff'>https://download.oracle.com/java/17/archive/jdk-17.0.4.1_windows-x64_bin.zip</font>)
+-   **Unzip** the folder <font color='#006817'>jdk-17.0.6</font> under <font color='#006817'>C:\\Users\\Software</font> (for example)
 
 After a Java installation (in version 8, 17 or other), you need to:
 
