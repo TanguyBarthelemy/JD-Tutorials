@@ -3,6 +3,7 @@ title: "Tools installation for seasonnal adjustment"
 author: "Tanguy BARTHELEMY"
 date: "2023-01-17"
 output:
+  github_document: default
   pdf_document: 
     includes:
         in_header: 
@@ -160,6 +161,8 @@ After a Java installation (in version 8, 17 or other), you need to:
 
 For example, if you installed Java version 17 in order to use the JDemetra+ version 3.0.0. You should add the localisation of Java 17 to the shortcut of the executable using the option `--jdkhome`. The target of the shortcut becomes `C:\Users\Software\nbdemetra-3.0.0\bin\nbdemetra64.exe --jdkhome "C:\Users\Software\Java17\jdk17"`
 
+![](../img/set_java_jdemetra.png)
+
 
 # Installation of **R** and Rstudio
 
@@ -235,10 +238,10 @@ remotes::install_github("rjdemetra/rjd3x13")
 remotes::install_github("rjdemetra/rjdemetra3")
 remotes::install_github("rjdemetra/rjd3revisions")
 
-remotes::install_github("palatej/rjd3sts")
-remotes::install_github("palatej/rjd3highfreq")
-remotes::install_github("palatej/rjd3stl")
-remotes::install_github("palatej/rjd3bench")
+remotes::install_github("rjdemetra/rjd3sts")
+remotes::install_github("rjdemetra/rjd3highfreq")
+remotes::install_github("rjdemetra/rjd3stl")
+remotes::install_github("rjdemetra/rjd3bench")
 # options : INSTALL_opts = "--no-multiarch"
 
 remotes::install_github("AQLT/ggdemetra3")
@@ -275,8 +278,18 @@ install.packages("path/.../JDCruncheR_0.2.4.tar.gz",
 
 - **Save** and **close** the file
 
+Also, you can set the environment variables `http_proxy` and `https_proxy` for Windows.
 
-### Java version
+To do this, follow these steps:
+
+- Search for "Environment variables"
+- Click on the application that appears.
+- Add the variables `http_proxy` and `https_proxy` if they don't exist, and modify them if they already do:
+
+![](../img/modify_proxy.png)
+
+
+### JAVA_HOME
 
 If a new Java version has been installed, you should inform Rstudio of the Java installation localisation. For this, as to parameter the proxy:
 
@@ -288,6 +301,17 @@ If a new Java version has been installed, you should inform Rstudio of the Java 
     ```
 
 - **Save** and **close** the file
+
+Also, you can set the environment variable `JAVA_HOME` for Windows.
+
+To do this (as for the proxy set up), follow these steps:
+
+- Search for "Environment variables"
+- Click on the application that appears.
+- Add the variable `JAVA_HOME` if it doesn't exist, and modify is if it already does:
+
+![](../img/modify_java_home.png)
+
 
 ### PATH
 

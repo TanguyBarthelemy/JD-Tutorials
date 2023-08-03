@@ -3,6 +3,7 @@ title: "Installation des outils pour la désaisonnalisation"
 author: "Tanguy BARTHELEMY"
 date: "2023-01-17"
 output:
+  github_document: default
   pdf_document: 
     includes:
         in_header: 
@@ -16,6 +17,10 @@ output:
     number_sections: TRUE
     highlight: "arrow"
     theme: "readable"
+    # keep_md: yes
+  # md_document:
+  #   variant: markdown_github
+always_allow_html: true
 ---
 
 ```{r setup, include=FALSE}
@@ -161,6 +166,8 @@ Après avoir installé Java (en version 8, 17 ou autre), il faut :
 
 Ainsi par exemple, si vous avez installé la version 17 de Java pour utiliser la version 3.0.0 de JDemetra+. Il est nécessaire d'ajouter la localisation de Java 17 au raccourci de l'exécutable grace à l'option `--jdkhome`. La cible du raccourci devient `C:\Users\Software\nbdemetra-3.0.0\bin\nbdemetra64.exe --jdkhome "C:\Users\Software\Java17\jdk17"`
 
+![](../img/set_java_jdemetra.png)
+
 
 # Installation de **R** et Rstudio
 
@@ -236,10 +243,10 @@ remotes::install_github("rjdemetra/rjd3x13")
 remotes::install_github("rjdemetra/rjdemetra3")
 remotes::install_github("rjdemetra/rjd3revisions")
 
-remotes::install_github("palatej/rjd3sts")
-remotes::install_github("palatej/rjd3highfreq")
-remotes::install_github("palatej/rjd3stl")
-remotes::install_github("palatej/rjd3bench")
+remotes::install_github("rjdemetra/rjd3sts")
+remotes::install_github("rjdemetra/rjd3highfreq")
+remotes::install_github("rjdemetra/rjd3stl")
+remotes::install_github("rjdemetra/rjd3bench")
 # options : INSTALL_opts = "--no-multiarch"
 
 remotes::install_github("AQLT/ggdemetra3")
@@ -276,10 +283,20 @@ Pour les postes Insee, il faut **configurer** le proxy et des paramètres de loc
 
 - **Sauvegarder** et **fermer** le fichier
 
+Aussi on peut préciser les variables d'environnement `http_proxy` et `https_proxy` pour Windows.
 
-### Version de Java
+Pour cela, il faut :
 
-Si une nouvelle version de Java a été installé, il faut préciser à Rstudio la localisation de l'installation. Pour cela, comme pour paramétrer le proxy :
+- Rechercher "Modifier les variables d'environnement pour votre compte"
+- Cliquer sur l'application
+- Ajouter les variables `http_proxy` et `https_proxy` si elles n'existent pas et les modifier si elles existent :
+
+![](../img/modify_proxy.png)
+
+
+### JAVA_HOME
+
+Si une nouvelle version de Java a été installé (Java 17 par exemple), il faut préciser à Rstudio la localisation de l'installation. Pour cela, comme pour paramétrer le proxy :
 
 - **Lancer** le code `file.edit("~/.Renviron")`{.r}
 - **Ajouter** les paramètres :
@@ -289,6 +306,17 @@ Si une nouvelle version de Java a été installé, il faut préciser à Rstudio 
     ```
 
 - **Sauvegarder** et **fermer** le fichier
+
+Aussi on peut préciser la variable d'environnement `JAVA_HOME` pour Windows.
+
+Pour cela, comme pour la configuration du proxy, il faut :
+
+- Rechercher "Modifier les variables d'environnement pour votre compte"
+- Cliquer sur l'application
+- Ajouter une variable `JAVA_HOME` si elle n'existe pas et la modifier si elle existe :
+
+![](../img/modify_java_home.png)
+
 
 ### PATH
 
