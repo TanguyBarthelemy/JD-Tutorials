@@ -208,13 +208,13 @@ Pour installer un package **R**, il y a plusieurs méthodes :
 
 Les packages en version 2 sont les suivants :
 
-| Nom           | Disponible sur le CRAN | Lien Github                                  |
-|---------------|:----------------------:|----------------------------------------------|
-| RJDemetra     |           ✔️           | <https://github.com/jdemetra/rjdemetra>      |
-| rjdworkspace  |           ❌           | <https://github.com/InseeFrLab/rjdworkspace> |
-| JDCruncheR    |           ❌           | <https://github.com/InseeFr/JDCruncheR>      |
-| rjwsacruncher |           ✔️           | <https://github.com/AQLT/rjwsacruncher>      |
-| rjdmarkdown   |           ✔️           | <https://github.com/AQLT/rjdmarkdown>        |
+| Nom           | Disponible sur le CRAN | Disponible sur AUS | Lien Github                                                     |
+|---------------|------------------------|--------------------|-----------------------------------------------------------------|
+| RJDemetra     | ✔️                     | ✔️                 | <https://github.com/jdemetra/rjdemetra>                         |
+| rjdworkspace  | ❌                     | ✔️                 | <https://github.com/InseeFrLab/rjdworkspace>                    |
+| JDCruncheR    | ❌                     | ✔️                 | `r colFmt("https://github.com/InseeFr/JDCruncheR", html_color)` |
+| rjwsacruncher | ✔️                     | ✔️                 | <https://github.com/AQLT/rjwsacruncher>                         |
+| rjdmarkdown   | ✔️                     | ✔️                 | <https://github.com/AQLT/rjdmarkdown>                           |
 
 Le code d’installation des packages est ci-dessous :
 
@@ -223,10 +223,15 @@ Le code d’installation des packages est ci-dessous :
 # install.packages("remotes")
 
 install.packages("RJDemetra")
-remotes::install_github("InseeFrLab/rjdworkspace")
-remotes::install_github("InseeFr/JDCruncheR")
 install.packages("rjwsacruncher")
 install.packages("rjdmarkdown")
+
+remotes::install_github("InseeFrLab/rjdworkspace")
+remotes::install_github("InseeFr/JDCruncheR")
+
+# Sous AUS
+# install.packages("rjdworkspace")
+# install.packages("JDCruncheR")
 ```
 
 ### En version 3
@@ -244,6 +249,7 @@ remotes::install_github("rjdemetra/rjd3x13")
 
 remotes::install_github("rjdemetra/rjdemetra3")
 remotes::install_github("rjdemetra/rjd3revisions")
+remotes::install_github("rjdemetra/rjd3x11plus")
 
 remotes::install_github("rjdemetra/rjd3sts")
 remotes::install_github("rjdemetra/rjd3highfreq")
@@ -257,17 +263,18 @@ remotes::install_github("AQLT/ggdemetra3")
 ### Cas AUS
 
 Pour installer un package sur AUS, il n’est pas possible d’utiliser la
-fonction `install_github()`. Ainsi, si le package n’est pas sur le CRAN,
-il doit être téléchargé au format binaire. Pour cela, il faut aller
-chercher le dossier compressé `.zip` sous GitHub.
+fonction `install_github()`. Ainsi, si le package n’est pas sur le CRAN
+ni sur le nexus d’AUS, il doit être téléchargé au format binaire. Pour
+cela, il faut aller chercher le dossier compressé `.zip` sous GitHub.
 
-Exemple pour le package **JDCruncheR**, le `Source code (tar.gz)` se
-trouve sous <https://github.com/InseeFr/JDCruncheR/releases/tag/v0.2.4>
+Exemple pour le package **rjd3toolkit**, le `Source code (tar.gz)` se
+trouve sous
+<https://github.com/rjdemetra/rjd3toolkit/releases/tag/v3.0.0>
 (*release* Section). Après l’avoir récupéré, il faut lancer la commande
 d’installation :
 
 ``` r
-install.packages("chemin/.../JDCruncheR_0.2.4.tar.gz",
+install.packages("path/.../rjd3toolkit_3.0.0.tar.gz ",
                  repos = NULL, type = "binary")
 ```
 

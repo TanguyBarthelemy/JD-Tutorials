@@ -1945,41 +1945,48 @@ et les arguments <code>repos = NULL, type = &quot;binary&quot;</code>.</li>
 <p>Les packages en version 2 sont les suivants :</p>
 <table>
 <colgroup>
-<col width="18%" />
-<col width="36%" />
-<col width="45%" />
+<col width="25%" />
+<col width="16%" />
+<col width="16%" />
+<col width="41%" />
 </colgroup>
 <thead>
 <tr class="header">
 <th>Nom</th>
-<th align="center">Disponible sur le CRAN</th>
+<th>Disponible sur le CRAN</th>
+<th>Disponible sur AUS</th>
 <th>Lien Github</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>RJDemetra</td>
-<td align="center">✔️</td>
+<td>✔️</td>
+<td>✔️</td>
 <td><font color="#000cff"><a href="https://github.com/jdemetra/rjdemetra" class="uri">https://github.com/jdemetra/rjdemetra</a></font></td>
 </tr>
 <tr class="even">
 <td>rjdworkspace</td>
-<td align="center">❌</td>
+<td>❌</td>
+<td>✔️</td>
 <td><font color="#000cff"><a href="https://github.com/InseeFrLab/rjdworkspace" class="uri">https://github.com/InseeFrLab/rjdworkspace</a></font></td>
 </tr>
 <tr class="odd">
 <td>JDCruncheR</td>
-<td align="center">❌</td>
-<td><font color="#000cff"><a href="https://github.com/InseeFr/JDCruncheR" class="uri">https://github.com/InseeFr/JDCruncheR</a></font></td>
+<td>❌</td>
+<td>✔️</td>
+<td><code>r colFmt(&quot;https://github.com/InseeFr/JDCruncheR&quot;, html_color)</code></td>
 </tr>
 <tr class="even">
 <td>rjwsacruncher</td>
-<td align="center">✔️</td>
+<td>✔️</td>
+<td>✔️</td>
 <td><font color="#000cff"><a href="https://github.com/AQLT/rjwsacruncher" class="uri">https://github.com/AQLT/rjwsacruncher</a></font></td>
 </tr>
 <tr class="odd">
 <td>rjdmarkdown</td>
-<td align="center">✔️</td>
+<td>✔️</td>
+<td>✔️</td>
 <td><font color="#000cff"><a href="https://github.com/AQLT/rjdmarkdown" class="uri">https://github.com/AQLT/rjdmarkdown</a></font></td>
 </tr>
 </tbody>
@@ -1989,10 +1996,15 @@ et les arguments <code>repos = NULL, type = &quot;binary&quot;</code>.</li>
 <span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="co"># install.packages(&quot;remotes&quot;)</span></span>
 <span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a></span>
 <span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;RJDemetra&quot;</span>)</span>
-<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;InseeFrLab/rjdworkspace&quot;</span>)</span>
-<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;InseeFr/JDCruncheR&quot;</span>)</span>
-<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;rjwsacruncher&quot;</span>)</span>
-<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;rjdmarkdown&quot;</span>)</span></code></pre></div>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;rjwsacruncher&quot;</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;rjdmarkdown&quot;</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;InseeFrLab/rjdworkspace&quot;</span>)</span>
+<span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;InseeFr/JDCruncheR&quot;</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" tabindex="-1"></a><span class="co"># Sous AUS</span></span>
+<span id="cb1-12"><a href="#cb1-12" tabindex="-1"></a><span class="co"># install.packages(&quot;rjdworkspace&quot;)</span></span>
+<span id="cb1-13"><a href="#cb1-13" tabindex="-1"></a><span class="co"># install.packages(&quot;JDCruncheR&quot;)</span></span></code></pre></div>
 </div>
 <div id="en-version-3" class="section level3" number="3.3.2">
 <h3><span class="header-section-number">3.3.2</span> En version 3</h3>
@@ -2007,28 +2019,29 @@ installer les packages, il faut passer par Github :</p>
 <span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a></span>
 <span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;rjdemetra/rjdemetra3&quot;</span>)</span>
 <span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;rjdemetra/rjd3revisions&quot;</span>)</span>
-<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a></span>
-<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;rjdemetra/rjd3sts&quot;</span>)</span>
-<span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;rjdemetra/rjd3highfreq&quot;</span>)</span>
-<span id="cb2-13"><a href="#cb2-13" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;rjdemetra/rjd3stl&quot;</span>)</span>
-<span id="cb2-14"><a href="#cb2-14" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;rjdemetra/rjd3bench&quot;</span>)</span>
-<span id="cb2-15"><a href="#cb2-15" tabindex="-1"></a><span class="co"># options : INSTALL_opts = &quot;--no-multiarch&quot;</span></span>
-<span id="cb2-16"><a href="#cb2-16" tabindex="-1"></a></span>
-<span id="cb2-17"><a href="#cb2-17" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;AQLT/ggdemetra3&quot;</span>)</span></code></pre></div>
+<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;rjdemetra/rjd3x11plus&quot;</span>)</span>
+<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;rjdemetra/rjd3sts&quot;</span>)</span>
+<span id="cb2-13"><a href="#cb2-13" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;rjdemetra/rjd3highfreq&quot;</span>)</span>
+<span id="cb2-14"><a href="#cb2-14" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;rjdemetra/rjd3stl&quot;</span>)</span>
+<span id="cb2-15"><a href="#cb2-15" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;rjdemetra/rjd3bench&quot;</span>)</span>
+<span id="cb2-16"><a href="#cb2-16" tabindex="-1"></a><span class="co"># options : INSTALL_opts = &quot;--no-multiarch&quot;</span></span>
+<span id="cb2-17"><a href="#cb2-17" tabindex="-1"></a></span>
+<span id="cb2-18"><a href="#cb2-18" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;AQLT/ggdemetra3&quot;</span>)</span></code></pre></div>
 </div>
 <div id="cas-aus" class="section level3" number="3.3.3">
 <h3><span class="header-section-number">3.3.3</span> Cas AUS</h3>
 <p>Pour installer un package sur AUS, il n’est pas possible d’utiliser
 la fonction <code class="sourceCode r"><span class="fu">install_github</span>()</code>.
-Ainsi, si le package n’est pas sur le CRAN, il doit être téléchargé au
-format binaire. Pour cela, il faut aller chercher le dossier compressé
-<code>.zip</code> sous GitHub.</p>
-<p>Exemple pour le package <strong>JDCruncheR</strong>, le
+Ainsi, si le package n’est pas sur le CRAN ni sur le nexus d’AUS, il
+doit être téléchargé au format binaire. Pour cela, il faut aller
+chercher le dossier compressé <code>.zip</code> sous GitHub.</p>
+<p>Exemple pour le package <strong>rjd3toolkit</strong>, le
 <code>Source code (tar.gz)</code> se trouve sous
-<font color="#000cff"><a href="https://github.com/InseeFr/JDCruncheR/releases/tag/v0.2.4" class="uri">https://github.com/InseeFr/JDCruncheR/releases/tag/v0.2.4</a></font>
+<font color="#000cff"><a href="https://github.com/rjdemetra/rjd3toolkit/releases/tag/v3.0.0" class="uri">https://github.com/rjdemetra/rjd3toolkit/releases/tag/v3.0.0</a></font>
 (<em>release</em> Section). Après l’avoir récupéré, il faut lancer la
 commande d’installation :</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;chemin/.../JDCruncheR_0.2.4.tar.gz&quot;</span>,</span>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;path/.../rjd3toolkit_3.0.0.tar.gz &quot;</span>,</span>
 <span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>                 <span class="at">repos =</span> <span class="cn">NULL</span>, <span class="at">type =</span> <span class="st">&quot;binary&quot;</span>)</span></code></pre></div>
 </div>
 </div>
