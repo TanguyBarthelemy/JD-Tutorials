@@ -52,7 +52,7 @@ d’utiliser en production.**
 Il existe une autre version de JDemetra+ qui en est uniquement au stade
 de **test** :
 
-- [v3.0.0](https://github.com/jdemetra/jdemetra-app/releases/tag/v3.0.0-RC1)
+- [v3.0.2](https://github.com/jdemetra/jdplus-main/releases/tag/v3.0.2)
   : la nouvelle version de JDemetra+ avec de nouvelles fonctionnalités
   et une nouvelle interface
 
@@ -62,9 +62,7 @@ la v3.0.0 nécessite une version de Java $\geq 17$ :
 | JDemetra+ version | Java version |
 |-------------------|--------------|
 | v2.2.4            | $\geq 8$     |
-| v3.0.0 (RC1)      | $\geq 17$    |
-
-*RC : Release candidate*
+| v3.0.2            | $\geq 17$    |
 
 Pour la suite, les processus d’installation de ces 3 versions sont les
 mêmes. Il suffit de les répéter pour chaque version que l’on veut
@@ -174,7 +172,7 @@ Rstudio. Tous les exécutables à télécharger sont sous
 
 Pour installer **R**, il faut :
 
-- **Télécharger** le fichier binaire `R-4.2.2-win.exe` sous
+- **Télécharger** le fichier binaire `R-4.3.1-win.exe` sous
   <https://cran.rstudio.com/bin/windows/base/>
 - **Exécuter** l’exécutable pour paramétrer et installer **R**.
 
@@ -208,13 +206,13 @@ Pour installer un package **R**, il y a plusieurs méthodes :
 
 Les packages en version 2 sont les suivants :
 
-| Nom           | Disponible sur le CRAN | Disponible sur AUS | Lien Github                                                     |
-|---------------|------------------------|--------------------|-----------------------------------------------------------------|
-| RJDemetra     | ✔️                     | ✔️                 | <https://github.com/jdemetra/rjdemetra>                         |
-| rjdworkspace  | ❌                     | ✔️                 | <https://github.com/InseeFrLab/rjdworkspace>                    |
-| JDCruncheR    | ❌                     | ✔️                 | `r colFmt("https://github.com/InseeFr/JDCruncheR", html_color)` |
-| rjwsacruncher | ✔️                     | ✔️                 | <https://github.com/AQLT/rjwsacruncher>                         |
-| rjdmarkdown   | ✔️                     | ✔️                 | <https://github.com/AQLT/rjdmarkdown>                           |
+| Nom           | Disponible sur le CRAN | Disponible sur AUS | Lien Github                                  |
+|---------------|------------------------|--------------------|----------------------------------------------|
+| RJDemetra     | ✔️                     | ✔️                 | <https://github.com/jdemetra/rjdemetra>      |
+| rjdworkspace  | ❌                     | ✔️                 | <https://github.com/InseeFrLab/rjdworkspace> |
+| JDCruncheR    | ❌                     | ✔️                 | <https://github.com/InseeFr/JDCruncheR>      |
+| rjwsacruncher | ✔️                     | ✔️                 | <https://github.com/AQLT/rjwsacruncher>      |
+| rjdmarkdown   | ✔️                     | ✔️                 | <https://github.com/AQLT/rjdmarkdown>        |
 
 Le code d’installation des packages est ci-dessous :
 

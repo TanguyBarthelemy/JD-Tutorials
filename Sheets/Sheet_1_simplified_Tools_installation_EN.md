@@ -51,18 +51,16 @@ production.**
 There is one more version of JDemetra+ which are only at a **test**
 stage:
 
-- [v3.0.0](https://github.com/jdemetra/jdemetra-app/releases/tag/v3.0.0-RC1):
+- [v3.0.2](https://github.com/jdemetra/jdplus-main/releases/tag/v3.0.2):
   the new JDemetra+ version with new features and a new GUI
 
-JDemetra+ v2.2.4 require Java version $\geq 8$ while v3.0.0 requires
+JDemetra+ v2.2.4 require Java version $\geq 8$ while v3.0.2 requires
 Java version $\geq 17$:
 
 | JDemetra+ version | Java version |
 |-------------------|--------------|
 | v2.2.4            | $\geq 8$     |
-| v3.0.0 (RC1)      | $\geq 17$    |
-
-*RC: Release candidate*
+| v3.0.2            | $\geq 17$    |
 
 In the following procedure, the installation processes of this 3
 versions are the same. You just have to repeat them for each version you
