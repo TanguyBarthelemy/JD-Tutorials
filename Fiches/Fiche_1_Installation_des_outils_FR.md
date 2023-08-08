@@ -275,12 +275,41 @@ install.packages("chemin/.../JDCruncheR_0.2.4.tar.gz",
 
 ## Sous Rstudio
 
+Pour ajouter des variables d’environnement sous Rstudio, il faut ajouter
+le nom de la variable et sa valeur. Il y a 2 manières de le remplir :
+
+- Utiliser le fichier `.Renviron` :
+
+  - **Lancer** le code `file.edit("~/.Renviron")` ou
+    `usethis::edit_r_environ()` (avec le package **usethis** et
+    l’argument `scope` qui vaut `"user"` ou `"project"` si vous êtes
+    dans un R project)
+  - **Ajouter** les variables au fichiers (sous la forme de nouvelles
+    lignes)
+  - **Enregistrer** le fichier
+
+- Utiliser le fichier `.Rprofile` :
+
+  - **Lancer** le code `file.edit("~/.Rprofile")` ou
+    `usethis::edit_r_profile()` (avec le package **usethis** et
+    l’argument `scope` qui vaut `"user"` ou `"project"` si vous êtes
+    dans un R project)
+  - **Ajouter** les variables grâce à la fonction `Sys.setenv()` (sous
+    la forme de nouvelles lignes)
+  - **Enregistrer** le fichier
+
 ### Proxy
 
 Pour les postes Insee, il faut **configurer** le proxy et des paramètres
-de localisation des logiciels sous Rstudio. Il suffit de :
+de localisation des logiciels sous Rstudio. Les deux manières de faire
+sont :
 
-- **Lancer** le code `file.edit("~/.Renviron")`
+Méthode 1 (avec le `.Renviron`) :
+
+- **Lancer** le code `file.edit("~/.Renviron")` ou
+  `usethis::edit_r_environ()` (avec le package **usethis** et l’argument
+  `scope` qui vaut `"user"` ou `"project"` si vous êtes dans un R
+  project)
 
 - **Ajouter** les paramètres (nouvelles lignes) :
 
@@ -291,10 +320,37 @@ de localisation des logiciels sous Rstudio. Il suffit de :
 
 - **Sauvegarder** et **fermer** le fichier
 
-Aussi on peut préciser les variables d’environnement `http_proxy` et
-`https_proxy` pour Windows.
+Méthode 2 (avec le `.Rprofile`) : - **Lancer** le code
+`file.edit("~/.Rprofile")` ou `usethis::edit_r_profile()` (avec le
+package **usethis** et l’argument `scope` qui vaut `"user"` ou
+`"project"` si vous êtes dans un R project) - **Ajouter** les lignes
+suivantes :
 
-Pour cela, il faut :
+    ```r
+    Sys.setenv("http_proxy" = "http://proxy-rie.http.insee.fr:8080/")
+    Sys.setenv("https_proxy" = "http://proxy-rie.http.insee.fr:8080/")
+    ```
+
+- **Enregistrer** le fichier
+
+### JAVA_HOME
+
+Si une nouvelle version de Java a été installé (Java 17 par exemple), il
+faut préciser à Rstudio la localisation de l’installation. Pour cela, il
+suffit de faire comme pour paramétrer le proxy. Le nom de la variable
+est `JAVA_HOME` et la valeur de la variable
+`"C:/Users/Software/Java17/jdk17"` (selon l’emplacement de ton
+installation de java).
+
+## Sous Windows
+
+Sous Windows, il peut être utile de renseigner aussi les variables
+d’environnement.
+
+### Proxy
+
+Pour les variables d’environnement `http_proxy` et `https_proxy` sous
+Windows, il faut :
 
 - Rechercher “Modifier les variables d’environnement pour votre compte”
 - Cliquer sur l’application
@@ -305,24 +361,8 @@ Pour cela, il faut :
 
 ### JAVA_HOME
 
-Si une nouvelle version de Java a été installé (Java 17 par exemple), il
-faut préciser à Rstudio la localisation de l’installation. Pour cela,
-comme pour paramétrer le proxy :
-
-- **Lancer** le code `file.edit("~/.Renviron")`
-
-- **Ajouter** les paramètres :
-
-  ``` Code
-  JAVA_HOME = "C:/Users/Software/Java17/jdk17"
-  ```
-
-- **Sauvegarder** et **fermer** le fichier
-
-Aussi on peut préciser la variable d’environnement `JAVA_HOME` pour
-Windows.
-
-Pour cela, comme pour la configuration du proxy, il faut :
+De même pour la variable d’environnement `JAVA_HOME` pour Windows, comme
+pour la configuration du proxy, il faut :
 
 - Rechercher “Modifier les variables d’environnement pour votre compte”
 - Cliquer sur l’application
@@ -341,7 +381,7 @@ Java…)* dont Rstudio fera appel, il faut modifier cette variable
 d’environnement :
 
 - **Récupérer** l’actuelle valeur de la variable `PATH` via la commande
-  `Sys.getenv("PATH")` (Rstudio renvoie alors une succession d’adresses
+  `Sys.getenv("PATH")` (Rstudio renvoie alors une succession d’adresse
   du type `C:/WINDOWS/system32;C:/WINDOWS`)
 
 - **Copier-coller** ces adresses après `PATH =` et y ajouter les chemins

@@ -263,13 +263,32 @@ install.packages("path/.../JDCruncheR_0.2.4.tar.gz",
 
 # Environment variables {#var_env}
 
+
 ## In Rstudio
+
+To add environment variables in Rstudio, you need to add the variable's name and the variable's value.
+There are 2 ways to fill it:
+
+- Using the `.Renviron` file:
+
+    - **Launch** the code `file.edit("~/.Renviron")`{.r} or `usethis::edit_r_environ()`{.r} (with  the package **usethis** and the argument `scope` which egals `"user"`{.r} or `"project"`{.r} if you are in a R project)
+    - **Add** the variables to the file (with new lines)
+    - **Save** the file
+
+- Using the `.Rprofile` file:
+
+    - **Launch** the code `file.edit("~/.Rprofile")`{.r} or `usethis::edit_r_profile()`{.r} (with  the package **usethis** and the argument `scope` which egals `"user"`{.r} or `"project"`{.r} if you are in a R project)
+    - **Add** the variables with the fonction `Sys.setenv()`{.r} (with new lines)
+    - **Save** the file
+
 
 ### Proxy
 
-ℹ️ On Insee computers, you need to **configure** the proxy and parameters of Software localisation under Rstudio. You should:
+ℹ️ On Insee computers, you need to **configure** the proxy and parameters of Software localisation under Rstudio. The two ways to do it:
 
-- **Launch** the code `file.edit("~/.Renviron")`{.r}
+First method (with the `.Renviron`):
+
+- **Launch** the code `file.edit("~/.Renviron")`{.r} or `usethis::edit_r_environ()`{.r} (with  the package **usethis** and the argument `scope` which egals `"user"`{.r} or `"project"`{.r} if you are in a R project)
 - **Add** the parameters (news lines):
 
     ```{.Code}
@@ -279,9 +298,32 @@ install.packages("path/.../JDCruncheR_0.2.4.tar.gz",
 
 - **Save** and **close** the file
 
-Also, you can set the environment variables `http_proxy` and `https_proxy` for Windows.
+Second method (with the `.Rprofile`) :
 
-To do this, follow these steps:
+- **Launch** the code `file.edit("~/.Rprofile")`{.r} or `usethis::edit_r_profile()`{.r} (with  the package **usethis** and the argument `scope` which egals `"user"`{.r} or `"project"`{.r} if you are in a R project)
+- **Add** the next lines:
+
+    ```r
+    Sys.setenv("http_proxy" = "http://proxy-rie.http.insee.fr:8080/")
+    Sys.setenv("https_proxy" = "http://proxy-rie.http.insee.fr:8080/")
+    ```
+
+- **Save** the file
+
+
+### JAVA_HOME
+
+If a new Java version has been installed, you should inform Rstudio of the Java installation localisation. For this, you should do as to parameter the proxy. The name of the variable is `JAVA_HOME` and the value of the variable is `"C:/Users/Software/Java17/jdk17"`{.r} (according to where your java installation is).
+
+
+## In Windows
+
+In Windows, it could be usefull to fill also the environnement variables.
+
+
+### Proxy
+
+For the environment variables `http_proxy` and `https_proxy` for Windows, follow these steps:
 
 - Search for "Environment variables"
 - Click on the application that appears.
@@ -292,20 +334,7 @@ To do this, follow these steps:
 
 ### JAVA_HOME
 
-If a new Java version has been installed, you should inform Rstudio of the Java installation localisation. For this, as to parameter the proxy:
-
-- **Launch** the code `file.edit("~/.Renviron")`{.r} to edit the environment variables
-- **Add** the parameters:
-
-    ```{.Code}
-    JAVA_HOME = "C:/Users/Software/Java17/jdk17"
-    ```
-
-- **Save** and **close** the file
-
-Also, you can set the environment variable `JAVA_HOME` for Windows.
-
-To do this (as for the proxy set up), follow these steps:
+Similary for the environment variable `JAVA_HOME` for Windows, you have to:
 
 - Search for "Environment variables"
 - Click on the application that appears.
