@@ -3,11 +3,6 @@ Installation des outils pour la désaisonnalisation
 Tanguy BARTHELEMY
 2023-01-17
 
-<style type="text/css">
-.Code {
-background-color: #F1F3F5;
-}
-</style>
 # Contexte
 
 Les outils d’aide à la désaisonnalisation sont :

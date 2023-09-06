@@ -3,11 +3,6 @@ Tools installation for seasonnal adjustment
 Tanguy BARTHELEMY
 2023-01-17
 
-<style type="text/css">
-.Code {
-background-color: #F1F3F5;
-}
-</style>
 # Context
 
 For seasonal adjustment we recommend using JDemetra+ algorithms

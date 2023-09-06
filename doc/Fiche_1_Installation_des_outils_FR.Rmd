@@ -9,6 +9,7 @@ output:
     number_sections: TRUE
     highlight: "arrow"
     theme: "readable"
+    css: "style.css"
   pdf_document: 
     includes:
         in_header: 
@@ -22,12 +23,6 @@ always_allow_html: true
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-```
-
-```{css, echo = FALSE}
-.Code {
-background-color: #F1F3F5;
-}
 ```
 
 ```{r, echo = FALSE, eval = TRUE}
