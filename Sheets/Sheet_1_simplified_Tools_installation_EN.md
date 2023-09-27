@@ -1,7 +1,6 @@
-Tools installation for seasonnal adjustment
+Tools installation for seasonal adjustment
 ================
 Tanguy BARTHELEMY
-2023-01-17
 
 # Context
 
@@ -17,8 +16,10 @@ Thus, it is helpful to install the following tools:
 
 On the computers without administrator rights (*professional computer,
 for example*), it is recommended to create a folder **Software** under
-C:\Users\\\Software or directly under C:\Users\Software where all
-software will be installed.
+$\textsf{\color{#006817}C: \backslash Users \backslash ... \backslash Software}$
+or directly under
+$\textsf{\color{#006817}C: \backslash Users \backslash Software}$ where
+all software will be installed.
 
 ⚠️ Warning: when we specify an **absolute** path for a software
 (JDemetra+, Java, …) in a program, a shortcut, a variable, …, it must be
@@ -35,11 +36,12 @@ cruncher (executable).
 
 JDemetra+ is downloadable from the [github
 link](https://github.com/jdemetra/jdemetra-app/releases) of the
-application: <https://github.com/jdemetra/jdemetra-app/releases>.
+application:
+[$\textsf{\color{#000cff}https://github.com/jdemetra/jdemetra-app/releases}$](https://github.com/jdemetra/jdemetra-app/releases).
 
 The last release
 ([v2.2.4](https://github.com/jdemetra/jdemetra-app/releases/tag/v2.2.3))
-dates from january 31, 2023. It is the last **stable** version of
+dates from January 31, 2023. It is the last **stable** version of
 JDemetra+. **This version should be downloaded and must be used in
 production.**
 
@@ -74,14 +76,17 @@ There are two possibilities for installing:
 compressed folder `jdemetra+-2.2.4-bin.zip` (for the version 2.2.4 for
 example) and **not** the folder `Source code (zip)`.
 
-The Software is in the folder \nbdemetra\bin\\ these are the file
-`nbdemetra.exe` (version 32-bit) and `nbdemetra64.exe` (version 64-bit).
+The Software is in the folder
+$\textsf{\color{#006817} \backslash nbdemetra \backslash bin \backslash }$,
+these are the file `nbdemetra.exe` (version 32-bit) and
+`nbdemetra64.exe` (version 64-bit).
 
 ℹ Advice: If you want to use several versions of JDemetra+ (v2.2.4,
-v3.0.0, …), you can rename the unzipped folder in \nbdemetra-2.2.4\\ and
-\nbdemetra-3.0.0\\
+v3.0.0, …), you can rename the unzipped folder in
+$\textsf{\color{#006817} \backslash nbdemetra-2.2.4 \backslash }$ and
+$\textsf{\color{#006817} \backslash nbdemetra-3.0.0 \backslash }$.
 
-ℹ️ Remark:You can create shortcuts to the executable files if you want
+ℹ️ Remark: You can create shortcuts to the executable files if you want
 to launch them from another folder (Desktop, project folder…).
 
 ## Installation of the cruncher
@@ -95,19 +100,23 @@ be done from another Software (**R** or **SAS** for example).
 To use the cruncher, you have to:
 
 - **Download** and **unzip** the file from the **latest stable** version
-  v2.2.4 here <https://github.com/jdemetra/jwsacruncher/releases>
+  v2.2.4 here
+  [$\textsf{\color{#000cff}https://github.com/jdemetra/jwsacruncher/releases}$](https://github.com/jdemetra/jwsacruncher/releases)
 
 If you want to install and use a portable Java version (See section
 [Java installation](#install_java)), you have to modify some parameters
 to use the cruncher:
 
 - In the unzipped folder, **open** (for example with Notepad++) the file
-  `jwsacruncher.bat` present in the subfolder \bin\\ (that is under
-  jdemetra-cli-2.2.4\bin\\ in the version 2.2.3 of the cruncher)
+  `jwsacruncher.bat` present in the subfolder
+  $\textsf{\color{#006817} \backslash bin \backslash }$ (that is under
+  $\textsf{\color{#006817}jdemetra-cli-2.2.4 \backslash bin \backslash }$
+  in the version 2.2.3 of the cruncher)
 - **Modify** the value of the variable `JAVACMD` at the line **71**
   (currently `JAVACMD=java`) by the address towards the file `java.exe`
   of the portable version. Then, if JPortable is installed under
-  C:\Users\Software, the new line is
+  $\textsf{\color{#006817}C: \backslash Users \backslash Software}$, the
+  new line is
   `if "%JAVACMD%"=="" set JAVACMD="C:\\Users\\Software\\Java64\\bin\\java"`
   (for Java 8).
 
@@ -120,18 +129,20 @@ version 2.2.4.
 ## Java 8
 
 To install Java 8, use the link
-<https://portableapps.com/apps/utilities/java_portable>. If you use the
-version 64-bit of JDemetra+, you should install the version jPortable
-64-bit (at the bottom of the page).
+[$\textsf{\color{#000cff}https://portableapps.com/apps/utilities/java_portable}$](https://portableapps.com/apps/utilities/java_portable).
+If you use the version 64-bit of JDemetra+, you should install the
+version jPortable 64-bit (at the bottom of the page).
 
 ## Java 17
 
 To install Java 17, you need to head over to
-<https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html>.
+[$\textsf{\color{#000cff}https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html}$](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html).
 
 - **Download** the version `Compressed Archive` of Windows
-  (<https://download.oracle.com/java/17/archive/jdk-17.0.4.1_windows-x64_bin.zip>)
-- **Unzip** the folder jdk-17.0.6 under C:\Users\Software (for example)
+  ([$\textsf{\color{#000cff}https://download.oracle.com/java/17/archive/jdk-17.0.4.1_windows-x64_bin.zip}$](https://download.oracle.com/java/17/archive/jdk-17.0.4.1_windows-x64_bin.zip))
+- **Unzip** the folder $\textsf{\color{#006817}jdk-17.0.6}$ under
+  $\textsf{\color{#006817}C: \backslash Users \backslash Software}$ (for
+  example)
 
 After a Java installation (in version 8, 17 or other), you need to:
 

@@ -11,9 +11,8 @@
 
 <meta name="author" content="Tanguy BARTHELEMY" />
 
-<meta name="date" content="2023-01-17" />
 
-<title>Tools installation for seasonnal adjustment</title>
+<title>Tools installation for seasonal adjustment</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -1707,10 +1706,9 @@ display: none;
 
 
 
-<h1 class="title toc-ignore">Tools installation for seasonnal
+<h1 class="title toc-ignore">Tools installation for seasonal
 adjustment</h1>
 <h4 class="author">Tanguy BARTHELEMY</h4>
-<h4 class="date">2023-01-17</h4>
 
 </div>
 
@@ -1754,7 +1752,7 @@ and dependencies</h2>
 <p>JDemetra+ is downloadable from the <a href="https://github.com/jdemetra/jdemetra-app/releases">github link</a>
 of the application: <font color="#000cff"><a href="https://github.com/jdemetra/jdemetra-app/releases" class="uri">https://github.com/jdemetra/jdemetra-app/releases</a></font>.</p>
 <p>The last release (<a href="https://github.com/jdemetra/jdemetra-app/releases/tag/v2.2.3">v2.2.4</a>)
-dates from january 31, 2023. It is the last <strong>stable</strong>
+dates from January 31, 2023. It is the last <strong>stable</strong>
 version of JDemetra+. <strong>This version should be downloaded and must
 be used in production.</strong></p>
 <p>There is one more version of JDemetra+ which are only at a
@@ -1810,7 +1808,7 @@ and <strong>not</strong> the folder <code>Source code (zip)</code>.</p>
 v3.0.0, …), you can rename the unzipped folder in
 <font color="#006817">\nbdemetra-2.2.4\</font> and
 <font color="#006817">\nbdemetra-3.0.0\</font>.</p>
-<p>ℹ️ Remark:You can create shortcuts to the executable files if you
+<p>ℹ️ Remark: You can create shortcuts to the executable files if you
 want to launch them from another folder (Desktop, project folder…).</p>
 </div>
 <div id="installation-of-the-cruncher" class="section level2" number="1.3">
@@ -2117,7 +2115,7 @@ and the value of the variable is <code class="sourceCode r"><span class="st">&qu
 </div>
 <div id="in-windows" class="section level2" number="4.2">
 <h2><span class="header-section-number">4.2</span> In Windows</h2>
-<p>In Windows, it could be usefull to fill also the environnement
+<p>In Windows, it could be useful to fill also the environnement
 variables.</p>
 <div id="proxy-1" class="section level3" number="4.2.1">
 <h3><span class="header-section-number">4.2.1</span> Proxy</h3>
@@ -2134,7 +2132,7 @@ already do:</li>
 </div>
 <div id="java_home-1" class="section level3" number="4.2.2">
 <h3><span class="header-section-number">4.2.2</span> JAVA_HOME</h3>
-<p>Similary for the environment variable <code>JAVA_HOME</code> for
+<p>Similarly for the environment variable <code>JAVA_HOME</code> for
 Windows, you have to:</p>
 <ul>
 <li>Search for “Environment variables”</li>
@@ -2155,7 +2153,7 @@ variable:</p>
 <ul>
 <li><p><strong>Get</strong> the actual value of the variable
 <code>PATH</code> via the <strong>R</strong> command <code class="sourceCode r"><span class="fu">Sys.getenv</span>(<span class="st">&quot;PATH&quot;</span>)</code>
-(Rstudio returns a succession of adresses as
+(Rstudio returns a succession of addresses as
 <code>C:/WINDOWS/system32;C:/WINDOWS</code>)</p></li>
 <li><p><strong>Copy paste</strong> this value after <code>PATH =</code>
 and add the paths towards the folder <font color="#006817">\bin\</font>
@@ -2166,7 +2164,8 @@ the path is <font color="#006817">C:\rtools42\mingw64\bin</font>
 <code>C:\\rtools42\\mingw64\\bin</code> or
 <code>C:/rtools42/mingw64/bin</code> (In <strong>R</strong>,
 <code>\</code> is a special character, so you have to replace the
-<code>\</code> by <code>/</code> or by <code>\\</code>). The path become
+<code>\</code> by <code>/</code> or by <code>\\</code>). The path
+becomes
 <code>C:/WINDOWS/system32;C:/WINDOWS;C:/rtools42/mingw64/bin</code>.</p></li>
 <li><p><strong>Modify</strong> the variable with the function <code class="sourceCode r"><span class="fu">Sys.setenv</span>()</code>. For
 Rtools, the command to launch is:</p>
@@ -2246,10 +2245,10 @@ means that Java was incorrectly installed or incorrectly configured on
 Windows works (it doesn’t matter to us):</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="fu">system</span>(<span class="st">&quot;java -version&quot;</span>)</span></code></pre></div>
 </div>
-<div id="optionnal-installations" class="section level1" number="6">
-<h1><span class="header-section-number">6</span> Optionnal
+<div id="optional-installations" class="section level1" number="6">
+<h1><span class="header-section-number">6</span> Optional
 installations</h1>
-<p>Some supplementary installations are optionnal (that is they are no
+<p>Some supplementary installations are optional (that is they are no
 mandatory but bring external features):</p>
 <ul>
 <li><a href="https://miktex.org/howto/install-miktex">Miktek</a> to

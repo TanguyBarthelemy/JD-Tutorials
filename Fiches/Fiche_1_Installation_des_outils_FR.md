@@ -1,7 +1,6 @@
 Installation des outils pour la désaisonnalisation
 ================
 Tanguy BARTHELEMY
-2023-01-17
 
 # Contexte
 
@@ -16,8 +15,10 @@ Les outils d’aide à la désaisonnalisation sont :
 
 Sur les ordinateurs sans droits d’administrateur (*postes professionnels
 par exemple*), il est conseillé de créer un dossier **Software** sous
-C:\Users\\\Software ou directement sous C:\Users\Software dans lequel
-tous les logiciels seront installés.
+$\textsf{\color{#006817}C: \backslash Users \backslash ... \backslash Software}$
+ou directement sous
+$\textsf{\color{#006817}C: \backslash Users \backslash Software}$ dans
+lequel tous les logiciels seront installés.
 
 ⚠️ Attention : lorsqu’on précise un chemin **absolu** de logiciel
 (JDemetra+, Java, **R**, …) dans un programme, un raccourci, une
@@ -36,7 +37,8 @@ mais il existe des packages **R** développés pour l’utiliser aussi sur
 
 JDemetra+ est téléchargeable depuis le lien
 [github](https://github.com/jdemetra/jdemetra-app/releases) de
-l’application : <https://github.com/jdemetra/jdemetra-app/releases>.
+l’application :
+[$\textsf{\color{#000cff}https://github.com/jdemetra/jdemetra-app/releases}$](https://github.com/jdemetra/jdemetra-app/releases).
 
 La dernière release
 ([v2.2.4](https://github.com/jdemetra/jdemetra-app/releases/tag/v2.2.4))
@@ -76,13 +78,15 @@ Deux solutions pour l’installer :
 compressé `jdemetra+-2.2.4-bin.zip` (pour la version 2.2.4 par exemple)
 et **non** le dossier `Source code (zip)`.
 
-Le logiciel se trouve alors dans le dossier \nbdemetra\bin\\ ce sont les
-fichiers `nbdemetra.exe` (version 32-bit) et `nbdemetra64.exe` (version
-64-bit).
+Le logiciel se trouve alors dans le dossier
+$\textsf{\color{#006817} \backslash nbdemetra \backslash bin \backslash }$,
+ce sont les fichiers `nbdemetra.exe` (version 32-bit) et
+`nbdemetra64.exe` (version 64-bit).
 
 ℹ️ Conseil : si vous comptez utiliser plusieurs version de JDemetra+
 (v2.2.4, v3.0.0, …), vous pouvez renommer les dossiers dézippés en
-\nbdemetra-2.2.4\\ et \nbdemetra-3.0.0\\
+$\textsf{\color{#006817} \backslash nbdemetra-2.2.4 \backslash }$ et
+$\textsf{\color{#006817} \backslash nbdemetra-3.0.0 \backslash }$.
 
 ℹ️ Remarque : Vous pouvez créer des raccourcis des exécutables si vous
 souhaitez les lancer depuis le bureau ou d’autres dossiers.
@@ -101,20 +105,23 @@ Pour utiliser le cruncher, il faut:
 - **Télécharger** et **Dézipper** le fichier
   `jwsacruncher-2.2.4-bin.zip` de la dernière version **stable**
   (**Latest** v2.2.4 disponible ici
-  <https://github.com/jdemetra/jwsacruncher/releases>)
+  [$\textsf{\color{#000cff}https://github.com/jdemetra/jwsacruncher/releases}$](https://github.com/jdemetra/jwsacruncher/releases))
 
 Si l’on utilise une version portable de Java (voir section [Installation
 Java](#install_java)), il faut encore modifier certains paramètres pour
 utiliser le cruncher :
 
 - Dans le dossier dézippé, **ouvrir** (par exemple avec Notepad++) le
-  fichier `jwsacruncher.bat` présent dans le sous-dossier \bin\\
-  (c’est-à-dire sous jdemetra-cli-2.2.4\bin\\ dans la version 2.2.4 du
-  cruncher)
+  fichier `jwsacruncher.bat` présent dans le sous-dossier
+  $\textsf{\color{#006817} \backslash bin \backslash }$ (c’est-à-dire
+  sous
+  $\textsf{\color{#006817}jdemetra-cli-2.2.4 \backslash bin \backslash }$
+  dans la version 2.2.4 du cruncher)
 - **Modifier** la valeur de la variable `JAVACMD` de la ligne **71**
   (actuelle `JAVACMD=java`) par l’adresse vers le fichier `java.exe` de
   la version portable . Ainsi, si JPortable est installé sous
-  C:\Users\Software, la nouvelle ligne est
+  $\textsf{\color{#006817}C: \backslash Users \backslash Software}$, la
+  nouvelle ligne est
   `if "%JAVACMD%"=="" set JAVACMD="C:\\Users\\Software\\Java64\\bin\\java"`
   (pour Java 8).
 
@@ -127,19 +134,20 @@ utiliser JDemetra+ en version 2.2.4.
 ## Java 8
 
 Pour installer Java 8, utiliser le lien
-<https://portableapps.com/apps/utilities/java_portable>. Si l’on utilise
-la version 64-bit de JDemetra+, il faut bien installer la version
-jPortable 64-bit (en bas de la page).
+[$\textsf{\color{#000cff}https://portableapps.com/apps/utilities/java_portable}$](https://portableapps.com/apps/utilities/java_portable).
+Si l’on utilise la version 64-bit de JDemetra+, il faut bien installer
+la version jPortable 64-bit (en bas de la page).
 
 ## Java 17
 
 Pour installer Java 17, il faut aller à l’adresse
-<https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html>.
+[$\textsf{\color{#000cff}https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html}$](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html).
 
 - **Télécharger** la version `Compressed Archive` de Windows
-  (<https://download.oracle.com/java/17/archive/jdk-17.0.4.1_windows-x64_bin.zip>)
-- **Dézipper** le dossier jdk-17.0.6 sous C:\Users\Software (*par
-  exemple*)
+  ([$\textsf{\color{#000cff}https://download.oracle.com/java/17/archive/jdk-17.0.4.1_windows-x64_bin.zip}$](https://download.oracle.com/java/17/archive/jdk-17.0.4.1_windows-x64_bin.zip))
+- **Dézipper** le dossier $\textsf{\color{#006817}jdk-17.0.6}$ sous
+  $\textsf{\color{#006817}C: \backslash Users \backslash Software}$
+  (*par exemple*)
 
 Après avoir installé Java (en version 8, 17 ou autre), il faut :
 
@@ -161,28 +169,29 @@ localisation de Java 17 au raccourci de l’exécutable grace à l’option
 Les fonctionnalités de JDemetra+ sont accessibles sur **R** via des
 packages **R**. Pour utiliser **R**, mieux vaut utiliser un IDE donc
 Rstudio. Tous les exécutables à télécharger sont sous
-<https://posit.co/download/rstudio-desktop/#download>.
+[$\textsf{\color{#000cff}https://posit.co/download/rstudio-desktop/#download}$](https://posit.co/download/rstudio-desktop/#download).
 
 ## Installation de **R**
 
 Pour installer **R**, il faut :
 
 - **Télécharger** le fichier binaire `R-4.3.1-win.exe` sous
-  <https://cran.rstudio.com/bin/windows/base/>
+  [$\textsf{\color{#000cff}https://cran.rstudio.com/bin/windows/base/}$](https://cran.rstudio.com/bin/windows/base/)
 - **Exécuter** l’exécutable pour paramétrer et installer **R**.
 
 ## Installation de Rstudio
 
 **Télécharger** la dernière version de Rstudio (sous
-<https://posit.co/download/rstudio-desktop/#download>) et
-l’**installer**.
+[$\textsf{\color{#000cff}https://posit.co/download/rstudio-desktop/#download}$](https://posit.co/download/rstudio-desktop/#download))
+et l’**installer**.
 
 Si l’installation via le fichier `.exe` échoue (car nécessite des droits
 supérieurs (administrateur, élévation, …), nous allons récupérer une
 version portable du logiciel. Pour cela :
 
 - **Télécharger** et **dézipper** le dossier compressé `.zip` dans un
-  dossier Rstudio (sous C:\Users\Software)
+  dossier Rstudio (sous
+  $\textsf{\color{#006817}C: \backslash Users \backslash Software}$)
 - **Créer un raccourci** du fichier `rstudio.exe` sur le Bureau
 
 ## Installation des packages **R**
@@ -201,13 +210,13 @@ Pour installer un package **R**, il y a plusieurs méthodes :
 
 Les packages en version 2 sont les suivants :
 
-| Nom           | Disponible sur le CRAN | Disponible sur AUS | Lien Github                                  |
-|---------------|------------------------|--------------------|----------------------------------------------|
-| RJDemetra     | ✔️                     | ✔️                 | <https://github.com/jdemetra/rjdemetra>      |
-| rjdworkspace  | ❌                     | ✔️                 | <https://github.com/InseeFrLab/rjdworkspace> |
-| JDCruncheR    | ❌                     | ✔️                 | <https://github.com/InseeFr/JDCruncheR>      |
-| rjwsacruncher | ✔️                     | ✔️                 | <https://github.com/AQLT/rjwsacruncher>      |
-| rjdmarkdown   | ✔️                     | ✔️                 | <https://github.com/AQLT/rjdmarkdown>        |
+| Nom           | Disponible sur le CRAN | Disponible sur AUS | Lien Github                                                                                                        |
+|---------------|------------------------|--------------------|--------------------------------------------------------------------------------------------------------------------|
+| RJDemetra     | ✔️                     | ✔️                 | [$\textsf{\color{#000cff}https://github.com/jdemetra/rjdemetra}$](https://github.com/jdemetra/rjdemetra)           |
+| rjdworkspace  | ❌                     | ✔️                 | [$\textsf{\color{#000cff}https://github.com/InseeFrLab/rjdworkspace}$](https://github.com/InseeFrLab/rjdworkspace) |
+| JDCruncheR    | ❌                     | ✔️                 | [$\textsf{\color{#000cff}https://github.com/InseeFr/JDCruncheR}$](https://github.com/InseeFr/JDCruncheR)           |
+| rjwsacruncher | ✔️                     | ✔️                 | [$\textsf{\color{#000cff}https://github.com/AQLT/rjwsacruncher}$](https://github.com/AQLT/rjwsacruncher)           |
+| rjdmarkdown   | ✔️                     | ✔️                 | [$\textsf{\color{#000cff}https://github.com/AQLT/rjdmarkdown}$](https://github.com/AQLT/rjdmarkdown)               |
 
 Le code d’installation des packages est ci-dessous :
 
@@ -262,7 +271,7 @@ cela, il faut aller chercher le dossier compressé `.zip` sous GitHub.
 
 Exemple pour le package **rjd3toolkit**, le `Source code (tar.gz)` se
 trouve sous
-<https://github.com/rjdemetra/rjd3toolkit/releases/tag/v3.0.0>
+[$\textsf{\color{#000cff}https://github.com/rjdemetra/rjd3toolkit/releases/tag/v3.0.0}$](https://github.com/rjdemetra/rjd3toolkit/releases/tag/v3.0.0)
 (*release* Section). Après l’avoir récupéré, il faut lancer la commande
 d’installation :
 
@@ -385,15 +394,17 @@ d’environnement :
   du type `C:/WINDOWS/system32;C:/WINDOWS`)
 
 - **Copier-coller** ces adresses après `PATH =` et y ajouter les chemins
-  vers les répertoires \bin\\ (binary) des logiciels nouvellement
-  installés, en les séparant par des points-virgules sans espace avant
-  ni après.
+  vers les répertoires
+  $\textsf{\color{#006817} \backslash bin \backslash }$ (binary) des
+  logiciels nouvellement installés, en les séparant par des
+  points-virgules sans espace avant ni après.
 
   Par exemple, pour l’installation de Rtools, le chemin est
-  C:\rtools42\mingw64\bin (selon là où a été installé Rtools). Il faut
-  donc rajouter `C:\\rtools42\\mingw64\\bin` ou
-  `C:/rtools42/mingw64/bin` (En **R**, `\` est un caractère spécial,
-  donc il faut remplacer les `\` par `/` ou par `\\`). Le chemin devient
+  $\textsf{\color{#006817}C: \backslash rtools42 \backslash mingw64 \backslash bin}$
+  (selon là où a été installé Rtools). Il faut donc rajouter
+  `C:\\rtools42\\mingw64\\bin` ou `C:/rtools42/mingw64/bin` (En **R**,
+  `\` est un caractère spécial, donc il faut remplacer les `\` par `/`
+  ou par `\\`). Le chemin devient
   `C:/WINDOWS/system32;C:/WINDOWS;C:/rtools42/mingw64/bin`.
 
 - **Modifier** la variable avec la fonction `Sys.setenv()`.
@@ -427,7 +438,7 @@ Selon le résultat, la version est 32 bits ou 64 bits :
 |         | x86_32 |
 
 Plus d’informations sur la variable `PATH` via la page
-<https://java.com/fr/download/help/path.xml>.
+[$\textsf{\color{#000cff}https://java.com/fr/download/help/path.xml}$](https://java.com/fr/download/help/path.xml).
 
 # Vérifications
 
@@ -520,7 +531,7 @@ Deux solutions :
   ```
 
 ℹ️ Plus d’information :
-<https://github.com/jdemetra/rjdemetra/wiki/Installation-manual>
+[$\textsf{\color{#000cff}https://github.com/jdemetra/rjdemetra/wiki/Installation-manual}$](https://github.com/jdemetra/rjdemetra/wiki/Installation-manual)
 
 ## La commande `library("RJDemetra")` renvoie un message d’erreur
 
