@@ -59,7 +59,7 @@ la v3.0.2 nécessite une version de Java $\geq 17$ :
 | v2.2.4            | $\geq 8$     |
 | v3.0.2            | $\geq 17$    |
 
-Pour la suite, les processus d’installation de ces 3 versions sont les
+Pour la suite, les processus d’installation de ces 2 versions sont les
 mêmes. Il suffit de les répéter pour chaque version que l’on veut
 installer.
 
@@ -137,6 +137,20 @@ jPortable 64-bit (en bas de la page).
 
 ## Java 17
 
+ℹ️ Remarques
+
+La version 3.0.2 de JDemetra+ contient une jdk 17 (version de java 17)
+packetée dans le
+[.zip](https://github.com/jdemetra/jdplus-main/releases/tag/v3.0.2).
+Ainsi pour utiliser l’interface, il n’est pas nécessaire d’installer
+java 17.
+
+En revanche, pour utiliser les packages R en version 3 sans télécharger
+la GUI (en version 3.0.2), il est obligatoire d’avoir java 17 et donc de
+l’installer soit même.
+
+### Installation
+
 Pour installer Java 17, il faut aller à l’adresse
 <https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html>.
 
@@ -149,16 +163,6 @@ Après avoir installé Java (en version 8, 17 ou autre), il faut :
 
 - **Modifier** les variables d’environnement de `PATH` de Rstudio et de
   Windows (voir section [Variables d’environnement](#var_env))
-- **Modifier** les cibles de JDemetra+ pour informer de la localisation
-  des nouvelles versions de Java.
-
-Ainsi par exemple, si vous avez installé la version 17 de Java pour
-utiliser la version 3.0.2 de JDemetra+. Il est nécessaire d’ajouter la
-localisation de Java 17 au raccourci de l’exécutable grace à l’option
-`--jdkhome`. La cible du raccourci devient
-`C:\Users\Software\nbdemetra-3.0.2\bin\nbdemetra64.exe --jdkhome "C:\Users\Software\Java17\jdk17"`
-
-![](../img/set_java_jdemetra.png)
 
 # Installation de **R** et Rstudio
 

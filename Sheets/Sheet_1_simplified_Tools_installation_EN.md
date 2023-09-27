@@ -57,7 +57,7 @@ Java version $\geq 17$:
 | v2.2.4            | $\geq 8$     |
 | v3.0.2            | $\geq 17$    |
 
-In the following procedure, the installation processes of this 3
+In the following procedure, the installation processes of this 2
 versions are the same. You just have to repeat them for each version you
 want to install.
 
@@ -131,22 +131,9 @@ version 64-bit of JDemetra+, you should install the version jPortable
 
 ## Java 17
 
-To install Java 17, you need to head over to
-<https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html>.
+ℹ️ Remark
 
-- **Download** the version `Compressed Archive` of Windows
-  (<https://download.oracle.com/java/17/archive/jdk-17.0.4.1_windows-x64_bin.zip>)
-- **Unzip** the folder ${\textsf{\color{#006817}{jdk-17.0.6}}}$ under
-  ${\textsf{\color{#006817}{C:\\\\Users\\\\Software}}}$ (for example)
-
-After a Java installation (in version 8, 17 or other), you need to:
-
-- **Modify** the environment variable `PATH` of Windows
-- **Modify** the targets of JDemetra+ to set the localisation of the new
-  Java versions.
-
-For example, if you installed Java version 17 in order to use the
-JDemetra+ version 3.0.2. You should add the localisation of Java 17 to
-the shortcut of the executable using the option `--jdkhome`. The target
-of the shortcut becomes
-`C:\Users\Software\nbdemetra-3.0.2\bin\nbdemetra64.exe --jdkhome "C:\Users\Software\Java17\jdk17"`
+The version 3.0.2 of JDemetra+ contains a JDemetra+ version 3.0.2
+contains a jdk 17 (java 17 version) packaged in
+[.zip](https://github.com/jdemetra/jdplus-main/releases/tag/v3.0.2). So
+to use the interface, it is not necessary to install Java 17.
