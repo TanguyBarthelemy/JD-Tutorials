@@ -33,22 +33,21 @@ colFmt <- function(x, color, url = TRUE) {
     color_name <- deparse(substitute(color))
     outputFormat <- knitr::opts_knit$get("rmarkdown.pandoc.to")
     
-    x <- x |> 
-        gsub(pattern = "\\", replacement = "\\\\", fixed = TRUE)
+    x <- x |> gsub(pattern = "\\", replacement = "\\\\", fixed = TRUE)
     
     if (outputFormat == 'latex') {
-        x <- x |> 
-            gsub(pattern = "#", replacement = "\\#", fixed = TRUE)
+        x <- x |> gsub(pattern = "#", replacement = "\\#", fixed = TRUE)
         ret <- paste("\\textcolor{", color_name, ifelse(url, "}{\\url{", "}{\\nolinkurl{"), x, ifelse(url, "}}", "}}"), sep = "")
     } else if (outputFormat == 'html') {
         ret <- paste("<font color='", color, "'>", x, "</font>", sep = "")
     } else if (outputFormat == "gfm+tex_math_dollars-yaml_metadata_block") {
-        ret <- x |> 
-            gsub(pattern = "\\\\", replacement = " \\backslash ", fixed = TRUE)
-        ret <- paste(ifelse(url, "[", ""), 
-                     "$\\textsf{\\color{", color, "}", ret, "}$", 
-                     ifelse(url, paste0("](", x, ")"), ""), 
-                     sep = "")
+        if (url) {
+            ret <- paste("[", x, "](", x, ")", sep = "")
+        } else {
+            # ret <- x |> gsub(pattern = "\\\\", replacement = " \\backslash ", fixed = TRUE)
+            ret <- x |> gsub(pattern = "\\", replacement = "\\\\", fixed = TRUE)
+            ret <- paste("${\\textsf{\\color{", color, "}{", ret, "}}}$", sep = "")
+        }
     } else {
         ret <- x
     }

@@ -649,10 +649,9 @@ des outils pour la désaisonnalisation</h1>
 <h1 id="préalable">Préalable</h1>
 <p>Sur les ordinateurs sans droits d’administrateur (<em>postes
 professionnels par exemple</em>), il est conseillé de créer un dossier
-<strong>Software</strong> sous <span class="math inline">\(\textsf{\color{#006817}C: \backslash Users
-\backslash ... \backslash Software}\)</span> ou directement sous <span class="math inline">\(\textsf{\color{#006817}C: \backslash Users
-\backslash Software}\)</span> dans lequel tous les logiciels seront
-installés.</p>
+<strong>Software</strong> sous <span class="math inline">\({\textsf{\color{#006817}{C:\\\\Users\\\\...\\\\Software}}}\)</span>
+ou directement sous <span class="math inline">\({\textsf{\color{#006817}{C:\\\\Users\\\\Software}}}\)</span>
+dans lequel tous les logiciels seront installés.</p>
 <p>⚠️ Attention : lorsqu’on précise un chemin <strong>absolu</strong> de
 logiciel (JDemetra+, Java, <strong>R</strong>, …) dans un programme, un
 raccourci, une variable, …, il doit être modifié à chaque fois qu’un des
@@ -667,7 +666,7 @@ l’utiliser aussi sur <strong>R</strong> ainsi qu’un cruncher
 <h2 id="version-de-jdemetra-et-dépendances">Version de JDemetra+ et
 dépendances</h2>
 <p>JDemetra+ est téléchargeable depuis le lien <a href="https://github.com/jdemetra/jdemetra-app/releases">github</a> de
-l’application : <a href="https://github.com/jdemetra/jdemetra-app/releases"><span class="math inline">\(\textsf{\color{#000cff}https://github.com/jdemetra/jdemetra-app/releases}\)</span></a>.</p>
+l’application : <a href="https://github.com/jdemetra/jdemetra-app/releases">https://github.com/jdemetra/jdemetra-app/releases</a>.</p>
 <p>La dernière release (<a href="https://github.com/jdemetra/jdemetra-app/releases/tag/v2.2.4">v2.2.4</a>)
 date du 31 janvier 2023. C’est la dernière version
 <strong>stable</strong> de JDemetra+. <strong>C’est cette version qu’il
@@ -715,14 +714,12 @@ logiciel.</li>
 <strong>télécharger</strong> le dossier compressé
 <code>jdemetra+-2.2.4-bin.zip</code> (pour la version 2.2.4 par exemple)
 et <strong>non</strong> le dossier <code>Source code (zip)</code>.</p>
-<p>Le logiciel se trouve alors dans le dossier <span class="math inline">\(\textsf{\color{#006817} \backslash nbdemetra
-\backslash bin \backslash }\)</span>, ce sont les fichiers
-<code>nbdemetra.exe</code> (version 32-bit) et
+<p>Le logiciel se trouve alors dans le dossier <span class="math inline">\({\textsf{\color{#006817}{\\\\nbdemetra\\\\bin\\\\}}}\)</span>,
+ce sont les fichiers <code>nbdemetra.exe</code> (version 32-bit) et
 <code>nbdemetra64.exe</code> (version 64-bit).</p>
 <p>ℹ️ Conseil : si vous comptez utiliser plusieurs version de JDemetra+
-(v2.2.4, v3.0.0, …), vous pouvez renommer les dossiers dézippés en <span class="math inline">\(\textsf{\color{#006817} \backslash nbdemetra-2.2.4
-\backslash }\)</span> et <span class="math inline">\(\textsf{\color{#006817} \backslash nbdemetra-3.0.0
-\backslash }\)</span>.</p>
+(v2.2.4, v3.0.0, …), vous pouvez renommer les dossiers dézippés en <span class="math inline">\({\textsf{\color{#006817}{\\\\nbdemetra-2.2.4\\\\}}}\)</span>
+et <span class="math inline">\({\textsf{\color{#006817}{\\\\nbdemetra-3.0.0\\\\}}}\)</span>.</p>
 <p>ℹ️ Remarque : Vous pouvez créer des raccourcis des exécutables si
 vous souhaitez les lancer depuis le bureau ou d’autres dossiers.</p>
 <h2 id="installation-du-cruncher">Installation du cruncher</h2>
@@ -736,23 +733,22 @@ workspace peut alors se faire à partir d’un autre logiciel statistique
 <li><strong>Télécharger</strong> et <strong>Dézipper</strong> le fichier
 <code>jwsacruncher-2.2.4-bin.zip</code> de la dernière version
 <strong>stable</strong> (<strong>Latest</strong> v2.2.4 disponible ici
-<a href="https://github.com/jdemetra/jwsacruncher/releases"><span class="math inline">\(\textsf{\color{#000cff}https://github.com/jdemetra/jwsacruncher/releases}\)</span></a>)</li>
+<a href="https://github.com/jdemetra/jwsacruncher/releases">https://github.com/jdemetra/jwsacruncher/releases</a>)</li>
 </ul>
 <p>Si l’on utilise une version portable de Java (voir section <a href="#install_java">Installation Java</a>), il faut encore modifier
 certains paramètres pour utiliser le cruncher :</p>
 <ul>
 <li>Dans le dossier dézippé, <strong>ouvrir</strong> (par exemple avec
 Notepad++) le fichier <code>jwsacruncher.bat</code> présent dans le
-sous-dossier <span class="math inline">\(\textsf{\color{#006817}
-\backslash bin \backslash }\)</span> (c’est-à-dire sous <span class="math inline">\(\textsf{\color{#006817}jdemetra-cli-2.2.4
-\backslash bin \backslash }\)</span> dans la version 2.2.4 du
-cruncher)</li>
+sous-dossier <span class="math inline">\({\textsf{\color{#006817}{\\\\bin\\\\}}}\)</span>
+(c’est-à-dire sous <span class="math inline">\({\textsf{\color{#006817}{jdemetra-cli-2.2.4\\\\bin\\\\}}}\)</span>
+dans la version 2.2.4 du cruncher)</li>
 <li><strong>Modifier</strong> la valeur de la variable
 <code>JAVACMD</code> de la ligne <strong>71</strong> (actuelle
 <code>JAVACMD=java</code>) par l’adresse vers le fichier
 <code>java.exe</code> de la version portable . Ainsi, si JPortable est
-installé sous <span class="math inline">\(\textsf{\color{#006817}C:
-\backslash Users \backslash Software}\)</span>, la nouvelle ligne est
+installé sous <span class="math inline">\({\textsf{\color{#006817}{C:\\\\Users\\\\Software}}}\)</span>,
+la nouvelle ligne est
 <code>if &quot;%JAVACMD%&quot;==&quot;&quot; set JAVACMD=&quot;C:\\Users\\Software\\Java64\\bin\\java&quot;</code>
 (pour Java 8).</li>
 </ul>
@@ -761,17 +757,17 @@ installé sous <span class="math inline">\(\textsf{\color{#006817}C:
 Ainsi, il n’y a pas besoin d’installer de version portable de Java pour
 utiliser JDemetra+ en version 2.2.4.</p>
 <h2 id="java-8">Java 8</h2>
-<p>Pour installer Java 8, utiliser le lien <a href="https://portableapps.com/apps/utilities/java_portable"><span class="math inline">\(\textsf{\color{#000cff}https://portableapps.com/apps/utilities/java_portable}\)</span></a>.
+<p>Pour installer Java 8, utiliser le lien <a href="https://portableapps.com/apps/utilities/java_portable">https://portableapps.com/apps/utilities/java_portable</a>.
 Si l’on utilise la version 64-bit de JDemetra+, il faut bien installer
 la version jPortable 64-bit (en bas de la page).</p>
 <h2 id="java-17">Java 17</h2>
-<p>Pour installer Java 17, il faut aller à l’adresse <a href="https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html"><span class="math inline">\(\textsf{\color{#000cff}https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html}\)</span></a>.</p>
+<p>Pour installer Java 17, il faut aller à l’adresse <a href="https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html">https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html</a>.</p>
 <ul>
 <li><strong>Télécharger</strong> la version
-<code>Compressed Archive</code> de Windows (<a href="https://download.oracle.com/java/17/archive/jdk-17.0.4.1_windows-x64_bin.zip"><span class="math inline">\(\textsf{\color{#000cff}https://download.oracle.com/java/17/archive/jdk-17.0.4.1_windows-x64_bin.zip}\)</span></a>)</li>
-<li><strong>Dézipper</strong> le dossier <span class="math inline">\(\textsf{\color{#006817}jdk-17.0.6}\)</span> sous
-<span class="math inline">\(\textsf{\color{#006817}C: \backslash Users
-\backslash Software}\)</span> (<em>par exemple</em>)</li>
+<code>Compressed Archive</code> de Windows (<a href="https://download.oracle.com/java/17/archive/jdk-17.0.4.1_windows-x64_bin.zip">https://download.oracle.com/java/17/archive/jdk-17.0.4.1_windows-x64_bin.zip</a>)</li>
+<li><strong>Dézipper</strong> le dossier <span class="math inline">\({\textsf{\color{#006817}{jdk-17.0.6}}}\)</span>
+sous <span class="math inline">\({\textsf{\color{#006817}{C:\\\\Users\\\\Software}}}\)</span>
+(<em>par exemple</em>)</li>
 </ul>
 <p>Après avoir installé Java (en version 8, 17 ou autre), il faut :</p>
 <ul>
@@ -791,25 +787,24 @@ et Rstudio</h1>
 <p>Les fonctionnalités de JDemetra+ sont accessibles sur
 <strong>R</strong> via des packages <strong>R</strong>. Pour utiliser
 <strong>R</strong>, mieux vaut utiliser un IDE donc Rstudio. Tous les
-exécutables à télécharger sont sous <a href="https://posit.co/download/rstudio-desktop/#download"><span class="math inline">\(\textsf{\color{#000cff}https://posit.co/download/rstudio-desktop/#download}\)</span></a>.</p>
+exécutables à télécharger sont sous <a href="https://posit.co/download/rstudio-desktop/#download">https://posit.co/download/rstudio-desktop/#download</a>.</p>
 <h2 id="installation-de-r">Installation de <strong>R</strong></h2>
 <p>Pour installer <strong>R</strong>, il faut :</p>
 <ul>
 <li><strong>Télécharger</strong> le fichier binaire
-<code>R-4.3.1-win.exe</code> sous <a href="https://cran.rstudio.com/bin/windows/base/"><span class="math inline">\(\textsf{\color{#000cff}https://cran.rstudio.com/bin/windows/base/}\)</span></a></li>
+<code>R-4.3.1-win.exe</code> sous <a href="https://cran.rstudio.com/bin/windows/base/">https://cran.rstudio.com/bin/windows/base/</a></li>
 <li><strong>Exécuter</strong> l’exécutable pour paramétrer et installer
 <strong>R</strong>.</li>
 </ul>
 <h2 id="installation-de-rstudio">Installation de Rstudio</h2>
-<p><strong>Télécharger</strong> la dernière version de Rstudio (sous <a href="https://posit.co/download/rstudio-desktop/#download"><span class="math inline">\(\textsf{\color{#000cff}https://posit.co/download/rstudio-desktop/#download}\)</span></a>)
+<p><strong>Télécharger</strong> la dernière version de Rstudio (sous <a href="https://posit.co/download/rstudio-desktop/#download">https://posit.co/download/rstudio-desktop/#download</a>)
 et l’<strong>installer</strong>.</p>
 <p>Si l’installation via le fichier <code>.exe</code> échoue (car
 nécessite des droits supérieurs (administrateur, élévation, …), nous
 allons récupérer une version portable du logiciel. Pour cela :</p>
 <ul>
 <li><strong>Télécharger</strong> et <strong>dézipper</strong> le dossier
-compressé <code>.zip</code> dans un dossier Rstudio (sous <span class="math inline">\(\textsf{\color{#006817}C: \backslash Users
-\backslash Software}\)</span>)</li>
+compressé <code>.zip</code> dans un dossier Rstudio (sous <span class="math inline">\({\textsf{\color{#006817}{C:\\\\Users\\\\Software}}}\)</span>)</li>
 <li><strong>Créer un raccourci</strong> du fichier
 <code>rstudio.exe</code> sur le Bureau</li>
 </ul>
@@ -844,31 +839,31 @@ directement avec la fonction <code>install_github()</code> du package
 <td>RJDemetra</td>
 <td>✔️</td>
 <td>✔️</td>
-<td><a href="https://github.com/jdemetra/rjdemetra"><span class="math inline">\(\textsf{\color{#000cff}https://github.com/jdemetra/rjdemetra}\)</span></a></td>
+<td><a href="https://github.com/jdemetra/rjdemetra">https://github.com/jdemetra/rjdemetra</a></td>
 </tr>
 <tr class="even">
 <td>rjdworkspace</td>
 <td>❌</td>
 <td>✔️</td>
-<td><a href="https://github.com/InseeFrLab/rjdworkspace"><span class="math inline">\(\textsf{\color{#000cff}https://github.com/InseeFrLab/rjdworkspace}\)</span></a></td>
+<td><a href="https://github.com/InseeFrLab/rjdworkspace">https://github.com/InseeFrLab/rjdworkspace</a></td>
 </tr>
 <tr class="odd">
 <td>JDCruncheR</td>
 <td>❌</td>
 <td>✔️</td>
-<td><a href="https://github.com/InseeFr/JDCruncheR"><span class="math inline">\(\textsf{\color{#000cff}https://github.com/InseeFr/JDCruncheR}\)</span></a></td>
+<td><a href="https://github.com/InseeFr/JDCruncheR">https://github.com/InseeFr/JDCruncheR</a></td>
 </tr>
 <tr class="even">
 <td>rjwsacruncher</td>
 <td>✔️</td>
 <td>✔️</td>
-<td><a href="https://github.com/AQLT/rjwsacruncher"><span class="math inline">\(\textsf{\color{#000cff}https://github.com/AQLT/rjwsacruncher}\)</span></a></td>
+<td><a href="https://github.com/AQLT/rjwsacruncher">https://github.com/AQLT/rjwsacruncher</a></td>
 </tr>
 <tr class="odd">
 <td>rjdmarkdown</td>
 <td>✔️</td>
 <td>✔️</td>
-<td><a href="https://github.com/AQLT/rjdmarkdown"><span class="math inline">\(\textsf{\color{#000cff}https://github.com/AQLT/rjdmarkdown}\)</span></a></td>
+<td><a href="https://github.com/AQLT/rjdmarkdown">https://github.com/AQLT/rjdmarkdown</a></td>
 </tr>
 </tbody>
 </table>
@@ -914,7 +909,7 @@ pas sur le CRAN ni sur le nexus d’AUS, il doit être téléchargé au format
 binaire. Pour cela, il faut aller chercher le dossier compressé
 <code>.zip</code> sous GitHub.</p>
 <p>Exemple pour le package <strong>rjd3toolkit</strong>, le
-<code>Source code (tar.gz)</code> se trouve sous <a href="https://github.com/rjdemetra/rjd3toolkit/releases/tag/v3.0.0"><span class="math inline">\(\textsf{\color{#000cff}https://github.com/rjdemetra/rjd3toolkit/releases/tag/v3.0.0}\)</span></a>
+<code>Source code (tar.gz)</code> se trouve sous <a href="https://github.com/rjdemetra/rjd3toolkit/releases/tag/v3.0.0">https://github.com/rjdemetra/rjd3toolkit/releases/tag/v3.0.0</a>
 (<em>release</em> Section). Après l’avoir récupéré, il faut lancer la
 commande d’installation :</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;path/.../rjd3toolkit_3.0.0.tar.gz &quot;</span>,</span>
@@ -1027,13 +1022,13 @@ variable d’environnement :</p>
 (Rstudio renvoie alors une succession d’adresse du type
 <code>C:/WINDOWS/system32;C:/WINDOWS</code>)</p></li>
 <li><p><strong>Copier-coller</strong> ces adresses après
-<code>PATH =</code> et y ajouter les chemins vers les répertoires <span class="math inline">\(\textsf{\color{#006817} \backslash bin \backslash
-}\)</span> (binary) des logiciels nouvellement installés, en les
-séparant par des points-virgules sans espace avant ni après.</p>
-<p>Par exemple, pour l’installation de Rtools, le chemin est <span class="math inline">\(\textsf{\color{#006817}C: \backslash rtools42
-\backslash mingw64 \backslash bin}\)</span> (selon là où a été installé
-Rtools). Il faut donc rajouter <code>C:\\rtools42\\mingw64\\bin</code>
-ou <code>C:/rtools42/mingw64/bin</code> (En <strong>R</strong>,
+<code>PATH =</code> et y ajouter les chemins vers les répertoires <span class="math inline">\({\textsf{\color{#006817}{\\\\bin\\\\}}}\)</span>
+(binary) des logiciels nouvellement installés, en les séparant par des
+points-virgules sans espace avant ni après.</p>
+<p>Par exemple, pour l’installation de Rtools, le chemin est <span class="math inline">\({\textsf{\color{#006817}{C:\\\\rtools42\\\\mingw64\\\\bin}}}\)</span>
+(selon là où a été installé Rtools). Il faut donc rajouter
+<code>C:\\rtools42\\mingw64\\bin</code> ou
+<code>C:/rtools42/mingw64/bin</code> (En <strong>R</strong>,
 <code>\</code> est un caractère spécial, donc il faut remplacer les
 <code>\</code> par <code>/</code> ou par <code>\\</code>). Le chemin
 devient
@@ -1081,7 +1076,7 @@ choisir le bon dossier propre à votre version système.</p>
 </tr>
 </tbody>
 </table>
-<p>Plus d’informations sur la variable <code>PATH</code> via la page <a href="https://java.com/fr/download/help/path.xml"><span class="math inline">\(\textsf{\color{#000cff}https://java.com/fr/download/help/path.xml}\)</span></a>.</p>
+<p>Plus d’informations sur la variable <code>PATH</code> via la page <a href="https://java.com/fr/download/help/path.xml">https://java.com/fr/download/help/path.xml</a>.</p>
 <h1 id="vérifications">Vérifications</h1>
 <p>Pour s’assurer que tout fonctionne bien, on peut faire tourner des
 exemples de code et vérifier qu’il n’y a pas d’erreurs :</p>
@@ -1143,7 +1138,7 @@ versions de Java).</p>
 <li><p>Spécifier que l’on veut utiliser les paramètres locaux :</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;RJDemetra&quot;</span>, <span class="at">type =</span> <span class="st">&quot;source&quot;</span>, <span class="at">INSTALL_opts =</span> <span class="st">&quot;--no-multiarch&quot;</span>)</span></code></pre></div></li>
 </ul>
-<p>ℹ️ Plus d’information : <a href="https://github.com/jdemetra/rjdemetra/wiki/Installation-manual"><span class="math inline">\(\textsf{\color{#000cff}https://github.com/jdemetra/rjdemetra/wiki/Installation-manual}\)</span></a></p>
+<p>ℹ️ Plus d’information : <a href="https://github.com/jdemetra/rjdemetra/wiki/Installation-manual">https://github.com/jdemetra/rjdemetra/wiki/Installation-manual</a></p>
 <h2 id="la-commande-libraryrjdemetra-renvoie-un-message-derreur">La
 commande <code>library(&quot;RJDemetra&quot;)</code> renvoie un message
 d’erreur</h2>
