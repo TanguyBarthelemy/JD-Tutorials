@@ -99,7 +99,7 @@ Il existe une autre version de JDemetra+ qui en est uniquement au stade de **tes
 
 -   [v3.0.2](https://github.com/jdemetra/jdplus-main/releases/tag/v3.0.2) : la nouvelle version de JDemetra+ avec de nouvelles fonctionnalités et une nouvelle interface
 
-La v2.2.4 de JDemetra+ nécessite une version de Java $\geq 8$ alors que la v3.0.0 nécessite une version de Java $\geq 17$ :
+La v2.2.4 de JDemetra+ nécessite une version de Java $\geq 8$ alors que la v3.0.2 nécessite une version de Java $\geq 17$ :
 
 | JDemetra+ version | Java version |
 |-------------------|--------------|
@@ -120,7 +120,7 @@ Deux solutions pour l'installer :
 
 Le logiciel se trouve alors dans le dossier `r colFmt("\\nbdemetra\\bin\\", color = windows_path_color, url = FALSE)`, ce sont les fichiers `nbdemetra.exe` (version 32-bit) et `nbdemetra64.exe` (version 64-bit).
 
-ℹ️ Conseil : si vous comptez utiliser plusieurs version de JDemetra+ (v2.2.4, v3.0.0, ...), vous pouvez renommer les dossiers dézippés en `r colFmt("\\nbdemetra-2.2.4\\", color = windows_path_color, url = FALSE)` et `r colFmt("\\nbdemetra-3.0.0\\", color = windows_path_color, url = FALSE)`.
+ℹ️ Conseil : si vous comptez utiliser plusieurs version de JDemetra+ (v2.2.4, v3.0.2, ...), vous pouvez renommer les dossiers dézippés en `r colFmt("\\nbdemetra-2.2.4\\", color = windows_path_color, url = FALSE)` et `r colFmt("\\nbdemetra-3.0.2\\", color = windows_path_color, url = FALSE)`.
 
 ℹ️ Remarque : Vous pouvez créer des raccourcis des exécutables si vous souhaitez les lancer depuis le bureau ou d'autres dossiers.
 
@@ -161,7 +161,7 @@ Après avoir installé Java (en version 8, 17 ou autre), il faut :
 - **Modifier** les variables d'environnement de `PATH` de Rstudio et de Windows (voir section [Variables d'environnement](#var_env))
 - **Modifier** les cibles de JDemetra+ pour informer de la localisation des nouvelles versions de Java.
 
-Ainsi par exemple, si vous avez installé la version 17 de Java pour utiliser la version 3.0.0 de JDemetra+. Il est nécessaire d'ajouter la localisation de Java 17 au raccourci de l'exécutable grace à l'option `--jdkhome`. La cible du raccourci devient `C:\Users\Software\nbdemetra-3.0.0\bin\nbdemetra64.exe --jdkhome "C:\Users\Software\Java17\jdk17"`
+Ainsi par exemple, si vous avez installé la version 17 de Java pour utiliser la version 3.0.2 de JDemetra+. Il est nécessaire d'ajouter la localisation de Java 17 au raccourci de l'exécutable grace à l'option `--jdkhome`. La cible du raccourci devient `C:\Users\Software\nbdemetra-3.0.2\bin\nbdemetra64.exe --jdkhome "C:\Users\Software\Java17\jdk17"`
 
 ![](../img/set_java_jdemetra.png)
 
@@ -260,10 +260,10 @@ remotes::install_github("AQLT/ggdemetra3")
 
 Pour installer un package sur AUS, il n'est pas possible d'utiliser la fonction `install_github()`{.r}. Ainsi, si le package n'est pas sur le CRAN ni sur le nexus d'AUS, il doit être téléchargé au format binaire. Pour cela, il faut aller chercher le dossier compressé `.zip` sous GitHub.
 
-Exemple pour le package **rjd3toolkit**, le `Source code (tar.gz)` se trouve sous `r colFmt("https://github.com/rjdemetra/rjd3toolkit/releases/tag/v3.0.0", color = html_color, url = TRUE)` (*release* Section). Après l'avoir récupéré, il faut lancer la commande d'installation :
+Exemple pour le package **rjd3toolkit**, le `Source code (tar.gz)` se trouve sous `r colFmt("https://github.com/rjdemetra/rjd3toolkit/releases/tag/v3.0.2", color = html_color, url = TRUE)` (*release* Section). Après l'avoir récupéré, il faut lancer la commande d'installation :
 
 ```{r, echo = TRUE, eval = FALSE}
-install.packages("path/.../rjd3toolkit_3.0.0.tar.gz ",
+install.packages("path/.../rjd3toolkit_3.0.2.tar.gz ",
                  repos = NULL, type = "binary")
 ```
 

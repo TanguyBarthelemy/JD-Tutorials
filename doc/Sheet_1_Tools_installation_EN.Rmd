@@ -121,7 +121,7 @@ There are two possibilities for installing:
 
 The Software is in the folder `r colFmt("\\nbdemetra\\bin\\", color = windows_path_color, url = FALSE)`, these are the file `nbdemetra.exe` (version 32-bit) and `nbdemetra64.exe` (version 64-bit).
 
-ℹ Advice: If you want to use several versions of JDemetra+ (v2.2.4, v3.0.0, ...), you can rename the unzipped folder in `r colFmt("\\nbdemetra-2.2.4\\", color = windows_path_color, url = FALSE)` and `r colFmt("\\nbdemetra-3.0.0\\", color = windows_path_color, url = FALSE)`.
+ℹ Advice: If you want to use several versions of JDemetra+ (v2.2.4, v3.0.2, ...), you can rename the unzipped folder in `r colFmt("\\nbdemetra-2.2.4\\", color = windows_path_color, url = FALSE)` and `r colFmt("\\nbdemetra-3.0.2\\", color = windows_path_color, url = FALSE)`.
 
 ℹ️ Remark: You can create shortcuts to the executable files if you want to launch them from another folder (Desktop, project folder...).
 
@@ -160,7 +160,7 @@ After a Java installation (in version 8, 17 or other), you need to:
 - **Modify** the environment variable `PATH` of Rstudio and of Windows (See section [Environment variables](#var_env))
 - **Modify** the targets of JDemetra+ to set the localisation of the new Java versions.
 
-For example, if you installed Java version 17 in order to use the JDemetra+ version 3.0.0. You should add the localisation of Java 17 to the shortcut of the executable using the option `--jdkhome`. The target of the shortcut becomes `C:\Users\Software\nbdemetra-3.0.0\bin\nbdemetra64.exe --jdkhome "C:\Users\Software\Java17\jdk17"`
+For example, if you installed Java version 17 in order to use the JDemetra+ version 3.0.2. You should add the localisation of Java 17 to the shortcut of the executable using the option `--jdkhome`. The target of the shortcut becomes `C:\Users\Software\nbdemetra-3.0.2\bin\nbdemetra64.exe --jdkhome "C:\Users\Software\Java17\jdk17"`
 
 ![](../img/set_java_jdemetra.png)
 
@@ -259,10 +259,10 @@ remotes::install_github("AQLT/ggdemetra3")
 
 To install a package on AUS, you can't use the function `install_github()`{.r}. Therefore, if the package is not on CRAN and not on AUS, it must be downloaded at the binary format (`.zip`). For this you have to look for the compressed folder `.zip` under GitHub.
 
-For the package **rjd3toolkit**, you need to search under `r colFmt("https://github.com/rjdemetra/rjd3toolkit/releases/tag/v3.0.0", color = html_color, url = TRUE)` (*release* Section) then launch the installation code:
+For the package **rjd3toolkit**, you need to search under `r colFmt("https://github.com/rjdemetra/rjd3toolkit/releases/tag/v3.0.2", color = html_color, url = TRUE)` (*release* Section) then launch the installation code:
 
 ```{r, echo = TRUE, eval = FALSE}
-install.packages("path/.../rjd3toolkit_3.0.0.tar.gz ",
+install.packages("path/.../rjd3toolkit_3.0.2.tar.gz ",
                  repos = NULL, type = "binary")
 ```
 
