@@ -29,29 +29,28 @@ knitr::opts_chunk$set(echo = TRUE)
 html_color <- "#000cff"
 windows_path_color <- "#006817"
 
-colFmt <- function(x, color, url = TRUE) {
+color_format <- function(x, color, url = TRUE) {
     color_name <- deparse(substitute(color))
-    outputFormat <- knitr::opts_knit$get("rmarkdown.pandoc.to")
-    
+    output_format <- knitr::opts_knit$get("rmarkdown.pandoc.to")
+
     x <- x |> gsub(pattern = "\\", replacement = "\\\\", fixed = TRUE)
-    
-    if (outputFormat == 'latex') {
+
+    if (output_format == "latex") {
         x <- x |> gsub(pattern = "#", replacement = "\\#", fixed = TRUE)
         ret <- paste("\\textcolor{", color_name, ifelse(url, "}{\\url{", "}{\\nolinkurl{"), x, ifelse(url, "}}", "}}"), sep = "")
-    } else if (outputFormat == 'html') {
+    } else if (output_format == "html") {
         ret <- paste("<font color='", color, "'>", x, "</font>", sep = "")
-    } else if (outputFormat == "gfm+tex_math_dollars-yaml_metadata_block") {
+    } else if (output_format == "gfm+tex_math_dollars-yaml_metadata_block") {
         if (url) {
             ret <- paste("[", x, "](", x, ")", sep = "")
         } else {
-            # ret <- x |> gsub(pattern = "\\\\", replacement = " \\backslash ", fixed = TRUE)
             ret <- x |> gsub(pattern = "\\", replacement = "\\\\", fixed = TRUE)
             ret <- paste("${\\textsf{\\color{", color, "}{", ret, "}}}$", sep = "")
         }
     } else {
         ret <- x
     }
-    
+
     return(ret)
 }
 ```
@@ -80,7 +79,7 @@ Thus, it is helpful to install the following tools:
 
 # Preliminary {-}
 
-On the computers without administrator rights (*professional computer, for example*), it is recommended to create a folder **Software** under `r colFmt("C:\\Users\\...\\Software", windows_path_color, url = FALSE)` or directly under `r colFmt("C:\\Users\\Software", windows_path_color, url = FALSE)` where all software will be installed.
+On the computers without administrator rights (*professional computer, for example*), it is recommended to create a folder **Software** under `r color_format("C:\\Users\\...\\Software", windows_path_color, url = FALSE)` or directly under `r color_format("C:\\Users\\Software", windows_path_color, url = FALSE)` where all software will be installed.
 
 ⚠️ Warning: when we specify an **absolute** path for a software (JDemetra+, Java, ...) in a program, a shortcut, a variable, ..., it must be modified each time any root repository is moved.
 
@@ -90,7 +89,7 @@ JDemetra+ is a collection of Java programs used for time series analysis and mor
 
 ## Version of JDemetra+ and dependencies
 
-JDemetra+ is downloadable from the [github link](https://github.com/jdemetra/jdemetra-app/releases) of the application: `r colFmt("https://github.com/jdemetra/jdemetra-app/releases", color = html_color, url = TRUE)`.
+JDemetra+ is downloadable from the [github link](https://github.com/jdemetra/jdemetra-app/releases) of the application: `r color_format("https://github.com/jdemetra/jdemetra-app/releases", color = html_color, url = TRUE)`.
 
 The last release ([v2.2.4](https://github.com/jdemetra/jdemetra-app/releases/tag/v2.2.3)) dates from January 31, 2023. It is the last **stable** version of JDemetra+. **This version should be downloaded and must be used in production.**
 
@@ -117,9 +116,9 @@ There are two possibilities for installing:
 
 ⚠️ Warning: for the second option, you need to **download** the compressed folder `jdemetra+-2.2.4-bin.zip` (for the version 2.2.4 for example) and **not** the folder `Source code (zip)`.
 
-The Software is in the folder `r colFmt("\\nbdemetra\\bin\\", windows_path_color, url = FALSE)`, these are the file `nbdemetra.exe` (version 32-bit) and `nbdemetra64.exe` (version 64-bit).
+The Software is in the folder `r color_format("\\nbdemetra\\bin\\", windows_path_color, url = FALSE)`, these are the file `nbdemetra.exe` (version 32-bit) and `nbdemetra64.exe` (version 64-bit).
 
-ℹ Advice: If you want to use several versions of JDemetra+ (v2.2.4, v3.0.2, ...), you can rename the unzipped folder in `r colFmt("\\nbdemetra-2.2.4\\", windows_path_color, url = FALSE)` and `r colFmt("\\nbdemetra-3.0.2\\", windows_path_color, url = FALSE)`.
+ℹ Advice: If you want to use several versions of JDemetra+ (v2.2.4, v3.0.2, ...), you can rename the unzipped folder in `r color_format("\\nbdemetra-2.2.4\\", windows_path_color, url = FALSE)` and `r color_format("\\nbdemetra-3.0.2\\", windows_path_color, url = FALSE)`.
 
 ℹ️ Remark: You can create shortcuts to the executable files if you want to launch them from another folder (Desktop, project folder...).
 
@@ -129,12 +128,12 @@ The cruncher ([**JWSACruncher**](https://github.com/jdemetra/jwsacruncher)) is a
 
 To use the cruncher, you have to:
 
--   **Download** and **unzip** the file from the **latest stable** version v2.2.4 here `r colFmt("https://github.com/jdemetra/jwsacruncher/releases", color = html_color, url = TRUE)`
+-   **Download** and **unzip** the file from the **latest stable** version v2.2.4 here `r color_format("https://github.com/jdemetra/jwsacruncher/releases", color = html_color, url = TRUE)`
 
 If you want to install and use a portable Java version (See section [Java installation](#install_java)), you have to modify some parameters to use the cruncher:
 
--   In the unzipped folder, **open** (for example with Notepad++) the file `jwsacruncher.bat` present in the subfolder `r colFmt("\\bin\\", windows_path_color, url = FALSE)` (that is under `r colFmt("jdemetra-cli-2.2.4\\bin\\", windows_path_color, url = FALSE)` in the version 2.2.3 of the cruncher)
--   **Modify** the value of the variable `JAVACMD` at the line **71** (currently `JAVACMD=java`) by the address towards the file `java.exe` of the portable version. Then, if JPortable is installed under `r colFmt("C:\\Users\\Software", windows_path_color, url = FALSE)`, the new line is `if "%JAVACMD%"=="" set JAVACMD="C:\\Users\\Software\\Java64\\bin\\java"` (for Java 8).
+-   In the unzipped folder, **open** (for example with Notepad++) the file `jwsacruncher.bat` present in the subfolder `r color_format("\\bin\\", windows_path_color, url = FALSE)` (that is under `r color_format("jdemetra-cli-2.2.4\\bin\\", windows_path_color, url = FALSE)` in the version 2.2.3 of the cruncher)
+-   **Modify** the value of the variable `JAVACMD` at the line **71** (currently `JAVACMD=java`) by the address towards the file `java.exe` of the portable version. Then, if JPortable is installed under `r color_format("C:\\Users\\Software", windows_path_color, url = FALSE)`, the new line is `if "%JAVACMD%"=="" set JAVACMD="C:\\Users\\Software\\Java64\\bin\\java"` (for Java 8).
 
 
 # Installation of Java {#install_java}
@@ -143,7 +142,7 @@ If you want to install and use a portable Java version (See section [Java instal
 
 ## Java 8
 
-To install Java 8, use the link `r colFmt("https://portableapps.com/apps/utilities/java_portable", color = html_color, url = TRUE)`. If you use the version 64-bit of JDemetra+, you should install the version jPortable 64-bit (at the bottom of the page).
+To install Java 8, use the link `r color_format("https://portableapps.com/apps/utilities/java_portable", color = html_color, url = TRUE)`. If you use the version 64-bit of JDemetra+, you should install the version jPortable 64-bit (at the bottom of the page).
 
 
 ## Java 17

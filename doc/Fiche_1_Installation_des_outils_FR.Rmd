@@ -11,6 +11,7 @@ output:
     number_sections: TRUE
     highlight: "arrow"
     latex_engine: xelatex
+    keep_tex: true
   html_document:
     df_print: paged
     number_sections: TRUE
@@ -29,29 +30,28 @@ knitr::opts_chunk$set(echo = TRUE)
 html_color <- "#000cff"
 windows_path_color <- "#006817"
 
-colFmt <- function(x, color, url = TRUE) {
+color_format <- function(x, color, url = TRUE) {
     color_name <- deparse(substitute(color))
-    outputFormat <- knitr::opts_knit$get("rmarkdown.pandoc.to")
-    
+    output_format <- knitr::opts_knit$get("rmarkdown.pandoc.to")
+
     x <- x |> gsub(pattern = "\\", replacement = "\\\\", fixed = TRUE)
-    
-    if (outputFormat == 'latex') {
+
+    if (output_format == "latex") {
         x <- x |> gsub(pattern = "#", replacement = "\\#", fixed = TRUE)
         ret <- paste("\\textcolor{", color_name, ifelse(url, "}{\\url{", "}{\\nolinkurl{"), x, ifelse(url, "}}", "}}"), sep = "")
-    } else if (outputFormat == 'html') {
+    } else if (output_format == "html") {
         ret <- paste("<font color='", color, "'>", x, "</font>", sep = "")
-    } else if (outputFormat == "gfm+tex_math_dollars-yaml_metadata_block") {
+    } else if (output_format == "gfm+tex_math_dollars-yaml_metadata_block") {
         if (url) {
             ret <- paste("[", x, "](", x, ")", sep = "")
         } else {
-            # ret <- x |> gsub(pattern = "\\\\", replacement = " \\backslash ", fixed = TRUE)
             ret <- x |> gsub(pattern = "\\", replacement = "\\\\", fixed = TRUE)
             ret <- paste("${\\textsf{\\color{", color, "}{", ret, "}}}$", sep = "")
         }
     } else {
         ret <- x
     }
-    
+
     return(ret)
 }
 ```
@@ -79,7 +79,7 @@ Les outils d'aide à la désaisonnalisation sont :
 
 # Préalable  {-}
 
-Sur les ordinateurs sans droits d'administrateur (*postes professionnels par exemple*), il est conseillé de créer un dossier **Software** sous `r colFmt("C:\\Users\\...\\Software", color = windows_path_color, url = FALSE)` ou directement sous `r colFmt("C:\\Users\\Software", color = windows_path_color, url = FALSE)` dans lequel tous les logiciels seront installés.
+Sur les ordinateurs sans droits d'administrateur (*postes professionnels par exemple*), il est conseillé de créer un dossier **Software** sous `r color_format("C:\\Users\\...\\Software", color = windows_path_color, url = FALSE)` ou directement sous `r color_format("C:\\Users\\Software", color = windows_path_color, url = FALSE)` dans lequel tous les logiciels seront installés.
 
 ⚠️ Attention : lorsqu'on précise un chemin **absolu** de logiciel (JDemetra+, Java, **R**, ...) dans un programme, un raccourci, une variable, ..., il doit être modifié à chaque fois qu’un des répertoires racines du logiciel est déplacé.
 
@@ -90,7 +90,7 @@ JDemetra+ est une galerie de programmes Java servant à l'étude des séries tem
 
 ## Version de JDemetra+ et dépendances
 
-JDemetra+ est téléchargeable depuis le lien [github](https://github.com/jdemetra/jdemetra-app/releases) de l'application : `r colFmt("https://github.com/jdemetra/jdemetra-app/releases", color = html_color, url = TRUE)`.
+JDemetra+ est téléchargeable depuis le lien [github](https://github.com/jdemetra/jdemetra-app/releases) de l'application : `r color_format("https://github.com/jdemetra/jdemetra-app/releases", color = html_color, url = TRUE)`.
 
 La dernière release ([v2.2.4](https://github.com/jdemetra/jdemetra-app/releases/tag/v2.2.4)) date du 31 janvier 2023. C'est la dernière version **stable** de JDemetra+. **C'est cette version qu'il convient de télécharger et d'utiliser en production.**
 
@@ -118,9 +118,9 @@ Deux solutions pour l'installer :
 
 ⚠️ Attention : pour la seconde option il faut **télécharger** le dossier compressé `jdemetra+-2.2.4-bin.zip` (pour la version 2.2.4 par exemple) et **non** le dossier `Source code (zip)`.
 
-Le logiciel se trouve alors dans le dossier `r colFmt("\\nbdemetra\\bin\\", color = windows_path_color, url = FALSE)`, ce sont les fichiers `nbdemetra.exe` (version 32-bit) et `nbdemetra64.exe` (version 64-bit).
+Le logiciel se trouve alors dans le dossier `r color_format("\\nbdemetra\\bin\\", color = windows_path_color, url = FALSE)`, ce sont les fichiers `nbdemetra.exe` (version 32-bit) et `nbdemetra64.exe` (version 64-bit).
 
-ℹ️ Conseil : si vous comptez utiliser plusieurs version de JDemetra+ (v2.2.4, v3.0.2, ...), vous pouvez renommer les dossiers dézippés en `r colFmt("\\nbdemetra-2.2.4\\", color = windows_path_color, url = FALSE)` et `r colFmt("\\nbdemetra-3.0.2\\", color = windows_path_color, url = FALSE)`.
+ℹ️ Conseil : si vous comptez utiliser plusieurs version de JDemetra+ (v2.2.4, v3.0.2, ...), vous pouvez renommer les dossiers dézippés en `r color_format("\\nbdemetra-2.2.4\\", color = windows_path_color, url = FALSE)` et `r color_format("\\nbdemetra-3.0.2\\", color = windows_path_color, url = FALSE)`.
 
 ℹ️ Remarque : Vous pouvez créer des raccourcis des exécutables si vous souhaitez les lancer depuis le bureau ou d'autres dossiers.
 
@@ -131,12 +131,12 @@ Le cruncher ([**JWSACruncher**](https://github.com/jdemetra/jwsacruncher)) est u
 
 Pour utiliser le cruncher, il faut:
 
--   **Télécharger** et **Dézipper** le fichier `jwsacruncher-2.2.4-bin.zip` de la dernière version **stable** (**Latest** v2.2.4 disponible ici `r colFmt("https://github.com/jdemetra/jwsacruncher/releases", color = html_color, url = TRUE)`)
+-   **Télécharger** et **Dézipper** le fichier `jwsacruncher-2.2.4-bin.zip` de la dernière version **stable** (**Latest** v2.2.4 disponible ici `r color_format("https://github.com/jdemetra/jwsacruncher/releases", color = html_color, url = TRUE)`)
 
 Si l’on utilise une version portable de Java (voir section [Installation Java](#install_java)), il faut encore modifier certains paramètres pour utiliser le cruncher :
 
--   Dans le dossier dézippé, **ouvrir** (par exemple avec Notepad++) le fichier `jwsacruncher.bat` présent dans le sous-dossier `r colFmt("\\bin\\", color = windows_path_color, url = FALSE)` (c'est-à-dire sous `r colFmt("jdemetra-cli-2.2.4\\bin\\", color = windows_path_color, url = FALSE)` dans la version 2.2.4 du cruncher)
--   **Modifier** la valeur de la variable `JAVACMD` de la ligne **71** (actuelle `JAVACMD=java`) par l’adresse vers le fichier `java.exe` de la version portable . Ainsi, si JPortable est installé sous `r colFmt("C:\\Users\\Software", color = windows_path_color, url = FALSE)`, la nouvelle ligne est `if "%JAVACMD%"=="" set JAVACMD="C:\\Users\\Software\\Java64\\bin\\java"` (pour Java 8).
+-   Dans le dossier dézippé, **ouvrir** (par exemple avec Notepad++) le fichier `jwsacruncher.bat` présent dans le sous-dossier `r color_format("\\bin\\", color = windows_path_color, url = FALSE)` (c'est-à-dire sous `r color_format("jdemetra-cli-2.2.4\\bin\\", color = windows_path_color, url = FALSE)` dans la version 2.2.4 du cruncher)
+-   **Modifier** la valeur de la variable `JAVACMD` de la ligne **71** (actuelle `JAVACMD=java`) par l’adresse vers le fichier `java.exe` de la version portable . Ainsi, si JPortable est installé sous `r color_format("C:\\Users\\Software", color = windows_path_color, url = FALSE)`, la nouvelle ligne est `if "%JAVACMD%"=="" set JAVACMD="C:\\Users\\Software\\Java64\\bin\\java"` (pour Java 8).
 
 
 # Installation de Java {#install_java}
@@ -145,7 +145,7 @@ Si l’on utilise une version portable de Java (voir section [Installation Java]
 
 ## Java 8
 
-Pour installer Java 8, utiliser le lien `r colFmt("https://portableapps.com/apps/utilities/java_portable", color = html_color, url = TRUE)`. Si l’on utilise la version 64-bit de
+Pour installer Java 8, utiliser le lien `r color_format("https://portableapps.com/apps/utilities/java_portable", color = html_color, url = TRUE)`. Si l’on utilise la version 64-bit de
 JDemetra+, il faut bien installer la version jPortable 64-bit (en bas de la page).
 
 
@@ -159,10 +159,10 @@ En revanche, pour utiliser les packages R en version 3 sans télécharger la GUI
 
 ### Installation
 
-Pour installer Java 17, il faut aller à l'adresse `r colFmt("https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html", color = html_color, url = TRUE)`.
+Pour installer Java 17, il faut aller à l'adresse `r color_format("https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html", color = html_color, url = TRUE)`.
 
--   **Télécharger** la version `Compressed Archive` de Windows (`r colFmt("https://download.oracle.com/java/17/archive/jdk-17.0.4.1_windows-x64_bin.zip", color = html_color, url = TRUE)`)
--   **Dézipper** le dossier `r colFmt("jdk-17.0.6", color = windows_path_color, url = FALSE)` sous `r colFmt("C:\\Users\\Software", color = windows_path_color, url = FALSE)` (*par exemple*)
+-   **Télécharger** la version `Compressed Archive` de Windows (`r color_format("https://download.oracle.com/java/17/archive/jdk-17.0.4.1_windows-x64_bin.zip", color = html_color, url = TRUE)`)
+-   **Dézipper** le dossier `r color_format("jdk-17.0.6", color = windows_path_color, url = FALSE)` sous `r color_format("C:\\Users\\Software", color = windows_path_color, url = FALSE)` (*par exemple*)
 
 Après avoir installé Java (en version 8, 17 ou autre), il faut :
 
@@ -172,24 +172,24 @@ Après avoir installé Java (en version 8, 17 ou autre), il faut :
 # Installation de **R** et Rstudio
 
 Les fonctionnalités de JDemetra+ sont accessibles sur **R** via des packages **R**.
-Pour utiliser **R**, mieux vaut utiliser un IDE donc Rstudio. Tous les exécutables à télécharger sont sous `r colFmt("https://posit.co/download/rstudio-desktop/#download", color = html_color, url = TRUE)`.
+Pour utiliser **R**, mieux vaut utiliser un IDE donc Rstudio. Tous les exécutables à télécharger sont sous `r color_format("https://posit.co/download/rstudio-desktop/#download", color = html_color, url = TRUE)`.
 
 
 ## Installation de **R**
 
 Pour installer **R**, il faut :
 
--   **Télécharger** le fichier binaire `R-4.3.1-win.exe` sous `r colFmt("https://cran.rstudio.com/bin/windows/base/", color = html_color, url = TRUE)`
+-   **Télécharger** le fichier binaire `R-4.3.1-win.exe` sous `r color_format("https://cran.rstudio.com/bin/windows/base/", color = html_color, url = TRUE)`
 -   **Exécuter** l'exécutable pour paramétrer et installer **R**.
 
 
 ## Installation de Rstudio
 
-**Télécharger** la dernière version de Rstudio (sous `r colFmt("https://posit.co/download/rstudio-desktop/#download", color = html_color, url = TRUE)`) et l'**installer**.
+**Télécharger** la dernière version de Rstudio (sous `r color_format("https://posit.co/download/rstudio-desktop/#download", color = html_color, url = TRUE)`) et l'**installer**.
 
 Si l'installation via le fichier `.exe` échoue (car nécessite des droits supérieurs (administrateur, élévation, ...), nous allons récupérer une version portable du logiciel. Pour cela :
 
-- **Télécharger** et **dézipper** le dossier compressé `.zip` dans un dossier Rstudio (sous `r colFmt("C:\\Users\\Software", color = windows_path_color, url = FALSE)`) 
+- **Télécharger** et **dézipper** le dossier compressé `.zip` dans un dossier Rstudio (sous `r color_format("C:\\Users\\Software", color = windows_path_color, url = FALSE)`) 
 - **Créer un raccourci** du fichier `rstudio.exe` sur le Bureau
 
 
@@ -208,11 +208,11 @@ Les packages en version 2 sont les suivants :
 
 | Nom | Disponible sur le CRAN | Disponible sur AUS | Lien Github |
 |---|--|--|-----|
-|     RJDemetra | ✔️ | ✔️ |      `r colFmt("https://github.com/jdemetra/rjdemetra", color = html_color, url = TRUE)` |
-|  rjdworkspace | ❌ | ✔️ | `r colFmt("https://github.com/InseeFrLab/rjdworkspace", color = html_color, url = TRUE)` |
-|    JDCruncheR | ❌ | ✔️ |      `r colFmt("https://github.com/InseeFr/JDCruncheR", color = html_color, url = TRUE)` |
-| rjwsacruncher | ✔️ | ✔️ |      `r colFmt("https://github.com/AQLT/rjwsacruncher", color = html_color, url = TRUE)` |
-|   rjdmarkdown | ✔️ | ✔️ |        `r colFmt("https://github.com/AQLT/rjdmarkdown", color = html_color, url = TRUE)` |
+|     RJDemetra | ✔️ | ✔️ |      `r color_format("https://github.com/jdemetra/rjdemetra", color = html_color, url = TRUE)` |
+|  rjdworkspace | ❌ | ✔️ | `r color_format("https://github.com/InseeFrLab/rjdworkspace", color = html_color, url = TRUE)` |
+|    JDCruncheR | ❌ | ✔️ |      `r color_format("https://github.com/InseeFr/JDCruncheR", color = html_color, url = TRUE)` |
+| rjwsacruncher | ✔️ | ✔️ |      `r color_format("https://github.com/AQLT/rjwsacruncher", color = html_color, url = TRUE)` |
+|   rjdmarkdown | ✔️ | ✔️ |        `r color_format("https://github.com/AQLT/rjdmarkdown", color = html_color, url = TRUE)` |
 
 Le code d'installation des packages est ci-dessous :
 
@@ -263,7 +263,7 @@ remotes::install_github("AQLT/ggdemetra3")
 
 Pour installer un package sur AUS, il n'est pas possible d'utiliser la fonction `install_github()`{.r}. Ainsi, si le package n'est pas sur le CRAN ni sur le nexus d'AUS, il doit être téléchargé au format binaire. Pour cela, il faut aller chercher le dossier compressé `.zip` sous GitHub.
 
-Exemple pour le package **rjd3toolkit**, le `Source code (tar.gz)` se trouve sous `r colFmt("https://github.com/rjdemetra/rjd3toolkit/releases/tag/v3.0.2", color = html_color, url = TRUE)` (*release* Section). Après l'avoir récupéré, il faut lancer la commande d'installation :
+Exemple pour le package **rjd3toolkit**, le `Source code (tar.gz)` se trouve sous `r color_format("https://github.com/rjdemetra/rjd3toolkit/releases/tag/v3.0.2", color = html_color, url = TRUE)` (*release* Section). Après l'avoir récupéré, il faut lancer la commande d'installation :
 
 ```{r, echo = TRUE, eval = FALSE}
 install.packages("path/.../rjd3toolkit_3.0.2.tar.gz ",
@@ -354,9 +354,9 @@ Lorsque vous installer un nouveau logiciel *(exemple JDemetra+, Rtools, Java...)
 
 - **Récupérer** l'actuelle valeur de la variable `PATH` via la commande `Sys.getenv("PATH")`{.r} (Rstudio renvoie alors une succession d'adresse du type `C:/WINDOWS/system32;C:/WINDOWS`)
 
-- **Copier-coller** ces adresses après `PATH = ` et y ajouter les chemins vers les répertoires `r colFmt("\\bin\\", color = windows_path_color, url = FALSE)` (binary) des logiciels nouvellement installés, en les séparant par des points-virgules sans espace avant ni après.
+- **Copier-coller** ces adresses après `PATH = ` et y ajouter les chemins vers les répertoires `r color_format("\\bin\\", color = windows_path_color, url = FALSE)` (binary) des logiciels nouvellement installés, en les séparant par des points-virgules sans espace avant ni après.
 
-    Par exemple, pour l'installation de Rtools, le chemin est `r colFmt("C:\\rtools42\\mingw64\\bin", color = windows_path_color, url = FALSE)` (selon là où a été installé Rtools). Il faut donc rajouter `C:\\rtools42\\mingw64\\bin` ou `C:/rtools42/mingw64/bin` (En **R**, `\` est un caractère spécial, donc il faut remplacer les `\` par `/` ou par `\\`). Le chemin devient `C:/WINDOWS/system32;C:/WINDOWS;C:/rtools42/mingw64/bin`.
+    Par exemple, pour l'installation de Rtools, le chemin est `r color_format("C:\\rtools42\\mingw64\\bin", color = windows_path_color, url = FALSE)` (selon là où a été installé Rtools). Il faut donc rajouter `C:\\rtools42\\mingw64\\bin` ou `C:/rtools42/mingw64/bin` (En **R**, `\` est un caractère spécial, donc il faut remplacer les `\` par `/` ou par `\\`). Le chemin devient `C:/WINDOWS/system32;C:/WINDOWS;C:/rtools42/mingw64/bin`.
 
 - **Modifier** la variable avec la fonction `Sys.setenv()`{.r}. 
 
@@ -390,7 +390,7 @@ Selon le résultat, la version est 32 bits ou 64 bits :
 |            | x86_32      |
 +------------+-------------+
 
-Plus d'informations sur la variable `PATH` via la page `r colFmt("https://java.com/fr/download/help/path.xml", color = html_color, url = TRUE)`.
+Plus d'informations sur la variable `PATH` via la page `r color_format("https://java.com/fr/download/help/path.xml", color = html_color, url = TRUE)`.
 
 
 # Vérifications
@@ -472,7 +472,7 @@ Deux solutions :
     install.packages("RJDemetra", type = "source", INSTALL_opts = "--no-multiarch")
     ```
 
-ℹ️ Plus d'information : `r colFmt("https://github.com/jdemetra/rjdemetra/wiki/Installation-manual", color = html_color, url = TRUE)`
+ℹ️ Plus d'information : `r color_format("https://github.com/jdemetra/rjdemetra/wiki/Installation-manual", color = html_color, url = TRUE)`
 
 
 ## La commande `library("RJDemetra")`{.r} renvoie un message d’erreur
