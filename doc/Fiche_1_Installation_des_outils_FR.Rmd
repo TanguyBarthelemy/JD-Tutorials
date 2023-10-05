@@ -227,9 +227,9 @@ install.packages("rjdmarkdown")
 remotes::install_github("InseeFrLab/rjdworkspace")
 remotes::install_github("InseeFr/JDCruncheR")
 
-# Sous AUS
-# install.packages("rjdworkspace")
-# install.packages("JDCruncheR")
+# Sous AUS et sur les ordinateurs Insee
+install.packages("rjdworkspace", repos = "https://nexus.insee.fr/repository/r-public")
+install.packages("JDCruncheR", repos = "https://nexus.insee.fr/repository/r-public")
 ```
 
 
