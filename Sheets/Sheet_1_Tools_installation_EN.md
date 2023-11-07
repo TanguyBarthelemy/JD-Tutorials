@@ -50,16 +50,16 @@ production.**
 There is one more version of JDemetra+ which are only at a **test**
 stage:
 
-- [v3.0.2](https://github.com/jdemetra/jdplus-main/releases/tag/v3.0.2):
+- [v3.1.1](https://github.com/jdemetra/jdplus-main/releases/tag/v3.1.1):
   the new JDemetra+ version with new features and a new GUI
 
-JDemetra+ v2.2.4 require Java version $\geq 8$ while v3.0.2 requires
+JDemetra+ v2.2.4 require Java version $\geq 8$ while v3.1.1 requires
 Java version $\geq 17$:
 
 | JDemetra+ version | Java version |
 |-------------------|--------------|
 | v2.2.4            | $\geq 8$     |
-| v3.0.2            | $\geq 17$    |
+| v3.1.1            | $\geq 17$    |
 
 In the following procedure, the installation processes of this 2
 versions are the same. You just have to repeat them for each version you
@@ -84,9 +84,9 @@ file `nbdemetra.exe` (version 32-bit) and `nbdemetra64.exe` (version
 64-bit).
 
 ℹ Advice: If you want to use several versions of JDemetra+ (v2.2.4,
-v3.0.2, …), you can rename the unzipped folder in
+v3.1.1, …), you can rename the unzipped folder in
 ${\textsf{\color{#006817}{\\\\nbdemetra-2.2.4\\\\}}}$ and
-${\textsf{\color{#006817}{\\\\nbdemetra-3.0.2\\\\}}}$.
+${\textsf{\color{#006817}{\\\\nbdemetra-3.1.1\\\\}}}$.
 
 ℹ️ Remark: You can create shortcuts to the executable files if you want
 to launch them from another folder (Desktop, project folder…).
@@ -137,13 +137,13 @@ version 64-bit of JDemetra+, you should install the version jPortable
 
 ### Remark
 
-The version 3.0.2 of JDemetra+ contains a JDemetra+ version 3.0.2
+The version 3.1.1 of JDemetra+ contains a JDemetra+ version 3.1.1
 contains a jdk 17 (java 17 version) packaged in
-[.zip](https://github.com/jdemetra/jdplus-main/releases/tag/v3.0.2). So
+[.zip](https://github.com/jdemetra/jdplus-main/releases/tag/v3.1.1). So
 to use the interface, it is not necessary to install Java 17.
 
 On the other hand, to use R packages in version 3 without downloading
-the GUI (in version 3.0.2), it is mandatory to have java 17 and
+the GUI (in version 3.1.1), it is mandatory to have java 17 and
 therefore to install it yourself.
 
 ### Installation
@@ -267,11 +267,11 @@ AUS, it must be downloaded at the binary format (`.zip`). For this you
 have to look for the compressed folder `.zip` under GitHub.
 
 For the package **rjd3toolkit**, you need to search under
-<https://github.com/rjdemetra/rjd3toolkit/releases/tag/v3.0.2>
+<https://github.com/rjdemetra/rjd3toolkit/releases/tag/v3.1.0>
 (*release* Section) then launch the installation code:
 
 ``` r
-install.packages("path/.../rjd3toolkit_3.0.2.tar.gz ",
+install.packages("path/.../rjd3toolkit_3.1.0.tar.gz ",
                  repos = NULL, type = "binary")
 ```
 
