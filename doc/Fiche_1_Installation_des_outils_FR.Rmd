@@ -179,7 +179,7 @@ Pour utiliser **R**, mieux vaut utiliser un IDE donc Rstudio. Tous les exécutab
 
 Pour installer **R**, il faut :
 
--   **Télécharger** le fichier binaire `R-4.3.1-win.exe` sous `r color_format("https://cran.rstudio.com/bin/windows/base/", color = html_color, url = TRUE)`
+-   **Télécharger** le fichier binaire `R-4.3.2-win.exe` sous `r color_format("https://cran.rstudio.com/bin/windows/base/", color = html_color, url = TRUE)`
 -   **Exécuter** l'exécutable pour paramétrer et installer **R**.
 
 
