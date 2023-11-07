@@ -175,7 +175,7 @@ Rstudio. Tous les exécutables à télécharger sont sous
 
 Pour installer **R**, il faut :
 
-- **Télécharger** le fichier binaire `R-4.3.1-win.exe` sous
+- **Télécharger** le fichier binaire `R-4.3.2-win.exe` sous
   <https://cran.rstudio.com/bin/windows/base/>
 - **Exécuter** l’exécutable pour paramétrer et installer **R**.
 

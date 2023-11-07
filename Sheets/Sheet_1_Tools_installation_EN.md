@@ -172,7 +172,7 @@ to download are under
 
 To install **R**, you should:
 
-- **Download** the binary file `R-4.3.1-win.exe` under
+- **Download** the binary file `R-4.3.2-win.exe` under
   <https://cran.rstudio.com/bin/windows/base/>
 - **Execute** the executable to parameter and install **R**.
 
