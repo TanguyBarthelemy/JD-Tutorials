@@ -2052,8 +2052,8 @@ case</h3>
 Therefore, if the package is not on CRAN and not on AUS, it must be
 downloaded at the binary format (<code>.zip</code>). For this you have
 to look for the compressed folder <code>.zip</code> under GitHub.</p>
-<p>For the package <span class="RPackages">{rjd3toolkit}</span>, you
-need to search under <font color="#000cff"><a href="https://github.com/rjdemetra/rjd3toolkit/releases/tag/v3.1.0" class="uri">https://github.com/rjdemetra/rjd3toolkit/releases/tag/v3.1.0</a></font>
+<p>For the package <span class="RPackages"><strong>{rjd3toolkit}</strong></span>, you need to
+search under <font color="#000cff"><a href="https://github.com/rjdemetra/rjd3toolkit/releases/tag/v3.1.0" class="uri">https://github.com/rjdemetra/rjd3toolkit/releases/tag/v3.1.0</a></font>
 (<em>release</em> Section) then launch the installation code:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;path/.../rjd3toolkit_3.1.0.tar.gz &quot;</span>,</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>                 <span class="at">repos =</span> <span class="cn">NULL</span>, <span class="at">type =</span> <span class="st">&quot;binary&quot;</span>)</span></code></pre></div>
@@ -2309,17 +2309,19 @@ version).</p>
 <div id="the-command-libraryrjdemetra-returns-an-error-message" class="section level2" number="7.2">
 <h2><span class="header-section-number">7.2</span> The command <code class="sourceCode r"><span class="fu">library</span>(<span class="st">&quot;RJDemetra&quot;</span>)</code>
 returns an error message</h2>
-<p>The package <span class="RPackages">{RJDemetra</span> requires Java
+<p>The package <span class="RPackages">**{RJDemetra</span> requires Java
 version 8 or higher to work. If another package has been loaded before
-<span class="RPackages">{RJDemetra}</span> via the function <code class="sourceCode r"><span class="fu">library</span>()</code> and which
+<span class="RPackages"><strong>{RJDemetra}</strong></span> via the
+function <code class="sourceCode r"><span class="fu">library</span>()</code> and which
 doesn’t requires an updated Java version, then an old Java version will
 be used during all the session (<strong>R</strong> is refractory to
-in-session version change). In case of using <span class="RPackages">{RJDemetra}</span> in a program, you have to specify
-at the very beginning of the program that <strong>R</strong> must use
-Java version 8, via the command:</p>
+in-session version change). In case of using <span class="RPackages"><strong>{RJDemetra}</strong></span> in a program, you
+have to specify at the very beginning of the program that
+<strong>R</strong> must use Java version 8, via the command:</p>
 <div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Where Java is installed</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.setenv</span>(<span class="at">JAVA_HOME =</span> <span class="st">&quot;C:/Users/Software/Java17/jdk17&quot;</span>)</span></code></pre></div>
-<p>or load <span class="RPackages">{RJDemetra}</span> first</p>
+<p>or load <span class="RPackages"><strong>{RJDemetra}</strong></span>
+first</p>
 <div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># At the beginning of program</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;RJDemetra&quot;</span>)</span></code></pre></div>
 <p>Else you have to restart a new <strong>R</strong> session.</p>
@@ -2334,11 +2336,11 @@ outlier…).</p>
 </div>
 <div id="the-function-cruncher_and_param...-of-the-jdcruncher-package-returns-an-error" class="section level2" number="7.4">
 <h2><span class="header-section-number">7.4</span> The function <code class="sourceCode r"><span class="fu">cruncher_and_param</span>(...)</code>
-of the <span class="RPackages">{JDCruncheR}</span> package returns an
-error</h2>
+of the <span class="RPackages"><strong>{JDCruncheR}</strong></span>
+package returns an error</h2>
 <p>When you use the function <code class="sourceCode r"><span class="fu">cruncher_and_param</span>(...)</code>
-of the <span class="RPackages">{JDCruncheR}</span> package, you can get
-the following error:</p>
+of the <span class="RPackages"><strong>{JDCruncheR}</strong></span>
+package, you can get the following error:</p>
 <pre><code>## Error in eval(expr, envir, enclos): Error in cruncher(workspace = workspace, cruncher_bin_directory = cruncher_bin_directory,  : 
 ##   There is an error in the path to the cruncher bin folder</code></pre>
 <p>That means that the path to the cruncher is incorrectly configured.
