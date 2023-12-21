@@ -97,14 +97,14 @@ The last release ([v2.2.4](https://github.com/jdemetra/jdemetra-app/releases/tag
 
 There is one more version of JDemetra+ which are only at a **test** stage:
 
--   [v3.1.1](https://github.com/jdemetra/jdplus-main/releases/tag/v3.1.1): the new JDemetra+ version with new features and a new GUI
+-   [v3.2.1](https://github.com/jdemetra/jdplus-main/releases/tag/v3.2.1): the new JDemetra+ version with new features and a new GUI
 
-JDemetra+ v2.2.4 require Java version $\geq 8$ while v3.1.1 requires Java version $\geq 17$:
+JDemetra+ v2.2.4 require Java version $\geq 8$ while v3.2.1 requires Java version $\geq 17$:
 
 | JDemetra+ version | Java version |
 |-------------------|--------------|
 |            v2.2.4 |     $\geq 8$ |
-|            v3.1.1 |    $\geq 17$ |
+|            v3.2.1 |    $\geq 17$ |
 
 In the following procedure, the installation processes of this 2 versions are the same. You just have to repeat them for each version you want to install.
 
@@ -120,7 +120,7 @@ There are two possibilities for installing:
 
 The Software is in the folder `r color_format("\\nbdemetra\\bin\\", color = windows_path_color, url = FALSE)`, these are the file `nbdemetra.exe` (version 32-bit) and `nbdemetra64.exe` (version 64-bit).
 
-ℹ Advice: If you want to use several versions of JDemetra+ (v2.2.4, v3.1.1, ...), you can rename the unzipped folder in `r color_format("\\nbdemetra-2.2.4\\", color = windows_path_color, url = FALSE)` and `r color_format("\\nbdemetra-3.1.1\\", color = windows_path_color, url = FALSE)`.
+ℹ Advice: If you want to use several versions of JDemetra+ (v2.2.4, v3.2.1, ...), you can rename the unzipped folder in `r color_format("\\nbdemetra-2.2.4\\", color = windows_path_color, url = FALSE)` and `r color_format("\\nbdemetra-3.2.1\\", color = windows_path_color, url = FALSE)`.
 
 ℹ️ Remark: You can create shortcuts to the executable files if you want to launch them from another folder (Desktop, project folder...).
 
@@ -151,21 +151,21 @@ To install Java 8, use the link `r color_format("https://portableapps.com/apps/u
 
 ### Remark
 
-The version 3.1.1 of JDemetra+ contains a
-JDemetra+ version 3.1.1 contains a jdk 17 (java 17 version) packaged in [.zip](https://github.com/jdemetra/jdplus-main/releases/tag/v3.1.1). So to use the interface, it is not necessary to install Java 17.
+The version 3.2.1 of JDemetra+ contains a
+JDemetra+ version 3.2.1 contains a jdk 17 (java 17 version) packaged in [.zip](https://github.com/jdemetra/jdplus-main/releases/tag/v3.2.1). So to use the interface, it is not necessary to install Java 17.
 
-On the other hand, to use R packages in version 3 without downloading the GUI (in version 3.1.1), it is mandatory to have java 17 and therefore to install it yourself.
+On the other hand, to use R packages in version 3 without downloading the GUI (in version 3.2.1), it is mandatory to have java >= 17 and therefore to install it yourself.
 
 ### Installation
 
-To install Java 17, you need to head over to `r color_format("https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html", color = html_color, url = TRUE)`.
+To install Java 17, you need to head over to `r color_format("https://whichjdk.com/", color = html_color, url = TRUE)`.
 
--   **Download** the version `Compressed Archive` of Windows (`r color_format("https://download.oracle.com/java/17/archive/jdk-17.0.4.1_windows-x64_bin.zip", color = html_color, url = TRUE)`)
+-   **Download** the version `Compressed Archive` of Windows (`r color_format("https://whichjdk.com/", color = html_color, url = TRUE)`)
 -   **Unzip** the folder `r color_format("jdk-17.0.6", color = windows_path_color, url = FALSE)` under `r color_format("C:\\Users\\Software", color = windows_path_color, url = FALSE)` (for example)
 
 After a Java installation (in version 8, 17 or other), you need to:
 
-- **Modify** the environment variable `PATH` of Rstudio and of Windows (See section [Environment variables](#var_env))
+- **Modify** the environment variable `PATH` of Rstudio and of Windows and `JAVA_HOME` from Rstudio (See section [Environment variables](#var_env))
 
 
 # Installation of **R** and Rstudio
@@ -262,7 +262,7 @@ remotes::install_github("AQLT/ggdemetra3")
 
 To install a package on AUS, you can't use the function `install_github()`{.r}. Therefore, if the package is not on CRAN and not on AUS, it must be downloaded at the binary format (`.zip`). For this you have to look for the compressed folder `.zip` under GitHub.
 
-For the package **rjd3toolkit**, you need to search under `r color_format("https://github.com/rjdemetra/rjd3toolkit/releases/tag/v3.1.0", color = html_color, url = TRUE)` (*release* Section) then launch the installation code:
+For the package [{rjd3toolkit}]{.RPackages}, you need to search under `r color_format("https://github.com/rjdemetra/rjd3toolkit/releases/tag/v3.1.0", color = html_color, url = TRUE)` (*release* Section) then launch the installation code:
 
 ```{r, echo = TRUE, eval = FALSE}
 install.packages("path/.../rjd3toolkit_3.1.0.tar.gz ",
@@ -480,14 +480,14 @@ There are two solutions:
 
 ## The command `library("RJDemetra")`{.r} returns an error message
 
-The package **RJDemetra** requires Java version 8 or higher to work. If another package has been loaded before **RJDemetra** via the function `library()`{.r} and which doesn't requires an updated Java version, then an old Java version will be used during all the session (**R** is refractory to in-session version change). In case of using **RJDemetra** in a program, you have to specify at the very beginning of the program that **R** must use Java version 8, via the command:
+The package [{RJDemetra]{.RPackages} requires Java version 8 or higher to work. If another package has been loaded before [{RJDemetra}]{.RPackages}  via the function `library()`{.r} and which doesn't requires an updated Java version, then an old Java version will be used during all the session (**R** is refractory to in-session version change). In case of using [{RJDemetra}]{.RPackages}  in a program, you have to specify at the very beginning of the program that **R** must use Java version 8, via the command:
 
 ```{r, echo = TRUE, eval = FALSE}
 # Where Java is installed
 Sys.setenv(JAVA_HOME = "C:/Users/Software/Java17/jdk17")
 ```
 
-or load **RJDemetra** first
+or load [{RJDemetra}]{.RPackages} first
 
 ```{r, echo = TRUE, eval = FALSE}
 # At the beginning of program
@@ -502,9 +502,9 @@ Else you have to restart a new **R** session.
 The message of the type `Error array index = -1` tells that an auxiliary variable is not found. It can be calendar regressor or other user defined variables (Easter effect, PSO = pure seasonal outlier...).
 
 
-## The function `cruncher_and_param(...)`{.r} of the **JDCruncheR** package returns an error
+## The function `cruncher_and_param(...)`{.r} of the [{JDCruncheR}]{.RPackages} package returns an error
 
-When you use the function `cruncher_and_param(...)`{.r} of the **JDCruncheR** package, you can get the following error:
+When you use the function `cruncher_and_param(...)`{.r} of the [{JDCruncheR}]{.RPackages} package, you can get the following error:
 
 ```{r, error = TRUE, echo = FALSE, include = TRUE, eval = TRUE}
 stop("Error in cruncher(workspace = workspace, cruncher_bin_directory = cruncher_bin_directory,  : 

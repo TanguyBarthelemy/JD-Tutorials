@@ -3,6 +3,13 @@ title: "Installation des outils pour la désaisonnalisation"
 author: "Tanguy BARTHELEMY"
 # date: "2023-01-17"
 output:
+  github_document: default
+  html_document:
+    df_print: paged
+    number_sections: TRUE
+    highlight: "arrow"
+    theme: "readable"
+    css: "style.css"
   pdf_document: 
     includes:
         in_header: 
@@ -12,13 +19,6 @@ output:
     highlight: "arrow"
     latex_engine: xelatex
     keep_tex: true
-  html_document:
-    df_print: paged
-    number_sections: TRUE
-    highlight: "arrow"
-    theme: "readable"
-    css: "style.css"
-  github_document: default
 always_allow_html: true
 ---
 
@@ -97,14 +97,14 @@ La dernière release ([v2.2.4](https://github.com/jdemetra/jdemetra-app/releases
 
 Il existe une autre version de JDemetra+ qui en est uniquement au stade de **test** :
 
--   [v3.1.1](https://github.com/jdemetra/jdplus-main/releases/tag/v3.1.1) : la nouvelle version de JDemetra+ avec de nouvelles fonctionnalités et une nouvelle interface
+-   [v3.2.1](https://github.com/jdemetra/jdplus-main/releases/tag/v3.2.1) : la nouvelle version de JDemetra+ avec de nouvelles fonctionnalités et une nouvelle interface
 
-La v2.2.4 de JDemetra+ nécessite une version de Java $\geq 8$ alors que la v3.1.1 nécessite une version de Java $\geq 17$ :
+La v2.2.4 de JDemetra+ nécessite une version de Java $\geq 8$ alors que la v3.2.1 nécessite une version de Java $\geq 17$ :
 
 | JDemetra+ version | Java version |
 |-------------------|--------------|
 |            v2.2.4 |     $\geq 8$ |
-|            v3.1.1 |    $\geq 17$ |
+|            v3.2.1 |    $\geq 17$ |
 
 Pour la suite, les processus d'installation de ces 2 versions sont les mêmes. Il suffit de les répéter pour chaque version que l'on veut installer.
 
@@ -120,7 +120,7 @@ Deux solutions pour l'installer :
 
 Le logiciel se trouve alors dans le dossier `r color_format("\\nbdemetra\\bin\\", color = windows_path_color, url = FALSE)`, ce sont les fichiers `nbdemetra.exe` (version 32-bit) et `nbdemetra64.exe` (version 64-bit).
 
-ℹ️ Conseil : si vous comptez utiliser plusieurs version de JDemetra+ (v2.2.4, v3.1.1, ...), vous pouvez renommer les dossiers dézippés en `r color_format("\\nbdemetra-2.2.4\\", color = windows_path_color, url = FALSE)` et `r color_format("\\nbdemetra-3.1.1\\", color = windows_path_color, url = FALSE)`.
+ℹ️ Conseil : si vous comptez utiliser plusieurs version de JDemetra+ (v2.2.4, v3.2.1, ...), vous pouvez renommer les dossiers dézippés en `r color_format("\\nbdemetra-2.2.4\\", color = windows_path_color, url = FALSE)` et `r color_format("\\nbdemetra-3.2.1\\", color = windows_path_color, url = FALSE)`.
 
 ℹ️ Remarque : Vous pouvez créer des raccourcis des exécutables si vous souhaitez les lancer depuis le bureau ou d'autres dossiers.
 
@@ -153,20 +153,20 @@ JDemetra+, il faut bien installer la version jPortable 64-bit (en bas de la page
 
 ℹ️ Remarques
 
-La version 3.1.1 de JDemetra+ contient une jdk 17 (version de java 17) packetée dans le [.zip](https://github.com/jdemetra/jdplus-main/releases/tag/v3.1.1). Ainsi pour utiliser l'interface, il n'est pas nécessaire d'installer java 17.
+La version 3.2.1 de JDemetra+ contient une jdk 17 (version de java 17) packetée dans le [.zip](https://github.com/jdemetra/jdplus-main/releases/tag/v3.2.1). Ainsi pour utiliser l'interface, il n'est pas nécessaire d'installer java 17.
 
-En revanche, pour utiliser les packages R en version 3 sans télécharger la GUI (en version 3.1.1), il est obligatoire d'avoir java 17 et donc de l'installer soit même.
+En revanche, pour utiliser les packages R en version 3 sans télécharger la GUI (en version 3.2.1), il est obligatoire d'avoir java >= 17 et donc de l'installer soit même.
 
 ### Installation
 
-Pour installer Java 17, il faut aller à l'adresse `r color_format("https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html", color = html_color, url = TRUE)`.
+Pour installer Java 17, il faut aller à l'adresse `r color_format("https://whichjdk.com/", color = html_color, url = TRUE)`.
 
--   **Télécharger** la version `Compressed Archive` de Windows (`r color_format("https://download.oracle.com/java/17/archive/jdk-17.0.4.1_windows-x64_bin.zip", color = html_color, url = TRUE)`)
+-   **Télécharger** la version `Compressed Archive` de Windows (`r color_format("https://whichjdk.com/", color = html_color, url = TRUE)`)
 -   **Dézipper** le dossier `r color_format("jdk-17.0.6", color = windows_path_color, url = FALSE)` sous `r color_format("C:\\Users\\Software", color = windows_path_color, url = FALSE)` (*par exemple*)
 
 Après avoir installé Java (en version 8, 17 ou autre), il faut :
 
-- **Modifier** les variables d'environnement de `PATH` de Rstudio et de Windows (voir section [Variables d'environnement](#var_env))
+- **Modifier** les variables d'environnement de `PATH` de Rstudio et de Windows et `JAVA_HOME` de Rstudio (voir section [Variables d'environnement](#var_env))
 
 
 # Installation de **R** et Rstudio
@@ -208,11 +208,11 @@ Les packages en version 2 sont les suivants :
 
 | Nom | Disponible sur le CRAN | Disponible sur AUS | Lien Github |
 |---|--|--|-----|
-|     RJDemetra | ✔️ | ✔️ |      `r color_format("https://github.com/jdemetra/rjdemetra", color = html_color, url = TRUE)` |
-|  rjdworkspace | ❌ | ✔️ | `r color_format("https://github.com/InseeFrLab/rjdworkspace", color = html_color, url = TRUE)` |
-|    JDCruncheR | ❌ | ✔️ |      `r color_format("https://github.com/InseeFr/JDCruncheR", color = html_color, url = TRUE)` |
-| rjwsacruncher | ✔️ | ✔️ |      `r color_format("https://github.com/AQLT/rjwsacruncher", color = html_color, url = TRUE)` |
-|   rjdmarkdown | ✔️ | ✔️ |        `r color_format("https://github.com/AQLT/rjdmarkdown", color = html_color, url = TRUE)` |
+|     [{RJDemetra}]{.RPackages} | ✔️ | ✔️ |      `r color_format("https://github.com/jdemetra/rjdemetra", color = html_color, url = TRUE)` |
+|  [{rjdworkspace}]{.RPackages} | ❌ | ✔️ | `r color_format("https://github.com/InseeFrLab/rjdworkspace", color = html_color, url = TRUE)` |
+|    [{JDCruncheR}]{.RPackages} | ❌ | ✔️ |      `r color_format("https://github.com/InseeFr/JDCruncheR", color = html_color, url = TRUE)` |
+| [{rjwsacruncher}]{.RPackages} | ✔️ | ✔️ |      `r color_format("https://github.com/AQLT/rjwsacruncher", color = html_color, url = TRUE)` |
+|   [{rjdmarkdown}]{.RPackages} | ✔️ | ✔️ |        `r color_format("https://github.com/AQLT/rjdmarkdown", color = html_color, url = TRUE)` |
 
 Le code d'installation des packages est ci-dessous :
 
@@ -263,7 +263,7 @@ remotes::install_github("AQLT/ggdemetra3")
 
 Pour installer un package sur AUS, il n'est pas possible d'utiliser la fonction `install_github()`{.r}. Ainsi, si le package n'est pas sur le CRAN ni sur le nexus d'AUS, il doit être téléchargé au format binaire. Pour cela, il faut aller chercher le dossier compressé `.zip` sous GitHub.
 
-Exemple pour le package **rjd3toolkit**, le `Source code (tar.gz)` se trouve sous `r color_format("https://github.com/rjdemetra/rjd3toolkit/releases/tag/v3.1.0", color = html_color, url = TRUE)` (*release* Section). Après l'avoir récupéré, il faut lancer la commande d'installation :
+Exemple pour le package [{rjd3toolkit}]{.RPackages}, le `Source code (tar.gz)` se trouve sous `r color_format("https://github.com/rjdemetra/rjd3toolkit/releases/tag/v3.1.0", color = html_color, url = TRUE)` (*release* Section). Après l'avoir récupéré, il faut lancer la commande d'installation :
 
 ```{r, echo = TRUE, eval = FALSE}
 install.packages("path/.../rjd3toolkit_3.1.0.tar.gz ",
@@ -477,14 +477,14 @@ Deux solutions :
 
 ## La commande `library("RJDemetra")`{.r} renvoie un message d’erreur
 
-Le package **RJDemetra** a besoin de la version 8 (au minimum) de Java pour fonctionner. Si au moins un autre package a déjà été chargé via la fonction `library()`{.r} et qu’il ne nécessite pas une version très à jour de Java, c’est cette ancienne version qui sera sollicitée pendant toute la durée de la session (**R** est réfractaire au changement de version en cours de session). En cas d’utilisation de **RJDemetra** au cours d’un programme, il faut donc impérativement spécifier dès le début de programme que **R** aille chercher la version 8, via la commande :
+Le package [{RJDemetra}]{.RPackages} a besoin de la version 8 (au minimum) de Java pour fonctionner. Si au moins un autre package a déjà été chargé via la fonction `library()`{.r} et qu’il ne nécessite pas une version très à jour de Java, c’est cette ancienne version qui sera sollicitée pendant toute la durée de la session (**R** est réfractaire au changement de version en cours de session). En cas d’utilisation de [RJDemetra]{.RPackages} au cours d’un programme, il faut donc impérativement spécifier dès le début de programme que **R** aille chercher la version 8, via la commande :
 
 ```{r, echo = TRUE, eval = FALSE}
 # Là où est installé java
 Sys.setenv(JAVA_HOME = "C:/Users/Software/Java17/jdk17")
 ```
 
-ou charger **RJDemetra** en premier
+ou charger [{RJDemetra}]{.RPackages} en premier
 
 ```{r, echo = TRUE, eval = FALSE}
 # En début de programme
@@ -499,9 +499,9 @@ Sinon il faut redémarrer une nouvelle session **R**.
 Le message du type `Error array index = -1` indique une variable auxiliaire non trouvée. Il peut s’agir de régresseurs CJO ou d’autres variables définies par l’utilisateur (effet de Pâques spécifique, PSO = pure seasonal outlier...).
 
 
-## La fonction `cruncher_and_param(...)`{.r} du package **JDCruncheR** renvoie un message d’erreur
+## La fonction `cruncher_and_param(...)`{.r} du package [{JDCruncheR}]{.RPackages} renvoie un message d’erreur
 
-Lorsqu'on lance la fonction `cruncher_and_param(...)`{.r} du package **JDCruncheR**, on peut obtenir l'erreur suivante :
+Lorsqu'on lance la fonction `cruncher_and_param(...)`{.r} du package [{JDCruncheR}]{.RPackages}, on peut obtenir l'erreur suivante :
 
 ```{r, error = TRUE, echo = FALSE, include = TRUE, eval = TRUE}
 stop("Error in cruncher(workspace = workspace, cruncher_bin_directory = cruncher_bin_directory,  : 

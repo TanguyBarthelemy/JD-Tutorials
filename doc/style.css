@@ -1,1 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+
 .Code { background-color: #F1F3F5; }
+
+.RPackages { 
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
