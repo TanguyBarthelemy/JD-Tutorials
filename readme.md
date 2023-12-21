@@ -27,9 +27,9 @@ flowchart TB
   direction TB
   
     subgraph rjd3_other[" "]
-      rjd3stl
       rjd3bench
       rjd3revisions
+      rjd3nowcasting
     end
 
     subgraph rjd3x13_tramo[" "]
@@ -42,10 +42,11 @@ flowchart TB
     rjd3x13_tramo --> ggdemetra3
 
     rjd3sts --> rjd3highfreq
-    rjd3x11plus --> rjd3filters
+    rjd3filters --> rjd3x11plus
     rjd3filters --> ggdemetra3
     rjd3x11plus --> ggdemetra3
     rjd3highfreq --> ggdemetra3
+    rjd3highfreq --> rjd3stl
 
 
   end
@@ -53,6 +54,7 @@ flowchart TB
   rjd3toolkit --> rjd3toolkit_depends
 
   click rjd3toolkit "https://github.com/rjdemetra/rjd3toolkit" _blank
+  click rjd3nowcasting "https://github.com/rjdemetra/rjd3nowcasting" _blank
   click rjd3stl "https://github.com/rjdemetra/rjd3stl" _blank
   click rjd3highfreq "https://github.com/rjdemetra/rjd3highfreq" _blank
   click rjd3sts "https://github.com/rjdemetra/rjd3sts" _blank
