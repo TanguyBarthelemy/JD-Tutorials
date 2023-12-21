@@ -262,7 +262,7 @@ remotes::install_github("AQLT/ggdemetra3")
 
 To install a package on AUS, you can't use the function `install_github()`{.r}. Therefore, if the package is not on CRAN and not on AUS, it must be downloaded at the binary format (`.zip`). For this you have to look for the compressed folder `.zip` under GitHub.
 
-For the package [{rjd3toolkit}]{.RPackages}, you need to search under `r color_format("https://github.com/rjdemetra/rjd3toolkit/releases/tag/v3.1.0", color = html_color, url = TRUE)` (*release* Section) then launch the installation code:
+For the package [**{rjd3toolkit}**]{.RPackages}, you need to search under `r color_format("https://github.com/rjdemetra/rjd3toolkit/releases/tag/v3.1.0", color = html_color, url = TRUE)` (*release* Section) then launch the installation code:
 
 ```{r, echo = TRUE, eval = FALSE}
 install.packages("path/.../rjd3toolkit_3.1.0.tar.gz ",
@@ -480,14 +480,14 @@ There are two solutions:
 
 ## The command `library("RJDemetra")`{.r} returns an error message
 
-The package [{RJDemetra]{.RPackages} requires Java version 8 or higher to work. If another package has been loaded before [{RJDemetra}]{.RPackages}  via the function `library()`{.r} and which doesn't requires an updated Java version, then an old Java version will be used during all the session (**R** is refractory to in-session version change). In case of using [{RJDemetra}]{.RPackages}  in a program, you have to specify at the very beginning of the program that **R** must use Java version 8, via the command:
+The package [**{RJDemetra]{.RPackages} requires Java version 8 or higher to work. If another package has been loaded before [**{RJDemetra}**]{.RPackages}  via the function `library()`{.r} and which doesn't requires an updated Java version, then an old Java version will be used during all the session (**R** is refractory to in-session version change). In case of using [**{RJDemetra}**]{.RPackages}  in a program, you have to specify at the very beginning of the program that **R** must use Java version 8, via the command:
 
 ```{r, echo = TRUE, eval = FALSE}
 # Where Java is installed
 Sys.setenv(JAVA_HOME = "C:/Users/Software/Java17/jdk17")
 ```
 
-or load [{RJDemetra}]{.RPackages} first
+or load [**{RJDemetra}**]{.RPackages} first
 
 ```{r, echo = TRUE, eval = FALSE}
 # At the beginning of program
@@ -502,9 +502,9 @@ Else you have to restart a new **R** session.
 The message of the type `Error array index = -1` tells that an auxiliary variable is not found. It can be calendar regressor or other user defined variables (Easter effect, PSO = pure seasonal outlier...).
 
 
-## The function `cruncher_and_param(...)`{.r} of the [{JDCruncheR}]{.RPackages} package returns an error
+## The function `cruncher_and_param(...)`{.r} of the [**{JDCruncheR}**]{.RPackages} package returns an error
 
-When you use the function `cruncher_and_param(...)`{.r} of the [{JDCruncheR}]{.RPackages} package, you can get the following error:
+When you use the function `cruncher_and_param(...)`{.r} of the [**{JDCruncheR}**]{.RPackages} package, you can get the following error:
 
 ```{r, error = TRUE, echo = FALSE, include = TRUE, eval = TRUE}
 stop("Error in cruncher(workspace = workspace, cruncher_bin_directory = cruncher_bin_directory,  : 

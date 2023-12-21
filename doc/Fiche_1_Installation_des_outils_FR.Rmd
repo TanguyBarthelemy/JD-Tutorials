@@ -208,11 +208,11 @@ Les packages en version 2 sont les suivants :
 
 | Nom | Disponible sur le CRAN | Disponible sur AUS | Lien Github |
 |---|--|--|-----|
-|     [{RJDemetra}]{.RPackages} | ✔️ | ✔️ |      `r color_format("https://github.com/jdemetra/rjdemetra", color = html_color, url = TRUE)` |
-|  [{rjdworkspace}]{.RPackages} | ❌ | ✔️ | `r color_format("https://github.com/InseeFrLab/rjdworkspace", color = html_color, url = TRUE)` |
-|    [{JDCruncheR}]{.RPackages} | ❌ | ✔️ |      `r color_format("https://github.com/InseeFr/JDCruncheR", color = html_color, url = TRUE)` |
-| [{rjwsacruncher}]{.RPackages} | ✔️ | ✔️ |      `r color_format("https://github.com/AQLT/rjwsacruncher", color = html_color, url = TRUE)` |
-|   [{rjdmarkdown}]{.RPackages} | ✔️ | ✔️ |        `r color_format("https://github.com/AQLT/rjdmarkdown", color = html_color, url = TRUE)` |
+|     [**{RJDemetra}**]{.RPackages} | ✔️ | ✔️ |      `r color_format("https://github.com/jdemetra/rjdemetra", color = html_color, url = TRUE)` |
+|  [**{rjdworkspace}**]{.RPackages} | ❌ | ✔️ | `r color_format("https://github.com/InseeFrLab/rjdworkspace", color = html_color, url = TRUE)` |
+|    [**{JDCruncheR}**]{.RPackages} | ❌ | ✔️ |      `r color_format("https://github.com/InseeFr/JDCruncheR", color = html_color, url = TRUE)` |
+| [**{rjwsacruncher}**]{.RPackages} | ✔️ | ✔️ |      `r color_format("https://github.com/AQLT/rjwsacruncher", color = html_color, url = TRUE)` |
+|   [**{rjdmarkdown}**]{.RPackages} | ✔️ | ✔️ |        `r color_format("https://github.com/AQLT/rjdmarkdown", color = html_color, url = TRUE)` |
 
 Le code d'installation des packages est ci-dessous :
 
@@ -263,7 +263,7 @@ remotes::install_github("AQLT/ggdemetra3")
 
 Pour installer un package sur AUS, il n'est pas possible d'utiliser la fonction `install_github()`{.r}. Ainsi, si le package n'est pas sur le CRAN ni sur le nexus d'AUS, il doit être téléchargé au format binaire. Pour cela, il faut aller chercher le dossier compressé `.zip` sous GitHub.
 
-Exemple pour le package [{rjd3toolkit}]{.RPackages}, le `Source code (tar.gz)` se trouve sous `r color_format("https://github.com/rjdemetra/rjd3toolkit/releases/tag/v3.1.0", color = html_color, url = TRUE)` (*release* Section). Après l'avoir récupéré, il faut lancer la commande d'installation :
+Exemple pour le package [**{rjd3toolkit}**]{.RPackages}, le `Source code (tar.gz)` se trouve sous `r color_format("https://github.com/rjdemetra/rjd3toolkit/releases/tag/v3.1.0", color = html_color, url = TRUE)` (*release* Section). Après l'avoir récupéré, il faut lancer la commande d'installation :
 
 ```{r, echo = TRUE, eval = FALSE}
 install.packages("path/.../rjd3toolkit_3.1.0.tar.gz ",
@@ -477,14 +477,14 @@ Deux solutions :
 
 ## La commande `library("RJDemetra")`{.r} renvoie un message d’erreur
 
-Le package [{RJDemetra}]{.RPackages} a besoin de la version 8 (au minimum) de Java pour fonctionner. Si au moins un autre package a déjà été chargé via la fonction `library()`{.r} et qu’il ne nécessite pas une version très à jour de Java, c’est cette ancienne version qui sera sollicitée pendant toute la durée de la session (**R** est réfractaire au changement de version en cours de session). En cas d’utilisation de [RJDemetra]{.RPackages} au cours d’un programme, il faut donc impérativement spécifier dès le début de programme que **R** aille chercher la version 8, via la commande :
+Le package [**{RJDemetra}**]{.RPackages} a besoin de la version 8 (au minimum) de Java pour fonctionner. Si au moins un autre package a déjà été chargé via la fonction `library()`{.r} et qu’il ne nécessite pas une version très à jour de Java, c’est cette ancienne version qui sera sollicitée pendant toute la durée de la session (**R** est réfractaire au changement de version en cours de session). En cas d’utilisation de [RJDemetra]{.RPackages} au cours d’un programme, il faut donc impérativement spécifier dès le début de programme que **R** aille chercher la version 8, via la commande :
 
 ```{r, echo = TRUE, eval = FALSE}
 # Là où est installé java
 Sys.setenv(JAVA_HOME = "C:/Users/Software/Java17/jdk17")
 ```
 
-ou charger [{RJDemetra}]{.RPackages} en premier
+ou charger [**{RJDemetra}**]{.RPackages} en premier
 
 ```{r, echo = TRUE, eval = FALSE}
 # En début de programme
@@ -499,9 +499,9 @@ Sinon il faut redémarrer une nouvelle session **R**.
 Le message du type `Error array index = -1` indique une variable auxiliaire non trouvée. Il peut s’agir de régresseurs CJO ou d’autres variables définies par l’utilisateur (effet de Pâques spécifique, PSO = pure seasonal outlier...).
 
 
-## La fonction `cruncher_and_param(...)`{.r} du package [{JDCruncheR}]{.RPackages} renvoie un message d’erreur
+## La fonction `cruncher_and_param(...)`{.r} du package [**{JDCruncheR}**]{.RPackages} renvoie un message d’erreur
 
-Lorsqu'on lance la fonction `cruncher_and_param(...)`{.r} du package [{JDCruncheR}]{.RPackages}, on peut obtenir l'erreur suivante :
+Lorsqu'on lance la fonction `cruncher_and_param(...)`{.r} du package [**{JDCruncheR}**]{.RPackages}, on peut obtenir l'erreur suivante :
 
 ```{r, error = TRUE, echo = FALSE, include = TRUE, eval = TRUE}
 stop("Error in cruncher(workspace = workspace, cruncher_bin_directory = cruncher_bin_directory,  : 
