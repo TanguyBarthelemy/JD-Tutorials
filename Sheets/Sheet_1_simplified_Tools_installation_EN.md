@@ -46,16 +46,16 @@ production.**
 There is one more version of JDemetra+ which are only at a **test**
 stage:
 
-- [v3.1.1](https://github.com/jdemetra/jdplus-main/releases/tag/v3.1.1):
+- [v3.2.1](https://github.com/jdemetra/jdplus-main/releases/tag/v3.2.1):
   the new JDemetra+ version with new features and a new GUI
 
-JDemetra+ v2.2.4 require Java version $\geq 8$ while v3.1.1 requires
+JDemetra+ v2.2.4 require Java version $\geq 8$ while v3.2.1 requires
 Java version $\geq 17$:
 
 | JDemetra+ version | Java version |
 |-------------------|--------------|
 | v2.2.4            | $\geq 8$     |
-| v3.1.1            | $\geq 17$    |
+| v3.2.1            | $\geq 17$    |
 
 In the following procedure, the installation processes of this 2
 versions are the same. You just have to repeat them for each version you
@@ -80,9 +80,9 @@ file `nbdemetra.exe` (version 32-bit) and `nbdemetra64.exe` (version
 64-bit).
 
 ℹ Advice: If you want to use several versions of JDemetra+ (v2.2.4,
-v3.1.1, …), you can rename the unzipped folder in
+v3.2.1, …), you can rename the unzipped folder in
 ${\textsf{\color{#006817}{\\\\nbdemetra-2.2.4\\\\}}}$ and
-${\textsf{\color{#006817}{\\\\nbdemetra-3.1.1\\\\}}}$.
+${\textsf{\color{#006817}{\\\\nbdemetra-3.2.1\\\\}}}$.
 
 ℹ️ Remark: You can create shortcuts to the executable files if you want
 to launch them from another folder (Desktop, project folder…).
@@ -133,7 +133,7 @@ version 64-bit of JDemetra+, you should install the version jPortable
 
 ℹ️ Remark
 
-The version 3.1.1 of JDemetra+ contains a JDemetra+ version 3.1.1
+The version 3.2.1 of JDemetra+ contains a JDemetra+ version 3.2.1
 contains a jdk 17 (java 17 version) packaged in
-[.zip](https://github.com/jdemetra/jdplus-main/releases/tag/v3.1.1). So
+[.zip](https://github.com/jdemetra/jdplus-main/releases/tag/v3.2.1). So
 to use the interface, it is not necessary to install Java 17.

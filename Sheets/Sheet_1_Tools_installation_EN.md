@@ -50,16 +50,16 @@ production.**
 There is one more version of JDemetra+ which are only at a **test**
 stage:
 
-- [v3.1.1](https://github.com/jdemetra/jdplus-main/releases/tag/v3.1.1):
+- [v3.2.1](https://github.com/jdemetra/jdplus-main/releases/tag/v3.2.1):
   the new JDemetra+ version with new features and a new GUI
 
-JDemetra+ v2.2.4 require Java version $\geq 8$ while v3.1.1 requires
+JDemetra+ v2.2.4 require Java version $\geq 8$ while v3.2.1 requires
 Java version $\geq 17$:
 
 | JDemetra+ version | Java version |
 |-------------------|--------------|
 | v2.2.4            | $\geq 8$     |
-| v3.1.1            | $\geq 17$    |
+| v3.2.1            | $\geq 17$    |
 
 In the following procedure, the installation processes of this 2
 versions are the same. You just have to repeat them for each version you
@@ -84,9 +84,9 @@ file `nbdemetra.exe` (version 32-bit) and `nbdemetra64.exe` (version
 64-bit).
 
 ℹ Advice: If you want to use several versions of JDemetra+ (v2.2.4,
-v3.1.1, …), you can rename the unzipped folder in
+v3.2.1, …), you can rename the unzipped folder in
 ${\textsf{\color{#006817}{\\\\nbdemetra-2.2.4\\\\}}}$ and
-${\textsf{\color{#006817}{\\\\nbdemetra-3.1.1\\\\}}}$.
+${\textsf{\color{#006817}{\\\\nbdemetra-3.2.1\\\\}}}$.
 
 ℹ️ Remark: You can create shortcuts to the executable files if you want
 to launch them from another folder (Desktop, project folder…).
@@ -137,29 +137,29 @@ version 64-bit of JDemetra+, you should install the version jPortable
 
 ### Remark
 
-The version 3.1.1 of JDemetra+ contains a JDemetra+ version 3.1.1
+The version 3.2.1 of JDemetra+ contains a JDemetra+ version 3.2.1
 contains a jdk 17 (java 17 version) packaged in
-[.zip](https://github.com/jdemetra/jdplus-main/releases/tag/v3.1.1). So
+[.zip](https://github.com/jdemetra/jdplus-main/releases/tag/v3.2.1). So
 to use the interface, it is not necessary to install Java 17.
 
 On the other hand, to use R packages in version 3 without downloading
-the GUI (in version 3.1.1), it is mandatory to have java 17 and
+the GUI (in version 3.2.1), it is mandatory to have java \>= 17 and
 therefore to install it yourself.
 
 ### Installation
 
-To install Java 17, you need to head over to
-<https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html>.
+To install Java 17, you need to head over to <https://whichjdk.com/>.
 
 - **Download** the version `Compressed Archive` of Windows
-  (<https://download.oracle.com/java/17/archive/jdk-17.0.4.1_windows-x64_bin.zip>)
+  (<https://whichjdk.com/>)
 - **Unzip** the folder ${\textsf{\color{#006817}{jdk-17.0.6}}}$ under
   ${\textsf{\color{#006817}{C:\\\\Users\\\\Software}}}$ (for example)
 
 After a Java installation (in version 8, 17 or other), you need to:
 
 - **Modify** the environment variable `PATH` of Rstudio and of Windows
-  (See section [Environment variables](#var_env))
+  and `JAVA_HOME` from Rstudio (See section [Environment
+  variables](#var_env))
 
 # Installation of **R** and Rstudio
 
@@ -266,7 +266,8 @@ To install a package on AUS, you can’t use the function
 AUS, it must be downloaded at the binary format (`.zip`). For this you
 have to look for the compressed folder `.zip` under GitHub.
 
-For the package **rjd3toolkit**, you need to search under
+For the package <span class="RPackages">{rjd3toolkit}</span>, you need
+to search under
 <https://github.com/rjdemetra/rjd3toolkit/releases/tag/v3.1.0>
 (*release* Section) then launch the installation code:
 
@@ -522,20 +523,22 @@ There are two solutions:
 
 ## The command `library("RJDemetra")` returns an error message
 
-The package **RJDemetra** requires Java version 8 or higher to work. If
-another package has been loaded before **RJDemetra** via the function
-`library()` and which doesn’t requires an updated Java version, then an
-old Java version will be used during all the session (**R** is
-refractory to in-session version change). In case of using **RJDemetra**
-in a program, you have to specify at the very beginning of the program
-that **R** must use Java version 8, via the command:
+The package <span class="RPackages">{RJDemetra</span> requires Java
+version 8 or higher to work. If another package has been loaded before
+<span class="RPackages">{RJDemetra}</span> via the function `library()`
+and which doesn’t requires an updated Java version, then an old Java
+version will be used during all the session (**R** is refractory to
+in-session version change). In case of using <span
+class="RPackages">{RJDemetra}</span> in a program, you have to specify
+at the very beginning of the program that **R** must use Java version 8,
+via the command:
 
 ``` r
 # Where Java is installed
 Sys.setenv(JAVA_HOME = "C:/Users/Software/Java17/jdk17")
 ```
 
-or load **RJDemetra** first
+or load <span class="RPackages">{RJDemetra}</span> first
 
 ``` r
 # At the beginning of program
@@ -550,10 +553,11 @@ The message of the type `Error array index = -1` tells that an auxiliary
 variable is not found. It can be calendar regressor or other user
 defined variables (Easter effect, PSO = pure seasonal outlier…).
 
-## The function `cruncher_and_param(...)` of the **JDCruncheR** package returns an error
+## The function `cruncher_and_param(...)` of the <span class="RPackages">{JDCruncheR}</span> package returns an error
 
-When you use the function `cruncher_and_param(...)` of the
-**JDCruncheR** package, you can get the following error:
+When you use the function `cruncher_and_param(...)` of the <span
+class="RPackages">{JDCruncheR}</span> package, you can get the following
+error:
 
     ## Error in eval(expr, envir, enclos): Error in cruncher(workspace = workspace, cruncher_bin_directory = cruncher_bin_directory,  : 
     ##   There is an error in the path to the cruncher bin folder
