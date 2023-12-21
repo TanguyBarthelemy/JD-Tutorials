@@ -211,13 +211,13 @@ Pour installer un package **R**, il y a plusieurs méthodes :
 
 Les packages en version 2 sont les suivants :
 
-| Nom                                            | Disponible sur le CRAN | Disponible sur AUS | Lien Github                                  |
-|------------------------------------------------|------------------------|--------------------|----------------------------------------------|
-| <span class="RPackages">{RJDemetra}</span>     | ✔️                     | ✔️                 | <https://github.com/jdemetra/rjdemetra>      |
-| <span class="RPackages">{rjdworkspace}</span>  | ❌                     | ✔️                 | <https://github.com/InseeFrLab/rjdworkspace> |
-| <span class="RPackages">{JDCruncheR}</span>    | ❌                     | ✔️                 | <https://github.com/InseeFr/JDCruncheR>      |
-| <span class="RPackages">{rjwsacruncher}</span> | ✔️                     | ✔️                 | <https://github.com/AQLT/rjwsacruncher>      |
-| <span class="RPackages">{rjdmarkdown}</span>   | ✔️                     | ✔️                 | <https://github.com/AQLT/rjdmarkdown>        |
+| Nom                                                | Disponible sur le CRAN | Disponible sur AUS | Lien Github                                  |
+|----------------------------------------------------|------------------------|--------------------|----------------------------------------------|
+| <span class="RPackages">**{RJDemetra}**</span>     | ✔️                     | ✔️                 | <https://github.com/jdemetra/rjdemetra>      |
+| <span class="RPackages">**{rjdworkspace}**</span>  | ❌                     | ✔️                 | <https://github.com/InseeFrLab/rjdworkspace> |
+| <span class="RPackages">**{JDCruncheR}**</span>    | ❌                     | ✔️                 | <https://github.com/InseeFr/JDCruncheR>      |
+| <span class="RPackages">**{rjwsacruncher}**</span> | ✔️                     | ✔️                 | <https://github.com/AQLT/rjwsacruncher>      |
+| <span class="RPackages">**{rjdmarkdown}**</span>   | ✔️                     | ✔️                 | <https://github.com/AQLT/rjdmarkdown>        |
 
 Le code d’installation des packages est ci-dessous :
 
@@ -270,8 +270,9 @@ fonction `install_github()`. Ainsi, si le package n’est pas sur le CRAN
 ni sur le nexus d’AUS, il doit être téléchargé au format binaire. Pour
 cela, il faut aller chercher le dossier compressé `.zip` sous GitHub.
 
-Exemple pour le package <span class="RPackages">{rjd3toolkit}</span>, le
-`Source code (tar.gz)` se trouve sous
+Exemple pour le package <span
+class="RPackages">**{rjd3toolkit}**</span>, le `Source code (tar.gz)` se
+trouve sous
 <https://github.com/rjdemetra/rjd3toolkit/releases/tag/v3.1.0>
 (*release* Section). Après l’avoir récupéré, il faut lancer la commande
 d’installation :
@@ -535,7 +536,7 @@ Deux solutions :
 
 ## La commande `library("RJDemetra")` renvoie un message d’erreur
 
-Le package <span class="RPackages">{RJDemetra}</span> a besoin de la
+Le package <span class="RPackages">**{RJDemetra}**</span> a besoin de la
 version 8 (au minimum) de Java pour fonctionner. Si au moins un autre
 package a déjà été chargé via la fonction `library()` et qu’il ne
 nécessite pas une version très à jour de Java, c’est cette ancienne
@@ -550,7 +551,7 @@ programme que **R** aille chercher la version 8, via la commande :
 Sys.setenv(JAVA_HOME = "C:/Users/Software/Java17/jdk17")
 ```
 
-ou charger <span class="RPackages">{RJDemetra}</span> en premier
+ou charger <span class="RPackages">**{RJDemetra}**</span> en premier
 
 ``` r
 # En début de programme
@@ -566,11 +567,11 @@ auxiliaire non trouvée. Il peut s’agir de régresseurs CJO ou d’autres
 variables définies par l’utilisateur (effet de Pâques spécifique, PSO =
 pure seasonal outlier…).
 
-## La fonction `cruncher_and_param(...)` du package <span class="RPackages">{JDCruncheR}</span> renvoie un message d’erreur
+## La fonction `cruncher_and_param(...)` du package <span class="RPackages">**{JDCruncheR}**</span> renvoie un message d’erreur
 
 Lorsqu’on lance la fonction `cruncher_and_param(...)` du package <span
-class="RPackages">{JDCruncheR}</span>, on peut obtenir l’erreur suivante
-:
+class="RPackages">**{JDCruncheR}**</span>, on peut obtenir l’erreur
+suivante :
 
     ## Error in eval(expr, envir, enclos): Error in cruncher(workspace = workspace, cruncher_bin_directory = cruncher_bin_directory,  : 
     ##   There is an error in the path to the cruncher bin folder

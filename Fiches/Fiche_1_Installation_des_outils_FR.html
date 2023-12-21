@@ -1976,31 +1976,31 @@ et les arguments <code>repos = NULL, type = &quot;binary&quot;</code>.</li>
 </thead>
 <tbody>
 <tr class="odd">
-<td><span class="RPackages">{RJDemetra}</span></td>
+<td><span class="RPackages"><strong>{RJDemetra}</strong></span></td>
 <td>✔️</td>
 <td>✔️</td>
 <td><font color="#000cff"><a href="https://github.com/jdemetra/rjdemetra" class="uri">https://github.com/jdemetra/rjdemetra</a></font></td>
 </tr>
 <tr class="even">
-<td><span class="RPackages">{rjdworkspace}</span></td>
+<td><span class="RPackages"><strong>{rjdworkspace}</strong></span></td>
 <td>❌</td>
 <td>✔️</td>
 <td><font color="#000cff"><a href="https://github.com/InseeFrLab/rjdworkspace" class="uri">https://github.com/InseeFrLab/rjdworkspace</a></font></td>
 </tr>
 <tr class="odd">
-<td><span class="RPackages">{JDCruncheR}</span></td>
+<td><span class="RPackages"><strong>{JDCruncheR}</strong></span></td>
 <td>❌</td>
 <td>✔️</td>
 <td><font color="#000cff"><a href="https://github.com/InseeFr/JDCruncheR" class="uri">https://github.com/InseeFr/JDCruncheR</a></font></td>
 </tr>
 <tr class="even">
-<td><span class="RPackages">{rjwsacruncher}</span></td>
+<td><span class="RPackages"><strong>{rjwsacruncher}</strong></span></td>
 <td>✔️</td>
 <td>✔️</td>
 <td><font color="#000cff"><a href="https://github.com/AQLT/rjwsacruncher" class="uri">https://github.com/AQLT/rjwsacruncher</a></font></td>
 </tr>
 <tr class="odd">
-<td><span class="RPackages">{rjdmarkdown}</span></td>
+<td><span class="RPackages"><strong>{rjdmarkdown}</strong></span></td>
 <td>✔️</td>
 <td>✔️</td>
 <td><font color="#000cff"><a href="https://github.com/AQLT/rjdmarkdown" class="uri">https://github.com/AQLT/rjdmarkdown</a></font></td>
@@ -2052,8 +2052,8 @@ la fonction <code class="sourceCode r"><span class="fu">install_github</span>()<
 Ainsi, si le package n’est pas sur le CRAN ni sur le nexus d’AUS, il
 doit être téléchargé au format binaire. Pour cela, il faut aller
 chercher le dossier compressé <code>.zip</code> sous GitHub.</p>
-<p>Exemple pour le package <span class="RPackages">{rjd3toolkit}</span>,
-le <code>Source code (tar.gz)</code> se trouve sous
+<p>Exemple pour le package <span class="RPackages"><strong>{rjd3toolkit}</strong></span>, le
+<code>Source code (tar.gz)</code> se trouve sous
 <font color="#000cff"><a href="https://github.com/rjdemetra/rjd3toolkit/releases/tag/v3.1.0" class="uri">https://github.com/rjdemetra/rjd3toolkit/releases/tag/v3.1.0</a></font>
 (<em>release</em> Section). Après l’avoir récupéré, il faut lancer la
 commande d’installation :</p>
@@ -2320,7 +2320,7 @@ versions de Java).</p>
 <div id="la-commande-libraryrjdemetra-renvoie-un-message-derreur" class="section level2" number="7.2">
 <h2><span class="header-section-number">7.2</span> La commande <code class="sourceCode r"><span class="fu">library</span>(<span class="st">&quot;RJDemetra&quot;</span>)</code>
 renvoie un message d’erreur</h2>
-<p>Le package <span class="RPackages">{RJDemetra}</span> a besoin de la
+<p>Le package <span class="RPackages"><strong>{RJDemetra}</strong></span> a besoin de la
 version 8 (au minimum) de Java pour fonctionner. Si au moins un autre
 package a déjà été chargé via la fonction <code class="sourceCode r"><span class="fu">library</span>()</code> et qu’il
 ne nécessite pas une version très à jour de Java, c’est cette ancienne
@@ -2331,7 +2331,7 @@ impérativement spécifier dès le début de programme que
 <strong>R</strong> aille chercher la version 8, via la commande :</p>
 <div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Là où est installé java</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.setenv</span>(<span class="at">JAVA_HOME =</span> <span class="st">&quot;C:/Users/Software/Java17/jdk17&quot;</span>)</span></code></pre></div>
-<p>ou charger <span class="RPackages">{RJDemetra}</span> en premier</p>
+<p>ou charger <span class="RPackages"><strong>{RJDemetra}</strong></span> en premier</p>
 <div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># En début de programme</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;RJDemetra&quot;</span>)</span></code></pre></div>
 <p>Sinon il faut redémarrer une nouvelle session <strong>R</strong>.</p>
@@ -2346,11 +2346,11 @@ spécifique, PSO = pure seasonal outlier…).</p>
 </div>
 <div id="la-fonction-cruncher_and_param...-du-package-jdcruncher-renvoie-un-message-derreur" class="section level2" number="7.4">
 <h2><span class="header-section-number">7.4</span> La fonction <code class="sourceCode r"><span class="fu">cruncher_and_param</span>(...)</code>
-du package <span class="RPackages">{JDCruncheR}</span> renvoie un
-message d’erreur</h2>
+du package <span class="RPackages"><strong>{JDCruncheR}</strong></span>
+renvoie un message d’erreur</h2>
 <p>Lorsqu’on lance la fonction <code class="sourceCode r"><span class="fu">cruncher_and_param</span>(...)</code>
-du package <span class="RPackages">{JDCruncheR}</span>, on peut obtenir
-l’erreur suivante :</p>
+du package <span class="RPackages"><strong>{JDCruncheR}</strong></span>,
+on peut obtenir l’erreur suivante :</p>
 <pre><code>## Error in eval(expr, envir, enclos): Error in cruncher(workspace = workspace, cruncher_bin_directory = cruncher_bin_directory,  : 
 ##   There is an error in the path to the cruncher bin folder</code></pre>
 <p>Cela veut dire que le chemin jusqu’au cruncher a mal été configuré.
