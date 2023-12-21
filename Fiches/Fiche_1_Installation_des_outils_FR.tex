@@ -1218,13 +1218,13 @@ de \textbf{test} :
 \begin{itemize}
 \tightlist
 \item
-  \href{https://github.com/jdemetra/jdplus-main/releases/tag/v3.1.1}{v3.1.1}
+  \href{https://github.com/jdemetra/jdplus-main/releases/tag/v3.2.1}{v3.2.1}
   : la nouvelle version de JDemetra+ avec de nouvelles fonctionnalités
   et une nouvelle interface
 \end{itemize}
 
 La v2.2.4 de JDemetra+ nécessite une version de Java \(\geq 8\) alors
-que la v3.1.1 nécessite une version de Java \(\geq 17\) :
+que la v3.2.1 nécessite une version de Java \(\geq 17\) :
 
 \begin{longtable}[]{@{}ll@{}}
 \toprule()
@@ -1232,7 +1232,7 @@ JDemetra+ version & Java version \\
 \midrule()
 \endhead
 v2.2.4 & \(\geq 8\) \\
-v3.1.1 & \(\geq 17\) \\
+v3.2.1 & \(\geq 17\) \\
 \bottomrule()
 \end{longtable}
 
@@ -1266,9 +1266,9 @@ les fichiers \texttt{nbdemetra.exe} (version 32-bit) et
 \texttt{nbdemetra64.exe} (version 64-bit).
 
 ℹ️ Conseil : si vous comptez utiliser plusieurs version de JDemetra+
-(v2.2.4, v3.1.1, \ldots), vous pouvez renommer les dossiers dézippés en
+(v2.2.4, v3.2.1, \ldots), vous pouvez renommer les dossiers dézippés en
 \textcolor{windows_path_color}{\nolinkurl{\\nbdemetra-2.2.4\\}} et
-\textcolor{windows_path_color}{\nolinkurl{\\nbdemetra-3.1.1\\}}.
+\textcolor{windows_path_color}{\nolinkurl{\\nbdemetra-3.2.1\\}}.
 
 ℹ️ Remarque : Vous pouvez créer des raccourcis des exécutables si vous
 souhaitez les lancer depuis le bureau ou d'autres dossiers.
@@ -1337,28 +1337,27 @@ la version jPortable 64-bit (en bas de la page).
 
 ℹ️ Remarques
 
-La version 3.1.1 de JDemetra+ contient une jdk 17 (version de java 17)
+La version 3.2.1 de JDemetra+ contient une jdk 17 (version de java 17)
 packetée dans le
-\href{https://github.com/jdemetra/jdplus-main/releases/tag/v3.1.1}{.zip}.
+\href{https://github.com/jdemetra/jdplus-main/releases/tag/v3.2.1}{.zip}.
 Ainsi pour utiliser l'interface, il n'est pas nécessaire d'installer
 java 17.
 
 En revanche, pour utiliser les packages R en version 3 sans télécharger
-la GUI (en version 3.1.1), il est obligatoire d'avoir java 17 et donc de
-l'installer soit même.
+la GUI (en version 3.2.1), il est obligatoire d'avoir java \textgreater=
+17 et donc de l'installer soit même.
 
 \hypertarget{installation}{%
 \subsubsection{Installation}\label{installation}}
 
 Pour installer Java 17, il faut aller à l'adresse
-\textcolor{html_color}{\url{https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html}}.
+\textcolor{html_color}{\url{https://whichjdk.com/}}.
 
 \begin{itemize}
 \tightlist
 \item
   \textbf{Télécharger} la version \texttt{Compressed\ Archive} de
-  Windows
-  (\textcolor{html_color}{\url{https://download.oracle.com/java/17/archive/jdk-17.0.4.1_windows-x64_bin.zip}})
+  Windows (\textcolor{html_color}{\url{https://whichjdk.com/}})
 \item
   \textbf{Dézipper} le dossier
   \textcolor{windows_path_color}{\nolinkurl{jdk-17.0.6}} sous
@@ -1372,7 +1371,7 @@ Après avoir installé Java (en version 8, 17 ou autre), il faut :
 \tightlist
 \item
   \textbf{Modifier} les variables d'environnement de \texttt{PATH} de
-  Rstudio et de Windows (voir section
+  Rstudio et de Windows et \texttt{JAVA\_HOME} de Rstudio (voir section
   \protect\hyperlink{var_env}{Variables d'environnement})
 \end{itemize}
 
@@ -1468,15 +1467,15 @@ Lien Github
 \end{minipage} \\
 \midrule()
 \endhead
-RJDemetra & ✔️ & ✔️ &
+{\{RJDemetra\}} & ✔️ & ✔️ &
 \textcolor{html_color}{\url{https://github.com/jdemetra/rjdemetra}} \\
-rjdworkspace & ❌ & ✔️ &
+{\{rjdworkspace\}} & ❌ & ✔️ &
 \textcolor{html_color}{\url{https://github.com/InseeFrLab/rjdworkspace}} \\
-JDCruncheR & ❌ & ✔️ &
+{\{JDCruncheR\}} & ❌ & ✔️ &
 \textcolor{html_color}{\url{https://github.com/InseeFr/JDCruncheR}} \\
-rjwsacruncher & ✔️ & ✔️ &
+{\{rjwsacruncher\}} & ✔️ & ✔️ &
 \textcolor{html_color}{\url{https://github.com/AQLT/rjwsacruncher}} \\
-rjdmarkdown & ✔️ & ✔️ &
+{\{rjdmarkdown\}} & ✔️ & ✔️ &
 \textcolor{html_color}{\url{https://github.com/AQLT/rjdmarkdown}} \\
 \bottomrule()
 \end{longtable}
@@ -1539,7 +1538,7 @@ le package n'est pas sur le CRAN ni sur le nexus d'AUS, il doit être
 téléchargé au format binaire. Pour cela, il faut aller chercher le
 dossier compressé \texttt{.zip} sous GitHub.
 
-Exemple pour le package \textbf{rjd3toolkit}, le
+Exemple pour le package {\{rjd3toolkit\}}, le
 \texttt{Source\ code\ (tar.gz)} se trouve sous
 \textcolor{html_color}{\url{https://github.com/rjdemetra/rjd3toolkit/releases/tag/v3.1.0}}
 (\emph{release} Section). Après l'avoir récupéré, il faut lancer la
@@ -1924,15 +1923,15 @@ Deux solutions :
 renvoie un message
 d'erreur}{La commande library("RJDemetra") renvoie un message d'erreur}}\label{la-commande-libraryrjdemetra-renvoie-un-message-derreur}}
 
-Le package \textbf{RJDemetra} a besoin de la version 8 (au minimum) de
-Java pour fonctionner. Si au moins un autre package a déjà été chargé
-via la fonction \VERB|\FunctionTok{library}\NormalTok{()}| et qu'il ne
+Le package {\{RJDemetra\}} a besoin de la version 8 (au minimum) de Java
+pour fonctionner. Si au moins un autre package a déjà été chargé via la
+fonction \VERB|\FunctionTok{library}\NormalTok{()}| et qu'il ne
 nécessite pas une version très à jour de Java, c'est cette ancienne
 version qui sera sollicitée pendant toute la durée de la session
 (\textbf{R} est réfractaire au changement de version en cours de
-session). En cas d'utilisation de \textbf{RJDemetra} au cours d'un
-programme, il faut donc impérativement spécifier dès le début de
-programme que \textbf{R} aille chercher la version 8, via la commande :
+session). En cas d'utilisation de {RJDemetra} au cours d'un programme,
+il faut donc impérativement spécifier dès le début de programme que
+\textbf{R} aille chercher la version 8, via la commande :
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1941,7 +1940,7 @@ programme que \textbf{R} aille chercher la version 8, via la commande :
 \end{Highlighting}
 \end{Shaded}
 
-ou charger \textbf{RJDemetra} en premier
+ou charger {\{RJDemetra\}} en premier
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1962,13 +1961,13 @@ spécifique, PSO = pure seasonal outlier\ldots).
 
 \hypertarget{la-fonction-cruncher_and_param...-du-package-jdcruncher-renvoie-un-message-derreur}{%
 \subsection{\texorpdfstring{La fonction
-\texttt{cruncher\_and\_param(...)} du package \textbf{JDCruncheR}
-renvoie un message
-d'erreur}{La fonction cruncher\_and\_param(...) du package JDCruncheR renvoie un message d'erreur}}\label{la-fonction-cruncher_and_param...-du-package-jdcruncher-renvoie-un-message-derreur}}
+\texttt{cruncher\_and\_param(...)} du package {\{JDCruncheR\}} renvoie
+un message
+d'erreur}{La fonction cruncher\_and\_param(...) du package \{JDCruncheR\} renvoie un message d'erreur}}\label{la-fonction-cruncher_and_param...-du-package-jdcruncher-renvoie-un-message-derreur}}
 
 Lorsqu'on lance la fonction
 \VERB|\FunctionTok{cruncher\_and\_param}\NormalTok{(...)}| du package
-\textbf{JDCruncheR}, on peut obtenir l'erreur suivante :
+{\{JDCruncheR\}}, on peut obtenir l'erreur suivante :
 
 \begin{verbatim}
 ## Error in eval(expr, envir, enclos): Error in cruncher(workspace = workspace, cruncher_bin_directory = cruncher_bin_directory,  : 
