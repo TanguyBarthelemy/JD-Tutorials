@@ -23,35 +23,36 @@ This project is complementary to the [online documentation](https://jdemetra-new
 
 ```mermaid
 flowchart TB
-  subgraph rjd3toolkit_depends ["Packages dépendants de rjd3toolkit"]
-  direction TB
-  
-    subgraph rjd3_other[" "]
-      rjd3bench
-      rjd3revisions
-      rjd3nowcasting
+    subgraph rjd3toolkit_depends ["Packages dépendants de rjd3toolkit"]
+        direction TB
+
+
+        subgraph rjd3_other[" "]
+            rjd3bench
+            rjd3revisions
+            rjd3nowcasting
+        end
+        
+        subgraph rjd3x13_tramo[" "]
+            rjd3x13
+            rjd3tramoseats
+        end
+
+        rjd3providers --> rjdemetra3
+        rjd3x13_tramo --> rjdemetra3
+
+        rjd3x13_tramo --> ggdemetra3
+        rjd3highfreq --> ggdemetra3
+        rjd3x11plus --> ggdemetra3
+        rjd3filters --> ggdemetra3
+        
+        rjd3filters --> rjd3x11plus
+        rjd3sts --> rjd3highfreq
+        rjd3highfreq --> rjd3stl
+
     end
 
-    subgraph rjd3x13_tramo[" "]
-      rjd3x13
-      rjd3tramoseats
-    end
-
-    rjd3providers --> rjdemetra3
-    rjd3x13_tramo --> rjdemetra3
-    rjd3x13_tramo --> ggdemetra3
-
-    rjd3sts --> rjd3highfreq
-    rjd3filters --> rjd3x11plus
-    rjd3filters --> ggdemetra3
-    rjd3x11plus --> ggdemetra3
-    rjd3highfreq --> ggdemetra3
-    rjd3highfreq --> rjd3stl
-
-
-  end
-
-  rjd3toolkit --> rjd3toolkit_depends
+    rjd3toolkit --> rjd3toolkit_depends
 
   click rjd3toolkit "https://github.com/rjdemetra/rjd3toolkit" _blank
   click rjd3nowcasting "https://github.com/rjdemetra/rjd3nowcasting" _blank
