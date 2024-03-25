@@ -97,14 +97,14 @@ The last release ([v2.2.4](https://github.com/jdemetra/jdemetra-app/releases/tag
 
 There is one more version of JDemetra+ which are only at a **test** stage:
 
--   [v3.2.1](https://github.com/jdemetra/jdplus-main/releases/tag/v3.2.1): the new JDemetra+ version with new features and a new GUI
+-   [v3.2.2](https://github.com/jdemetra/jdplus-main/releases/tag/v3.2.2): the new JDemetra+ version with new features and a new GUI
 
-JDemetra+ v2.2.4 require Java version $\geq 8$ while v3.2.1 requires Java version $\geq 17$:
+JDemetra+ v2.2.4 require Java version $\geq 8$ while v3.2.2 requires Java version $\geq 17$:
 
 | JDemetra+ version | Java version |
 |-------------------|--------------|
 |            v2.2.4 |     $\geq 8$ |
-|            v3.2.1 |    $\geq 17$ |
+|            v3.2.2 |    $\geq 17$ |
 
 In the following procedure, the installation processes of this 2 versions are the same. You just have to repeat them for each version you want to install.
 
@@ -120,7 +120,7 @@ There are two possibilities for installing:
 
 The Software is in the folder `r color_format("\\nbdemetra\\bin\\", color = windows_path_color, url = FALSE)`, these are the file `nbdemetra.exe` (version 32-bit) and `nbdemetra64.exe` (version 64-bit).
 
-ℹ Advice: If you want to use several versions of JDemetra+ (v2.2.4, v3.2.1, ...), you can rename the unzipped folder in `r color_format("\\nbdemetra-2.2.4\\", color = windows_path_color, url = FALSE)` and `r color_format("\\nbdemetra-3.2.1\\", color = windows_path_color, url = FALSE)`.
+ℹ Advice: If you want to use several versions of JDemetra+ (v2.2.4, v3.2.2, ...), you can rename the unzipped folder in `r color_format("\\nbdemetra-2.2.4\\", color = windows_path_color, url = FALSE)` and `r color_format("\\nbdemetra-3.2.2\\", color = windows_path_color, url = FALSE)`.
 
 ℹ️ Remark: You can create shortcuts to the executable files if you want to launch them from another folder (Desktop, project folder...).
 
@@ -151,10 +151,10 @@ To install Java 8, use the link `r color_format("https://portableapps.com/apps/u
 
 ### Remark
 
-The version 3.2.1 of JDemetra+ contains a
-JDemetra+ version 3.2.1 contains a jdk 17 (java 17 version) packaged in [.zip](https://github.com/jdemetra/jdplus-main/releases/tag/v3.2.1). So to use the interface, it is not necessary to install Java 17.
+The version 3.2.2 of JDemetra+ contains a
+JDemetra+ version 3.2.2 contains a jdk 17 (java 17 version) packaged in [.zip](https://github.com/jdemetra/jdplus-main/releases/tag/v3.2.2). So to use the interface, it is not necessary to install Java 17.
 
-On the other hand, to use R packages in version 3 without downloading the GUI (in version 3.2.1), it is mandatory to have java >= 17 and therefore to install it yourself.
+On the other hand, to use R packages in version 3 without downloading the GUI (in version 3.2.2), it is mandatory to have java >= 17 and therefore to install it yourself.
 
 ### Installation
 
@@ -312,7 +312,7 @@ Second method (with the `.Rprofile`) :
 - **Launch** the code `file.edit("~/.Rprofile")`{.r} or `usethis::edit_r_profile()`{.r} (with  the package **usethis** and the argument `scope` which egals `"user"`{.r} or `"project"`{.r} if you are in a R project)
 - **Add** the next lines:
 
-    ```r
+    ```{r, echo = TRUE, eval = FALSE}
     Sys.setenv("http_proxy" = "http://proxy-rie.http.insee.fr:8080/")
     Sys.setenv("https_proxy" = "http://proxy-rie.http.insee.fr:8080/")
     ```
