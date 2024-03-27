@@ -239,20 +239,25 @@ Currently version 3 packages are NOT on CRAN. To install them, you need to go th
 ```{r, echo = TRUE, eval = FALSE}
 # If remotes is not installed
 # install.packages("remotes")
+
 remotes::install_github("rjdemetra/rjd3toolkit")
 
-remotes::install_github("rjdemetra/rjd3tramoseats")
 remotes::install_github("rjdemetra/rjd3x13")
+remotes::install_github("rjdemetra/rjd3tramoseats")
 
+remotes::install_github("rjdemetra/rjd3providers")
 remotes::install_github("rjdemetra/rjdemetra3")
-remotes::install_github("rjdemetra/rjd3revisions")
+
+remotes::install_github("rjdemetra/rjd3filters")
 remotes::install_github("rjdemetra/rjd3x11plus")
 
 remotes::install_github("rjdemetra/rjd3sts")
 remotes::install_github("rjdemetra/rjd3highfreq")
 remotes::install_github("rjdemetra/rjd3stl")
+
+remotes::install_github("rjdemetra/rjd3revisions")
 remotes::install_github("rjdemetra/rjd3bench")
-# options : INSTALL_opts = "--no-multiarch"
+remotes::install_github("rjdemetra/rjd3nowcasting")
 
 remotes::install_github("AQLT/ggdemetra3")
 ```
@@ -260,14 +265,33 @@ remotes::install_github("AQLT/ggdemetra3")
 
 ### AUS (Insee server) case
 
-To install a package on AUS, you can't use the function `install_github()`{.r}. Therefore, if the package is not on CRAN and not on AUS, it must be downloaded at the binary format (`.zip`). For this you have to look for the compressed folder `.zip` under GitHub.
+### Cas AUS
 
-For the package [**{rjd3toolkit}**]{.RPackages}, you need to search under `r color_format("https://github.com/rjdemetra/rjd3toolkit/releases/tag/v3.1.0", color = html_color, url = TRUE)` (*release* Section) then launch the installation code:
+To install a package on AUS, you can't use the function `install_github()`{.r}. Therefore:
 
-```{r, echo = TRUE, eval = FALSE}
-install.packages("path/.../rjd3toolkit_3.1.0.tar.gz ",
-                 repos = NULL, type = "binary")
-```
+
+- either the package is on CRAN or on AUS, it can be installed with the function `install.packages()`{.r} and with the argument `repos = "https://nexus.insee.fr/repository/r-public/"`{.r}
+- or the package is not available and it must be downloaded at the binary format (`.zip`). For this you have to look for the compressed folder `.zip` under GitHub.
+
+Example for the package [**{rjd3toolkit}**]{.RPackages}, you can install the package:
+
+- on the nexus with the following  code:
+
+    ```{r, echo = TRUE, eval = FALSE}
+    install.packages("rjd3toolkit", repos = "https://nexus.insee.fr/repository/r-public/")
+    ```
+
+- you need to search under `r color_format("https://github.com/rjdemetra/rjd3toolkit/releases/tag/v3.2.2", color = html_color, url = TRUE)` (*release* Section) 
+
+    ```{r, echo = TRUE, eval = FALSE}
+    install.packages("path/.../rjd3toolkit_3.2.2.zip ", repos = NULL, type = "binary")
+    ```
+
+- with the binary format `rjd3toolkit_3.2.2.zip` under `r color_format("https://github.com/rjdemetra/rjd3toolkit/releases/tag/v3.2.2", color = html_color, url = TRUE)` (*release* Section), then launch the installation code:
+
+    ```{r, echo = TRUE, eval = FALSE}
+    install.packages("path/to/the/binary/package/.../rjd3toolkit_3.2.2.zip ", repos = NULL, type = "binary")
+    ```
 
 
 # Environment variables {#var_env}

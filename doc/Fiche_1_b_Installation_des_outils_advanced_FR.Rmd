@@ -242,18 +242,22 @@ Pour l'instant aucun package de la version 3 n'est sur le CRAN. Pour installer l
 # install.packages("remotes")
 remotes::install_github("rjdemetra/rjd3toolkit")
 
-remotes::install_github("rjdemetra/rjd3tramoseats")
 remotes::install_github("rjdemetra/rjd3x13")
+remotes::install_github("rjdemetra/rjd3tramoseats")
 
+remotes::install_github("rjdemetra/rjd3providers")
 remotes::install_github("rjdemetra/rjdemetra3")
-remotes::install_github("rjdemetra/rjd3revisions")
+
+remotes::install_github("rjdemetra/rjd3filters")
 remotes::install_github("rjdemetra/rjd3x11plus")
 
 remotes::install_github("rjdemetra/rjd3sts")
 remotes::install_github("rjdemetra/rjd3highfreq")
 remotes::install_github("rjdemetra/rjd3stl")
+
+remotes::install_github("rjdemetra/rjd3revisions")
 remotes::install_github("rjdemetra/rjd3bench")
-# options : INSTALL_opts = "--no-multiarch"
+remotes::install_github("rjdemetra/rjd3nowcasting")
 
 remotes::install_github("AQLT/ggdemetra3")
 ```
@@ -261,14 +265,25 @@ remotes::install_github("AQLT/ggdemetra3")
 
 ### Cas AUS
 
-Pour installer un package sur AUS, il n'est pas possible d'utiliser la fonction `install_github()`{.r}. Ainsi, si le package n'est pas sur le CRAN ni sur le nexus d'AUS, il doit être téléchargé au format binaire. Pour cela, il faut aller chercher le dossier compressé `.zip` sous GitHub.
+Pour installer un package sur AUS, il n'est pas possible d'utiliser la fonction `install_github()`{.r}. Ainsi :
 
-Exemple pour le package [**{rjd3toolkit}**]{.RPackages}, le `Source code (tar.gz)` se trouve sous `r color_format("https://github.com/rjdemetra/rjd3toolkit/releases/tag/v3.1.0", color = html_color, url = TRUE)` (*release* Section). Après l'avoir récupéré, il faut lancer la commande d'installation :
+- soit le package est sur le CRAN ou sur le nexus d'AUS, il peut être installé avec la fonction `install.packages()`{.r} et l'argument `repos = "https://nexus.insee.fr/repository/r-public/"`{.r}
+- soit il n'est pas disponible et doit être téléchargé au format binaire. Pour cela, il faut aller chercher le dossier compressé `.zip` sous GitHub.
 
-```{r, echo = TRUE, eval = FALSE}
-install.packages("path/.../rjd3toolkit_3.1.0.tar.gz ",
-                 repos = NULL, type = "binary")
-```
+Exemple pour le package [**{rjd3toolkit}**]{.RPackages}, on peut installer le package :
+
+- sur le nexus avec le code suivant :
+
+    ```{r, echo = TRUE, eval = FALSE}
+    install.packages("rjd3toolkit", repos = "https://nexus.insee.fr/repository/r-public/")
+    ```
+
+- au format binaire `rjd3toolkit_3.2.2.zip` qui se trouve sous `r color_format("https://github.com/rjdemetra/rjd3toolkit/releases/tag/v3.2.2", color = html_color, url = TRUE)` (*release* Section). Après l'avoir récupéré, il faut lancer la commande d'installation :
+
+    ```{r, echo = TRUE, eval = FALSE}
+    install.packages("chemin/vers/le/binaire/.../rjd3toolkit_3.2.2.zip ",
+                     repos = NULL, type = "binary")
+    ```
 
 
 # Variables d'environnement {#var_env}
