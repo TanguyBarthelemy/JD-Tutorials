@@ -1,5 +1,6 @@
-linters: with_defaults(
-    line_length_linter = NULL, 
-    trailing_blank_lines_linter = NULL, 
-    indentation_linter(indent = 4L), 
-    commented_code_linter = NULL)
+linters: linters_with_defaults(
+        line_length_linter = NULL, 
+        indentation_linter(indent = 4L), 
+        commented_code_linter = NULL
+    )
+encoding: "UTF-8"
