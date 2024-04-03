@@ -1,25 +1,19 @@
-# 🇫🇷 Projet JD Tutorials : Comment désaisonnaliser avec JDemetra+ ?
-# 🇬🇧 JD Tutorials project: Seasonnal adjustment with JDemetra+
+# 🇫🇷 Projet JD Tutorials : Bien utiliser JDemetra+
+# 🇬🇧 JD Tutorials project: Make good use of JDemetra+
 
-## Français 🇫🇷
+## Objectifs 🇫🇷
 
-### But
+L'objectif du projet **JD Tutorials** est de faciliter l'utilisation de JDemetra+, aussi de l'interface graphique (GUI, Graphical user Interface) que des packages R qui donnent également accès aux algorithmes de JDemetra+.
 
-Les objectifs du projet **JD Tutorials** est d'apporter des outils d'aide à l'utilisation de JDemetra+ aussi bien pour l'utilisation de la GUI (Graphical user Interface) que des packages R qui accompagne JDemetra+.
+Ce projet est complémentaire à la [documentation](https://jdemetra-new-documentation.netlify.app/) en ligne. Nous y proposons des vidéos, des tutoriels et des guides d'installation des différents outils autour de JDemetra+.
 
-Ce projet est complémentaire à la [documentation](https://jdemetra-new-documentation.netlify.app/) en ligne en apportant des vidéos, des tutoriels et des guides d'installation des différents outils.
+## Motivation 🇬🇧
 
+The aim of the **JD Tutorials** project is to make JDemetra+ easier to use, both with the Graphical User Interface (GUI) and with the companion R packages, which also provide access to JDemetra+ algorithms.
 
-## English 🇬🇧
+This project complements the online [documentation](https://jdemetra-new-documentation.netlify.app/). Here you'll find videos, tutorials and installation guides for the various JDemetra+ related tools.
 
-
-### Objectives
-
-The objectives of the project **JD Tutorials** is to bring helping tools to use JDemetra+ both for using the GUI (Graphical user Interface) and the R packages which are related to JDemetra+.
-
-This project is complementary to the [online documentation](https://jdemetra-new-documentation.netlify.app/) by bringing videos, tutorials and installation guideset for the different tools.
-
-### Structure
+## Structure
 
 ```mermaid
 flowchart TB
@@ -75,5 +69,5 @@ flowchart TB
 - ▶️ [YouTube](https://www.youtube.com/@TSwithJDemetraandR) : @TSwithJDemetraandR
 - 📚 [JD+ Documentation](https://jdemetra-new-documentation.netlify.app/)
 - 📝 [Blog](https://jdemetra-universe-blog.netlify.app/)
-- 🖥️ GitHub Tanguy : https://github.com/TanguyBarthelemy
-- 🖥️ GitHub Anna : https://github.com/annasmyk
+- 🖥️ GitHub Tanguy Barthelemy: https://github.com/TanguyBarthelemy
+- 🖥️ GitHub Anna Smyk: https://github.com/annasmyk
