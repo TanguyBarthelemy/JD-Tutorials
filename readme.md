@@ -3,7 +3,7 @@
 
 ## Objectifs 🇫🇷
 
-L'objectif du projet **JD Tutorials** est de faciliter l'utilisation de JDemetra+, aussi de l'interface graphique (GUI, Graphical user Interface) que des packages R qui donnent également accès aux algorithmes de JDemetra+.
+L'objectif du projet **JD Tutorials** est de faciliter l'utilisation de JDemetra+, aussi bien de l'interface graphique (GUI, Graphical user Interface) que des packages R qui donnent également accès aux algorithmes de JDemetra+.
 
 Ce projet est complémentaire à la [documentation](https://jdemetra-new-documentation.netlify.app/) en ligne. Nous y proposons des vidéos, des tutoriels et des guides d'installation des différents outils autour de JDemetra+.
 
