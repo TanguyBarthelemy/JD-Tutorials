@@ -1,7 +1,7 @@
 ---
-title: "Tools installation for seasonal adjustment"
+title: "Installing JDemetra+"
 author: "Tanguy BARTHELEMY"
-# date: "2023-01-17"
+# date: "2024-04-04"
 output:
   github_document: default
   html_document:
@@ -65,17 +65,36 @@ windows_path_color <- "#006817"
 
 \renewcommand{\xelatexemojipath}[1]{../xelatex-emoji/images/#1}
 
-## Installation of JDemetra+
+## Installating the Graphical User Interface (GUI)
 
-You can find the two current versions of JDemetra3 (v2 and v3):
+You can find the latest releases 
 
-- in v2 : the last release ([v2.2.4](https://github.com/jdemetra/jdemetra-app/releases/tag/v2.2.4))
-- in v3 : the last release ([v3.2.2](https://github.com/jdemetra/jdplus-main/releases/tag/v3.2.2))
+- in v2.x family: [here](https://github.com/jdemetra/jdemetra-app/releases)
 
-You just have to **Download** and **unzip** the compressed folder `jdemetra-standalone-3.2.2-windows-x86_64.zip` that allows to get a portable version of the software.
+In April 2024, the latest version is [v2.2.4](https://github.com/jdemetra/jdemetra-app/releases/tag/v2.2.4)
+
+Scroll down on the page, download and unzip the file *jdemetra-2.2.4-bin.zip*
+
+To launch the application execute the file **nbdemetra64.exe** located in the following sub folder: "... \jdemetra-2.2.4-bin\nbdemetra\bin"
+
+- in v3.x family: [here](https://github.com/jdemetra/jdplus-main/releases)
+
+In April 2024, the latest version is ([v3.2.2](https://github.com/jdemetra/jdplus-main/releases/tag/v3.2.2))
+
+Scroll down on the page, download and unzip the file if you use windows *jdemetra-standalone-3.2.2-windows-x86_64.zip*
+
+To launch the application execute the file **nbdemetra64.exe** located in the following sub folder: "... \jdemetra-standalone-3.2.2-windows-x86_64\nbdemetra\bin"
+
+Version 3.x requires Java 17 or superior, *jdemetra-standalone-3.2.2-windows-x86_64.zip* contains a portable version of java 21, so you don't have to tackle this issue on your computer.
+
+R packages related to version 3.x (rjd3...) also require Java 17 or superior, you can (and should) use the portable version provided with the Graphical user interface  to run them, this is explained [here](#Rconfig)
+
+## Installing additionnal plug-ins
+
+Extending...
 
 
-## Installation of the cruncher
+## Installing the cruncher
 
 To install the installer the cruncher :
 
@@ -83,7 +102,9 @@ To install the installer the cruncher :
 - in v3, go on the page of [**jdplus-main**](https://github.com/jdemetra/jdplus-main) and **Download** and **unzip** the compressed folder `jwsacruncher-standalone-3.2.2-windows-x86_64.zip`
 
 
-## Configuration of R and Rstudio
+## Configaration to run rjd3 packages {#Rconfig}
+
+Configuration of R and Rstudio
 
 To use the packages in v3 in R, you need to specify the path to Java 17.
 
