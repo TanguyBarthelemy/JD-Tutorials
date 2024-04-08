@@ -209,6 +209,8 @@ When you install a new software (for example JDemetra+, Rtools, Java...) that Rs
 - **Get** the actual value of the variable `PATH` via the **R** command `Sys.getenv("PATH")`{.r} (Rstudio returns a succession of addresses as `C:/WINDOWS/system32;C:/WINDOWS`)
 
 - **Copy paste** this value after `PATH = ` and add the paths towards the folder `r color_format("\\bin\\", color = windows_path_color, url = FALSE)` (binary) of the software newly installed, by separating them with semicolon (without space before or after).
+
+
     For the Rtools installation, the path is `r color_format("C:\\rtools42\\mingw64\\bin", color = windows_path_color, url = FALSE)` (depending on where Rtools was installed). You have to add `C:\\rtools42\\mingw64\\bin` or `C:/rtools42/mingw64/bin` (In **R**, `\` is a special character, so you have to replace the `\` by `/` or by `\\`). The path becomes `C:/WINDOWS/system32;C:/WINDOWS;C:/rtools42/mingw64/bin`.
 
 - **Modify** the variable with the function `Sys.setenv()`{.r}. For Rtools, the command to launch is:
@@ -276,7 +278,7 @@ library("rJava")
 .jcall("java/lang/System", "S", "getProperty", "java.runtime.version")
 ```
 
-Finally, you can consult the Java version installed with which Windows works (it doesn't matter to us):
+Finally, you can display the Java version installed with which Windows works (it doesn't matter to us):
 
 ```{r, echo = TRUE, eval = FALSE}
 system("java -version")
@@ -342,7 +344,7 @@ or load [**{RJDemetra}**]{.RPackages} first
 library("RJDemetra")
 ```
 
-Else you have to restart a new **R** session.
+Otherwise you have to restart a new **R** session.
 
 
 ### `Error array index = -1`
@@ -365,7 +367,7 @@ That means that the path to the cruncher is incorrectly configured. To solve thi
 options(cruncher_bin_directory = "C:/Users/Software/jwsacruncher-2.2.4-bin/bin")
 ```
 
-To check that the path is valid, you could use the function `getOption(...)`{.r} :
+To check that the path is valid, you can use the function `getOption(...)`{.r} :
 
 ```{r, echo = TRUE, eval = FALSE}
 getOption("cruncher_bin_directory")
