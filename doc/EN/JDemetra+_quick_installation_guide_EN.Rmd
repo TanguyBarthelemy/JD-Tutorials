@@ -137,4 +137,4 @@ You can use the version of Java that comes with the graphical user interface, as
 
 ```{r, echo = TRUE, eval = FALSE}
 Sys.setenv("JAVA_HOME" = ".../jdemetra-standalone-3.2.2-windows-x86_64/nbdemetra/jdk-21.0.2+13-jre")
-``
+```
