@@ -64,7 +64,7 @@ windows_path_color <- "#006817"
 \definecolor{html_color}{HTML}{000cff}
 \definecolor{windows_path_color}{HTML}{006817}
 
-\renewcommand{\xelatexemojipath}[1]{../xelatex-emoji/images/#1}
+\renewcommand{\xelatexemojipath}[1]{../../xelatex-emoji/images/#1}
 
 ## Context {-}
 
