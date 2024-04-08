@@ -74,22 +74,22 @@ On computers without administrator rights (*professional computer, for example*)
 
 ⚠️ Warning: when we specify an **absolute** path for a software (JDemetra+, Java, **R**, ...) in a program, a shortcut, a variable, ..., it must be modified each time any root repository is moved.
 
-# Installation of JDemetra+ Graphical user interface
+## Installation of JDemetra+ Graphical user interface
 
 To install [JDemetra+ Graphical User Interface](https://github.com/jdemetra/jdemetra-app) see the [quick installation guide] (https://github.com/TanguyBarthelemy/JD-Tutorials/blob/master/Sheets/JDemetra+_quick_installation_guide_EN.pdf)
 
-# Installation of the cruncher
+## Installation of the cruncher
 
 To install [JDemetra+ cruncher](https://github.com/jdemetra/jdemetra-app) see the [quick installation guide] (https://github.com/TanguyBarthelemy/JD-Tutorials/blob/master/Sheets/JDemetra+_quick_installation_guide_EN.pdf)
 
 
-# Installation of **R** and Rstudio
+## Installation of **R** and Rstudio
 
 The JDemetra+ algorithms can be accessed in **R** via **R** packages.
 To use **R**, it is better to use an IDE like Rstudio. All the executable files to download are under `r color_format("https://posit.co/download/rstudio-desktop/#download", color = html_color, url = TRUE)`.
 
 
-## Installation of **R**
+### Installation of **R**
 
 To install **R**, you should:
 
@@ -97,7 +97,7 @@ To install **R**, you should:
 -   **Execute** the executable to parameter and install **R**.
 
 
-## Installation of Rstudio
+### Installation of Rstudio
 
 **Download** the last Rstudio version (under `r color_format("https://posit.co/download/rstudio-desktop/#download", color = html_color, url = TRUE)`) and the **installer**.
 
@@ -107,7 +107,7 @@ If the installation via the file `.exe` fails (because it requires higher rights
 - **Create a shortcut** of the file `rstudio.exe` on the Desktop.
 
 
-## Installation of **R** packages
+### Installation of **R** packages
 
 To install a **R** package, there are several methods:
 
@@ -116,7 +116,7 @@ To install a **R** package, there are several methods:
 - Or you have to retrieve the package from a folder (binary format) (`.zip`) and then install it with the function `install.packages()`{.r} with the arguments `repos = NULL, type = "binary"`.
 
 
-### R packages for JDemetra+ version 2.2.4
+#### R packages for JDemetra+ version 2.2.4
 
 The packages in version 2 are:
 
@@ -147,7 +147,7 @@ install.packages("JDCruncheR", repos = "https://nexus.insee.fr/repository/r-publ
 ```
 
 
-### R packages for JDemetra+ version 3.x
+#### R packages for JDemetra+ version 3.x
 
 Currently version 3 packages are NOT on CRAN. To install them, you need to go through Github:
 
@@ -178,10 +178,10 @@ remotes::install_github("AQLT/ggdemetra3")
 ```
 
 
-# Environment variables {#var_env}
+## Environment variables {#var_env}
 
 
-## In Rstudio
+### In Rstudio
 
 To add environment variables in Rstudio, you need to add the variable's name and the variable's value.
 There are 2 ways to fill it:
@@ -244,7 +244,7 @@ According to the result, the version is 32 bits or 64 bits :
 More information on the variable `PATH` via the page `r color_format("https://java.com/fr/download/help/path.xml", color = html_color, url = TRUE)`.
 
 
-# Verifications
+## Check your set up
 
 To ensure that everything works fine, you can launch some example of **R** code and check that there is no error:
 
@@ -283,7 +283,7 @@ system("java -version")
 ```
 
 
-# Optional installations
+## Optional installations
 
 Some supplementary installations are optional (that is they are no mandatory but bring external features):
 
@@ -291,9 +291,9 @@ Some supplementary installations are optional (that is they are no mandatory but
 -   [Rtools](https://cran.r-project.org/bin/windows/Rtools/rtools42/rtools.html) to develop **R** packages and compile the code
 
 
-# Problems you may encounter
+## Problems you may encounter
 
-## Problems installing **R** packages
+### Problems installing **R** packages
 
 If you get the following error while installing **R** packages:
 
@@ -326,7 +326,7 @@ There are two solutions:
 ℹ️ More information: `r color_format("https://github.com/jdemetra/rjdemetra/wiki/Installation-manual", color = html_color, url = TRUE)`
 
 
-## The command `library("RJDemetra")`{.r} returns an error message
+### The command `library("RJDemetra")`{.r} returns an error message
 
 The package [**{RJDemetra]{.RPackages} requires Java version 8 or higher to work. If another package has been loaded before [**{RJDemetra}**]{.RPackages}  via the function `library()`{.r} and which doesn't requires an updated Java version, then an old Java version will be used during all the session (**R** is refractory to in-session version change). In case of using [**{RJDemetra}**]{.RPackages}  in a program, you have to specify at the very beginning of the program that **R** must use Java version 8, via the command:
 
@@ -345,12 +345,12 @@ library("RJDemetra")
 Else you have to restart a new **R** session.
 
 
-## `Error array index = -1`
+### `Error array index = -1`
 
 The message of the type `Error array index = -1` tells that an auxiliary variable is not found. It can be calendar regressor or other user defined variables (Easter effect, PSO = pure seasonal outlier...).
 
 
-## The function `cruncher_and_param(...)`{.r} of the [**{JDCruncheR}**]{.RPackages} package returns an error
+### The function `cruncher_and_param(...)`{.r} of the [**{JDCruncheR}**]{.RPackages} package returns an error
 
 When you use the function `cruncher_and_param(...)`{.r} of the [**{JDCruncheR}**]{.RPackages} package, you can get the following error:
 

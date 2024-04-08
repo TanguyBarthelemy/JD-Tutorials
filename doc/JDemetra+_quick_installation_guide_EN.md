@@ -10,7 +10,7 @@ User Interface, Cruncher and related R packages.
 
 If you need more information on how to configure your computer, you
 should read this more [detailed
-guide](https://github.com/TanguyBarthelemy/JD-Tutorials/blob/master/Sheets/Sheet_1_b_Tools_installation_advanced_EN.pdf)
+guide](https://github.com/TanguyBarthelemy/JD-Tutorials/blob/master/Sheets/JDemetra+_configuration_guide_EN.pdf)
 
 ## Installing the Graphical User Interface (GUI)
 
@@ -27,6 +27,9 @@ Scroll down the page, download and unzip the file
 
 To start the application, run the file **nbdemetra64.exe** located in
 the following subfolder “… .4-bin”
+
+ℹ️ Remark: You can create shortcuts to the executable files if you want
+to launch them from another folder (Desktop, project folder…).
 
 - in the v3.x family:
   [here](https://github.com/jdemetra/jdplus-main/releases)
@@ -82,9 +85,9 @@ To install the
 
 ## Configuration to run rjd3 packages
 
-rjd3 suite of packages is available \[here\]
+rjd3 suite of packages is available [here](https://github.com/rjdemetra)
 
-Installation procedure and exemple are provided in the readme files.
+Installation procedure and example are provided in the readme files.
 
 To use the v3 packages in R, you need to specify the path to Java 17 or
 higher.
@@ -94,7 +97,8 @@ interface, as shown in the example below.
 
 - Run this line at the beginning of your programs (with the correct path
   where you installed JDemetra+) or configure your Renviron file as
-  explained [here]():
+  explained
+  [here](https://github.com/TanguyBarthelemy/JD-Tutorials/blob/master/Sheets/Sheet_1_b_Tools_installation_advanced_EN.pdf):
 
 ``` r
 Sys.setenv("JAVA_HOME" = ".../jdemetra-standalone-3.2.2-windows-x86_64/nbdemetra/jdk-21.0.2+13-jre")
