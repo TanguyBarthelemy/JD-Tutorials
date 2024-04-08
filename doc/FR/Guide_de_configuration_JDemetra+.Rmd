@@ -9,11 +9,11 @@ output:
     number_sections: TRUE
     highlight: "arrow"
     theme: "readable"
-    css: "style.css"
+    css: "../style.css"
   pdf_document: 
     includes:
         in_header: 
-            - ../xelatex-emoji/xelatexemoji.sty
+            - ../../xelatex-emoji/xelatexemoji.sty
     extra_dependencies: ["url"]
     number_sections: TRUE
     highlight: "arrow"
@@ -348,7 +348,7 @@ Pour les variables d'environnement `http_proxy` et `https_proxy` sous Windows, i
 - Cliquer sur l'application
 - Ajouter les variables `http_proxy` et `https_proxy` si elles n'existent pas et les modifier si elles existent :
 
-![](../img/modify_proxy.png)
+![](../../img/modify_proxy.png)
 
 ### JAVA_HOME
 
@@ -358,7 +358,7 @@ De même pour la variable d'environnement `JAVA_HOME` pour Windows, comme pour l
 - Cliquer sur l'application
 - Ajouter une variable `JAVA_HOME` si elle n'existe pas et la modifier si elle existe :
 
-![](../img/modify_java_home.png)
+![](../../img/modify_java_home.png)
 
 
 ### PATH

@@ -9,11 +9,11 @@ output:
     number_sections: TRUE
     highlight: "arrow"
     theme: "readable"
-    css: "style.css"
+    css: "../style.css"
   pdf_document: 
     includes:
         in_header: 
-            - ../xelatex-emoji/xelatexemoji.sty
+            - ../../xelatex-emoji/xelatexemoji.sty
     extra_dependencies: ["url"]
     number_sections: TRUE
     highlight: "arrow"
