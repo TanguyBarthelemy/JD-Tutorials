@@ -14,6 +14,7 @@ output:
     includes:
         in_header: 
             - ../../xelatex-emoji/xelatexemoji.sty
+            - ../../xelatex-emoji/xelatexemoji-flags.sty
     extra_dependencies: ["url"]
     number_sections: TRUE
     highlight: "arrow"
@@ -63,16 +64,16 @@ windows_path_color <- "#006817"
 \definecolor{html_color}{HTML}{000cff}
 \definecolor{windows_path_color}{HTML}{006817}
 
-\renewcommand{\xelatexemojipath}[1]{../xelatex-emoji/images/#1}
+\renewcommand{\xelatexemojipath}[1]{../../xelatex-emoji/images/#1}
 
-## Context 
+## Context {-}
 
 This is a quick guide on how to install [JDemetra+](https://jdemetra-new-documentation.netlify.app/) Graphical User Interface, Cruncher and related R packages.
 
 If you need more information on how to configure your computer, you should read this 
 more [detailed guide](https://github.com/TanguyBarthelemy/JD-Tutorials/blob/master/Sheets/JDemetra+_configuration_guide_EN.pdf)
 
-## Installing the Graphical User Interface (GUI)
+## Installing the Graphical User Interface (GUI) {-}
 
 You can find the latest releases 
 
@@ -82,7 +83,7 @@ As of April 2024, the latest version is [v2.2.4](https://github.com/jdemetra/jde
 
 Scroll down the page, download and unzip the file *jdemetra-2.2.4-bin.zip*.
 
-To start the application, run the file **nbdemetra64.exe** located in the following subfolder "... \jdemetra-2.2.4-bin\nbdemetra\bin" 
+To start the application, run the file **nbdemetra64.exe** located in the following subfolder `r color_format("...\\jdemetra-2.2.4-bin\\nbdemetra\\bin", color = windows_path_color, url = FALSE)`
 
 ℹ️ Remark: You can create shortcuts to the executable files if you want to launch them from another folder (Desktop, project folder...).
 
@@ -93,7 +94,7 @@ As of April 2024, the latest version is ([v3.2.2](https://github.com/jdemetra/jd
 
 Scroll down the page, download and unzip the file if you use Windows *jdemetra-standalone-3.2.2-windows-x86_64.zip*.
 
-To start the application, run the file **nbdemetra64.exe** located in the following subfolder "... \jdemetra-standalone-3.2.2-windows-x86_64\nbdemetra\bin"
+To start the application, run the file **nbdemetra64.exe** located in the following subfolder `r color_format("...\\jdemetra-standalone-3.2.2-windows-x86_64\\nbdemetra\\bin", color = windows_path_color, url = FALSE)`
 
 Version 3.x requires Java 17 or higher, *jdemetra-standalone-3.2.2-windows-x86_64.zip* contains a portable version of Java 21, so you don't have to deal with this issue on your computer.
 
@@ -114,7 +115,7 @@ In the **v3.x family** some of the additional features are:
     - Additional algorithms for seasonal adjustment
 
 
-## Installing the cruncher
+## Installing the cruncher {-}
 
 To install the [Cruncher](https://jdemetra-new-documentation.netlify.app/t-production-tools-cruncher-qr) :
 

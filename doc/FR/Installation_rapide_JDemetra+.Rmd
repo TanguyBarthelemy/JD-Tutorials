@@ -14,6 +14,7 @@ output:
     includes:
         in_header: 
             - ../../xelatex-emoji/xelatexemoji.sty
+            - ../../xelatex-emoji/xelatexemoji-flags.sty
     extra_dependencies: ["url"]
     number_sections: TRUE
     highlight: "arrow"
@@ -22,7 +23,7 @@ output:
 always_allow_html: true
 ---
 
-```{r setup, include=FALSE}
+```{r setup, include = FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
@@ -64,7 +65,7 @@ windows_path_color <- "#006817"
 \definecolor{html_color}{HTML}{000cff}
 \definecolor{windows_path_color}{HTML}{006817}
 
-\renewcommand{\xelatexemojipath}[1]{../xelatex-emoji/images/#1}
+\renewcommand{\xelatexemojipath}[1]{../../xelatex-emoji/images/#1}
 
 ## Contexte 
 
@@ -83,7 +84,7 @@ En avril 2024, la dernière version est [v2.2.4](https://github.com/jdemetra/jde
 
 Allez en bas de la page, téléchargez et décompressez le fichier *jdemetra-2.2.4-bin.zip*.
 
-Pour démarrer l'application, exécutez le fichier **nbdemetra64.exe** situé dans le sous-dossier suivant "... \jdemetra-2.2.4-bin\nbdemetra\bin" 
+Pour démarrer l'application, exécutez le fichier **nbdemetra64.exe** situé dans le sous-dossier suivant `r color_format("...\\jdemetra-2.2.4-bin\\nbdemetra\\bin", color = windows_path_color, url = FALSE)`
 
 ℹ️ Remarque : Vous pouvez créer des raccourcis vers les fichiers exécutables si vous souhaitez les lancer à partir d'un autre dossier (bureau, dossier de projet...).
 
@@ -94,7 +95,7 @@ En avril 2024, la dernière version est ([v3.2.2](https://github.com/jdemetra/jd
 
 Allez en bas de la page, téléchargez et décompressez le fichier si vous utilisez Windows *jdemetra-standalone-3.2.2-windows-x86_64.zip*.
 
-Pour lancer l'application, exécutez le fichier **nbdemetra64.exe** situé dans le sous-dossier suivant "... \jdemetra-standalone-3.2.2-windows-x86_64\nbdemetra\bin"
+Pour lancer l'application, exécutez le fichier **nbdemetra64.exe** situé dans le sous-dossier suivant `r color_format("...\\jdemetra-standalone-3.2.2-windows-x86_64\\nbdemetra\\bin", color = windows_path_color, url = FALSE)`
 
 La version 3.x nécessite Java 17 ou supérieur, *jdemetra-standalone-3.2.2-windows-x86_64.zip* contient une version portable de Java 21, de sorte que vous n'avez pas à faire face à ce problème sur votre ordinateur.
 
@@ -106,7 +107,7 @@ Pour bénéficier des fonctionnalités étendues de l'interface graphique, il pe
 Cette procédure est détaillée [ici](https://jdemetra-new-documentation.netlify.app/t-plug-ins) et [ici](https://jdemetra-new-documentation.netlify.app/t-gui-sa-modelling-features) dans la documentation en ligne. 
 
 Dans la **famille v2.x**, certaines des fonctionnalités supplémentaires sont :
- - le Benchmarking et désagrégation temporelle. 
+- le Benchmarking et désagrégation temporelle. 
 - le Nowcasting
  
 Dans la **famille v3.x**, certaines des fonctionnalités supplémentaires sont :
@@ -139,4 +140,3 @@ Vous pouvez utiliser la version de Java fournie avec l'interface utilisateur gra
 ```{r, echo = TRUE, eval = FALSE}
 Sys.setenv("JAVA_HOME" = "chemin/vers/nbdemetra-3.2.2/jdk-21.0.2+13-jre")
 ```
-

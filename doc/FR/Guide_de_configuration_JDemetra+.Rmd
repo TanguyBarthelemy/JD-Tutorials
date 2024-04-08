@@ -14,6 +14,7 @@ output:
     includes:
         in_header: 
             - ../../xelatex-emoji/xelatexemoji.sty
+            - ../../xelatex-emoji/xelatexemoji-flags.sty
     extra_dependencies: ["url"]
     number_sections: TRUE
     highlight: "arrow"
@@ -64,8 +65,10 @@ windows_path_color <- "#006817"
 ```{=tex}
 \definecolor{html_color}{HTML}{000cff}
 \definecolor{windows_path_color}{HTML}{006817}
+
 ```
 \renewcommand{\xelatexemojipath}[1]{../xelatex-emoji/images/#1}
+
 
 ## Contexte {.unnumbered}
 
