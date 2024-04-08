@@ -65,14 +65,14 @@ windows_path_color <- "#006817"
 
 \renewcommand{\xelatexemojipath}[1]{../xelatex-emoji/images/#1}
 
-## Context 
+## Context {-}
 
 This is a quick guide on how to install [JDemetra+](https://jdemetra-new-documentation.netlify.app/) Graphical User Interface, Cruncher and related R packages.
 
 If you need more information on how to configure your computer, you should read this 
 more [detailed guide](https://github.com/TanguyBarthelemy/JD-Tutorials/blob/master/Sheets/JDemetra+_configuration_guide_EN.pdf)
 
-## Installing the Graphical User Interface (GUI)
+## Installing the Graphical User Interface (GUI) {-}
 
 You can find the latest releases 
 
@@ -114,7 +114,7 @@ In the **v3.x family** some of the additional features are:
     - Additional algorithms for seasonal adjustment
 
 
-## Installing the cruncher
+## Installing the cruncher {-}
 
 To install the [Cruncher](https://jdemetra-new-documentation.netlify.app/t-production-tools-cruncher-qr) :
 

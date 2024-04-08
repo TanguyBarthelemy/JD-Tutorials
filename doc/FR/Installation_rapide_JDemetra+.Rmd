@@ -1,0 +1,97 @@
+---
+title: "Installation des outils pour la désaisonnalisation"
+author: "Tanguy BARTHELEMY"
+# date: "2023-01-17"
+output:
+  github_document: default
+  html_document:
+    df_print: paged
+    number_sections: TRUE
+    highlight: "arrow"
+    theme: "readable"
+    css: "../style.css"
+  pdf_document: 
+    includes:
+        in_header: 
+            - ../../xelatex-emoji/xelatexemoji.sty
+            - ../../xelatex-emoji/xelatexemoji-flags.sty
+    extra_dependencies: ["url"]
+    number_sections: TRUE
+    highlight: "arrow"
+    latex_engine: xelatex
+    keep_tex: false
+always_allow_html: true
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, echo = FALSE, eval = TRUE}
+html_color <- "#000cff"
+windows_path_color <- "#006817"
+
+color_format <- function(x, color, url = TRUE) {
+    color_name <- deparse(substitute(color))
+    output_format <- knitr::opts_knit$get("rmarkdown.pandoc.to")
+
+    x <- x |> gsub(pattern = "\\", replacement = "\\\\", fixed = TRUE)
+
+    if (output_format == "latex") {
+        x <- x |> gsub(pattern = "#", replacement = "\\#", fixed = TRUE)
+        ret <- paste("\\textcolor{", color_name, ifelse(url, "}{\\url{", "}{\\nolinkurl{"), x, ifelse(url, "}}", "}}"), sep = "")
+    } else if (output_format == "html") {
+        ret <- paste("<font color='", color, "'>", x, "</font>", sep = "")
+    } else if (output_format == "gfm+tex_math_dollars-yaml_metadata_block") {
+        if (url) {
+            ret <- paste("[", x, "](", x, ")", sep = "")
+        } else {
+            ret <- x |> gsub(pattern = "\\", replacement = "\\\\", fixed = TRUE)
+            ret <- paste("${\\textsf{\\color{", color, "}{", ret, "}}}$", sep = "")
+        }
+    } else {
+        ret <- x
+    }
+
+    return(ret)
+}
+```
+
+```{r, echo = FALSE, eval = TRUE}
+html_color <- "#000cff"
+windows_path_color <- "#006817"
+```
+
+\definecolor{html_color}{HTML}{000cff}
+\definecolor{windows_path_color}{HTML}{006817}
+
+\renewcommand{\xelatexemojipath}[1]{../xelatex-emoji/images/#1}
+
+## Installation de JDemetra+ {-}
+
+Vous trouverez les 2 versions actuelles de JDemetra+ (v2 et v3) :
+
+- en v2 : la dernière release ([v2.2.4](https://github.com/jdemetra/jdemetra-app/releases/tag/v2.2.4))
+- en v3 : la dernière release ([v3.2.2](https://github.com/jdemetra/jdplus-main/releases/tag/v3.2.2))
+
+Il suffit de **Télécharger** et **dézipper** le dossier compressé `jdemetra-standalone-3.2.2-windows-x86_64.zip` qui permet d'avoir une version portable du logiciel.
+
+
+## Installation du cruncher {-}
+
+Pour installer le cruncher :
+
+- en v2, il faut aller sur la page du [**JWSACruncher**](https://github.com/jdemetra/jwsacruncher) et **Télécharger** et **Dézipper** le fichier `jwsacruncher-2.2.4-bin.zip`
+- en v3, il faut aller sur la page de [**jdplus-main**](https://github.com/jdemetra/jdplus-main) et **Télécharger** et **Dézipper** le fichier `jwsacruncher-standalone-3.2.2-windows-x86_64.zip`
+
+
+## Paramétrage de R et Rstudio {-}
+
+Pour utiliser les packages en v3, il faut spécifier le chemin jusqu'à Java 17 à R.
+
+Pour cela il suffit d'ajouter cette ligne de code au début du programme (en paramétrant le chemin là où vous avez installé JDemetra+) :
+
+```{r, echo = TRUE, eval = FALSE}
+Sys.setenv("JAVA_HOME" = "chemin/vers/nbdemetra-3.2.2/jdk-21.0.2+13-jre")
+```
+
