@@ -1,7 +1,7 @@
 ---
-title: "Tools installation for seasonal adjustment"
+title: "Configuring JDemetra+ and related R tools"
 author: "Tanguy BARTHELEMY"
-# date: "2023-01-17"
+# date: "2024-04-05"
 output:
   github_document: default
   html_document:
@@ -66,115 +66,30 @@ windows_path_color <- "#006817"
 \renewcommand{\xelatexemojipath}[1]{../xelatex-emoji/images/#1}
 
 
-# Context {-}
+## Context {-}
 
-For seasonal adjustment we recommend using JDemetra+ algorithms
+This document complements the [quick installation guide] (https://github.com/TanguyBarthelemy/JD-Tutorials/blob/master/Sheets/JDemetra+_quick_installation_guide_EN.pdf) by providing more details on the configuration required to run JDemetra+ and related tools.
 
-Thus, it is helpful to install the following tools: 
-
--   JDemetra+ Graphical User Interface (X13-Arima and Tramo-Seats )
-
--   **R** and Rstudio (which allow to access even more JDemetra+ algorithms)
-
-⚠️ No assistance in **SAS** language will be given. ⚠️
-
-
-# Preliminary {-}
-
-On the computers without administrator rights (*professional computer, for example*), it is recommended to create a folder **Software** under `r color_format("C:\\Users\\...\\Software", color = windows_path_color, url = FALSE)` or directly under `r color_format("C:\\Users\\Software", color = windows_path_color, url = FALSE)` where all software will be installed.
+On computers without administrator rights (*professional computer, for example*), it is recommended to create a folder **Software** under `r color_format("C:\\Users\\...\\Software", color = windows_path_color, url = FALSE)` or directly under `r color_format("C:\\Users\\Software", color = windows_path_color, url = FALSE)` where all software will be installed.
 
 ⚠️ Warning: when we specify an **absolute** path for a software (JDemetra+, Java, **R**, ...) in a program, a shortcut, a variable, ..., it must be modified each time any root repository is moved.
 
-# Installation of [JDemetra+](https://github.com/jdemetra/jdemetra-app)
+## Installation of JDemetra+ Graphical user interface
 
-JDemetra+ is a collection of Java programs used for time series analysis and more specifically for seasonal adjustment. JDemetra+ is delivered in the form of an GUI (Graphical User Interface) but there are **R** packages developed to be used with **R** as well as a cruncher (executable).
-
-## Version of JDemetra+ and dependencies
-
-JDemetra+ is downloadable from the [github link](https://github.com/jdemetra/jdemetra-app/releases) of the application: `r color_format("https://github.com/jdemetra/jdemetra-app/releases", color = html_color, url = TRUE)`.
-
-The last release ([v2.2.4](https://github.com/jdemetra/jdemetra-app/releases/tag/v2.2.3)) dates from January 31, 2023. It is the last **stable** version of JDemetra+. **This version should be downloaded and must be used in production.**
-
-There is one more version of JDemetra+ which are only at a **test** stage:
-
--   [v3.2.2](https://github.com/jdemetra/jdplus-main/releases/tag/v3.2.2): the new JDemetra+ version with new features and a new GUI
-
-JDemetra+ v2.2.4 require Java version $\geq 8$ while v3.2.2 requires Java version $\geq 17$:
-
-| JDemetra+ version | Java version |
-|-------------------|--------------|
-|            v2.2.4 |     $\geq 8$ |
-|            v3.2.2 |    $\geq 17$ |
-
-In the following procedure, the installation processes of this 2 versions are the same. You just have to repeat them for each version you want to install.
-
-
-## Installation process
-
-There are two possibilities for installing:
-
--   **Download and execute** the `.exe` file which requires administrator rights
--   **Download** and **unzip** the compressed folder `.zip` that allows to get a portable version of the software
-
-⚠️ Warning: for the second option, you need to **download** the compressed folder `jdemetra+-2.2.4-bin.zip` (for the version 2.2.4 for example) and **not** the folder `Source code (zip)`.
-
-The Software is in the folder `r color_format("\\nbdemetra\\bin\\", color = windows_path_color, url = FALSE)`, these are the file `nbdemetra.exe` (version 32-bit) and `nbdemetra64.exe` (version 64-bit).
-
-ℹ Advice: If you want to use several versions of JDemetra+ (v2.2.4, v3.2.2, ...), you can rename the unzipped folder in `r color_format("\\nbdemetra-2.2.4\\", color = windows_path_color, url = FALSE)` and `r color_format("\\nbdemetra-3.2.2\\", color = windows_path_color, url = FALSE)`.
-
-ℹ️ Remark: You can create shortcuts to the executable files if you want to launch them from another folder (Desktop, project folder...).
+To install [JDemetra+ Graphical User Interface](https://github.com/jdemetra/jdemetra-app) see the [quick installation guide] (https://github.com/TanguyBarthelemy/JD-Tutorials/blob/master/Sheets/JDemetra+_quick_installation_guide_EN.pdf)
 
 ## Installation of the cruncher
 
-The cruncher ([**JWSACruncher**](https://github.com/jdemetra/jwsacruncher)) is a tool to update a workspace of JDemetra+ from the console, without opening JDemetra+ Graphical User Interface. The update of a workspace can then be done from another Software (**R** or **SAS** for example).
-
-To use the cruncher, you have to:
-
--   **Download** and **unzip** the file from the **latest stable** version v2.2.4 here `r color_format("https://github.com/jdemetra/jwsacruncher/releases", color = html_color, url = TRUE)`
-
-If you want to install and use a portable Java version (See section [Java installation](#install_java)), you have to modify some parameters to use the cruncher:
-
--   In the unzipped folder, **open** (for example with Notepad++) the file `jwsacruncher.bat` present in the subfolder `r color_format("\\bin\\", color = windows_path_color, url = FALSE)` (that is under `r color_format("jdemetra-cli-2.2.4\\bin\\", color = windows_path_color, url = FALSE)` in the version 2.2.3 of the cruncher)
--   **Modify** the value of the variable `JAVACMD` at the line **71** (currently `JAVACMD=java`) by the address towards the file `java.exe` of the portable version. Then, if JPortable is installed under `r color_format("C:\\Users\\Software", color = windows_path_color, url = FALSE)`, the new line is `if "%JAVACMD%"=="" set JAVACMD="C:\\Users\\Software\\Java64\\bin\\java"` (for Java 8).
+To install [JDemetra+ cruncher](https://github.com/jdemetra/jdemetra-app) see the [quick installation guide] (https://github.com/TanguyBarthelemy/JD-Tutorials/blob/master/Sheets/JDemetra+_quick_installation_guide_EN.pdf)
 
 
-# Installation of Java {#install_java}
+## Installation of **R** and Rstudio
 
-ℹ️ On Insee computers, Java is already installed in version 8. Then, there is no need to install a portable version to use JDemetra+ in version 2.2.4.
-
-## Java 8
-
-To install Java 8, use the link `r color_format("https://portableapps.com/apps/utilities/java_portable", color = html_color, url = TRUE)`. If you use the version 64-bit of JDemetra+, you should install the version jPortable 64-bit (at the bottom of the page).
-
-
-## Java 17
-
-### Remark
-
-The version 3.2.2 of JDemetra+ contains a
-JDemetra+ version 3.2.2 contains a jdk 17 (java 17 version) packaged in [.zip](https://github.com/jdemetra/jdplus-main/releases/tag/v3.2.2). So to use the interface, it is not necessary to install Java 17.
-
-On the other hand, to use R packages in version 3 without downloading the GUI (in version 3.2.2), it is mandatory to have java >= 17 and therefore to install it yourself.
-
-### Installation
-
-To install Java 17, you need to head over to `r color_format("https://whichjdk.com/", color = html_color, url = TRUE)`.
-
--   **Download** the version `Compressed Archive` of Windows (`r color_format("https://whichjdk.com/", color = html_color, url = TRUE)`)
--   **Unzip** the folder `r color_format("jdk-17.0.6", color = windows_path_color, url = FALSE)` under `r color_format("C:\\Users\\Software", color = windows_path_color, url = FALSE)` (for example)
-
-After a Java installation (in version 8, 17 or other), you need to:
-
-- **Modify** the environment variable `PATH` of Rstudio and of Windows and `JAVA_HOME` from Rstudio (See section [Environment variables](#var_env))
-
-
-# Installation of **R** and Rstudio
-
-The JDemetra+ features are available on **R** via **R** packages.
+The JDemetra+ algorithms can be accessed in **R** via **R** packages.
 To use **R**, it is better to use an IDE like Rstudio. All the executable files to download are under `r color_format("https://posit.co/download/rstudio-desktop/#download", color = html_color, url = TRUE)`.
 
 
-## Installation of **R**
+### Installation of **R**
 
 To install **R**, you should:
 
@@ -182,7 +97,7 @@ To install **R**, you should:
 -   **Execute** the executable to parameter and install **R**.
 
 
-## Installation of Rstudio
+### Installation of Rstudio
 
 **Download** the last Rstudio version (under `r color_format("https://posit.co/download/rstudio-desktop/#download", color = html_color, url = TRUE)`) and the **installer**.
 
@@ -192,7 +107,7 @@ If the installation via the file `.exe` fails (because it requires higher rights
 - **Create a shortcut** of the file `rstudio.exe` on the Desktop.
 
 
-## Installation of **R** packages
+### Installation of **R** packages
 
 To install a **R** package, there are several methods:
 
@@ -201,7 +116,7 @@ To install a **R** package, there are several methods:
 - Or you have to retrieve the package from a folder (binary format) (`.zip`) and then install it with the function `install.packages()`{.r} with the arguments `repos = NULL, type = "binary"`.
 
 
-### In version 2
+#### R packages for JDemetra+ version 2.2.4
 
 The packages in version 2 are:
 
@@ -232,7 +147,7 @@ install.packages("JDCruncheR", repos = "https://nexus.insee.fr/repository/r-publ
 ```
 
 
-### In version 3
+#### R packages for JDemetra+ version 3.x
 
 Currently version 3 packages are NOT on CRAN. To install them, you need to go through Github:
 
@@ -263,41 +178,10 @@ remotes::install_github("AQLT/ggdemetra3")
 ```
 
 
-### AUS (Insee server) case
-
-### Cas AUS
-
-To install a package on AUS, you can't use the function `install_github()`{.r}. Therefore:
+## Environment variables {#var_env}
 
 
-- either the package is on CRAN or on AUS, it can be installed with the function `install.packages()`{.r} and with the argument `repos = "https://nexus.insee.fr/repository/r-public/"`{.r}
-- or the package is not available and it must be downloaded at the binary format (`.zip`). For this you have to look for the compressed folder `.zip` under GitHub.
-
-Example for the package [**{rjd3toolkit}**]{.RPackages}, you can install the package:
-
-- on the nexus with the following  code:
-
-    ```{r, echo = TRUE, eval = FALSE}
-    install.packages("rjd3toolkit", repos = "https://nexus.insee.fr/repository/r-public/")
-    ```
-
-- you need to search under `r color_format("https://github.com/rjdemetra/rjd3toolkit/releases/tag/v3.2.2", color = html_color, url = TRUE)` (*release* Section) 
-
-    ```{r, echo = TRUE, eval = FALSE}
-    install.packages("path/.../rjd3toolkit_3.2.2.zip ", repos = NULL, type = "binary")
-    ```
-
-- with the binary format `rjd3toolkit_3.2.2.zip` under `r color_format("https://github.com/rjdemetra/rjd3toolkit/releases/tag/v3.2.2", color = html_color, url = TRUE)` (*release* Section), then launch the installation code:
-
-    ```{r, echo = TRUE, eval = FALSE}
-    install.packages("path/to/the/binary/package/.../rjd3toolkit_3.2.2.zip ", repos = NULL, type = "binary")
-    ```
-
-
-# Environment variables {#var_env}
-
-
-## In Rstudio
+### In Rstudio
 
 To add environment variables in Rstudio, you need to add the variable's name and the variable's value.
 There are 2 ways to fill it:
@@ -314,66 +198,6 @@ There are 2 ways to fill it:
     - **Add** the variables with the fonction `Sys.setenv()`{.r} (with new lines)
     - **Save** the file
 
-
-### Proxy
-
-ℹ️ On Insee computers, you need to **configure** the proxy and parameters of Software localisation under Rstudio. The two ways to do it:
-
-First method (with the `.Renviron`):
-
-- **Launch** the code `file.edit("~/.Renviron")`{.r} or `usethis::edit_r_environ()`{.r} (with  the package **usethis** and the argument `scope` which egals `"user"`{.r} or `"project"`{.r} if you are in a R project)
-- **Add** the parameters (news lines):
-
-    ```{.Code}
-    http_proxy = http://proxy-rie.http.insee.fr:8080/
-    https_proxy = http://proxy-rie.http.insee.fr:8080/
-    ```
-
-- **Save** and **close** the file
-
-Second method (with the `.Rprofile`) :
-
-- **Launch** the code `file.edit("~/.Rprofile")`{.r} or `usethis::edit_r_profile()`{.r} (with  the package **usethis** and the argument `scope` which egals `"user"`{.r} or `"project"`{.r} if you are in a R project)
-- **Add** the next lines:
-
-    ```{r, echo = TRUE, eval = FALSE}
-    Sys.setenv("http_proxy" = "http://proxy-rie.http.insee.fr:8080/")
-    Sys.setenv("https_proxy" = "http://proxy-rie.http.insee.fr:8080/")
-    ```
-
-- **Save** the file
-
-
-### JAVA_HOME
-
-If a new Java version has been installed, you should inform Rstudio of the Java installation localisation. For this, you should do as to parameter the proxy. The name of the variable is `JAVA_HOME` and the value of the variable is `"C:/Users/Software/Java17/jdk17"`{.r} (according to where your java installation is).
-
-
-## In Windows
-
-In Windows, it could be useful to fill also the environnement variables.
-
-
-### Proxy
-
-For the environment variables `http_proxy` and `https_proxy` for Windows, follow these steps:
-
-- Search for "Environment variables"
-- Click on the application that appears.
-- Add the variables `http_proxy` and `https_proxy` if they don't exist, and modify them if they already do:
-
-![](../img/modify_proxy.png)
-
-
-### JAVA_HOME
-
-Similarly for the environment variable `JAVA_HOME` for Windows, you have to:
-
-- Search for "Environment variables"
-- Click on the application that appears.
-- Add the variable `JAVA_HOME` if it doesn't exist, and modify is if it already does:
-
-![](../img/modify_java_home.png)
 
 
 ### PATH
@@ -420,7 +244,7 @@ According to the result, the version is 32 bits or 64 bits :
 More information on the variable `PATH` via the page `r color_format("https://java.com/fr/download/help/path.xml", color = html_color, url = TRUE)`.
 
 
-# Verifications
+## Check your set up
 
 To ensure that everything works fine, you can launch some example of **R** code and check that there is no error:
 
@@ -459,7 +283,7 @@ system("java -version")
 ```
 
 
-# Optional installations
+## Optional installations
 
 Some supplementary installations are optional (that is they are no mandatory but bring external features):
 
@@ -467,9 +291,9 @@ Some supplementary installations are optional (that is they are no mandatory but
 -   [Rtools](https://cran.r-project.org/bin/windows/Rtools/rtools42/rtools.html) to develop **R** packages and compile the code
 
 
-# Problems you may encounter
+## Problems you may encounter
 
-## Problems installing **R** packages
+### Problems installing **R** packages
 
 If you get the following error while installing **R** packages:
 
@@ -502,7 +326,7 @@ There are two solutions:
 ℹ️ More information: `r color_format("https://github.com/jdemetra/rjdemetra/wiki/Installation-manual", color = html_color, url = TRUE)`
 
 
-## The command `library("RJDemetra")`{.r} returns an error message
+### The command `library("RJDemetra")`{.r} returns an error message
 
 The package [**{RJDemetra]{.RPackages} requires Java version 8 or higher to work. If another package has been loaded before [**{RJDemetra}**]{.RPackages}  via the function `library()`{.r} and which doesn't requires an updated Java version, then an old Java version will be used during all the session (**R** is refractory to in-session version change). In case of using [**{RJDemetra}**]{.RPackages}  in a program, you have to specify at the very beginning of the program that **R** must use Java version 8, via the command:
 
@@ -521,12 +345,12 @@ library("RJDemetra")
 Else you have to restart a new **R** session.
 
 
-## `Error array index = -1`
+### `Error array index = -1`
 
 The message of the type `Error array index = -1` tells that an auxiliary variable is not found. It can be calendar regressor or other user defined variables (Easter effect, PSO = pure seasonal outlier...).
 
 
-## The function `cruncher_and_param(...)`{.r} of the [**{JDCruncheR}**]{.RPackages} package returns an error
+### The function `cruncher_and_param(...)`{.r} of the [**{JDCruncheR}**]{.RPackages} package returns an error
 
 When you use the function `cruncher_and_param(...)`{.r} of the [**{JDCruncheR}**]{.RPackages} package, you can get the following error:
 
