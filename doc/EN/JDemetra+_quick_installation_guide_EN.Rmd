@@ -83,7 +83,7 @@ As of April 2024, the latest version is [v2.2.4](https://github.com/jdemetra/jde
 
 Scroll down the page, download and unzip the file *jdemetra-2.2.4-bin.zip*.
 
-To start the application, run the file **nbdemetra64.exe** located in the following subfolder "... \jdemetra-2.2.4-bin\nbdemetra\bin" 
+To start the application, run the file **nbdemetra64.exe** located in the following subfolder `r color_format("...\\jdemetra-2.2.4-bin\\nbdemetra\\bin", color = windows_path_color, url = FALSE)`
 
 ℹ️ Remark: You can create shortcuts to the executable files if you want to launch them from another folder (Desktop, project folder...).
 
@@ -94,7 +94,7 @@ As of April 2024, the latest version is ([v3.2.2](https://github.com/jdemetra/jd
 
 Scroll down the page, download and unzip the file if you use Windows *jdemetra-standalone-3.2.2-windows-x86_64.zip*.
 
-To start the application, run the file **nbdemetra64.exe** located in the following subfolder "... \jdemetra-standalone-3.2.2-windows-x86_64\nbdemetra\bin"
+To start the application, run the file **nbdemetra64.exe** located in the following subfolder `r color_format("...\\jdemetra-standalone-3.2.2-windows-x86_64\\nbdemetra\\bin", color = windows_path_color, url = FALSE)`
 
 Version 3.x requires Java 17 or higher, *jdemetra-standalone-3.2.2-windows-x86_64.zip* contains a portable version of Java 21, so you don't have to deal with this issue on your computer.
 
