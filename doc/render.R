@@ -2,9 +2,19 @@
 # Rendu des fiches -------------------------------------------------------------
 
 # Fiches FR
-rmarkdown::render(list.files("./doc/FR/", full.names = TRUE),
-                  output_dir = "Fiches", output_format = "all")
+for (fiche_rmd in list.files("./doc/FR/", full.names = TRUE)) {
+    rmarkdown::render(
+        input = fiche_rmd, 
+        output_dir = "Fiches", 
+        output_format = "all"
+    )
+}
 
 # Sheets EN
-rmarkdown::render(list.files("./doc/EN/", full.names = TRUE),
-                  output_dir = "Sheets", output_format = "all")
+for (sheet_rmd in list.files("./doc/EN/", full.names = TRUE)) {
+    rmarkdown::render(
+        input = sheet_rmd, 
+        output_dir = "Sheets", 
+        output_format = "all"
+    )
+}
