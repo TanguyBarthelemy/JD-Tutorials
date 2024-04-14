@@ -67,28 +67,35 @@ windows_path_color <- "#006817"
 \definecolor{windows_path_color}{HTML}{006817}
 
 ```
-\renewcommand{\xelatexemojipath}[1]{../xelatex-emoji/images/#1}
+
+\renewcommand{\xelatexemojipath}[1]{../../xelatex-emoji/images/#1}
 
 
 ## Contexte {.unnumbered}
 
-Ce document complète le [guide d'installation rapide] (<https://github.com/TanguyBarthelemy/JD-Tutorials/blob/master/Sheets/JDemetra+_quick_installation_guide_FR.pdf>) en fournissant plus de détails sur la configuration requise pour faire fonctionner JDemetra+ et les outils associés.
+Ce document complète le [guide d'installation rapide] (<https://github.com/TanguyBarthelemy/JD-Tutorials/blob/master/Fiches/Installation_rapide_JDemetra+.pdf>) en fournissant plus de détails sur la configuration requise pour faire fonctionner JDemetra+ et les outils associés.
 
 Sur les ordinateurs sans droits d'administrateur (*ordinateur professionnel, par exemple*), il est recommandé de créer un dossier **Software** sous `r color_format("C:\\Users\\...\\Software", color = windows_path_color, url = FALSE)` ou directement sous `r color_format("C:\\Users\\Software", color = windows_path_color, url = FALSE)` où tous les logiciels seront installés.
 
 ⚠️ Attention : lorsque nous spécifions un chemin **absolu** pour un logiciel (JDemetra+, Java, **R**, ...) dans un programme, un raccourci, une variable, ..., il doit être modifié à chaque fois qu'un dépôt racine est déplacé.
 
+
 ## Installation de JDemetra+ Interface graphique
 
-Pour installer [JDemetra+ Graphique User Interface](https://github.com/jdemetra/jdemetra-app) voir le [guide d'installation rapide] (<https://github.com/TanguyBarthelemy/JD-Tutorials/blob/master/Sheets/JDemetra+_quick_installation_guide_EN.pdf>).
+Pour installer [JDemetra+ Graphique User Interface](https://github.com/jdemetra/jdemetra-app) voir le [guide d'installation rapide] (<https://github.com/TanguyBarthelemy/JD-Tutorials/blob/master/Fiches/Installation_rapide_JDemetra+.pdf>).
+
 
 ## Installation du cruncher
 
-Pour installer [JDemetra+ cruncher](https://github.com/jdemetra/jdemetra-app) voir le [guide d'installation rapide] (<https://github.com/TanguyBarthelemy/JD-Tutorials/blob/master/Sheets/JDemetra+_quick_installation_guide_EN.pdf>)
+Pour installer [JDemetra+ cruncher](https://github.com/jdemetra/jdemetra-app) voir le [guide d'installation rapide] (<https://github.com/TanguyBarthelemy/JD-Tutorials/blob/master/Fiches/Installation_rapide_JDemetra+.pdf>)
+
 
 ## Installation de **R** et Rstudio
 
-Les algorithmes de JDemetra+ sont accessibles dans **R** via les packages **R**. Pour utiliser **R**, il est préférable d'utiliser un IDE comme Rstudio. Tous les fichiers exécutables à télécharger se trouvent sous `r color_format("https://posit.co/download/rstudio-desktop/#download", color = html_color, url = TRUE)`.
+Les algorithmes de JDemetra+ sont accessibles dans **R** via les packages R. 
+
+Pour utiliser **R**, il est préférable d'utiliser un IDE comme Rstudio. Tous les fichiers exécutables à télécharger se trouvent sous `r color_format("https://posit.co/download/rstudio-desktop/#download", color = html_color, url = TRUE)`.
+
 
 ### Installation de **R**
 
@@ -97,9 +104,10 @@ Pour installer **R**, vous devez
 -   **Télécharger** le fichier binaire `R-4.3.2-win.exe` sous `r color_format("https://cran.rstudio.com/bin/windows/base/", color = html_color, url = TRUE)`
 -   **Exécuter** l'exécutable pour paramétrer et installer **R**.
 
+
 ### Installation de Rstudio
 
-**Téléchargez** la dernière version de Rstudio (sous `r color_format("https://posit.co/download/rstudio-desktop/#download", color = html_color, url = TRUE)`) et le **installateur**.
+Pour installer Rstudio, il suffit de **téléchargez** la dernière version de Rstudio (sous `r color_format("https://posit.co/download/rstudio-desktop/#download", color = html_color, url = TRUE)`) et le **installateur**.
 
 Si l'installation via le fichier `.exe` échoue (parce qu'elle nécessite des droits plus élevés (administrateur, élévation, ...), nous obtiendrons une version portable du logiciel. Pour ce faire :
 
@@ -107,13 +115,15 @@ Si l'installation via le fichier `.exe` échoue (parce qu'elle nécessite des dr
 
 -   **Créer un raccourci** du fichier `rstudio.exe` sur le Bureau.
 
-### Installation des packages \*\*R
+
+### Installation des packages **R**
 
 Pour installer un package **R**, il y a plusieurs méthodes :
 
 -   Soit il est sur CRAN et vous pouvez l'installer directement avec la fonction `install.packages()`{.r}.
 -   Soit il est sur Github et vous pouvez l'installer directement avec la fonction `install_github()`{.r} à partir du package **remotes**.
 -   Soit vous devez récupérer le package dans un dossier (format binaire) (`.zip`) et ensuite l'installer avec la fonction `install.packages()`{.r} avec les arguments `repos = NULL, type = "binary"`.
+
 
 #### Les packages R pour JDemetra+ version 2.2.4
 
@@ -131,7 +141,7 @@ Le code d'installation des packages se trouve ci-dessous :
 
 
 ```{r, echo = TRUE, eval = FALSE}
-# If remotes is not installed
+# Si le package remotes n'est pas installé
 # install.packages("remotes")
 
 install.packages("RJDemetra")
@@ -141,17 +151,18 @@ install.packages("rjdmarkdown")
 remotes::install_github("InseeFrLab/rjdworkspace")
 remotes::install_github("InseeFr/JDCruncheR")
 
-# Under AUS and on Insee computers
+# Sous AUS et sur les ordinateurs Insee
 install.packages("rjdworkspace", repos = "https://nexus.insee.fr/repository/r-public")
 install.packages("JDCruncheR", repos = "https://nexus.insee.fr/repository/r-public")
 ```
+
 
 #### Packages R pour JDemetra+ version 3.x
 
 Actuellement, les packages pour la version 3 ne sont PAS sur CRAN. Pour les installer, vous devez passer par Github :
 
 ```{r, echo = TRUE, eval = FALSE}
-# If remotes is not installed
+# Si le package remotes n'est pas installé
 # install.packages("remotes")
 
 remotes::install_github("rjdemetra/rjd3toolkit")
@@ -175,6 +186,30 @@ remotes::install_github("rjdemetra/rjd3nowcasting")
 
 remotes::install_github("AQLT/ggdemetra3")
 ```
+
+
+#### Cas AUS (Insee)
+
+Pour installer un package sur AUS, il n'est pas possible d'utiliser la fonction `install_github()`{.r}. Ainsi :
+
+- soit le package est sur le nexus d'AUS, il peut être installé avec la fonction `install.packages()`{.r} et l'argument `repos = "https://nexus.insee.fr/repository/r-public/"`{.r}
+- soit il n'est pas disponible et doit être téléchargé au format binaire. Pour cela, il faut aller chercher le dossier compressé `.zip` sous GitHub.
+
+Exemple pour le package [**{rjd3toolkit}**]{.RPackages}, on peut installer le package :
+
+- sur le nexus avec le code suivant :
+
+    ```{r, echo = TRUE, eval = FALSE}
+    install.packages("rjd3toolkit", repos = "https://nexus.insee.fr/repository/r-public/")
+    ```
+
+- au format binaire `rjd3toolkit_3.2.2.zip` qui se trouve sous `r color_format("https://github.com/rjdemetra/rjd3toolkit/releases/tag/v3.2.2", color = html_color, url = TRUE)` (*release* Section). Après l'avoir récupéré, il faut lancer la commande d'installation :
+
+    ```{r, echo = TRUE, eval = FALSE}
+    install.packages("chemin/vers/le/binaire/.../rjd3toolkit_3.2.2.zip ",
+                     repos = NULL, type = "binary")
+    ```
+
 
 ## Variables d'environnement {#var_env}
 
@@ -289,7 +324,7 @@ system("java -version")
 Certaines installations supplémentaires sont optionnelles (c'est-à-dire qu'elles ne sont pas obligatoires mais apportent des fonctionnalités externes) :
 
 - [Miktek](https://miktex.org/howto/install-miktex) pour produire des documents PDF avec Latex
-- Rtools](https://cran.r-project.org/bin/windows/Rtools/rtools42/rtools.html) pour développer des packages **R** et compiler le code.
+- [Rtools](https://cran.r-project.org/bin/windows/Rtools/rtools42/rtools.html) pour développer des packages **R** et compiler le code.
 
 
 ## Problèmes que vous pouvez rencontrer
@@ -304,7 +339,7 @@ install.packages("RJDemetra")
 ```
 
 ```{r, error = TRUE, echo = FALSE, include = TRUE, eval = TRUE}
-stop("Erreur: the chargement a échoué
+stop("Erreur : the chargement a échoué
 Exécution arrêtée
 *** arch - x64")
 ```
@@ -335,14 +370,14 @@ Il y a deux solutions :
 Le package [**{RJDemetra]{.RPackages} nécessite la version 8 ou supérieure de Java pour fonctionner. Si un autre package a été chargé avant [**{RJDemetra}**]{.RPackages} via la fonction `library()`{.r} et qui ne nécessite pas une version Java à jour, alors une ancienne version Java sera utilisée pendant toute la session (**R** est réfractaire au changement de version en cours de session). Dans le cas de l'utilisation de [**{RJDemetra}**]{.RPackages} dans un programme, il faut spécifier au tout début du programme que **R** doit utiliser la version 8 de Java, via la commande :
 
 ```{r, echo = TRUE, eval = FALSE}
-# Where Java is installed
+# Là où est installé java
 Sys.setenv(JAVA_HOME = "C:/Users/Software/Java17/jdk17")
 ```
 
 ou chargez d'abord [**{RJDemetra}**]{.RPackages} 
 
 ```{r, echo = TRUE, eval = FALSE}
-# At the beginning of program
+# En début de programme
 library("RJDemetra")
 ```
 

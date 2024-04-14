@@ -67,39 +67,40 @@ windows_path_color <- "#006817"
 
 \renewcommand{\xelatexemojipath}[1]{../../xelatex-emoji/images/#1}
 
+
 ## Contexte 
 
-Il s'agit d'un guide rapide sur l'installation de l'interface graphique de [JDemetra+](https://jdemetra-new-documentation.netlify.app/), de Cruncher et des packages R associés.
+Il s'agit d'un guide rapide sur l'installation de l'interface graphique de [JDemetra+](https://jdemetra-new-documentation.netlify.app/), du cruncher et des packages R associés.
 
-Si vous avez besoin de plus d'informations sur la configuration de votre ordinateur, vous devriez lire ce 
-plus [guide détaillé](https://github.com/TanguyBarthelemy/JD-Tutorials/blob/master/Fiches/JDemetra+_configuration_guide_FR.pdf)
+Si vous avez besoin de plus d'informations sur la configuration de votre ordinateur, vous devriez lire ce [guide détaillé](https://github.com/TanguyBarthelemy/JD-Tutorials/blob/master/Fiches/JDemetra+_configuration_guide_FR.pdf)
+
 
 ## Installer l'Interface Graphique (GUI)
 
-Vous pouvez trouver les dernières versions 
+Vous pouvez trouver les dernières versions :
 
 - de la famille v2.x : [ici](https://github.com/jdemetra/jdemetra-app/releases)
 
-En avril 2024, la dernière version est [v2.2.4](https://github.com/jdemetra/jdemetra-app/releases/tag/v2.2.4)
-
-Allez en bas de la page, téléchargez et décompressez le fichier *jdemetra-2.2.4-bin.zip*.
-
-Pour démarrer l'application, exécutez le fichier **nbdemetra64.exe** situé dans le sous-dossier suivant `r color_format("...\\jdemetra-2.2.4-bin\\nbdemetra\\bin", color = windows_path_color, url = FALSE)`
-
-ℹ️ Remarque : Vous pouvez créer des raccourcis vers les fichiers exécutables si vous souhaitez les lancer à partir d'un autre dossier (bureau, dossier de projet...).
+    En avril 2024, la dernière version est [v2.2.4](https://github.com/jdemetra/jdemetra-app/releases/tag/v2.2.4)
+    
+    Allez en bas de la page, téléchargez et décompressez le fichier *jdemetra-2.2.4-bin.zip*.
+    
+    Pour démarrer l'application, exécutez le fichier **nbdemetra64.exe** situé dans le sous-dossier suivant `r color_format("...\\jdemetra-2.2.4-bin\\nbdemetra\\bin", color = windows_path_color, url = FALSE)`
+    
+    ℹ️ Remarque : Vous pouvez créer des raccourcis vers les fichiers exécutables si vous souhaitez les lancer à partir d'un autre dossier (bureau, dossier de projet...).
 
 
 - dans la famille v3.x : [ici](https://github.com/jdemetra/jdplus-main/releases)
 
-En avril 2024, la dernière version est ([v3.2.2](https://github.com/jdemetra/jdplus-main/releases/tag/v3.2.2)).
+    En avril 2024, la dernière version est ([v3.2.2](https://github.com/jdemetra/jdplus-main/releases/tag/v3.2.2)).
+    
+    Allez en bas de la page, téléchargez et décompressez le fichier si vous utilisez Windows *jdemetra-standalone-3.2.2-windows-x86_64.zip*.
+    
+    Pour lancer l'application, exécutez le fichier **nbdemetra64.exe** situé dans le sous-dossier suivant `r color_format("...\\jdemetra-standalone-3.2.2-windows-x86_64\\nbdemetra\\bin", color = windows_path_color, url = FALSE)`
+    
+    La version 3.x nécessite Java 17 ou supérieur, *jdemetra-standalone-3.2.2-windows-x86_64.zip* contient une version portable de Java 21, de sorte que vous n'avez pas à faire face à ce problème sur votre ordinateur.
+    Les packages R liés à la version 3.x (rjd3...) nécessitent également Java 17 ou supérieur, vous pouvez (et devriez) utiliser la version portable fournie avec l'interface graphique pour les lancer, ceci est expliqué [ici](#Rconfig).
 
-Allez en bas de la page, téléchargez et décompressez le fichier si vous utilisez Windows *jdemetra-standalone-3.2.2-windows-x86_64.zip*.
-
-Pour lancer l'application, exécutez le fichier **nbdemetra64.exe** situé dans le sous-dossier suivant `r color_format("...\\jdemetra-standalone-3.2.2-windows-x86_64\\nbdemetra\\bin", color = windows_path_color, url = FALSE)`
-
-La version 3.x nécessite Java 17 ou supérieur, *jdemetra-standalone-3.2.2-windows-x86_64.zip* contient une version portable de Java 21, de sorte que vous n'avez pas à faire face à ce problème sur votre ordinateur.
-
-Les packages R liés à la version 3.x (rjd3...) nécessitent également Java 17 ou supérieur, vous pouvez (et devriez) utiliser la version portable fournie avec l'interface graphique pour les lancer, ceci est expliqué [ici](#Rconfig).
 
 ## Installer des plug-ins supplémentaires
 
@@ -118,7 +119,7 @@ Dans la **famille v3.x**, certaines des fonctionnalités supplémentaires sont :
 
 ## Installation du cruncher
 
-Pour installer le [Cruncher] (https://jdemetra-new-documentation.netlify.app/t-production-tools-cruncher-qr) :
+Pour installer le [cruncher] (https://jdemetra-new-documentation.netlify.app/t-production-tools-cruncher-qr) :
 
 - en v2, allez sur la page [**JWSACruncher**](https://github.com/jdemetra/jwsacruncher) et **téléchargez** et **décompressez** le dossier compressé `jwsacruncher-2.2.4-bin.zip`.
 
