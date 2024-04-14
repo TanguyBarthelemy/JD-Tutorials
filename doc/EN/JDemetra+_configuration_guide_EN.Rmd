@@ -40,23 +40,23 @@ color_format <- function(x, color, url = TRUE) {
     if (output_format == "latex") {
         x <- x |> gsub(pattern = "#", replacement = "\\#", fixed = TRUE)
         ret <- paste("\\textcolor{", color_name, ifelse(url, "}{\\url{", "}{\\nolinkurl{"), x, ifelse(url, "}}", "}}"), sep = "")
-        
-    # Génération de .html
+
+        # Génération de .html
     } else if (output_format == "html") {
         ret <- paste("<font color='", color, "'>", x, "</font>", sep = "")
-        
-    # Génération de .md pour Github
+
+        # Génération de .md pour Github
     } else if (output_format == "gfm+tex_math_dollars-yaml_metadata_block") {
         if (url) {
             ret <- paste("[", x, "](", x, ")", sep = "")
         } else {
-            ret <- x |> 
-                gsub(pattern = "\\", replacement = "\\\\", fixed = TRUE) |> 
+            ret <- x |>
+                gsub(pattern = "\\", replacement = "\\\\", fixed = TRUE) |>
                 gsub(pattern = "_", replacement = "\\\\_", fixed = TRUE)
             ret <- paste("${\\textsf{\\color{", color, "}{", ret, "}}}$", sep = "")
         }
-        
-    # Autres ?
+
+        # Autres ?
     } else {
         ret <- x
     }
